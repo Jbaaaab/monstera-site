@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lore</title>
+
+  <!-- CSS global -->
+  <link rel="stylesheet" href="css/styles.css?v=4" />
+</head>
+<body class="page-lore">
+
+  <!-- Header (nav standardisée) -->
+  <header class="site-header">
+    <nav class="site-nav">
+      <a href="index.html#hero">Home</a>
+      <a href="work.html">Work</a>
+      <a href="lore.html" class="is-active">Lore</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Lignes verticales -->
+  <div class="page-grid" aria-hidden="true"></div>
+
+  <!-- BLOC FIXE CENTRÉ (PNG) -->
+  <div class="pharrel-fixed" aria-hidden="true" data-glitch>
+    <img
+      src="assets/Img/LORE/Hire Me.png"
+      alt="i wanna be pharrel"
+      class="pharrel-sticker"
+      loading="eager"
+      decoding="async"
+    />
+  </div>
+
+  <!-- SCÈNE LORE (scrollable) -->
+  <main id="lore" class="lore-scene" role="main" aria-label="Lore">
+    <div id="lore-stage">
+
+      <!-- Chaînes -->
+      <img src="assets/img/LORE/CHAINS 5 1.png" alt="" class="lore-item chains chains--5" loading="lazy">
+      <img src="assets/img/LORE/CHAINS 9 1.png" alt="" class="lore-item chains chains--9" loading="lazy">
+
+      <!-- Blocs textes / panneaux -->
+      <img src="assets/img/LORE/DESC 2.png" alt="Description 2" class="lore-item panel panel--desc2" loading="lazy">
+      <img src="assets/img/LORE/DESC 3.png" alt="Description 3" class="lore-item panel panel--desc3" loading="lazy">
+      <img src="assets/img/LORE/DESC.png"   alt="Description"  class="lore-item panel panel--desc"  loading="lazy">
+
+      <!-- Cartouches / tableaux -->
+      <img src="assets/img/LORE/FAV BRAND.png"      alt="My fav brand is Gentlemonster" class="lore-item tag tag--favbrand" loading="lazy">
+      <img src="assets/img/LORE/film.png"           alt="Top 3 films of all time"        class="lore-item table table--films" loading="lazy">
+      <img src="assets/img/LORE/IF NOT PHARREL.png" alt="if not pharrel, abloh is just fine" class="lore-item tag tag--ifnotpharrel" loading="lazy">
+      <img src="assets/img/LORE/NDA.png"            alt="I work both publicly and under NDA contracts" class="lore-item tag tag--nda" loading="lazy">
+      <img src="assets/img/LORE/PARIS.png"          alt="Currently living in Paris"      class="lore-item tag tag--paris" loading="lazy">
+      <img src="assets/img/LORE/TOP SONG.png"       alt="Top 3 songs of all time"        class="lore-item table table--songs" loading="lazy">
+
+      <!-- Photos -->
+      <img src="assets/img/LORE/TIMMY.png"         alt="Timmy"        class="lore-item photo photo--timmy" loading="lazy">
+      <img src="assets/img/LORE/PHOTO JB.png"      alt="Photo JB"     class="lore-item photo photo--jb" loading="lazy">
+      <img src="assets/img/LORE/PHOTO COUPLE.png"  alt="Photo couple" class="lore-item photo photo--couple" loading="lazy">
+      <img src="assets/img/LORE/CAT.png"           alt="Cat speech bubble" class="lore-item photo photo--cat" loading="lazy">
+
+      <!-- Oranges -->
+      <img src="assets/img/LORE/orange 1.png" alt="" class="lore-item deco deco--orange1" loading="lazy">
+      <img src="assets/img/LORE/orange 2.png" alt="" class="lore-item deco deco--orange2" loading="lazy">
+
+      <!-- Symbole -->
+      <img src="assets/img/LOGO PASTILLE.svg" alt="" class="lore-logo PASTILLE" loading="lazy">
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="contact" class="site-footer" aria-label="Contact & end navigation">
+    <div class="footer-card">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="footer-col left">
+            <div class="foot-label">Page</div>
+            <nav class="footer-nav" aria-label="Secondary">
+              <a href="index.html#hero">Home</a>
+              <a href="work.html">Work</a>
+              <a href="lore.html">Lore</a>
+              <a href="contact.html">Contact</a>
+            </nav>
+          </div>
+          <div class="footer-col right">
+            <div class="foot-label foot-right">Hire me !</div>
+            <ul class="footer-contacts">
+              <li><a href="mailto:hello@designerwithmonstera.com">hello@designerwithmonstera.com</a></li>
+              <li><a href="tel:+33649604494">+33 6 49 60 44 94</a></li>
+              <li><a href="https://designerwithmonstera.com" target="_blank" rel="noopener">designerwithmonstera.com</a></li>
+              <li class="social">
+                <a href="#" aria-label="Instagram">IG</a>
+                <a href="#" aria-label="Behance">Bē</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-giant" aria-hidden="true">
+          <span>Hire me !</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS global -->
+  <script src="./script.js" defer></script>
+
+  <!-- ===== Glitch trail global + total counter (UNIFORME) ===== -->
+  <script>
+  (function(){
+    // Anti double-init
+    if (window.__jbGlitchInited) return;
+    window.__jbGlitchInited = true;
+
+    try { if (!matchMedia('(pointer:fine)').matches) return; } catch(e){}
+
+    // -------- CONFIG
+    const DURATION = 560;
+    const THROTTLE = 16;
+    const CLEAN_LIMIT = 600;
+
+    // -------- CSS injecté (mêmes classes que Home/Work/Contact)
+    const css = `
+      .jb-root{position:fixed;inset:auto 0 0 0;z-index:2147483646;pointer-events:none}
+      .jb-layer{position:fixed;inset:0;pointer-events:none;z-index:0;}
+      .jb-counter{position:fixed;right:16px;bottom:16px;z-index:1;pointer-events:none;user-select:none;
+        font:12px/1.2 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#0B1211;
+        background:#41F373;border:1px solid rgba(0,0,0,.35);border-radius:6px;padding:4px 10px;display:flex;align-items:center;gap:10px}
+      .jb-counter .sq{width:12px;height:12px;background:#41F373;border:1px solid rgba(0,0,0,.35)}
+      .jb-counter .lbl{font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+      .jb-counter .num{font-variant-numeric:tabular-nums;font-weight:700}
+      .jb-counter .petal{width:14px;height:14px}
+      .jb-square{position:fixed;pointer-events:none;mix-blend-mode:difference;background:#fff;opacity:.95;
+        transform:translate(-50%,-50%);outline:1px solid rgba(0,0,0,.15);animation:jbGlFade ${DURATION}ms ease-out forwards}
+      .jb-s{width:8px;height:8px}.jb-m{width:14px;height:14px}.jb-l{width:20px;height:20px}.jb-xl{width:26px;height:26px}
+      @keyframes jbGlFade{0%{opacity:.95;transform:translate(-50%,-50%) scale(1)}60%{opacity:.6;transform:translate(-50%,-50%) scale(1.08)}100%{opacity:0;transform:translate(-50%,-50%) scale(1.14)}}
+      .page-grid{pointer-events:none !important;}
+    `;
+    const style = document.createElement('style'); style.textContent = css; document.head.appendChild(style);
+
+    // -------- ROOT unique (mêmes noms que les autres pages)
+    const root = document.createElement('div'); root.className = 'jb-root';
+    const layer = document.createElement('div'); layer.className = 'jb-layer';
+    const counter = document.createElement('div'); counter.className = 'jb-counter';
+    counter.innerHTML = `
+      <span class="sq" aria-hidden="true"></span>
+      <span class="lbl">COUNTER</span>
+      <span class="num" id="jbCounter">0</span>
+      <img class="petal" src="assets/Img/SYMBOLE2.svg" alt="" aria-hidden="true" />
+    `;
+    root.appendChild(layer); root.appendChild(counter); document.body.appendChild(root);
+
+    // -------- Compteur (TOTAL)
+    let total = 0;
+    const numEl = counter.querySelector('#jbCounter');
+    const update = () => { numEl.textContent = String(total); };
+
+    // -------- Spawn
+    const rand = (a,b)=>a + Math.random()*(b-a);
+    function spawn(x,y){
+      const d = document.createElement('div');
+      d.className = 'jb-square ' + (
+        Math.random()<.25 ? 'jb-s' :
+        Math.random()<.70 ? 'jb-m' :
+        Math.random()<.90 ? 'jb-l' : 'jb-xl'
+      );
+      d.style.left = (x + rand(-3,3)) + 'px';
+      d.style.top  = (y + rand(-3,3)) + 'px';
+      layer.appendChild(d);
+      total++; update();
+      setTimeout(()=>{ d.remove(); }, DURATION+20);
+
+      if (layer.children.length > CLEAN_LIMIT){
+        const excess = layer.children.length - CLEAN_LIMIT;
+        for (let i=0;i<excess;i++) layer.firstElementChild?.remove();
+      }
+    }
+
+    // -------- Mousemove global
+    let last = 0;
+    window.addEventListener('mousemove', (e)=>{
+      const now = performance.now();
+      if (now - last < THROTTLE) return; last = now;
+
+      spawn(e.clientX, e.clientY);
+      if (Math.random() < .55) spawn(e.clientX + rand(-6,6),  e.clientY + rand(-6,6));
+      if (Math.random() < .25) spawn(e.clientX + rand(-12,12), e.clientY + rand(-12,12));
+    }, {passive:true});
+
+    // -------- Keep root on top
+    new MutationObserver(()=>{ if (root !== document.body.lastElementChild) document.body.appendChild(root); })
+      .observe(document.body, {childList:true});
+  })();
+  </script>
+  <!-- ===== /Glitch trail global + total counter ===== -->
+</body>
+</html>
