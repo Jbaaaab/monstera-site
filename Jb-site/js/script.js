@@ -304,3 +304,20 @@
     lb.addEventListener('touchend',   ()=>{ if(!active)return; if(Math.abs(dx)>Math.abs(dy) && Math.abs(dx)>THRESH){ dx<0?next():prev(); } active=false; }, { passive:true });
   })();
 })();
+// Gestion des covers vidéos → autoplay
+document.querySelectorAll('.video-cover').forEach(cover => {
+  cover.addEventListener('click', () => {
+    const iframe = cover.nextElementSibling;
+
+    // Ajoute autoplay si pas déjà présent
+    if (iframe && iframe.tagName === "IFRAME") {
+      if (iframe.src.indexOf("autoplay=1") === -1) {
+        iframe.src += (iframe.src.includes("?") ? "&" : "?") + "autoplay=1";
+      }
+    }
+
+    // Cache la cover
+    cover.style.display = "none";
+  });
+});
+  

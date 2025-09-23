@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vidéo — JBAB</title>
+
+  <link rel="stylesheet" href="../css/styles.css?v=video" />
+</head>
+
+<body class="page-videos">
+  <!-- Header -->
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <a href="../work.html" class="is-active">Work</a>
+      <a href="../lore.html">Lore</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Lignes verticales -->
+  <div class="page-grid" aria-hidden="true"></div>
+
+  <!-- Badge FIXE -->
+  <div class="videos-fixed" aria-hidden="true">
+    <img src="../assets/Img/WORK/vidéo.png" alt="vidéo" />
+  </div>
+
+  <!-- CONTENU -->
+  <main role="main" aria-label="Video gallery">
+    <ul class="posters" role="list">
+      <!-- ZLAN (16:9 en haut gauche) -->
+      <li class="item zlan ratio-16x9">
+        <div class="video-wrapper">
+          <div class="video-cover" style="background-image:url('../assets/Img/WORK/VIDEO/covers/zlan.jpg');">
+            <button class="play-btn">▶</button>
+          </div>
+          <iframe
+            src="https://www.youtube.com/embed/XtPgi1q-M2Q?start=11"
+            title="ZLAN ANNOUNCEMENT"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </li>
+
+      <!-- SUPREME (9:16 en haut droite) -->
+      <li class="item supreme ratio-9x16">
+        <div class="video-wrapper">
+          <div class="video-cover" style="background-image:url('../assets/Img/WORK/VIDEO/covers/supreme.jpg');">
+            <button class="play-btn">▶</button>
+          </div>
+          <iframe
+            src="https://player.vimeo.com/video/1075076410?h=d03fc2d672"
+            title="SUPREME ADS"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </li>
+
+      <!-- NEW BALANCE (9:16 en bas gauche) -->
+      <li class="item nb ratio-9x16">
+        <div class="video-wrapper">
+          <div class="video-cover" style="background-image:url('../assets/Img/WORK/VIDEO/covers/nb.jpg');">
+            <button class="play-btn">▶</button>
+          </div>
+          <iframe
+            src="https://player.vimeo.com/video/1075076461?h=ed8fa06b4b"
+            title="NEW BALANCE ADS"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </li>
+
+      <!-- GUST (16:9 en bas droite) -->
+      <li class="item gust ratio-16x9">
+        <div class="video-wrapper">
+          <div class="video-cover" style="background-image:url('../assets/Img/WORK/VIDEO/covers/gust.jpg');">
+            <button class="play-btn">▶</button>
+          </div>
+          <iframe
+            src="https://player.vimeo.com/video/1075076999?h=c6820bc708"
+            title="GUST ADS"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </li>
+    </ul>
+
+    <!-- Spacer -->
+    <div class="footer-spacer"></div>
+  </main>
+
+  <!-- Footer -->
+  <footer id="contact" class="site-footer">…</footer>
+
+  <!-- JS -->
+  <script src="../script.js" defer></script>
+  <script>
+    // JS cover → autoplay
+    document.querySelectorAll('.video-cover').forEach(cover=>{
+      cover.addEventListener('click', ()=>{
+        const iframe = cover.nextElementSibling;
+        // Autoplay + cache la cover
+        if(iframe.src.indexOf("autoplay=1") === -1){
+          iframe.src += (iframe.src.includes("?") ? "&" : "?") + "autoplay=1";
+        }
+        cover.style.display = "none";
+      });
+    });
+  </script>
+</body>
+</html>

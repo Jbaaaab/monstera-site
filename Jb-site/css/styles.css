@@ -765,7 +765,7 @@ margin: -2px;
   padding: 4%;
 }
 .lb:target {
-  display: flex;
+  display: flex;xa
 }
 .lb-figure {
   max-width: 90%;
@@ -1375,4 +1375,141 @@ body:has(.page-posters .lb:target){ overflow:hidden; }
     grid-column: 1 / -1 !important;
     transform: none;
   }
+}
+
+
+/* =========================
+   PAGE — VIDÉOS
+   ========================= */
+.page-videos {
+  --bg:#F2F3F4;
+  background: var(--bg);
+}
+
+/* Conteneur principal */
+.page-videos main {
+  position: relative;
+  z-index: 30;
+  width: min(100%, calc(var(--base-w) * 1px));
+  margin: clamp(20px,4.2vw,48px) auto 8vh;
+}
+
+/* Badge fixe centré */
+.page-videos .videos-fixed {
+  position: fixed;
+  z-index: 40;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  width: clamp(100px, 9vw, 180px); /* plus grand */
+  pointer-events: none;
+}
+.page-videos .videos-fixed img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Grille 12 colonnes */
+.page-videos .posters {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-cols), 1fr);
+  gap: clamp(12px, 1vw, 20px);
+  position: relative;
+  z-index: 20;
+}
+
+/* Reset */
+.page-videos .item {
+  position: relative;
+}
+.page-videos .item figure {
+  margin: 0;
+}
+.page-videos .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border: none;
+  border-radius: 0;
+}
+
+/* Ratios fixes */
+.page-videos .item.ratio-16x9 {
+  aspect-ratio: 16 / 9;
+}
+.page-videos .item.ratio-9x16 {
+  aspect-ratio: 9 / 16;
+}
+
+/* Placement précis (maquette) */
+/* ZLAN (16:9 en haut gauche) */
+.page-videos .item.zlan {
+  grid-column: 2 / span 6;
+  grid-row: 1;
+}
+/* SUPREME (9:16 en haut droite) */
+.page-videos .item.supreme {
+  grid-column: 9 / span 3;
+  grid-row: 1;
+}
+/* NEW BALANCE (9:16 en bas gauche) */
+.page-videos .item.nb {
+  grid-column: 2 / span 3;
+  grid-row: 2;
+}
+/* GUST (16:9 en bas droite) */
+.page-videos .item.gust {
+  grid-column: 6 / span 6;
+  grid-row: 2;
+}
+
+/* Spacer avant footer */
+.page-videos .footer-spacer {
+  height: 12vh;
+}
+
+/* =========================
+   VIDÉOS — Cover autoplay
+   ========================= */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: none;
+}
+
+/* Cover */
+.video-cover {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  z-index: 10;
+}
+
+/* Bouton Play */
+.video-cover .play-btn {
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  padding: 1rem 1.4rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.video-cover .play-btn:hover {
+  transform: scale(1.1);
 }
