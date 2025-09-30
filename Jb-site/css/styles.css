@@ -525,6 +525,7 @@ img {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16), inset 0 0 0 1px rgba(0, 0, 0, 0.32);
 }
 
+
 /* =========================
    Footer
    ========================= */
@@ -2346,4 +2347,53 @@ body:has(.page-posters .lb:target) {
   .page-branding .branding-gallery {
     gap: 12px;
   }
+}
+/* === HOME: supprimer la bande verte entre le contenu et le footer === */
+.below-hero + .site-footer {
+  margin-top: 0 !important;
+}
+
+/* (optionnel) petit anti-liseré si l’arrondi du card laisse un pixel */
+.below-hero + .site-footer .footer-card {
+  margin-top: -1px; /* colle visuellement le bloc vert au card blanc */
+}
+
+.qa-table {
+  border-top: 1px solid #ccc;
+}
+
+.qa-item {
+  border-bottom: 1px solid #ccc;
+}
+
+.qa-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  cursor: pointer;
+}
+
+.qa-answer {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.qa-item.open .qa-answer {
+  max-height: 500px; /* assez large */
+  opacity: 1;
+  padding: 20px 0; /* 👈 espace entre texte et trait */
+}
+.qa-answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 0;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+}
+
+.qa-item.open .qa-answer {
+  max-height: 500px;   /* assez grand pour tout ton texte */
+  padding: 20px 0;     /* espace autour */
 }

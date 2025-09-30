@@ -7,7 +7,6 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/styles.css?v=3" />
-  
 </head>
 <body>
 
@@ -78,14 +77,53 @@
           </div>
         </div>
 
-        <!-- Q/A -->
         <div class="qa-table">
-          <div class="qa-row"><div class="qa-q">Who do you think you are ?</div><div class="qa-plus">+</div></div>
-          <div class="qa-row"><div class="qa-q">We should have a talk.</div><div class="qa-plus">+</div></div>
-          <div class="qa-row"><div class="qa-q">What’s about you ?</div><div class="qa-plus">+</div></div>
+
+          <div class="qa-item">
+            <div class="qa-row">
+              <span class="qa-q">Who do you think you are ?</span>
+              <span class="qa-plus">+</span>
+            </div>
+            <div class="qa-answer">
+              <p>
+                I am a designer on a journey to become the best creative ally anyone can dream of.
+                I'm willing to turn into a sort of goat of art direction, a little Pharrel Williams !
+              </p>
+            </div>
+          </div>
+
+          <div class="qa-item">
+            <div class="qa-row">
+              <span class="qa-q">We should have a talk.</span>
+              <span class="qa-plus">+</span>
+            </div>
+            <div class="qa-answer">
+              <p>
+                We surely do ! I'm open to talk to anyone with serious projects :)  
+                You can directly call me or message me on whatsapp,  
+                or send me an email if you're an Outlook addict.
+              </p>
+            </div>
+          </div>
+
+          <div class="qa-item">
+            <div class="qa-row">
+              <span class="qa-q">What's wrong about you ?</span>
+              <span class="qa-plus">+</span>
+            </div>
+            <div class="qa-answer">
+              <p>
+                Many things, but there's also a lot of cool feature with me !  
+                Do you know I know (almost) every capital city in the world,  
+                I can bake fresh croissant, and I'm a father of a little cat named Pespimax.  
+                Also, I'm married.
+              </p>
+            </div>
+          </div>
+
         </div>
 
-        <!-- CTA principal (avec étoiles SVG gauche/droite) -->
+        <!-- CTA principal -->
         <div class="cta">
           <a href="mailto:hello@designerwithmonstera.com" class="btn-hire" aria-label="Hire me">
             <img src="assets/Img/SYMBOLE.svg" alt="" class="icon" aria-hidden="true">
@@ -94,25 +132,25 @@
           </a>
         </div>
 
-        <!-- SECTION WORKS (full-bleed interne) -->
+        <!-- SECTION WORKS -->
         <section id="hardlabour" class="section-posters" aria-label="Selected works">
           <ul class="posters grid-12" role="list">
             <!-- Row 1 — 3 posters -->
-            <li class="item portrait"  style="--col-start:1;  --col-span:4;">
+            <li class="item portrait" style="--col-start:1;  --col-span:4;">
               <figure><img loading="lazy" src="assets/Img/HOME PROJECT/p1.png" alt="Poster — Kim Chaewon"></figure>
             </li>
-            <li class="item portrait"  style="--col-start:5;  --col-span:4;">
+            <li class="item portrait" style="--col-start:5;  --col-span:4;">
               <figure><img loading="lazy" src="assets/Img/HOME PROJECT/p2.png" alt="Poster — Pink vibes"></figure>
             </li>
-            <li class="item portrait"  style="--col-start:9;  --col-span:4;">
+            <li class="item portrait" style="--col-start:9;  --col-span:4;">
               <figure><img loading="lazy" src="assets/Img/HOME PROJECT/p3.png" alt="Poster — Green floor"></figure>
             </li>
 
             <!-- Row 2 — 2 magazines -->
-            <li class="item magazine"  style="--col-start:2;  --col-span:5;">
+            <li class="item magazine" style="--col-start:2;  --col-span:5;">
               <figure><img loading="lazy" src="assets/Img/HOME PROJECT/m1.png" alt="Magazine — Green cover"></figure>
             </li>
-            <li class="item magazine"  style="--col-start:7;  --col-span:5;">
+            <li class="item magazine" style="--col-start:7;  --col-span:5;">
               <figure><img loading="lazy" src="assets/Img/HOME PROJECT/m2.png" alt="Magazine — Pink duo"></figure>
             </li>
 
@@ -144,7 +182,6 @@
   <footer id="contact" class="site-footer" aria-label="Contact & end navigation">
     <div class="footer-card">
       <div class="footer-inner">
-        <!-- top line -->
         <div class="footer-top">
           <div class="footer-col left">
             <div class="foot-label">Page</div>
@@ -155,7 +192,6 @@
               <a href="contact.html">Contact</a>
             </nav>
           </div>
-
           <div class="footer-col right">
             <div class="foot-label foot-right">Hire me !</div>
             <ul class="footer-contacts">
@@ -169,8 +205,6 @@
             </ul>
           </div>
         </div>
-
-        <!-- giant wordmark -->
         <div class="footer-giant" aria-hidden="true">
           <span>Hire me !</span>
         </div>
@@ -181,28 +215,21 @@
   <!-- JS -->
   <script src="./script.js" defer></script>
 
-  <!-- ===== Glitch trail global + total counter (autonome) ===== -->
+  <!-- Glitch trail -->
   <script>
   (function(){
-    // Anti double-init entre pages
     if (window.__jbGlitchInited) return;
     window.__jbGlitchInited = true;
-
     try { if (!matchMedia('(pointer:fine)').matches) return; } catch(e){}
 
-    // -------- CONFIG
-    const DURATION = 560;    // ms : durée de vie d'un carré
-    const THROTTLE = 16;     // ms : délai mini entre spawns (~60 fps)
-    const CLEAN_LIMIT = 600; // limite de carrés simultanés
-
-    // -------- CSS injecté (tu peux surstyler via styles.css)
-    const css = `
+    const DURATION=560,THROTTLE=16,CLEAN_LIMIT=600;
+    const css=`
       .jb-root{position:fixed;inset:auto 0 0 0;z-index:2147483646;pointer-events:none}
       .jb-layer{position:fixed;inset:0;pointer-events:none;z-index:0;}
       .jb-counter{position:fixed;right:16px;bottom:16px;z-index:1;pointer-events:none;user-select:none;
         font:12px/1.2 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#0B1211;
-        background:#41F373;border:0px solid rgba(0,0,0,.35);border-radius:0px;padding:4px 10px;display:flex;align-items:center;gap:10px}
-      .jb-counter .sq{width:12px;height:12px;background:#41F373;border:0px solid rgba(0,0,0,.35)}
+        background:#41F373;border:0;border-radius:0;padding:4px 10px;display:flex;align-items:center;gap:10px}
+      .jb-counter .sq{width:12px;height:12px;background:#41F373}
       .jb-counter .lbl{font-weight:700;letter-spacing:.06em}
       .jb-counter .num{font-variant-numeric:tabular-nums;font-weight:700}
       .jb-counter .petal{width:14px;height:14px}
@@ -212,62 +239,89 @@
       @keyframes jbGlFade{0%{opacity:.95;transform:translate(-50%,-50%) scale(1)}60%{opacity:.6;transform:translate(-50%,-50%) scale(1.08)}100%{opacity:0;transform:translate(-50%,-50%) scale(1.14)}}
       .page-grid{pointer-events:none !important;}
     `;
-    const style = document.createElement('style'); style.textContent = css; document.head.appendChild(style);
+    const style=document.createElement('style');style.textContent=css;document.head.appendChild(style);
+    const root=document.createElement('div');root.className='jb-root';
+    const layer=document.createElement('div');layer.className='jb-layer';
+    const counter=document.createElement('div');counter.className='jb-counter';
+    counter.innerHTML=`<span class="sq"></span><span class="lbl">COUNTER</span><span class="num" id="jbCounter">0</span><img class="petal" src="assets/Img/SYMBOLE2.svg" alt="">`;
+    root.appendChild(layer);root.appendChild(counter);document.body.appendChild(root);
 
-    // -------- ROOT unique
-    const root = document.createElement('div'); root.className = 'jb-root';
-    const layer = document.createElement('div'); layer.className = 'jb-layer';
-    const counter = document.createElement('div'); counter.className = 'jb-counter';
-    counter.innerHTML = `
-      <span class="sq" aria-hidden="true"></span>
-      <span class="lbl">COUNTER</span>
-      <span class="num" id="jbCounter">0</span>
-      <img class="petal" src="assets/Img/SYMBOLE2.svg" alt="" aria-hidden="true" />
-    `;
-    root.appendChild(layer); root.appendChild(counter); document.body.appendChild(root);
-
-    // -------- Compteur (TOTAL seulement)
-    let total = 0;
-    const numEl = counter.querySelector('#jbCounter');
-    const update = () => { numEl.textContent = String(total); };
-
-    // -------- Génération des carrés
-    const rand = (a,b)=>a + Math.random()*(b-a);
+    let total=0;const numEl=counter.querySelector('#jbCounter');const update=()=>{numEl.textContent=String(total)};
+    const rand=(a,b)=>a+Math.random()*(b-a);
     function spawn(x,y){
-      const d = document.createElement('div');
-      d.className = 'jb-square ' + (
-        Math.random()<.25 ? 'jb-s' :
-        Math.random()<.70 ? 'jb-m' :
-        Math.random()<.90 ? 'jb-l' : 'jb-xl'
+      const d=document.createElement('div');
+      d.className='jb-square '+(
+        Math.random()<.25?'jb-s':
+        Math.random()<.70?'jb-m':
+        Math.random()<.90?'jb-l':'jb-xl'
       );
-      d.style.left = (x + rand(-3,3)) + 'px';
-      d.style.top  = (y + rand(-3,3)) + 'px';
-      layer.appendChild(d);
-      total++; update();
-      setTimeout(()=>{ d.remove(); }, DURATION+20);
-
-      if (layer.children.length > CLEAN_LIMIT){
-        const excess = layer.children.length - CLEAN_LIMIT;
-        for (let i=0;i<excess;i++) layer.firstElementChild?.remove();
-      }
+      d.style.left=(x+rand(-3,3))+'px';d.style.top=(y+rand(-3,3))+'px';
+      layer.appendChild(d);total++;update();setTimeout(()=>{d.remove()},DURATION+20);
+      if(layer.children.length>CLEAN_LIMIT){const excess=layer.children.length-CLEAN_LIMIT;for(let i=0;i<excess;i++)layer.firstElementChild?.remove()}
     }
-
-    // -------- Mousemove global
-    let last = 0;
-    window.addEventListener('mousemove', (e)=>{
-      const now = performance.now();
-      if (now - last < THROTTLE) return; last = now;
-
-      spawn(e.clientX, e.clientY);
-      if (Math.random() < .55) spawn(e.clientX + rand(-6,6),  e.clientY + rand(-6,6));
-      if (Math.random() < .25) spawn(e.clientX + rand(-12,12), e.clientY + rand(-12,12));
-    }, {passive:true});
-
-    // -------- Keep root on top
-    new MutationObserver(()=>{ if (root !== document.body.lastElementChild) document.body.appendChild(root); })
-      .observe(document.body, {childList:true});
+    let last=0;
+    window.addEventListener('mousemove',e=>{
+      const now=performance.now();if(now-last<THROTTLE)return;last=now;
+      spawn(e.clientX,e.clientY);
+      if(Math.random()<.55)spawn(e.clientX+rand(-6,6),e.clientY+rand(-6,6));
+      if(Math.random()<.25)spawn(e.clientX+rand(-12,12),e.clientY+rand(-12,12));
+    },{passive:true});
+    new MutationObserver(()=>{if(root!==document.body.lastElementChild)document.body.appendChild(root)})
+      .observe(document.body,{childList:true});
   })();
   </script>
-  <!-- ===== /Glitch trail global + total counter ===== -->
+
+  <!-- Q/A toggles (ouvre/ferme + padding 20px + change +/–) -->
+  <script>
+  (function initQA(){
+    function setup(){
+      document.querySelectorAll('.qa-item').forEach(item => {
+        const row   = item.querySelector('.qa-row');
+        const panel = item.querySelector('.qa-answer');
+        const plus  = item.querySelector('.qa-plus');
+
+        // Etat initial : fermé
+        panel.style.display = 'none';
+        panel.style.paddingTop = '0';
+        panel.style.paddingBottom = '0';
+
+        // accessibilité + clic ligne entière
+        row.setAttribute('role','button');
+        row.setAttribute('tabindex','0');
+        row.setAttribute('aria-expanded','false');
+
+        const setPlus = (open) => { if(plus) plus.textContent = open ? '–' : '+'; };
+
+        const toggle = () => {
+          const open = panel.style.display !== 'none';
+          if (open) {
+            panel.style.display = 'none';
+            panel.style.paddingTop = '0';
+            panel.style.paddingBottom = '0';
+            row.setAttribute('aria-expanded','false');
+            setPlus(false);
+          } else {
+            panel.style.display = 'block';
+            panel.style.paddingTop = '20px';
+            panel.style.paddingBottom = '20px';
+            row.setAttribute('aria-expanded','true');
+            setPlus(true);
+          }
+        };
+
+        row.addEventListener('click', toggle);
+        row.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+        });
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', setup);
+    } else {
+      setup();
+    }
+  })();
+  </script>
 </body>
 </html>
