@@ -4,13 +4,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Work — JBAB</title>
+  <!-- CSS global unifié -->
   <link rel="stylesheet" href="css/styles.css?v=work3" />
+  <meta name="color-scheme" content="light only" />
 </head>
 <body class="page-work page-work--onepage">
 
-  <!-- Header -->
-  <header class="site-header">
-    <nav class="site-nav" aria-label="Primary">
+  <!-- =========================
+       Header
+       ========================= -->
+  <header class="site-header" role="banner">
+    <nav class="site-nav" aria-label="Navigation principale">
       <a href="index.html">Home</a>
       <a href="work.html" class="is-active">Work</a>
       <a href="lore.html">Lore</a>
@@ -18,25 +22,29 @@
     </nav>
   </header>
 
-  <!-- Lignes verticales -->
+  <!-- =========================
+       Lignes verticales overlay
+       ========================= -->
   <div class="page-grid" aria-hidden="true"></div>
 
-  <!-- HERO -->
+  <!-- =========================
+       HERO
+       ========================= -->
   <section class="work-hero" aria-label="Work hero">
     <div class="hero-inner work-container">
       <!-- Logo -->
       <img
         src="assets/Img/LOGO FULL BLACK.svg"
-        alt="Designer with Monstera — logo"
+        alt="JBAB — logo"
         class="work-logo"
         loading="eager"
         decoding="async"
       />
       <!-- Bannière « Be amazed… » -->
-      <div class="work-banner">
+      <div class="work-banner" aria-hidden="true">
         <img
           src="assets/Img/BE AMAZED.png"
-          alt="* Be amazed by my work! *"
+          alt=""
           class="work-banner-img"
           loading="eager"
           decoding="async"
@@ -45,84 +53,94 @@
     </div>
   </section>
 
-  <!-- TABLE -->
-  <main class="work-scene" role="main" aria-label="Work categories">
+  <!-- =========================
+       TABLE DES CATÉGORIES
+       (chaque ligne est cliquable)
+       ========================= -->
+  <main class="work-scene" id="work" role="main" aria-label="Work categories">
     <div class="work-table work-container">
 
-      <div class="work-row">
+      <!-- Poster Design -->
+      <a class="work-row" href="work/poster.html">
         <div class="c idx">01</div>
         <div class="c title">
           <h3>Poster Design</h3>
           <p class="desc">Exploring bold compositions for clients across music &amp; culture.</p>
         </div>
-        <div class="c spacer"></div>
+        <div class="c spacer" aria-hidden="true"></div>
         <div class="c clients">
           <h4>Clients</h4>
           <p>Polyvalent Art Director<br>3D modeling / animation</p>
         </div>
-      </div>
+      </a>
 
-      <div class="work-row">
+      <!-- Magazine -->
+      <a class="work-row" href="work/magazine.html">
         <div class="c idx">02</div>
         <div class="c title">
           <h3>Magazine</h3>
           <p class="desc">Editorial layouts balancing typography and storytelling.</p>
         </div>
-        <div class="c spacer"></div>
+        <div class="c spacer" aria-hidden="true"></div>
         <div class="c clients">
           <h4>Clients</h4>
           <p>Polyvalent Art Director<br>3D modeling / animation</p>
         </div>
-      </div>
+      </a>
 
-      <div class="work-row">
+      <!-- 3D -->
+      <a class="work-row" href="work/3d.html">
         <div class="c idx">03</div>
         <div class="c title">
           <h3>3D</h3>
           <p class="desc">Modeling and animation — from playful objects to brand universes.</p>
         </div>
-        <div class="c spacer"></div>
+        <div class="c spacer" aria-hidden="true"></div>
         <div class="c clients">
           <h4>Clients</h4>
           <p>Polyvalent Art Director<br>3D modeling / animation</p>
         </div>
-      </div>
+      </a>
 
-      <div class="work-row">
+      <!-- Branding -->
+      <a class="work-row" href="work/branding.html">
         <div class="c idx">04</div>
         <div class="c title">
           <h3>Branding</h3>
           <p class="desc">Identity systems designed to last (and to be remembered).</p>
         </div>
-        <div class="c spacer"></div>
+        <div class="c spacer" aria-hidden="true"></div>
         <div class="c clients">
           <h4>Clients</h4>
           <p>Polyvalent Art Director<br>3D modeling / animation</p>
         </div>
-      </div>
+      </a>
 
-      <div class="work-row">
+      <!-- Video -->
+      <a class="work-row" href="work/video.html">
         <div class="c idx">05</div>
         <div class="c title">
           <h3>Video</h3>
           <p class="desc">Motion &amp; editing for campaigns and social media.</p>
         </div>
-        <div class="c spacer"></div>
+        <div class="c spacer" aria-hidden="true"></div>
         <div class="c clients">
           <h4>Clients</h4>
           <p>Polyvalent Art Director<br>3D modeling / animation</p>
         </div>
-      </div>
+      </a>
 
     </div>
   </main>
 
-  <!-- (Footer mini retiré) -->
-
-  <!-- JS global -->
+  <!-- =========================
+       JS global (si besoin)
+       ========================= -->
   <script src="script.js" defer></script>
 
-  <!-- ===== Glitch trail global + total counter (autonome) ===== -->
+  <!-- ======================================================
+       Glitch trail global + total counter (copié tel quel)
+       ====================================================== -->
   <script>
   (function(){
     if (window.__jbGlitchInited) return;
@@ -132,14 +150,14 @@
 
     const DURATION = 560, THROTTLE = 16, CLEAN_LIMIT = 600;
 
-    const css = `
+const css = `
       .jb-root{position:fixed;inset:auto 0 0 0;z-index:2147483646;pointer-events:none}
       .jb-layer{position:fixed;inset:0;pointer-events:none;z-index:0;}
       .jb-counter{position:fixed;right:16px;bottom:16px;z-index:1;pointer-events:none;user-select:none;
         font:12px/1.2 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#0B1211;
-        background:#41F373;border:1px solid rgba(0,0,0,.35);border-radius:6px;padding:4px 10px;display:flex;align-items:center;gap:10px}
-      .jb-counter .sq{width:12px;height:12px;background:#41F373;border:1px solid rgba(0,0,0,.35)}
-      .jb-counter .lbl{font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+        background:#41F373;border:0px solid rgba(0,0,0,.35);border-radius:0px;padding:4px 10px;display:flex;align-items:center;gap:10px}
+      .jb-counter .sq{width:12px;height:12px;background:#41F373;border:0px solid rgba(0,0,0,.35)}
+      .jb-counter .lbl{font-weight:700;letter-spacing:.06em}
       .jb-counter .num{font-variant-numeric:tabular-nums;font-weight:700}
       .jb-counter .petal{width:14px;height:14px}
       .jb-square{position:fixed;pointer-events:none;mix-blend-mode:difference;background:#fff;opacity:.95;
@@ -199,6 +217,8 @@
       .observe(document.body, {childList:true});
   })();
   </script>
-  <!-- ===== /Glitch trail global + total counter ===== -->
+  <!-- =========================
+       /Glitch trail
+       ========================= -->
 </body>
 </html>
