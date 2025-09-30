@@ -39,34 +39,34 @@
     <div id="lore-stage">
 
       <!-- Chaînes -->
-      <img src="assets/img/LORE/CHAINS 5 1.png" alt="" class="lore-item chains chains--5" loading="lazy">
-      <img src="assets/img/LORE/CHAINS 9 1.png" alt="" class="lore-item chains chains--9" loading="lazy">
+      <img src="assets/Img/LORE/CHAINS 5 1.png" alt="" class="lore-item chains chains--5" loading="lazy">
+      <img src="assets/Img/LORE/CHAINS 9 1.png" alt="" class="lore-item chains chains--9" loading="lazy">
 
       <!-- Blocs textes / panneaux -->
-      <img src="assets/img/LORE/DESC 2.png" alt="Description 2" class="lore-item panel panel--desc2" loading="lazy">
-      <img src="assets/img/LORE/DESC 3.png" alt="Description 3" class="lore-item panel panel--desc3" loading="lazy">
-      <img src="assets/img/LORE/DESC.png"   alt="Description"  class="lore-item panel panel--desc"  loading="lazy">
+      <img src="assets/Img/LORE/DESC 2.png" alt="Description 2" class="lore-item panel panel--desc2" loading="lazy">
+      <img src="assets/Img/LORE/DESC 3.png" alt="Description 3" class="lore-item panel panel--desc3" loading="lazy">
+      <img src="assets/Img/LORE/DESC.png"   alt="Description"  class="lore-item panel panel--desc"  loading="lazy">
 
       <!-- Cartouches / tableaux -->
-      <img src="assets/img/LORE/FAV BRAND.png"      alt="My fav brand is Gentlemonster" class="lore-item tag tag--favbrand" loading="lazy">
-      <img src="assets/img/LORE/film.png"           alt="Top 3 films of all time"        class="lore-item table table--films" loading="lazy">
-      <img src="assets/img/LORE/IF NOT PHARREL.png" alt="if not pharrel, abloh is just fine" class="lore-item tag tag--ifnotpharrel" loading="lazy">
-      <img src="assets/img/LORE/NDA.png"            alt="I work both publicly and under NDA contracts" class="lore-item tag tag--nda" loading="lazy">
-      <img src="assets/img/LORE/PARIS.png"          alt="Currently living in Paris"      class="lore-item tag tag--paris" loading="lazy">
-      <img src="assets/img/LORE/TOP SONG.png"       alt="Top 3 songs of all time"        class="lore-item table table--songs" loading="lazy">
+      <img src="assets/Img/LORE/FAV BRAND.png"      alt="My fav brand is Gentlemonster" class="lore-item tag tag--favbrand" loading="lazy">
+      <img src="assets/Img/LORE/film.png"           alt="Top 3 films of all time"        class="lore-item table table--films" loading="lazy">
+      <img src="assets/Img/LORE/IF NOT PHARREL.png" alt="if not pharrel, abloh is just fine" class="lore-item tag tag--ifnotpharrel" loading="lazy">
+      <img src="assets/Img/LORE/NDA.png"            alt="I work both publicly and under NDA contracts" class="lore-item tag tag--nda" loading="lazy">
+      <img src="assets/Img/LORE/PARIS.png"          alt="Currently living in Paris"      class="lore-item tag tag--paris" loading="lazy">
+      <img src="assets/Img/LORE/TOP SONG.png"       alt="Top 3 songs of all time"        class="lore-item table table--songs" loading="lazy">
 
       <!-- Photos -->
-      <img src="assets/img/LORE/TIMMY.png"         alt="Timmy"        class="lore-item photo photo--timmy" loading="lazy">
-      <img src="assets/img/LORE/PHOTO JB.png"      alt="Photo JB"     class="lore-item photo photo--jb" loading="lazy">
-      <img src="assets/img/LORE/PHOTO COUPLE.png"  alt="Photo couple" class="lore-item photo photo--couple" loading="lazy">
-      <img src="assets/img/LORE/CAT.png"           alt="Cat speech bubble" class="lore-item photo photo--cat" loading="lazy">
+      <img src="assets/Img/LORE/TIMMY.png"         alt="Timmy"        class="lore-item photo photo--timmy" loading="lazy">
+      <img src="assets/Img/LORE/PHOTO JB.png"      alt="Photo JB"     class="lore-item photo photo--jb" loading="lazy">
+      <img src="assets/Img/LORE/PHOTO COUPLE.png"  alt="Photo couple" class="lore-item photo photo--couple" loading="lazy">
+      <img src="assets/Img/LORE/CAT.png"           alt="Cat speech bubble" class="lore-item photo photo--cat" loading="lazy">
 
       <!-- Oranges -->
-      <img src="assets/img/LORE/orange 1.png" alt="" class="lore-item deco deco--orange1" loading="lazy">
-      <img src="assets/img/LORE/orange 2.png" alt="" class="lore-item deco deco--orange2" loading="lazy">
+      <img src="assets/Img/LORE/orange 1.png" alt="" class="lore-item deco deco--orange1" loading="lazy">
+      <img src="assets/Img/LORE/orange 2.png" alt="" class="lore-item deco deco--orange2" loading="lazy">
 
       <!-- Symbole -->
-      <img src="assets/img/LOGO PASTILLE.svg" alt="" class="lore-logo PASTILLE" loading="lazy">
+      <img src="assets/Img/LOGO PASTILLE.svg" alt="" class="lore-logo PASTILLE" loading="lazy">
 
     </div>
   </main>
@@ -118,12 +118,10 @@
 
     try { if (!matchMedia('(pointer:fine)').matches) return; } catch(e){}
 
-    // -------- CONFIG
     const DURATION = 560;
     const THROTTLE = 16;
     const CLEAN_LIMIT = 600;
 
-    // -------- CSS injecté (mêmes classes que Home/Work/Contact)
  const css = `
       .jb-root{position:fixed;inset:auto 0 0 0;z-index:2147483646;pointer-events:none}
       .jb-layer{position:fixed;inset:0;pointer-events:none;z-index:0;}
@@ -142,7 +140,6 @@
     `;
     const style = document.createElement('style'); style.textContent = css; document.head.appendChild(style);
 
-    // -------- ROOT unique (mêmes noms que les autres pages)
     const root = document.createElement('div'); root.className = 'jb-root';
     const layer = document.createElement('div'); layer.className = 'jb-layer';
     const counter = document.createElement('div'); counter.className = 'jb-counter';
@@ -154,12 +151,10 @@
     `;
     root.appendChild(layer); root.appendChild(counter); document.body.appendChild(root);
 
-    // -------- Compteur (TOTAL)
     let total = 0;
     const numEl = counter.querySelector('#jbCounter');
     const update = () => { numEl.textContent = String(total); };
 
-    // -------- Spawn
     const rand = (a,b)=>a + Math.random()*(b-a);
     function spawn(x,y){
       const d = document.createElement('div');
@@ -180,7 +175,6 @@
       }
     }
 
-    // -------- Mousemove global
     let last = 0;
     window.addEventListener('mousemove', (e)=>{
       const now = performance.now();
@@ -191,7 +185,6 @@
       if (Math.random() < .25) spawn(e.clientX + rand(-12,12), e.clientY + rand(-12,12));
     }, {passive:true});
 
-    // -------- Keep root on top
     new MutationObserver(()=>{ if (root !== document.body.lastElementChild) document.body.appendChild(root); })
       .observe(document.body, {childList:true});
   })();
