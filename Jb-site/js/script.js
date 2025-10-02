@@ -320,25 +320,5 @@ document.querySelectorAll('.video-cover').forEach(cover => {
     cover.style.display = "none";
   });
 });
-  document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".qa-item").forEach(item => {
-    const row = item.querySelector(".qa-row");
-    const plus = item.querySelector(".qa-plus");
 
-    row.addEventListener("click", () => {
-      const isOpen = item.classList.contains("open");
 
-      // Fermer tous les autres
-      document.querySelectorAll(".qa-item").forEach(el => {
-        el.classList.remove("open");
-        el.querySelector(".qa-plus").textContent = "+";
-      });
-
-      // Ouvrir celui qu'on clique
-      if (!isOpen) {
-        item.classList.add("open");
-        plus.textContent = "–";
-      }
-    });
-  });
-});

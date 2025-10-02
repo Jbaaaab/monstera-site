@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Landing</title>
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/Img/favicon.png">
+
   <!-- CSS -->
   <link rel="stylesheet" href="css/styles.css?v=3" />
 </head>
@@ -271,57 +274,58 @@
   })();
   </script>
 
-  <!-- Q/A toggles (ouvre/ferme + padding 20px + change +/–) -->
-  <script>
-  (function initQA(){
-    function setup(){
-      document.querySelectorAll('.qa-item').forEach(item => {
-        const row   = item.querySelector('.qa-row');
-        const panel = item.querySelector('.qa-answer');
-        const plus  = item.querySelector('.qa-plus');
+ <!-- Q/A toggles (ouvre/ferme + padding réduit) -->
+<script>
+(function initQA(){
+  function setup(){
+    document.querySelectorAll('.qa-item').forEach(item => {
+      const row   = item.querySelector('.qa-row');
+      const panel = item.querySelector('.qa-answer');
+      const plus  = item.querySelector('.qa-plus');
 
-        // Etat initial : fermé
-        panel.style.display = 'none';
-        panel.style.paddingTop = '0';
-        panel.style.paddingBottom = '0';
+      // Etat initial : fermé
+      panel.style.display = 'none';
+      panel.style.paddingTop = '0';
+      panel.style.paddingBottom = '0';
 
-        // accessibilité + clic ligne entière
-        row.setAttribute('role','button');
-        row.setAttribute('tabindex','0');
-        row.setAttribute('aria-expanded','false');
+      // accessibilité + clic ligne entière
+      row.setAttribute('role','button');
+      row.setAttribute('tabindex','0');
+      row.setAttribute('aria-expanded','false');
 
-        const setPlus = (open) => { if(plus) plus.textContent = open ? '–' : '+'; };
+      const setPlus = (open) => { if(plus) plus.textContent = open ? '–' : '+'; };
 
-        const toggle = () => {
-          const open = panel.style.display !== 'none';
-          if (open) {
-            panel.style.display = 'none';
-            panel.style.paddingTop = '0';
-            panel.style.paddingBottom = '0';
-            row.setAttribute('aria-expanded','false');
-            setPlus(false);
-          } else {
-            panel.style.display = 'block';
-            panel.style.paddingTop = '20px';
-            panel.style.paddingBottom = '20px';
-            row.setAttribute('aria-expanded','true');
-            setPlus(true);
-          }
-        };
+      const toggle = () => {
+        const open = panel.style.display !== 'none';
+        if (open) {
+          panel.style.display = 'none';
+          panel.style.paddingTop = '0';
+          panel.style.paddingBottom = '0';
+          row.setAttribute('aria-expanded','false');
+          setPlus(false);
+        } else {
+          panel.style.display = 'block';
+          panel.style.paddingTop = '0px';   /* 👈 réduit */
+          panel.style.paddingBottom = '0px';/* 👈 réduit */
+          row.setAttribute('aria-expanded','true');
+          setPlus(true);
+        }
+      };
 
-        row.addEventListener('click', toggle);
-        row.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
-        });
+      row.addEventListener('click', toggle);
+      row.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
       });
-    }
+    });
+  }
 
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', setup);
-    } else {
-      setup();
-    }
-  })();
-  </script>
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setup);
+  } else {
+    setup();
+  }
+})();
+</script>
+
 </body>
 </html>
