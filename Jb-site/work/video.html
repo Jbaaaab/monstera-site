@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Vidéo — JBAB</title>
-  <link rel="icon" type="image/png" href="assets/Img/favicon.png">
+  <link rel="icon" type="image/png" href="../assets/Img/favicon.png">
 
   <link rel="stylesheet" href="../css/styles.css?v=video" />
 </head>
@@ -103,6 +103,23 @@
   <!-- Footer -->
   <footer id="contact" class="site-footer">…</footer>
 
-  <script src="js/glitch.js" defer></script> 
+codex/analyze-repository-for-code-issues
+  <!-- JS -->
+  <script src="../js/script.js" defer></script>
+  <script src="../js/glitch.js" defer></script>
+  <script>
+    // JS cover → autoplay
+    document.querySelectorAll('.video-cover').forEach(cover=>{
+      cover.addEventListener('click', ()=>{
+        const iframe = cover.nextElementSibling;
+        // Autoplay + cache la cover
+        if(iframe.src.indexOf("autoplay=1") === -1){
+          iframe.src += (iframe.src.includes("?") ? "&" : "?") + "autoplay=1";
+        }
+        cover.style.display = "none";
+      });
+    });
+  </script>
+  
 </body>
 </html>

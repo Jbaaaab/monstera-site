@@ -216,6 +216,62 @@
   </footer>
 
   <!-- JS -->
+  codex/analyze-repository-for-code-issues
+  <script src="js/script.js" defer></script>
+  <script src="js/glitch.js" defer></script>
+
+ <!-- Q/A toggles (ouvre/ferme + padding réduit) -->
+<script>
+(function initQA(){
+  function setup(){
+    document.querySelectorAll('.qa-item').forEach(item => {
+      const row   = item.querySelector('.qa-row');
+      const panel = item.querySelector('.qa-answer');
+      const plus  = item.querySelector('.qa-plus');
+
+      // Etat initial : fermé
+      panel.style.display = 'none';
+      panel.style.paddingTop = '0';
+      panel.style.paddingBottom = '0';
+
+      // accessibilité + clic ligne entière
+      row.setAttribute('role','button');
+      row.setAttribute('tabindex','0');
+      row.setAttribute('aria-expanded','false');
+
+      const setPlus = (open) => { if(plus) plus.textContent = open ? '–' : '+'; };
+
+      const toggle = () => {
+        const open = panel.style.display !== 'none';
+        if (open) {
+          panel.style.display = 'none';
+          panel.style.paddingTop = '0';
+          panel.style.paddingBottom = '0';
+          row.setAttribute('aria-expanded','false');
+          setPlus(false);
+        } else {
+          panel.style.display = 'block';
+          panel.style.paddingTop = '0px';   /* 👈 réduit */
+          panel.style.paddingBottom = '0px';/* 👈 réduit */
+          row.setAttribute('aria-expanded','true');
+          setPlus(true);
+        }
+      };
+
+      row.addEventListener('click', toggle);
+      row.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setup);
+  } else {
+    setup();
+  }
+})();
+</script>
   <script src="js/glitch.js" defer></script> 
 
 </body>
