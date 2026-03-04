@@ -103,20 +103,6 @@
   <!-- Footer -->
   <footer id="contact" class="site-footer">…</footer>
 
-  <!-- JS -->
-  <script src="../js/script.js" defer></script>
-  <script>
-    // JS cover → autoplay
-    document.querySelectorAll('.video-cover').forEach(cover=>{
-      cover.addEventListener('click', ()=>{
-        const iframe = cover.nextElementSibling;
-        // Autoplay + cache la cover
-        if(iframe.src.indexOf("autoplay=1") === -1){
-          iframe.src += (iframe.src.includes("?") ? "&" : "?") + "autoplay=1";
-        }
-        cover.style.display = "none";
-      });
-    });
-  </script>
+  <script src="js/glitch.js" defer></script> 
 </body>
 </html>
