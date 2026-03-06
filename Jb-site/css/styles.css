@@ -1320,8 +1320,11 @@ body:has(.page-posters .lb:target) {
 .page-magazine .mag-scene {
   position: relative;
   z-index: 30;
-  width: min(100%, calc(var(--base-w) * 1px));
+  width: 100%;
+  max-width: var(--base-w);
   margin: clamp(60px, 10vw, 140px) auto 10vh;
+  padding-inline: clamp(24px, 3vw, 56px);
+  box-sizing: border-box;
 }
 
 .page-magazine .mag-badge {
@@ -1354,6 +1357,7 @@ body:has(.page-posters .lb:target) {
 
 .page-magazine .mag-head {
   padding: 24px 0 14px;
+  align-items: start;
 }
 
 .page-magazine .mag-head .idx {
@@ -1369,36 +1373,59 @@ body:has(.page-posters .lb:target) {
 }
 
 .page-magazine .mag-head .title {
-  grid-column: 2 / span 5;
+  grid-column: 2 / span 8;
+  max-width: none;
+  align-self: start;
+  display: grid;
+  grid-template-rows: auto auto;
+  row-gap: 2px;
 }
 
 .page-magazine .mag-head .year {
-  grid-column: 8 / span 2;
+  grid-column: 10 / span 1;
   align-self: start;
+  justify-self: end;
+  line-height: 1.1;
 }
 
 .page-magazine .mag-head .sector {
-  grid-column: 10 / span 3;
-  justify-self: stretch;
+  grid-column: 11 / span 2;
+  justify-self: end;
+  align-self: start;
   text-align: right;
+  display: grid;
+  grid-template-rows: auto auto;
+  row-gap: 2px;
+  align-items: start;
 }
 
 .page-magazine .mag-head h3 {
-  margin: 0 0 8px 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.1;
   font-family: "Epilogue", system-ui;
   font-weight: 500;
   font-size: clamp(18px, 1.25vw, 22px);
+}
+
+.page-magazine .mag-head p {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.2;
+  max-width: none;
 }
 
 .page-magazine .mag-head .lead {
   margin: 0;
   opacity: 0.8;
   font-size: clamp(13px, 0.95vw, 16px);
-  line-height: 1.35;
+  line-height: 1.2;
+  white-space: nowrap;
 }
 
 .page-magazine .mag-head .sector h4 {
-  margin: 0 0 4px 0;
+  margin: 0;
+  line-height: 1.1;
   font-weight: 600;
   font-size: clamp(12px, 0.9vw, 15px);
 }
@@ -1407,13 +1434,19 @@ body:has(.page-posters .lb:target) {
 .page-magazine .mag-head .year {
   margin: 0;
   font-size: clamp(12px, 0.95vw, 16px);
+  line-height: 1.2;
   opacity: 0.9;
 }
 
 .page-magazine .mag-body {
-  padding: clamp(14px, 1.6vw, 22px) 0 clamp(26px, 3vw, 36px);
-  row-gap: 18px;
+  padding: 8px 0 24px;
+  padding-top: 8px;
+  row-gap: 10px;
   align-items: stretch;
+  border-top: 1px solid rgba(0, 0, 0, 0.16);
+}
+
+.page-magazine .mag-body hr {
   border-top: 1px solid rgba(0, 0, 0, 0.16);
 }
 
@@ -1422,16 +1455,21 @@ body:has(.page-posters .lb:target) {
   display: flex;
   flex-direction: column;
   min-height: 100%;
-  max-width: 48ch;
+  max-width: 42ch;
+  margin-top: 4px;
 }
 
 .page-magazine .mag-body .gallery {
-  grid-column: 7 / span 6;
+  grid-column: 6 / span 6;
   position: relative;
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
   padding-top: 0;
+}
+
+.page-magazine .mag-body .gallery {
+  transform: translateX(6.25%);
 }
 
 .page-magazine .mag-body .desc p {
@@ -1447,14 +1485,16 @@ body:has(.page-posters .lb:target) {
 }
 
 .page-magazine .gallery.is-static {
-  width: min(100%, 860px);
-  height: clamp(240px, 31vw, 520px);
+  width: 100%;
+  height: clamp(260px, 31vw, 520px);
   background: transparent;
   overflow: hidden;
   border: 0;
+  display: flex;
+  justify-content: flex-end;
 }
 
-.page-magazine .gallery.is-static > img {
+.page-magazine .gallery.is-static img {
   position: static;
   display: block;
   width: auto;
@@ -1475,7 +1515,7 @@ body:has(.page-posters .lb:target) {
   height: 1px;
   border: 0;
   background: rgba(0, 0, 0, 0.16);
-  margin: 10px 0 clamp(28px, 3.5vw, 46px);
+  margin: 0 0 clamp(28px, 3.5vw, 46px);
 }
 
 /* Slider autoplay CSS-only */
@@ -2490,28 +2530,30 @@ body:has(.page-posters .lb:target) {
   }
 
   .page-magazine .mag-head .title {
-    grid-column: 2 / span 10;
+    grid-column: 2 / span 7;
+    max-width: none;
   }
 
   .page-magazine .mag-head .year {
-    grid-column: 2 / span 4;
-    margin-top: 0.6em;
+    grid-column: 10 / span 1;
+    margin-top: 0;
+    justify-self: end;
   }
 
   .page-magazine .mag-head .sector {
-    grid-column: 6 / span 6;
-    margin-top: 0.6em;
-    justify-self: start;
-    text-align: left;
+    grid-column: 11 / span 2;
+    margin-top: 0;
+    justify-self: end;
+    text-align: right;
   }
 
   .page-magazine .mag-body .desc {
-    grid-column: 2 / span 10;
+    grid-column: 2 / span 5;
     max-width: none;
   }
 
   .page-magazine .mag-body .gallery {
-    grid-column: 2 / span 10;
+    grid-column: 7 / span 6;
   }
 
   .page-magazine .gallery.is-static {
