@@ -2221,144 +2221,226 @@ body:has(.page-posters .lb:target) {
   background: var(--bg);
   color: var(--text-secondary);
   -webkit-font-smoothing: antialiased;
-} 
+}
 
-/* Container principal */
+.page-branding #site-footer,
+.page-branding .site-footer,
+.page-branding .site-footer .footer-card,
+.page-branding .site-footer .footer-inner,
+.page-branding .site-footer .footer-top,
+.page-branding .site-footer .footer-giant {
+  background: var(--green);
+}
+
 .page-branding .branding-scene {
   position: relative;
   z-index: 30;
-  width: min(100%, calc(var(--base-w) * 1px));
+  width: 100%;
+  max-width: var(--base-w);
   margin: clamp(60px, 10vw, 140px) auto 10vh;
-  padding-inline: clamp(20px, 3.5vw, 48px);
+  padding-inline: clamp(24px, 3vw, 56px);
+  box-sizing: border-box;
 }
 
-/* =========================
-   HERO BADGE (BRANDING.png)
-   ========================= */
 .page-branding .branding-badge-img {
   display: block;
-  width: clamp(120px, 10.4vw, 180px); /* même règles que magazine */
+  width: clamp(120px, 10.4vw, 180px);
   height: auto;
   margin: 250px auto clamp(24px, 5vw, 64px);
   object-fit: contain;
   max-width: 100%;
 }
 
-/* =========================
-   PROJETS (sections)
-   ========================= */
-.page-branding .branding-project {
-  margin-bottom: clamp(64px, 12vh, 120px);
+.page-branding .branding-row {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: clamp(12px, 1.6vw, 28px);
+  align-items: start;
 }
 
-/* En-têtes */
 .page-branding .branding-head {
-  display: grid;
-  grid-template-columns: 60px 1fr minmax(160px, 0.6fr);
+  padding: 24px 0 14px;
   align-items: start;
-  gap: clamp(16px, 2vw, 28px);
-  padding: 18px 0;
-  border-top: 1px solid rgba(0,0,0,0.18);
 }
 
 .page-branding .branding-head .idx {
-  font-family: "Clash Display", sans-serif;
+  grid-column: 1 / span 1;
+  justify-self: start;
+  font-family: "Clash Display", system-ui;
   font-weight: 600;
-  font-size: clamp(18px, 1.6vw, 26px);
+  font-size: clamp(18px, 1.8vw, 28px);
   line-height: 1;
+  letter-spacing: 0.01em;
   font-variant-numeric: tabular-nums;
   color: var(--text-secondary);
 }
 
 .page-branding .branding-head .title {
-  margin: 0 0 6px;
-  font-family: "Epilogue", sans-serif;
+  grid-column: 2 / span 8;
+  max-width: none;
+  align-self: start;
+  display: grid;
+  grid-template-rows: auto auto;
+  row-gap: 2px;
+}
+
+.page-branding .branding-head .year {
+  grid-column: 10 / span 1;
+  align-self: start;
+  justify-self: end;
+  margin: 0;
+  font-size: clamp(12px, 0.95vw, 16px);
+  line-height: 1.2;
+  opacity: 0.9;
+}
+
+.page-branding .branding-head .sector {
+  grid-column: 11 / span 2;
+  justify-self: end;
+  align-self: start;
+  text-align: right;
+  display: grid;
+  grid-template-rows: auto auto;
+  row-gap: 2px;
+  align-items: start;
+}
+
+.page-branding .branding-head h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.1;
+  font-family: "Epilogue", system-ui;
   font-weight: 500;
   font-size: clamp(18px, 1.25vw, 22px);
 }
 
-.page-branding .branding-head .desc {
+.page-branding .branding-head p {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.2;
+  max-width: none;
+}
+
+.page-branding .branding-head .lead {
   margin: 0;
   opacity: 0.8;
   font-size: clamp(13px, 0.95vw, 16px);
+  line-height: 1.2;
+}
+
+.page-branding .branding-head .sector h4 {
+  margin: 0;
+  line-height: 1.1;
+  font-weight: 600;
+  font-size: clamp(12px, 0.9vw, 15px);
+}
+
+.page-branding .branding-head .sector p {
+  margin: 0;
+  font-size: clamp(12px, 0.95vw, 16px);
+  line-height: 1.2;
+  opacity: 0.9;
+}
+
+.page-branding .branding-body {
+  padding: 8px 0 24px;
+  row-gap: 10px;
+  align-items: stretch;
+  border-top: 1px solid rgba(0, 0, 0, 0.16);
+}
+
+.page-branding .branding-body .desc {
+  grid-column: 2 / span 4;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  max-width: 42ch;
+  margin-top: 4px;
+}
+
+.page-branding .branding-body .gallery {
+  grid-column: 7 / span 6;
+  width: 100%;
+  justify-self: end;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(6px, 0.6vw, 10px);
+  justify-items: end;
+  align-items: start;
+}
+
+.page-branding .branding-body .desc p {
+  margin: 0 0 10px 0;
+  font-size: clamp(12px, 0.95vw, 16px);
   line-height: 1.35;
 }
 
-.page-branding .branding-head .meta {
-  justify-self: end;
-  text-align: right;
-}
-
-.page-branding .branding-head .meta .year {
-  font-family: "Epilogue", sans-serif;
-  font-weight: 600;
-  font-size: clamp(12px, 0.95vw, 15px);
-}
-
-.page-branding .branding-head .meta .sector {
-  font-family: "Epilogue", sans-serif;
-  font-weight: 400;
-  font-size: clamp(12px, 0.9vw, 15px);
+.page-branding .branding-body .desc .focus {
+  margin-top: auto;
+  padding-top: clamp(8px, 0.9vw, 14px);
   opacity: 0.85;
-}
-
-/* =========================
-   GALERIE
-   ========================= */
-.page-branding .branding-gallery {
-  margin-top: clamp(18px, 3vh, 28px);
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: clamp(10px, 1vw, 18px);
 }
 
 .page-branding .branding-gallery figure {
   margin: 0;
-  grid-column: span 6; /* par défaut, moitié largeur */
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.page-branding .branding-gallery figure:first-child {
+  grid-column: 1 / -1;
+}
+
+.page-branding .branding-gallery figure:first-child img {
+  height: clamp(220px, 28vw, 460px);
+}
+
+.page-branding .branding-gallery figure:not(:first-child) img {
+  height: clamp(120px, 12vw, 210px);
 }
 
 .page-branding .branding-gallery img {
   display: block;
-  width: 100%;
+  width: auto;
+  max-width: 100%;
   height: auto;
   object-fit: contain;
-  background: transparent;
+  object-position: right center;
+  margin-left: auto;
 }
 
-/* =========================
-   RESPONSIVE
-   ========================= */
-@media (max-width: 1200px) {
-  .page-branding .branding-head {
-    grid-template-columns: 44px 1fr;
-  }
-
-  .page-branding .branding-head .meta {
-    grid-column: 2 / -1;
-    justify-self: start;
-    text-align: left;
-    margin-top: 0.6em;
-  }
-
-  .page-branding .branding-gallery figure {
-    grid-column: span 12; /* en mobile: une image par ligne */
-  }
+.page-branding .branding-sep {
+  height: 1px;
+  border: 0;
+  background: rgba(0, 0, 0, 0.16);
+  margin: 0 0 clamp(28px, 3.5vw, 46px);
 }
 
 @media (max-width: 720px) {
-  .page-branding .branding-scene {
-    padding-inline: clamp(12px, 4vw, 20px);
+  .page-branding .branding-head .title,
+  .page-branding .branding-head .year,
+  .page-branding .branding-head .sector,
+  .page-branding .branding-body .desc,
+  .page-branding .branding-body .gallery {
+    grid-column: 2 / span 10;
   }
 
-  .page-branding .branding-head {
-    grid-template-columns: 36px 1fr;
-    gap: 12px;
+  .page-branding .branding-head .sector {
+    justify-self: start;
+    text-align: left;
   }
 
-  .page-branding .branding-gallery {
-    gap: 12px;
+  .page-branding .branding-gallery figure {
+    justify-content: flex-start;
+  }
+
+  .page-branding .branding-gallery img {
+    height: clamp(180px, 52vw, 360px);
+    margin-left: 0;
   }
 }
+
 /* =========================
    Responsive (tablettes & mobiles)
    ========================= */
