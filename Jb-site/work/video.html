@@ -4,21 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Vidéo — JBAB</title>
-  <link rel="icon" type="image/png" href="assets/Img/favicon.png">
+  <link rel="icon" type="image/png" href="../assets/Img/favicon.png">
 
   <link rel="stylesheet" href="../css/styles.css?v=video" />
 </head>
 
 <body class="page-videos">
   <!-- Header -->
-  <header class="site-header">
-    <nav class="site-nav" aria-label="Primary">
-      <a href="../index.html">Home</a>
-      <a href="../work.html" class="is-active">Work</a>
-      <a href="../lore.html">Lore</a>
-      <a href="../contact.html">Contact</a>
-    </nav>
-  </header>
+  <div id="site-header"></div>
 
   <!-- Lignes verticales -->
   <div class="page-grid" aria-hidden="true"></div>
@@ -101,10 +94,11 @@
   </main>
 
   <!-- Footer -->
-  <footer id="contact" class="site-footer">…</footer>
+  <div id="site-footer"></div>
 
   <!-- JS -->
   <script src="../js/script.js" defer></script>
+  <script src="../js/glitch.js" defer></script>
   <script>
     // JS cover → autoplay
     document.querySelectorAll('.video-cover').forEach(cover=>{
