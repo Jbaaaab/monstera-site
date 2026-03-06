@@ -1314,8 +1314,7 @@ body:has(.page-posters .lb:target) {
    PAGE MAGAZINE
    ========================= */
 .page-magazine {
-  --bg: #F2F3F4;
-  background: var(--bg);
+  background: #F2F3F4;
 }
 
 .page-magazine .mag-scene {
@@ -1337,9 +1336,19 @@ body:has(.page-posters .lb:target) {
   display: none;
 }
 
+.page-magazine #site-footer,
+.page-magazine .site-footer,
+.page-magazine .site-footer .footer-card,
+.page-magazine .site-footer .footer-inner,
+.page-magazine .site-footer .footer-top,
+.page-magazine .site-footer .footer-giant {
+  background: var(--green);
+}
+
 .page-magazine .mag-row {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: clamp(12px, 1.6vw, 28px);
   align-items: start;
 }
 
@@ -1414,6 +1423,9 @@ body:has(.page-posters .lb:target) {
 .page-magazine .mag-body .gallery {
   grid-column: 6/span 7;
   position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
   border-top: 1px solid rgba(0, 0, 0, 0.16);
   padding-top: clamp(10px, 1vw, 16px);
 }
@@ -1432,24 +1444,25 @@ body:has(.page-posters .lb:target) {
 
 .page-magazine .gallery.is-static {
   width: 100%;
-  aspect-ratio: 16/9;
+  height: clamp(240px, 31vw, 520px);
   background: transparent;
   overflow: hidden;
   border: 0;
 }
 
 .page-magazine .gallery.is-static > img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
+  position: static;
   display: block;
+  width: auto;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+  margin-left: auto;
+  object-fit: contain;
+  object-position: right center;
   background: transparent;
   transform: none;
   transition: none;
-  margin: 0;
   box-shadow: none;
   outline: 0;
 }
@@ -1871,29 +1884,6 @@ body:has(.page-posters .lb:target) {
 
   .page-3d .entry3d .hero {
     grid-column: 1 / -1;
-  }
-
-  /* Page Magazine */
-  .page-magazine .mag-head .title {
-    grid-column: 2/span 10;
-  }
-
-  .page-magazine .mag-head .year {
-    grid-column: 2/span 4;
-    margin-top: 0.6em;
-  }
-
-  .page-magazine .mag-head .sector {
-    grid-column: 6/span 6;
-    margin-top: 0.6em;
-  }
-
-  .page-magazine .mag-body .desc {
-    grid-column: 2/span 10;
-  }
-
-  .page-magazine .mag-body .gallery {
-    grid-column: 2/span 10;
   }
 }
 
@@ -2493,6 +2483,32 @@ body:has(.page-posters .lb:target) {
   .cta,
   .section-posters .section-cta {
     margin-top: clamp(20px, 8vw, 40px);
+  }
+
+  .page-magazine .mag-head .title {
+    grid-column: 2 / span 10;
+  }
+
+  .page-magazine .mag-head .year {
+    grid-column: 2 / span 4;
+    margin-top: 0.6em;
+  }
+
+  .page-magazine .mag-head .sector {
+    grid-column: 6 / span 6;
+    margin-top: 0.6em;
+  }
+
+  .page-magazine .mag-body .desc {
+    grid-column: 2 / span 10;
+  }
+
+  .page-magazine .mag-body .gallery {
+    grid-column: 2 / span 10;
+  }
+
+  .page-magazine .gallery.is-static {
+    height: clamp(220px, 52vw, 420px);
   }
 
 }
