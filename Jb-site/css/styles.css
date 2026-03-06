@@ -140,7 +140,7 @@ img {
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 70;
+  z-index: 80;
   background: var(--head-bg);
   width: 100%;
 }
@@ -205,6 +205,32 @@ img {
     transparent var(--grid-thk),
     transparent calc(100vw / var(--grid-cols))
   );
+}
+
+
+.page-home .page-grid {
+  z-index: 40;
+}
+
+.page-home .below-hero {
+  z-index: 20;
+}
+
+.page-home .content-card,
+.page-home .content-card .content-wrap {
+  position: relative;
+  z-index: 20;
+}
+
+.page-home .section-posters,
+.page-home .posters,
+.page-home .posters .item {
+  position: relative;
+  z-index: 50;
+}
+
+.page-home .site-footer {
+  margin-top: 0;
 }
 
 /* =========================
@@ -550,7 +576,7 @@ body.page-work #site-footer {
 .site-footer {
   width: 100%;
   position: relative;
-  z-index: 60;
+  z-index: 90;
   margin-top: clamp(28px, 6vw, 96px);
 }
 
