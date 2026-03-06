@@ -1369,15 +1369,18 @@ body:has(.page-posters .lb:target) {
 }
 
 .page-magazine .mag-head .title {
-  grid-column: 2/span 6;
+  grid-column: 2 / span 5;
 }
 
 .page-magazine .mag-head .year {
-  grid-column: 8/span 2;
+  grid-column: 8 / span 2;
+  align-self: start;
 }
 
 .page-magazine .mag-head .sector {
-  grid-column: 11/span 2;
+  grid-column: 10 / span 3;
+  justify-self: stretch;
+  text-align: right;
 }
 
 .page-magazine .mag-head h3 {
@@ -1408,26 +1411,27 @@ body:has(.page-posters .lb:target) {
 }
 
 .page-magazine .mag-body {
-  padding: 10px 0 32px;
+  padding: clamp(14px, 1.6vw, 22px) 0 clamp(26px, 3vw, 36px);
   row-gap: 18px;
   align-items: stretch;
+  border-top: 1px solid rgba(0, 0, 0, 0.16);
 }
 
 .page-magazine .mag-body .desc {
-  grid-column: 2/span 4;
+  grid-column: 2 / span 4;
   display: flex;
   flex-direction: column;
   min-height: 100%;
+  max-width: 48ch;
 }
 
 .page-magazine .mag-body .gallery {
-  grid-column: 6/span 7;
+  grid-column: 7 / span 6;
   position: relative;
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
-  border-top: 1px solid rgba(0, 0, 0, 0.16);
-  padding-top: clamp(10px, 1vw, 16px);
+  padding-top: 0;
 }
 
 .page-magazine .mag-body .desc p {
@@ -1443,7 +1447,7 @@ body:has(.page-posters .lb:target) {
 }
 
 .page-magazine .gallery.is-static {
-  width: 100%;
+  width: min(100%, 860px);
   height: clamp(240px, 31vw, 520px);
   background: transparent;
   overflow: hidden;
@@ -1471,7 +1475,7 @@ body:has(.page-posters .lb:target) {
   height: 1px;
   border: 0;
   background: rgba(0, 0, 0, 0.16);
-  margin: 22px 0 36px;
+  margin: 10px 0 clamp(28px, 3.5vw, 46px);
 }
 
 /* Slider autoplay CSS-only */
@@ -2497,10 +2501,13 @@ body:has(.page-posters .lb:target) {
   .page-magazine .mag-head .sector {
     grid-column: 6 / span 6;
     margin-top: 0.6em;
+    justify-self: start;
+    text-align: left;
   }
 
   .page-magazine .mag-body .desc {
     grid-column: 2 / span 10;
+    max-width: none;
   }
 
   .page-magazine .mag-body .gallery {
@@ -2508,6 +2515,7 @@ body:has(.page-posters .lb:target) {
   }
 
   .page-magazine .gallery.is-static {
+    width: 100%;
     height: clamp(220px, 52vw, 420px);
   }
 
