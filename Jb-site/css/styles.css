@@ -48,36 +48,9 @@
    Polices web
    ========================= */
 @font-face {
-  font-family: "Epilogue";
-  src: url("../assets/font/Epilogue/Epilogue-Regular.woff2") format("woff2"),
-       url("../assets/font/Epilogue/Epilogue-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Epilogue";
-  src: url("../assets/font/Epilogue/Epilogue-Medium.woff2") format("woff2"),
-       url("../assets/font/Epilogue/Epilogue-Medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
   font-family: "Clash Display";
-  src: url("../assets/font/ClashDisplay_Complete/fonts/ClashDisplay-Light.woff2") format("woff2"),
-       url("../assets/font/ClashDisplay_Complete/fonts/ClashDisplay-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Clash Display";
-  src: url("../assets/font/ClashDisplay_Complete/fonts/ClashDisplay-Regular.woff2") format("woff2"),
-       url("../assets/font/ClashDisplay_Complete/fonts/ClashDisplay-Regular.woff") format("woff");
+  src: url("../assets/font/ClashDisplay_Complete/Fonts/WEB/fonts/ClashDisplay-Regular.woff2") format("woff2"),
+       url("../assets/font/ClashDisplay_Complete/Fonts/WEB/fonts/ClashDisplay-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -85,10 +58,26 @@
 
 @font-face {
   font-family: "Clash Display";
-  src: url("../assets/font/ClashDisplay_Complete/fonts/ClashDisplay-Semibold.woff2") format("woff2"),
-       url("../assets/font/ClashDisplay_Complete/fonts/ClashDisplay-Semibold.woff") format("woff");
+  src: url("../assets/font/ClashDisplay_Complete/Fonts/WEB/fonts/ClashDisplay-Semibold.woff2") format("woff2"),
+       url("../assets/font/ClashDisplay_Complete/Fonts/WEB/fonts/ClashDisplay-Semibold.woff") format("woff");
   font-weight: 600;
   font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Epilogue";
+  src: url("../assets/font/Epilogue/Epilogue-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Epilogue";
+  src: url("../assets/font/Epilogue/Epilogue-Italic-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
   font-display: swap;
 }
 
@@ -112,11 +101,19 @@ html {
 body {
   background: var(--bg);
   color: var(--text-primary);
-  font-family: "Epilogue", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-family: "Epilogue", sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
 
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Clash Display", sans-serif;
 }
 
 /* Anti-drag pour les images */
