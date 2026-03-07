@@ -4,27 +4,21 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>3D — JBAB</title>
-  <link rel="icon" type="image/png" href="assets/Img/favicon.png">
-  <link rel="stylesheet" href="../css/styles.css?v=3d-fix" />
+  <link rel="icon" type="image/png" href="../assets/Img/favicon.png">
+  <link rel="stylesheet" href="../css/styles.css?v=3d-fix2" />
 </head>
 
 <body class="page-3d">
 
   <!-- Header -->
-  <header class="site-header">
-    <nav class="site-nav" aria-label="Primary">
-      <a href="../index.html#hero">Home</a>
-      <a href="../work.html" class="is-active">Work</a>
-      <a href="../lore.html">Lore</a>
-      <a href="../contact.html">Contact</a>
-    </nav>
-  </header>
+  <div id="site-header"></div>
 
   <!-- Grille -->
   <div class="page-grid" aria-hidden="true"></div>
 
   <!-- Intro project -->
   <main class="work-3d" role="main" aria-label="3D projects">
+    <section class="entry3d">
 
     <!-- Strap -->
     <div class="g">
@@ -52,12 +46,14 @@
     <div class="g below">
       <div class="copy">
         <p>We are doing this project on a small team of 3, in which I’m working as an art director, but also as a 3D modeler and animator.</p>
-        <p>Focused on Agathe’s music</p>
+        <p class="focus">Focused on Agathe’s music</p>
       </div>
       <figure class="hero">
         <img src="../assets/Img/WORK/3D/9.png" alt="Longtemps — butterfly scene" loading="eager" />
       </figure>
     </div>
+
+    </section>
 
     <!-- Gallery -->
     <section class="gallery3d" aria-label="3D gallery">
@@ -81,6 +77,10 @@
   </main>
 
   <!-- JS global -->
+  <div id="site-footer"></div>
+
+
   <script src="../js/script.js" defer></script>
+  <script src="../js/glitch.js" defer></script>
 </body>
 </html>
