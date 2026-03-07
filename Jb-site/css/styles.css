@@ -1148,109 +1148,146 @@ body:has(.page-posters .lb:target) {
 }
 
 .page-3d .entry3d {
-  width: min(100%, 1728px);
+  width: 100%;
+  max-width: var(--base-w);
   margin: 0 auto;
-  padding: 0 clamp(20px, 2.6vw, 32px) clamp(96px, 12vh, 160px);
+  padding: 0 clamp(24px, 3vw, 56px) clamp(96px, 12vh, 160px);
+  box-sizing: border-box;
   position: relative;
 }
 
 .page-3d .entry3d .g {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  column-gap: clamp(16px, 1.9vw, 24px);
+  column-gap: clamp(12px, 1.6vw, 28px);
+  align-items: start;
 }
 
 .page-3d .entry3d .strap3d {
   grid-column: 1 / -1;
   justify-self: center;
-  align-self: center;
-  height: 22px;
-  width: auto;
   display: block;
-  margin: clamp(48px, 6vh, 84px) 0 clamp(16px, 2.2vw, 24px);
+  width: clamp(120px, 10.4vw, 180px);
+  height: auto;
+  margin: 250px auto clamp(24px, 5vw, 64px);
 }
 
 .page-3d .entry3d .top {
+  padding: 24px 0 14px;
   align-items: start;
 }
 
 .page-3d .entry3d .idx {
-  grid-column: 2 / 3;
-  font: 700 18px/1.15 "Epilogue", system-ui;
+  grid-column: 1 / span 1;
+  justify-self: start;
+  font-family: "Clash Display", system-ui;
+  font-weight: 600;
+  font-size: clamp(18px, 1.8vw, 28px);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-secondary);
 }
 
 .page-3d .entry3d .titleWrap {
-  grid-column: 3 / 9;
+  grid-column: 2 / span 8;
+  display: grid;
+  grid-template-rows: auto auto;
+  row-gap: 2px;
 }
 
 .page-3d .entry3d .title {
-  margin: 0 0 0.45rem 0;
-  font: 600 clamp(18px, 1.65vw, 22px)/1.25 "Epilogue", system-ui;
+  margin: 0;
+  line-height: 1.1;
+  font-family: "Epilogue", system-ui;
+  font-weight: 500;
+  font-size: clamp(18px, 1.25vw, 22px);
 }
 
 .page-3d .entry3d .subtitle {
   margin: 0;
-  max-width: 56ch;
-  font: 400 clamp(13px, 1.1vw, 16px)/1.35 "Epilogue", system-ui;
-  opacity: 0.9;
+  opacity: 0.8;
+  font-size: clamp(13px, 0.95vw, 16px);
+  line-height: 1.2;
+  max-width: none;
 }
 
 .page-3d .entry3d .year {
-  grid-column: 9 / 10;
-  font: 500 14px/1.2 "Epilogue", system-ui;
-  margin-top: 0.25rem;
+  grid-column: 10 / span 1;
+  align-self: start;
+  justify-self: end;
+  margin: 0;
+  font-size: clamp(12px, 0.95vw, 16px);
+  line-height: 1.2;
+  opacity: 0.9;
 }
 
 .page-3d .entry3d .sector {
-  grid-column: 11 / 13;
-  margin-top: 0.25rem;
+  grid-column: 11 / span 2;
+  justify-self: end;
+  align-self: start;
+  text-align: right;
+  display: grid;
+  grid-template-rows: auto auto;
+  row-gap: 2px;
+  align-items: start;
 }
 
 .page-3d .entry3d .sector .label {
   display: block;
-  font: 600 14px/1.2 "Epilogue", system-ui;
+  margin: 0;
+  line-height: 1.1;
+  font-weight: 600;
+  font-size: clamp(12px, 0.9vw, 15px);
 }
 
 .page-3d .entry3d .sector .val {
   display: block;
-  margin-top: 0.35rem;
-  font: 400 12px/1.2 "Epilogue", system-ui;
+  margin: 0;
+  font-size: clamp(12px, 0.95vw, 16px);
+  line-height: 1.2;
+  opacity: 0.9;
 }
 
 .page-3d .entry3d .rule {
-  grid-column: 2 / 12;
+  grid-column: 2 / span 11;
   height: 1px;
   border: 0;
-  background: var(--text-secondary);
-  opacity: 0.55;
-  margin: clamp(12px, 1.6vw, 18px) 0 0;
+  background: rgba(0, 0, 0, 0.16);
+  margin: 0;
 }
 
 .page-3d .entry3d .below {
+  padding: 8px 0 24px;
+  row-gap: 10px;
   align-items: stretch;
 }
 
 .page-3d .entry3d .copy {
-  grid-column: 3 / 7;
+  grid-column: 2 / span 4;
   display: flex;
   flex-direction: column;
-  align-self: stretch;
-  gap: clamp(10px, 1.2vw, 14px);
-  font: 400 clamp(14px, 1.1vw, 16px)/1.35 "Epilogue", system-ui;
-  margin-top: clamp(8px, 1.2vw, 14px);
+  min-height: 100%;
+  max-width: 42ch;
+  margin-top: 4px;
 }
 
 .page-3d .entry3d .copy p {
-  margin: 0;
+  margin: 0 0 10px 0;
+  font-size: clamp(12px, 0.95vw, 16px);
+  line-height: 1.35;
 }
 
+.page-3d .entry3d .copy .focus,
 .page-3d .entry3d .copy p:last-child {
   margin-top: auto;
+  padding-top: clamp(8px, 0.9vw, 14px);
+  opacity: 0.85;
 }
 
 .page-3d .entry3d .hero {
-  grid-column: 7 / 12;
-  margin-top: clamp(8px, 1.2vw, 14px);
+  grid-column: 7 / span 6;
+  margin-top: 4px;
 }
 
 .page-3d .entry3d .hero figure {
@@ -1266,8 +1303,11 @@ body:has(.page-posters .lb:target) {
 
 /* Galerie 3D compositée */
 .page-3d .gallery3d {
-  width: min(100%, 1728px);
+  width: 100%;
+  max-width: var(--base-w);
   margin: 0 auto;
+  padding-inline: clamp(24px, 3vw, 56px);
+  box-sizing: border-box;
   user-select: none;
 }
 
