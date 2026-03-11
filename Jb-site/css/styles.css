@@ -2146,14 +2146,15 @@ body:has(.page-posters .lb:target) {
 
   .page-work .work-logo {
     width: min(86vw, 720px);
-    top: 24%;
+    top: 62%;
+    transform: translate(-50%, -50%);
   }
 
   .page-work .work-banner {
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     width: min(86vw, 620px);
-    top: 62%;
+    top: calc(62% - 10px);
     display: flex;
     justify-content: center;
   }
