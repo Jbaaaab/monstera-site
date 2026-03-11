@@ -2077,18 +2077,37 @@ body:has(.page-posters .lb:target) {
 
   /* Page Lore mobile */
   .page-lore .pharrel-fixed {
-    position: absolute;
-    top: clamp(250px, 34vh, 420px);
-    left: 0;
-    right: 0;
-    inset: auto 0 auto 0;
-    display: flex;
-    justify-content: center;
-    place-items: unset;
+    position: fixed;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    z-index: 40;
+    pointer-events: none;
   }
 
   .page-lore .pharrel-sticker {
     width: min(38vw, 190px);
+  }
+
+  .page-lore .footer-top {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 14px;
+  }
+
+  .page-lore .footer-col {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .page-lore .foot-label.foot-right,
+  .page-lore .footer-contacts {
+    text-align: right;
+  }
+
+  .page-lore .footer-contacts .social {
+    justify-content: flex-end;
   }
 
   .page-lore #lore-stage {
