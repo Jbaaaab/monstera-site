@@ -871,7 +871,7 @@ body.page-work #site-footer {
 .page-work .work-logo {
   position: absolute;
   left: 50%;
-  top: 56.8%;
+  top: 60%;
   transform: translateX(-50%);
   width: min(78vw, 1100px);
   height: auto;
@@ -899,13 +899,13 @@ body.page-work #site-footer {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding-bottom: 60px;
+  padding-bottom: 10px;
 }
 
 .page-work .work-table {
   width: 95vw;
   max-width: none;
-  margin: 0 auto 16px;
+  margin: 0 auto 10px;
   padding-inline: 0;
 }
 
@@ -2150,8 +2150,16 @@ body:has(.page-posters .lb:target) {
   }
 
   .page-work .work-banner {
+    left: 50%;
+    transform: translateX(-50%);
     width: min(86vw, 620px);
     top: 62%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .page-work .work-banner-img {
+    margin-inline: auto;
   }
 
   .page-work .work-table {
@@ -2164,7 +2172,7 @@ body:has(.page-posters .lb:target) {
   }
 
   .page-work .work-row .clients {
-    grid-column: 1 / -1;
+    display: none;
   }
 
   /* Page Posters mobile */
