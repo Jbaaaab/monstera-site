@@ -147,13 +147,12 @@ img {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   align-items: stretch;
   height: var(--head-h);
-  padding-left: var(--head-left-gutter);
 }
 
 .site-nav a {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   padding: 0 var(--head-pad-x);
   color: var(--head-fg);
   text-decoration: none;
@@ -2830,4 +2829,3 @@ body:has(.page-posters .lb:target) {
     transform: translateY(0.08em);
   }
 }
-
