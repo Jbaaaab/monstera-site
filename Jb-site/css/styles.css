@@ -2076,9 +2076,45 @@ body:has(.page-posters .lb:target) {
   }
 
   /* Page Lore mobile */
-  .page-lore .pharrel-sticker {
-    width: 28%;
+  .page-lore .pharrel-fixed {
+    position: absolute;
+    top: clamp(250px, 34vh, 420px);
+    left: 0;
+    right: 0;
+    inset: auto 0 auto 0;
+    display: flex;
+    justify-content: center;
+    place-items: unset;
   }
+
+  .page-lore .pharrel-sticker {
+    width: min(38vw, 190px);
+  }
+
+  .page-lore #lore-stage {
+    min-height: 430vw;
+    padding-top: calc(70vh + var(--head-h, 44px));
+    padding-bottom: 8vh;
+  }
+
+  .page-lore .photo--timmy { left: 13vw; top: 76vw; width: 26vw; }
+  .page-lore .panel--desc { left: 61vw; top: 86vw; width: 33vw; }
+  .page-lore .tag--favbrand { left: 9vw; top: 119vw; width: 28vw; }
+  .page-lore .photo--cat { left: 31vw; top: 126vw; width: 12vw; }
+  .page-lore .deco--orange1 { left: 55vw; top: 124vw; width: 14vw; }
+  .page-lore .tag--nda { left: 30vw; top: 142vw; width: 22vw; }
+  .page-lore .table--films { left: 58vw; top: 148vw; width: 38vw; }
+  .page-lore .panel--desc2 { left: 7vw; top: 182vw; width: 34vw; }
+  .page-lore .deco--orange2 { left: 30vw; top: 208vw; width: 15vw; }
+  .page-lore .photo--jb { left: 45vw; top: 198vw; width: 42vw; }
+  .page-lore .chains--5 { left: 20vw; top: 195vw; width: 56vw; }
+  .page-lore .lore-logo.PASTILLE { left: 19vw; top: 242vw; width: 24vw; }
+  .page-lore .tag--paris { left: 24vw; top: 255vw; width: 30vw; }
+  .page-lore .tag--ifnotpharrel { left: 10vw; top: 286vw; width: 38vw; }
+  .page-lore .panel--desc3 { left: 58vw; top: 260vw; width: 34vw; }
+  .page-lore .table--songs { left: 58vw; top: 306vw; width: 38vw; }
+  .page-lore .photo--couple { left: 10vw; top: 332vw; width: 42vw; }
+  .page-lore .chains--9 { left: 52vw; top: 120vw; width: 30vw; }
 
   /* Page Contact mobile */
   .page-contact .bg--monstera {
