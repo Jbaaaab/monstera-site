@@ -2689,6 +2689,24 @@ body:has(.page-posters .lb:target) {
     --scale: 0.5;
   }
 
+  .page-home #stage-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden;
+  }
+
+  .page-home #stage {
+    position: relative;
+    left: auto;
+    transform: scale(calc(var(--scale) * var(--boost) * 5.5));
+    transform-origin: top center;
+  }
+
+  .page-home .hero {
+    object-position: center top;
+  }
+
   body {
     font-size: 15px;
   }
@@ -2706,6 +2724,72 @@ body:has(.page-posters .lb:target) {
     width: 100%;
   }
 
+  .page-home .qa-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+    justify-items: stretch;
+    align-items: start;
+    column-gap: 10px;
+    row-gap: 0;
+  }
+
+  .page-home .qa-q {
+    min-width: 0;
+  }
+
+  .page-home .qa-plus {
+    justify-self: end;
+    align-self: start;
+    white-space: nowrap;
+  }
+
+  .page-home {
+    --home-mobile-gap: 66px;
+    --home-mobile-cta-gap: 66px;
+  }
+
+  .page-home .cta {
+    margin-top: var(--home-mobile-gap);
+    margin-bottom: 0;
+  }
+
+  .page-home .cta a,
+  .page-home .section-posters .section-cta .btn {
+    width: auto;
+    gap: 6px;
+    padding: 4px 10px;
+    font-size: 13px;
+    line-height: 1;
+  }
+
+  .page-home .section-posters .section-cta .btn {
+    padding: 3px 10px;
+  }
+
+  .page-home .cta a span {
+    font-size: 13px;
+    line-height: 1;
+  }
+
+  .page-home .cta a .icon {
+    width: 12px;
+    height: 12px;
+  }
+
+  .page-home .section-posters .section-cta .btn::before,
+  .page-home .section-posters .section-cta .btn::after {
+    width: 12px;
+    height: 12px;
+  }
+
+  .page-home .section-posters {
+    margin-top: var(--home-mobile-gap) !important;
+  }
+
+  .page-home .section-posters .section-cta {
+    margin-top: var(--home-mobile-cta-gap);
+    margin-bottom: var(--home-mobile-cta-gap);
+  }
+
   .footer-top {
     flex-direction: column;
     gap: 18px;
@@ -2720,10 +2804,30 @@ body:has(.page-posters .lb:target) {
     justify-content: flex-start;
   }
 
+  .page-home .footer-top {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 14px;
+  }
+
+  .page-home .footer-col {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .page-home .foot-label.foot-right,
+  .page-home .footer-contacts {
+    text-align: right;
+  }
+
+  .page-home .footer-contacts .social {
+    justify-content: flex-end;
+  }
+
   .footer-giant span {
     font-size: clamp(72px, 26vw, 140px);
     transform: translateY(0.08em);
   }
 }
-
 

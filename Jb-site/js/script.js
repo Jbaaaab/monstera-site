@@ -15,7 +15,7 @@
     scope.querySelectorAll('a[href]').forEach(a => {
       const href = a.getAttribute('href') || '';
       if (/^(mailto:|tel:|https?:|#)/i.test(href)) return;
-      if (!/^(?:\.\.\/)?(?:index\.html(?:#hero)?|work\.html|lore\.html|contact\.html)$/i.test(href)) return;
+      if (!/^(?:\.\.\/)?(?:index\.html|work\.html|lore\.html|contact\.html)$/i.test(href)) return;
       if (inWork && !href.startsWith('../')) a.setAttribute('href', `../${href}`);
       if (!inWork && href.startsWith('../')) a.setAttribute('href', href.replace(/^\.\.\//, ''));
     });
