@@ -775,6 +775,7 @@ body.page-work #site-footer {
 .page-lore .photo--jb { left: 40.8796vw; top: 89.5255vw; width: 22.6759vw; }
 .page-lore .photo--couple { left: 20.9444vw; top: 130.8693vw; width: 16.2037vw; }
 .page-lore .photo--cat { left: 67.8704vw; top: 134.0788vw; width: 12.7315vw; }
+.page-lore .photo--catlast { display: none; }
 .page-lore .deco--orange1 { left: 44.9259vw; top: 66.2489vw; width: 11.3657vw; }
 .page-lore .deco--orange2 { left: 15.0370vw; top: 76.9919vw; width: 8.6551vw; }
 .page-lore .lore-logo.PASTILLE { left: 68.8796vw; top: 95.5255vw; width: 10.6759vw; }
@@ -2133,65 +2134,86 @@ body:has(.page-posters .lb:target) {
   .page-lore .panel--desc3 { left: 58vw; top: 260vw; width: 34vw; }
   .page-lore .table--songs { left: 58vw; top: 306vw; width: 38vw; }
   .page-lore .photo--couple { left: 10vw; top: 332vw; width: 42vw; }
+  .page-lore .photo--catlast { display: block; left: 59vw; top: 354vw; width: 21vw; }
   .page-lore .chains--9 { left: 52vw; top: 120vw; width: 30vw; }
 
   /* Page Contact mobile */
+  .page-contact {
+    height: 100dvh;
+    overflow: hidden;
+  }
+
+  .page-contact .contact-scene {
+    height: calc(100dvh - var(--head-h));
+    overflow: hidden;
+  }
+
+  .page-contact #contact-stage {
+    height: calc(100dvh - var(--head-h));
+    min-height: calc(100dvh - var(--head-h));
+    max-height: calc(100dvh - var(--head-h));
+  }
+
   .page-contact .bg--monstera {
-    width: 78vw;
+    width: 162vw;
+    max-width: none;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10vh;
   }
 
   .page-contact .panel--main {
-    left: 23%;
-    top: 38vh;
-    width: 60%;
+    left: 25%;
+    top: 34vh;
+    width: 79%;
   }
 
   .page-contact .tag--hire {
-    left: 37%;
+    left: 44%;
     top: 44vh;
-    width: 28%;
+    width: 24%;
   }
 
   .page-contact .panel--cadre {
-    left: 9%;
-    top: 16vh;
-    width: 38%;
+    left: 6%;
+    top: 56vh;
+    width: 45%;
   }
 
   .page-contact .bubble--num {
-    left: 21%;
+    left: 15%;
     top: 30vh;
-    width: 40%;
+    width: 51%;
   }
 
   .page-contact .panel--mail {
-    left: 59%;
-    top: 56vh;
+    left: 65%;
+    top: 53vh;
     width: 34%;
   }
 
   .page-contact .photo--couple {
-    left: 19%;
-    top: 74vh;
-    width: 42%;
+    left: 39%;
+    top: 73vh;
+    width: 35%;
   }
 
   .page-contact .caption--cams {
-    left: 57%;
-    top: 76vh;
-    width: 32%;
+    left: 58%;
+    top: 70vh;
+    width: 42%;
   }
 
   .page-contact .deco--orange1 {
-    left: 71%;
-    top: 42vh;
-    width: 10%;
+    left: 3%;
+    top: 50vh;
+    width: 30%;
   }
 
   .page-contact .deco--orange2 {
-    left: 65%;
-    top: 52vh;
-    width: 11%;
+    left: 71%;
+    top: 50vh;
+    width: 26%;
   }
 
   /* Page Work mobile */
@@ -2713,36 +2735,146 @@ body:has(.page-posters .lb:target) {
     margin-top: clamp(20px, 8vw, 40px);
   }
 
-  .page-magazine .mag-head .title {
+  /* Mobile project layout template (Magazine + Branding) */
+  .page-magazine .mag-scene,
+  .page-branding .branding-scene {
+    margin: clamp(28px, 8vw, 52px) auto 8vh;
+    padding-inline: clamp(14px, 4vw, 24px);
+  }
+
+  .page-magazine .mag-badge,
+  .page-branding .branding-badge {
+    margin-top: clamp(26px, 7vw, 46px);
+  }
+
+  .page-magazine .mag-badge-img,
+  .page-branding .branding-badge-img {
+    width: clamp(110px, 34vw, 165px);
+    margin: 0 auto clamp(26px, 8vw, 48px);
+  }
+
+  .page-magazine .mag-head,
+  .page-branding .branding-head {
+    padding: 16px 0 12px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.22);
+  }
+
+  .page-magazine .mag-head .idx,
+  .page-branding .branding-head .idx {
+    grid-column: 1 / span 1;
+    font-size: clamp(20px, 4.5vw, 24px);
+    line-height: 1;
+    margin-top: 2px;
+  }
+
+  .page-magazine .mag-head .title,
+  .page-branding .branding-head .title {
     grid-column: 2 / span 7;
     max-width: none;
   }
 
-  .page-magazine .mag-head .year {
-    grid-column: 10 / span 1;
+  .page-magazine .mag-head .year,
+  .page-branding .branding-head .year {
+    grid-column: 9 / span 2;
     margin-top: 0;
     justify-self: end;
+    text-align: right;
   }
 
-  .page-magazine .mag-head .sector {
+  .page-magazine .mag-head .sector,
+  .page-branding .branding-head .sector {
     grid-column: 11 / span 2;
     margin-top: 0;
     justify-self: end;
     text-align: right;
   }
 
-  .page-magazine .mag-body .desc {
-    grid-column: 2 / span 5;
+  .page-magazine .mag-head h3,
+  .page-branding .branding-head h3 {
+    font-size: clamp(17px, 4.2vw, 20px);
+    line-height: 1.08;
+  }
+
+  .page-magazine .mag-head .lead,
+  .page-branding .branding-head .lead {
+    font-size: clamp(12px, 3.2vw, 14px);
+    line-height: 1.25;
+    margin-top: 6px;
+  }
+
+  .page-magazine .mag-body,
+  .page-branding .branding-body {
+    padding: 14px 0 20px;
+    row-gap: 14px;
+    border-top: 0;
+  }
+
+  .page-magazine .mag-body .desc,
+  .page-branding .branding-body .desc {
+    grid-column: 2 / span 11;
     max-width: none;
   }
 
-  .page-magazine .mag-body .gallery {
-    grid-column: 7 / span 6;
+  .page-magazine .mag-body .desc p,
+  .page-branding .branding-body .desc p {
+    font-size: clamp(12px, 3.2vw, 14px);
+    line-height: 1.28;
+  }
+
+  .page-magazine .mag-body .gallery,
+  .page-branding .branding-body .gallery {
+    grid-column: 2 / span 11;
+    justify-self: stretch;
+    width: 100%;
   }
 
   .page-magazine .gallery.is-static {
     width: 100%;
-    height: clamp(220px, 52vw, 420px);
+    height: clamp(260px, 58vw, 420px);
+  }
+
+  .page-branding .branding-body .gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(8px, 2vw, 12px);
+  }
+
+  .page-branding .branding-gallery figure:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .page-branding .branding-gallery img,
+  .page-branding .branding-gallery figure:first-child img,
+  .page-branding .branding-gallery figure:not(:first-child) img {
+    width: 100%;
+    height: auto;
+    margin-left: 0;
+  }
+
+  .page-magazine .mag-sep,
+  .page-branding .branding-sep {
+    margin: 0 0 clamp(34px, 10vw, 58px);
+    background: rgba(0, 0, 0, 0.24);
+  }
+
+  /* Magazine-specific phone fit */
+  .page-magazine .mag-head .title {
+    grid-column: 2 / span 6;
+  }
+
+  .page-magazine .mag-head .year {
+    grid-column: 8 / span 2;
+  }
+
+  .page-magazine .mag-head .sector {
+    grid-column: 10 / span 3;
+  }
+
+  .page-magazine .mag-head .lead,
+  .page-magazine .mag-body .desc p {
+    max-width: 36ch;
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
 
 }

@@ -80,7 +80,8 @@
     const boost = parseFloat(getComputedStyle(root).getPropertyValue('--boost')) || 1;
 
     const header = document.querySelector('.site-header');
-    const headH = header ? header.getBoundingClientRect().height : 0;
+    const headH = header ? header.offsetHeight : 0;
+    root.style.setProperty('--head-h', `${headH}px`);
 
     const availW = window.innerWidth;
     const availH = Math.max(0, window.innerHeight - headH);
