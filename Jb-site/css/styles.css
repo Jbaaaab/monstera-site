@@ -1139,215 +1139,224 @@ body:has(.page-posters .lb:target) {
    PAGE 3D
    ========================= */
 .page-3d {
-  background: var(--white);
+  background: #ececec;
   color: var(--text-secondary);
 }
 
-.page-3d .work-3d {
-  padding-top: calc(var(--head-h, 44px) + clamp(56px, 7vh, 96px));
-}
-
-.page-3d .entry3d {
+.page-3d .work-3d-v2 {
   width: 100%;
   max-width: var(--base-w);
   margin: 0 auto;
-  padding: 0 clamp(24px, 3vw, 56px) clamp(96px, 12vh, 160px);
+  padding: calc(var(--head-h, 44px) + clamp(26px, 4vh, 48px)) clamp(22px, 2.9vw, 50px) clamp(150px, 16vh, 240px);
   box-sizing: border-box;
-  position: relative;
 }
 
-.page-3d .entry3d .g {
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  column-gap: clamp(12px, 1.6vw, 28px);
-  align-items: start;
-}
-
-.page-3d .entry3d .strap3d {
-  grid-column: 1 / -1;
-  justify-self: center;
-  display: block;
-  width: clamp(72px, 6.2vw, 110px);
-  height: auto;
-  margin: 250px auto clamp(20px, 3.6vw, 40px);
-}
-
-.page-3d .entry3d .top {
-  padding: 24px 0 14px;
-  align-items: start;
-}
-
-.page-3d .entry3d .idx {
-  grid-column: 1 / span 1;
-  justify-self: start;
+.page-3d .tag-3d {
+  width: fit-content;
+  margin: clamp(72px, 9vw, 130px) auto clamp(118px, 12vw, 170px);
+  padding: 2px 12px;
+  background: #2ff35f;
+  color: #071112;
   font-family: "Clash Display", system-ui;
+  font-size: clamp(12px, 0.92vw, 14px);
   font-weight: 600;
-  font-size: clamp(18px, 1.8vw, 28px);
+  letter-spacing: 0.03em;
   line-height: 1;
-  letter-spacing: 0.01em;
-  font-variant-numeric: tabular-nums;
-  color: var(--text-secondary);
 }
 
-.page-3d .entry3d .titleWrap {
-  grid-column: 2 / span 8;
+.page-3d .intro3d {
   display: grid;
-  grid-template-rows: auto auto;
-  row-gap: 2px;
+  grid-template-columns: 4% 57% 10% 14%;
+  justify-content: space-between;
+  align-items: end;
+  gap: clamp(12px, 1.2vw, 20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  padding-bottom: clamp(20px, 2.4vw, 28px);
 }
 
-.page-3d .entry3d .title {
+.page-3d .intro3d .idx,
+.page-3d .intro3d h1,
+.page-3d .intro3d p,
+.page-3d .note {
   margin: 0;
-  line-height: 1.1;
-  font-family: "Epilogue", system-ui;
-  font-weight: 500;
-  font-size: clamp(18px, 1.25vw, 22px);
 }
 
-.page-3d .entry3d .subtitle {
-  margin: 0;
-  opacity: 0.8;
-  font-size: clamp(13px, 0.95vw, 16px);
-  line-height: 1.2;
-  max-width: none;
-}
-
-.page-3d .entry3d .year {
-  grid-column: 10 / span 1;
-  align-self: start;
-  justify-self: end;
-  margin: 0;
-  font-size: clamp(12px, 0.95vw, 16px);
-  line-height: 1.2;
-  opacity: 0.9;
-}
-
-.page-3d .entry3d .sector {
-  grid-column: 11 / span 2;
-  justify-self: end;
-  align-self: start;
-  text-align: right;
-  display: grid;
-  grid-template-rows: auto auto;
-  row-gap: 2px;
-  align-items: start;
-}
-
-.page-3d .entry3d .sector .label {
-  display: block;
-  margin: 0;
-  line-height: 1.1;
+.page-3d .intro3d .idx {
+  font-family: "Clash Display", system-ui;
+  font-size: clamp(23px, 1.55vw, 30px);
   font-weight: 600;
-  font-size: clamp(12px, 0.9vw, 15px);
+  line-height: 1;
 }
 
-.page-3d .entry3d .sector .val {
+.page-3d .intro3d h1 {
+  margin-bottom: 6px;
+  font-family: "Epilogue", system-ui;
+  font-size: clamp(20px, 1.38vw, 25px);
+  font-weight: 500;
+  line-height: 1.08;
+}
+
+.page-3d .intro3d p,
+.page-3d .note {
+  font-size: clamp(12px, 0.92vw, 14px);
+  line-height: 1.22;
+}
+
+.page-3d .intro3d .year,
+.page-3d .intro3d .sector {
+  align-self: center;
+}
+
+.page-3d .intro3d .sector strong,
+.page-3d .intro3d .sector span {
   display: block;
-  margin: 0;
-  font-size: clamp(12px, 0.95vw, 16px);
-  line-height: 1.2;
-  opacity: 0.9;
 }
 
-.page-3d .entry3d .rule {
-  grid-column: 2 / span 11;
-  height: 1px;
-  border: 0;
-  background: rgba(0, 0, 0, 0.16);
-  margin: 0;
-}
-
-.page-3d .entry3d .below {
-  padding: 8px 0 24px;
-  row-gap: 10px;
-  align-items: stretch;
-}
-
-.page-3d .entry3d .copy {
-  grid-column: 2 / span 4;
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-  max-width: 42ch;
-  margin-top: 4px;
-}
-
-.page-3d .entry3d .copy p {
-  margin: 0 0 10px 0;
-  font-size: clamp(12px, 0.95vw, 16px);
-  line-height: 1.35;
-}
-
-.page-3d .entry3d .copy .focus,
-.page-3d .entry3d .copy p:last-child {
-  margin-top: auto;
-  padding-top: clamp(8px, 0.9vw, 14px);
-  opacity: 0.85;
-}
-
-.page-3d .entry3d .hero {
-  grid-column: 7 / span 6;
-  margin: 4px 0 0 0;
-  justify-self: end;
-  width: calc(100% - clamp(10px, 0.9vw, 14px));
-}
-
-.page-3d .entry3d .hero figure {
-  margin: 0;
-}
-
-.page-3d .entry3d .hero img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-/* Galerie 3D compositée */
-.page-3d .gallery3d {
-  width: 100%;
-  max-width: var(--base-w);
-  margin: 0 auto;
-  padding-inline: clamp(24px, 3vw, 56px);
-  box-sizing: border-box;
-  user-select: none;
-}
-
-.page-3d .gallery3d .g-canvas {
+.page-3d .v2-stage {
   position: relative;
+  margin-top: clamp(24px, 2.8vw, 38px);
   width: 100%;
   height: 0;
-  padding-bottom: 274.65278%;
+  padding-bottom: 243%;
 }
 
-.page-3d .gallery3d .slot {
+.page-3d .piece,
+.page-3d .note {
   position: absolute;
-  margin: 0;
 }
 
-.page-3d .gallery3d .slot img {
+.page-3d .piece {
+  margin: 0;
+  transform: scale(0.9);
+  transform-origin: center top;
+}
+
+.page-3d .piece img {
   display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  -webkit-user-drag: none;
-  user-select: none;
+  height: auto;
 }
 
-/* Positions exactes des slots 3D */
-.page-3d .gallery3d .s1 { left: 42.9051%; top: 13.0215%; width: 50.8218%; height: 10.1138%; }
-.page-3d .gallery3d .s2 { left: -5%; top: 24.4758%; width: 70.8819%; height: 10.5335%; }
-.page-3d .gallery3d .s3 { left: 66.3542%; top: 27.6865%; width: 40.2199%; height: 8.3666%; }
-.page-3d .gallery3d .s4 { left: 42.5174%; top: 36.5150%; width: 39.7338%; height: 8.1332%; }
-.page-3d .gallery3d .s5 { left: 4.0000%; top: 40.9313%; width: 32.3935%; height: 6.6203%; }
-.page-3d .gallery3d .s6 { left: 70.4861%; top: 50%; width: 25.2963%; height: 10.3447%; }
-.page-3d .gallery3d .s7 { left: 52.2731%; top: 47%; width: 14.7269%; height: 5.8946%; }
-.page-3d .gallery3d .s8 { left: 71.0312%; top: 04.7505%; width: 26.1852%; height: 10.6924%; }
-.page-3d .gallery3d .s9 { left: 3.3102%; top: 53.6212%; width: 65.0324%; height: 12.1559%; }
-.page-3d .gallery3d .s10 { left: 3.0671%; top: 5.6650%; width: 44.7303%; height: 9.5360%; }
-.page-3d .gallery3d .s11 { left: 54.2303%; top: 83.8542%; width: 40.9826%; height: 8.2625%; }
-.page-3d .gallery3d .s12 { left: 55.2083%; top: 68.6894%; width: 41.5509%; height: 9.6123%; }
-.page-3d .gallery3d .s13 { left: 7.6563%; top: 66.9170%; width: 43.1366%; height: 25.8074%; }
+.page-3d .piece.dark img {
+  background: #5f5f5f;
+}
+
+.page-3d .n-top { left: 3.6%; top: 0.8%; width: 32%; }
+.page-3d .p-rue01 { left: 39%; top: 0.8%; width: 58%; }
+
+.page-3d .n-focus { left: 3.4%; top: 14.6%; width: 24%; }
+.page-3d .p-bureau02 { left: 44.6%; top: 20.8%; width: 39%; }
+.page-3d .n-boring { left: 84.4%; top: 27.1%; width: 12%; }
+.page-3d .p-ours { left: 76.1%; top: 29.5%; width: 20.2%; }
+
+.page-3d .n-rue { left: 0.4%; top: 30.2%; width: 20.2%; }
+.page-3d .p-rue03 { left: 0.8%; top: 31.8%; width: 50%; }
+.page-3d .n-bear { left: 54%; top: 41.9%; width: 18%; }
+.page-3d .p-chambre02 { left: 55%; top: 44.6%; width: 24.5%; }
+.page-3d .p-cafe03 { left: -0.2%; top: 43.7%; width: 36%; }
+.page-3d .p-chambre03 { left: 37.6%; top: 50.9%; width: 40%; }
+
+.page-3d .p-billie { left: 1.2%; top: 59.2%; width: 27.8%; }
+.page-3d .n-billie { left: 29.2%; top: 58.5%; width: 21%; }
+.page-3d .p-thibz { left: 53.4%; top: 58.2%; width: 24.5%; }
+.page-3d .p-thibz2 { left: 77.2%; top: 57.1%; width: 19%; }
+.page-3d .p-chambre01 { left: 78.7%; top: 69.1%; width: 17.6%; }
+.page-3d .p-bureau01 { left: 16.7%; top: 67.2%; width: 36%; }
+
+.page-3d .p-rue04 { left: 0.8%; top: 74.2%; width: 50%; }
+.page-3d .p-rer01 { left: 56.4%; top: 80.3%; width: 31%; }
+.page-3d .p-rer02 { left: 56.2%; top: 79.1%; width: 31%; opacity: 0; pointer-events: none; }
+.page-3d .p-cafe02 { left: 40.3%; top: 89.1%; width: 36%; }
+.page-3d .n-credit { left: 77.6%; top: 89.9%; width: 18.5%; }
+.page-3d .p-cafe01 { left: 2.9%; top: 97.8%; width: 54%; }
+.page-3d .p-rue02 { left: 57.4%; top: 97.8%; width: 40%; }
+
+@media (max-width: 640px) {
+  .page-3d .work-3d-v2 {
+    padding-inline: 16px;
+    padding-bottom: 190px;
+  }
+
+  .page-3d .tag-3d {
+    margin: 44px auto 72px;
+    padding: 2px 10px;
+    font-size: 11px;
+  }
+
+  .page-3d .intro3d {
+    grid-template-columns: 7% 52% 10% 16%;
+    gap: 8px;
+    align-items: center;
+    padding-bottom: 14px;
+  }
+
+  .page-3d .intro3d .idx {
+    font-size: 18px;
+  }
+
+  .page-3d .intro3d h1 {
+    font-size: 12px;
+    margin-bottom: 2px;
+  }
+
+  .page-3d .intro3d p,
+  .page-3d .note {
+    font-size: 10px;
+    line-height: 1.06;
+  }
+
+  .page-3d .v2-stage {
+    position: relative;
+    height: 0;
+    padding-bottom: 720%;
+    margin-top: 0;
+    transform: translateY(-18px);
+  }
+
+  .page-3d .v2-stage > * {
+    position: absolute;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  .page-3d .piece {
+    transform: scale(1);
+  }
+
+  .page-3d .n-top { left: 3%; top: 1.2%; width: 64%; }
+  .page-3d .p-rue01 { left: 2%; top: 5.0%; width: 94%; }
+
+  .page-3d .n-focus { left: 4%; top: 14.2%; width: 26%; }
+  .page-3d .p-bureau02 { left: 4%; top: 16.6%; width: 52%; }
+  .page-3d .n-boring { left: 57%; top: 20.7%; width: 20%; }
+
+  .page-3d .p-rue03 { left: 10%; top: 22.2%; width: 64%; }
+  .page-3d .n-rue { left: 76%; top: 28.8%; width: 19%; }
+  .page-3d .p-chambre02 { left: 4%; top: 30.0%; width: 52%; }
+  .page-3d .p-ours { left: 58%; top: 30.2%; width: 38%; }
+
+  .page-3d .n-bear { left: 23%; top: 38.0%; width: 34%; }
+  .page-3d .p-cafe03 { left: 2%; top: 39.8%; width: 45%; }
+  .page-3d .p-chambre03 { left: 48%; top: 40.4%; width: 50%; }
+
+  .page-3d .p-billie { left: 2%; top: 47.6%; width: 40%; }
+  .page-3d .n-billie { left: 43%; top: 48.1%; width: 54%; }
+  .page-3d .p-thibz { left: 38%; top: 54.0%; width: 35%; }
+  .page-3d .p-thibz2 { left: 72%; top: 54.8%; width: 24%; }
+  .page-3d .p-chambre01 { left: 71%; top: 63.0%; width: 30%; }
+
+  .page-3d .p-rue04 { left: 0%; top: 67.0%; width: 74%; }
+  .page-3d .p-rer01 { left: 60%; top: 75.3%; width: 40%; }
+  .page-3d .p-cafe02 { left: 0%; top: 77.2%; width: 43%; }
+  .page-3d .p-rue02 { left: 32%; top: 83.1%; width: 68%; }
+  .page-3d .p-cafe01 { left: 0%; top: 89.4%; width: 100%; }
+  .page-3d .n-credit { left: 2%; top: 98.0%; width: 95%; }
+
+  .page-3d .p-bureau01,
+  .page-3d .p-rer02 {
+    display: none;
+  }
+}
 
 /* =========================
    PAGE MAGAZINE
@@ -1975,7 +1984,7 @@ body:has(.page-posters .lb:target) {
     --boost: 0.94;
   }
 
-@media (max-width: 900px) {
+@media (max-width: 640px) {
   .footer-giant span {
     font-size: clamp(96px, 30vw, 320px);
   }
