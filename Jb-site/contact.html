@@ -5,19 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact</title>
   <link rel="icon" type="image/png" href="assets/Img/favicon.png">
-  <link rel="stylesheet" href="css/styles.css?v=7" />
+  <link rel="stylesheet" href="css/styles.css?v=8" />
 </head>
 <body class="page-contact">
 
   <!-- Header -->
-  <header class="site-header">
-    <nav class="site-nav">
-      <a href="index.html#hero">Home</a>
-      <a href="work.html">Work</a>
-      <a href="lore.html">Lore</a>
-      <a href="contact.html" class="is-active">Contact</a>
-    </nav>
-  </header>
+  <div id="site-header"></div>
 
   <!-- Lignes verticales -->
   <div class="page-grid" aria-hidden="true"></div>
@@ -111,89 +104,10 @@
   </main>
 
   <!-- JS global -->
+  <div id="site-footer"></div>
+
+
   <script src="js/script.js" defer></script>
-
-  <!-- ===== Glitch trail global + total counter (INCLUS) ===== -->
-  <script>
-  (function(){
-    if (window.__jbGlitchInited) return;
-    window.__jbGlitchInited = true;
-
-    try { if (!matchMedia('(pointer:fine)').matches) return; } catch(e){}
-
-    const DURATION = 560;
-    const THROTTLE = 16;
-    const CLEAN_LIMIT = 600;
-
-  const css = `
-      .jb-root{position:fixed;inset:auto 0 0 0;z-index:2147483646;pointer-events:none}
-      .jb-layer{position:fixed;inset:0;pointer-events:none;z-index:0;}
-      .jb-counter{position:fixed;right:16px;bottom:16px;z-index:1;pointer-events:none;user-select:none;
-        font:12px/1.2 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#0B1211;
-        background:#41F373;border:0px solid rgba(0,0,0,.35);border-radius:0px;padding:4px 10px;display:flex;align-items:center;gap:10px}
-      .jb-counter .sq{width:12px;height:12px;background:#41F373;border:0px solid rgba(0,0,0,.35)}
-      .jb-counter .lbl{font-weight:700;letter-spacing:.06em}
-      .jb-counter .num{font-variant-numeric:tabular-nums;font-weight:700}
-      .jb-counter .petal{width:14px;height:14px}
-      .jb-square{position:fixed;pointer-events:none;mix-blend-mode:difference;background:#fff;opacity:.95;
-        transform:translate(-50%,-50%);outline:1px solid rgba(0,0,0,.15);animation:jbGlFade ${DURATION}ms ease-out forwards}
-      .jb-s{width:8px;height:8px}.jb-m{width:14px;height:14px}.jb-l{width:20px;height:20px}.jb-xl{width:26px;height:26px}
-      @keyframes jbGlFade{0%{opacity:.95;transform:translate(-50%,-50%) scale(1)}60%{opacity:.6;transform:translate(-50%,-50%) scale(1.08)}100%{opacity:0;transform:translate(-50%,-50%) scale(1.14)}}
-      .page-grid{pointer-events:none !important;}
-    `;
-    const style = document.createElement('style');
-    style.textContent = css;
-    document.head.appendChild(style);
-
-    const root = document.createElement('div'); root.className = 'jb-root';
-    const layer = document.createElement('div'); layer.className = 'jb-layer';
-    const counter = document.createElement('div'); counter.className = 'jb-counter';
-    counter.innerHTML = `
-      <span class="sq" aria-hidden="true"></span>
-      <span class="lbl">COUNTER</span>
-      <span class="num" id="jbCounter">0</span>
-      <img class="petal" src="assets/Img/SYMBOLE2.svg" alt="" aria-hidden="true" />
-    `;
-    root.appendChild(layer); root.appendChild(counter); document.body.appendChild(root);
-
-    let total = 0;
-    const numEl = counter.querySelector('#jbCounter');
-    const update = () => { numEl.textContent = String(total); };
-
-    const rand = (a,b)=>a + Math.random()*(b-a);
-    function spawn(x,y){
-      const d = document.createElement('div');
-      d.className = 'jb-square ' + (
-        Math.random()<.25 ? 'jb-s' :
-        Math.random()<.70 ? 'jb-m' :
-        Math.random()<.90 ? 'jb-l' : 'jb-xl'
-      );
-      d.style.left = (x + rand(-3,3)) + 'px';
-      d.style.top  = (y + rand(-3,3)) + 'px';
-      layer.appendChild(d);
-      total++; update();
-      setTimeout(()=>{ d.remove(); }, DURATION+20);
-
-      if (layer.children.length > CLEAN_LIMIT){
-        const excess = layer.children.length - CLEAN_LIMIT;
-        for (let i=0;i<excess;i++) layer.firstElementChild?.remove();
-      }
-    }
-
-    let last = 0;
-    window.addEventListener('mousemove', (e)=>{
-      const now = performance.now();
-      if (now - last < THROTTLE) return; last = now;
-
-      spawn(e.clientX, e.clientY);
-      if (Math.random() < .55) spawn(e.clientX + rand(-6,6),  e.clientY + rand(-6,6));
-      if (Math.random() < .25) spawn(e.clientX + rand(-12,12), e.clientY + rand(-12,12));
-    }, {passive:true});
-
-    new MutationObserver(()=>{ if (root !== document.body.lastElementChild) document.body.appendChild(root); })
-      .observe(document.body, {childList:true});
-  })();
-  </script>
-  <!-- ===== /Glitch trail ===== -->
+  <script src="js/glitch.js" defer></script>
 </body>
 </html>

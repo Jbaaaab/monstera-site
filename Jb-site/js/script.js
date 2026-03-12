@@ -1,4 +1,52 @@
 /* =========================
+   Shared partials loader (header/footer)
+   ========================= */
+(() => {
+  const headerHost = document.getElementById('site-header');
+  const footerHost = document.getElementById('site-footer');
+  if (!headerHost && !footerHost) return;
+
+  const inWork = /\/work\//.test(location.pathname);
+  const headerPath = inWork ? '../partials/header.html' : 'partials/header.html';
+  const footerPath = inWork ? '../partials/footer.html' : 'partials/footer.html';
+
+  function normalizeNavLinks(scope) {
+    if (!scope) return;
+    scope.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href') || '';
+      if (/^(mailto:|tel:|https?:|#)/i.test(href)) return;
+      if (!/^(?:\.\.\/)?(?:index\.html|work\.html|lore\.html|contact\.html)$/i.test(href)) return;
+      if (inWork && !href.startsWith('../')) a.setAttribute('href', `../${href}`);
+      if (!inWork && href.startsWith('../')) a.setAttribute('href', href.replace(/^\.\.\//, ''));
+    });
+  }
+
+  const jobs = [];
+
+  if (headerHost) {
+    jobs.push(
+      fetch(headerPath)
+        .then(r => r.ok ? r.text() : '')
+        .then(html => { if (html) { headerHost.innerHTML = html; normalizeNavLinks(headerHost); } })
+        .catch(() => {})
+    );
+  }
+
+  if (footerHost) {
+    jobs.push(
+      fetch(footerPath)
+        .then(r => r.ok ? r.text() : '')
+        .then(html => { if (html) { footerHost.innerHTML = html; normalizeNavLinks(footerHost); } })
+        .catch(() => {})
+    );
+  }
+
+  Promise.all(jobs).finally(() => {
+    document.dispatchEvent(new CustomEvent('site:partialsLoaded'));
+  });
+})();
+
+/* =========================
    Scaler — base 1728×1117 (hero responsive)
    (Conserve ta logique + header height + nav active)
    ========================= */
@@ -32,7 +80,8 @@
     const boost = parseFloat(getComputedStyle(root).getPropertyValue('--boost')) || 1;
 
     const header = document.querySelector('.site-header');
-    const headH = header ? header.getBoundingClientRect().height : 0;
+    const headH = header ? header.offsetHeight : 0;
+    root.style.setProperty('--head-h', `${headH}px`);
 
     const availW = window.innerWidth;
     const availH = Math.max(0, window.innerHeight - headH);
@@ -47,6 +96,7 @@
   window.addEventListener('resize', recalc, { passive: true });
   window.addEventListener('orientationchange', recalc, { passive: true });
   document.addEventListener('visibilitychange', () => { if (!document.hidden) recalc(); });
+  document.addEventListener('site:partialsLoaded', recalc);
 
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(recalc).catch(()=>{});
 
