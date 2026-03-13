@@ -1223,7 +1223,7 @@ body:has(.page-posters .lb:target) {
   margin-top: clamp(24px, 2.8vw, 38px);
   width: 100%;
   height: 0;
-  padding-bottom: 248%;
+  padding-bottom: 258%;
 }
 
 .page-3d .piece,
@@ -1247,23 +1247,23 @@ body:has(.page-posters .lb:target) {
   background: #5f5f5f;
 }
 
-.page-3d .n-top { left: 3.6%; top: 0.6%; width: 31%; }
+.page-3d .n-top { left: 4%; top: 0.8%; width: 30%; }
 .page-3d .p-rue01 { left: 39%; top: 0.8%; width: 58%; }
 
-.page-3d .n-focus { left: 4.2%; top: 14.2%; width: 22%; }
+.page-3d .n-focus { left: 4%; top: 14.4%; width: 24%; }
 .page-3d .p-bureau02 { left: 44.6%; top: 20.8%; width: 39%; }
-.page-3d .n-boring { left: 84.4%; top: 27.1%; width: 12%; }
+.page-3d .n-boring { left: 83%; top: 27.1%; width: 13%; }
 .page-3d .p-ours { left: 76.1%; top: 29.5%; width: 20.2%; }
 
-.page-3d .n-rue { left: 0.8%; top: 29.8%; width: 18.6%; }
+.page-3d .n-rue { left: 2%; top: 30.2%; width: 18%; }
 .page-3d .p-rue03 { left: 0.8%; top: 31.8%; width: 50%; }
-.page-3d .n-bear { left: 55%; top: 41.2%; width: 17%; }
+.page-3d .n-bear { left: 56%; top: 41.4%; width: 18%; }
 .page-3d .p-chambre02 { left: 55%; top: 44.6%; width: 24.5%; }
 .page-3d .p-cafe03 { left: -0.2%; top: 43.7%; width: 36%; }
 .page-3d .p-chambre03 { left: 37.6%; top: 50.9%; width: 40%; }
 
 .page-3d .p-billie { left: 1.2%; top: 59.2%; width: 27.8%; }
-.page-3d .n-billie { left: 30.4%; top: 58.2%; width: 20%; }
+.page-3d .n-billie { left: 30%; top: 58.6%; width: 22%; }
 .page-3d .p-thibz { left: 53.4%; top: 58.2%; width: 24.5%; }
 .page-3d .p-thibz2 { left: 77.2%; top: 57.1%; width: 19%; }
 .page-3d .p-chambre01 { left: 78.7%; top: 69.1%; width: 17.6%; }
@@ -1273,7 +1273,7 @@ body:has(.page-posters .lb:target) {
 .page-3d .p-rer01 { left: 56.4%; top: 80.3%; width: 31%; }
 .page-3d .p-rer02 { left: 56.2%; top: 79.1%; width: 31%; opacity: 0; pointer-events: none; }
 .page-3d .p-cafe02 { left: 40.3%; top: 89.1%; width: 36%; }
-.page-3d .n-credit { left: 78.4%; top: 90.4%; width: 17%; }
+.page-3d .n-credit { left: 76%; top: 90.8%; width: 20%; }
 .page-3d .p-cafe01 { left: 2.9%; top: 97.8%; width: 54%; }
 .page-3d .p-rue02 { left: 57.4%; top: 97.8%; width: 40%; }
 
@@ -1314,7 +1314,7 @@ body:has(.page-posters .lb:target) {
   .page-3d .v2-stage {
     position: relative;
     height: 0;
-    padding-bottom: 736%;
+    padding-bottom: 758%;
     margin-top: 0;
     transform: translateY(-18px);
   }
@@ -1329,24 +1329,24 @@ body:has(.page-posters .lb:target) {
     transform: scale(1);
   }
 
-  .page-3d .n-top { left: 3%; top: 1.2%; width: 64%; }
+  .page-3d .n-top { left: 3%; top: 1.4%; width: 64%; }
   .page-3d .p-rue01 { left: 2%; top: 5.0%; width: 94%; }
 
-  .page-3d .n-focus { left: 4%; top: 13.8%; width: 27%; }
+  .page-3d .n-focus { left: 4%; top: 14.0%; width: 30%; }
   .page-3d .p-bureau02 { left: 4%; top: 16.6%; width: 52%; }
-  .page-3d .n-boring { left: 57%; top: 20.7%; width: 20%; }
+  .page-3d .n-boring { left: 56%; top: 20.8%; width: 24%; }
 
   .page-3d .p-rue03 { left: 10%; top: 22.2%; width: 64%; }
-  .page-3d .n-rue { left: 75%; top: 28.2%; width: 21%; }
+  .page-3d .n-rue { left: 73%; top: 28.6%; width: 23%; }
   .page-3d .p-chambre02 { left: 4%; top: 30.0%; width: 52%; }
   .page-3d .p-ours { left: 58%; top: 30.2%; width: 38%; }
 
-  .page-3d .n-bear { left: 22%; top: 37.4%; width: 36%; }
+  .page-3d .n-bear { left: 22%; top: 37.8%; width: 40%; }
   .page-3d .p-cafe03 { left: 2%; top: 39.8%; width: 45%; }
   .page-3d .p-chambre03 { left: 48%; top: 40.4%; width: 50%; }
 
   .page-3d .p-billie { left: 2%; top: 47.6%; width: 40%; }
-  .page-3d .n-billie { left: 43%; top: 47.6%; width: 54%; }
+  .page-3d .n-billie { left: 42%; top: 48.0%; width: 55%; }
   .page-3d .p-thibz { left: 38%; top: 54.0%; width: 35%; }
   .page-3d .p-thibz2 { left: 72%; top: 54.8%; width: 24%; }
   .page-3d .p-chambre01 { left: 71%; top: 63.0%; width: 30%; }
@@ -1356,7 +1356,7 @@ body:has(.page-posters .lb:target) {
   .page-3d .p-cafe02 { left: 0%; top: 77.2%; width: 43%; }
   .page-3d .p-rue02 { left: 32%; top: 83.1%; width: 68%; }
   .page-3d .p-cafe01 { left: 0%; top: 89.4%; width: 100%; }
-  .page-3d .n-credit { left: 2%; top: 98.0%; width: 95%; }
+  .page-3d .n-credit { left: 2%; top: 98.8%; width: 95%; }
 
   .page-3d .p-bureau01,
   .page-3d .p-rer02 {
