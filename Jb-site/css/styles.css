@@ -3041,3 +3041,220 @@ body:has(.page-posters .lb:target) {
     transform: translateY(0.08em);
   }
 }
+
+/* =========================
+   F1 Rebranding — Page
+   ========================= */
+.page-f1 {
+  --bg: #F2F3F4;
+  background: var(--bg);
+  color: var(--text-secondary);
+  -webkit-font-smoothing: antialiased;
+}
+
+.page-f1 .f1-scene {
+  position: relative;
+  z-index: 30;
+  width: 100%;
+  max-width: var(--base-w);
+  margin: 0 auto clamp(60px, 10vw, 120px);
+  padding-inline: clamp(24px, 3vw, 56px);
+  box-sizing: border-box;
+}
+
+/* Centered title label */
+.page-f1 .f1-title-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: clamp(80px, 14vw, 200px);
+  padding-bottom: clamp(60px, 10vw, 140px);
+}
+
+.page-f1 .f1-label {
+  font-family: "Epilogue", system-ui;
+  font-size: clamp(12px, 0.95vw, 16px);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+  border: 1px solid rgba(0, 0, 0, 0.55);
+  padding: 5px 14px;
+  line-height: 1;
+}
+
+/* 12-column row base */
+.page-f1 .f1-row {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: clamp(12px, 1.6vw, 28px);
+  align-items: start;
+}
+
+/* Head row */
+.page-f1 .f1-head {
+  padding: 24px 0 14px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+}
+
+.page-f1 .f1-head .idx {
+  grid-column: 1 / span 1;
+  justify-self: start;
+  font-family: "Clash Display", system-ui;
+  font-weight: 600;
+  font-size: clamp(18px, 1.8vw, 28px);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  font-variant-numeric: tabular-nums;
+}
+
+.page-f1 .f1-head .title {
+  grid-column: 2 / span 7;
+  display: grid;
+  grid-template-rows: auto auto;
+  row-gap: 4px;
+}
+
+.page-f1 .f1-head h1 {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 500;
+  font-size: clamp(18px, 1.25vw, 22px);
+  line-height: 1.1;
+}
+
+.page-f1 .f1-head .lead {
+  margin: 0;
+  font-size: clamp(13px, 0.95vw, 16px);
+  line-height: 1.2;
+  opacity: 0.8;
+  max-width: 52ch;
+}
+
+.page-f1 .f1-head .year {
+  grid-column: 10 / span 1;
+  justify-self: end;
+  align-self: start;
+  font-size: clamp(12px, 0.95vw, 16px);
+  line-height: 1.2;
+  opacity: 0.9;
+}
+
+.page-f1 .f1-head .sector {
+  grid-column: 11 / span 2;
+  justify-self: end;
+  align-self: start;
+  text-align: right;
+}
+
+.page-f1 .f1-head .sector h4 {
+  margin: 0 0 2px;
+  font-family: "Clash Display", system-ui;
+  font-weight: 600;
+  font-size: clamp(11px, 0.85vw, 14px);
+  line-height: 1.1;
+}
+
+.page-f1 .f1-head .sector p {
+  margin: 0;
+  font-size: clamp(12px, 0.95vw, 16px);
+  line-height: 1.3;
+  opacity: 0.9;
+}
+
+/* Body row */
+.page-f1 .f1-body {
+  padding: clamp(20px, 2.8vw, 40px) 0 0;
+  align-items: start;
+}
+
+.page-f1 .f1-body .desc {
+  grid-column: 2 / span 3;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(14px, 1.8vw, 28px);
+}
+
+.page-f1 .f1-body .desc p {
+  margin: 0;
+  font-size: clamp(12px, 0.95vw, 16px);
+  line-height: 1.5;
+}
+
+.page-f1 .f1-body .desc .disciplines {
+  font-size: clamp(11px, 0.85vw, 14px);
+  opacity: 0.7;
+  line-height: 1.4;
+}
+
+.page-f1 .f1-body .main-img {
+  grid-column: 6 / span 7;
+  margin: 0;
+}
+
+.page-f1 .f1-body .main-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .page-f1 .f1-head .title {
+    grid-column: 2 / span 6;
+  }
+
+  .page-f1 .f1-head .year {
+    grid-column: 9 / span 2;
+  }
+
+  .page-f1 .f1-head .sector {
+    grid-column: 11 / span 2;
+  }
+
+  .page-f1 .f1-body .desc {
+    grid-column: 2 / span 4;
+  }
+
+  .page-f1 .f1-body .main-img {
+    grid-column: 6 / span 7;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .page-f1 .f1-title-wrap {
+    padding-top: clamp(48px, 14vw, 80px);
+    padding-bottom: clamp(40px, 10vw, 72px);
+  }
+
+  .page-f1 .f1-head .idx {
+    grid-column: 1 / span 1;
+    font-size: clamp(16px, 4.5vw, 22px);
+  }
+
+  .page-f1 .f1-head .title {
+    grid-column: 2 / span 11;
+  }
+
+  .page-f1 .f1-head .year {
+    grid-column: 2 / span 4;
+    justify-self: start;
+    margin-top: 8px;
+  }
+
+  .page-f1 .f1-head .sector {
+    grid-column: 7 / span 6;
+    text-align: right;
+    margin-top: 8px;
+  }
+
+  .page-f1 .f1-body .desc {
+    grid-column: 2 / span 11;
+    margin-bottom: clamp(20px, 5vw, 36px);
+  }
+
+  .page-f1 .f1-body .main-img {
+    grid-column: 1 / span 12;
+  }
+}
