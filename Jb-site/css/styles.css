@@ -3168,7 +3168,7 @@ body:has(.page-posters .lb:target) {
   margin: 0;
   font-family: "Epilogue", system-ui;
   font-weight: 400;
-  font-size: 20px;
+  font-size: clamp(13px, 1.16vw, 20px);
   line-height: 1.55;
 }
 
@@ -3208,7 +3208,7 @@ body:has(.page-posters .lb:target) {
   margin: 0;
   font-family: "Epilogue", system-ui;
   font-weight: 400;
-  font-size: 20px;
+  font-size: clamp(13px, 1.16vw, 20px);
   line-height: 1.55;
 }
 
@@ -3302,7 +3302,7 @@ body:has(.page-posters .lb:target) {
   margin: 0;
   font-family: "Epilogue", system-ui;
   font-weight: 400;
-  font-size: 20px;
+  font-size: clamp(13px, 1.16vw, 20px);
   line-height: 1.55;
 }
 
@@ -3331,7 +3331,7 @@ body:has(.page-posters .lb:target) {
   margin: 0;
   font-family: "Epilogue", system-ui;
   font-weight: 600;
-  font-size: 24px;
+  font-size: clamp(16px, 1.39vw, 24px);
   line-height: 1.2;
 }
 
