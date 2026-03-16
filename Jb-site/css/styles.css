@@ -3580,6 +3580,91 @@ body:has(.page-posters .lb:target) {
   color: #F2F3F4;
 }
 
+/* ══ COOOOLORS SYSTEM (2.5) ══ */
+
+/* Grid column positions */
+.page-f1 .f1-csys-sw--main,
+.page-f1 .f1-csys-sw--flag      { grid-column: 1 / span 7; }
+.page-f1 .f1-csys-vb--main,
+.page-f1 .f1-csys-vb--flag      { grid-column: 8 / span 1; }
+.page-f1 .f1-csys-names--main,
+.page-f1 .f1-csys-names--flag   { grid-column: 9 / span 3; }
+
+.page-f1 .f1-csys-names--tryout { grid-column: 1 / span 2; }
+.page-f1 .f1-csys-vb--tryout    { grid-column: 6 / span 1; }
+.page-f1 .f1-csys-sw--tryout    { grid-column: 7 / span 6; }
+
+.page-f1 .f1-csys-sw--tleft     { grid-column: 1 / span 4; }
+.page-f1 .f1-csys-vb--tleft     { grid-column: 5 / span 1; }
+.page-f1 .f1-csys-names--tleft  { grid-column: 6 / span 2; }
+.page-f1 .f1-csys-names--tright { grid-column: 8 / span 2; }
+.page-f1 .f1-csys-vb--tright    { grid-column: 10 / span 1; }
+.page-f1 .f1-csys-sw--tright    { grid-column: 11 / span 2; }
+
+/* Row layout */
+.page-f1 .f1-csys-row { align-items: stretch; }
+
+/* Swatches container */
+.page-f1 .f1-csys-swatches {
+  display: flex;
+  flex-direction: column;
+}
+.page-f1 .f1-csys-sw--left {
+  margin-left: calc(-1 * clamp(24px, 3vw, 56px));
+  width: calc(100% + clamp(24px, 3vw, 56px));
+}
+.page-f1 .f1-csys-sw--right {
+  margin-right: calc(-1 * clamp(24px, 3vw, 56px));
+  width: calc(100% + clamp(24px, 3vw, 56px));
+}
+
+/* Individual swatch */
+.page-f1 .f1-csys-swatch {
+  flex: 1;
+  min-height: clamp(38px, 4vw, 64px);
+}
+
+/* Vertical accent bar */
+.page-f1 .f1-csys-vbar {
+  display: flex;
+  flex-direction: column;
+  width: 3px;
+  margin-inline: auto;
+}
+.page-f1 .f1-csys-vbar-item { flex: 1; }
+
+/* Names list */
+.page-f1 .f1-csys-names {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(11px, 0.93vw, 16px);
+  color: #F2F3F4;
+}
+.page-f1 .f1-csys-names--tright { text-align: right; }
+
+/* ── Gradient colors ── */
+.page-f1 .f1-cs--principal  { background: linear-gradient(to right, #FF470E 0%, #FF1626 33%, #990D17 66%, #FF1A19 100%); }
+.page-f1 .f1-cs--corps      { background: linear-gradient(to right, #FFFFFF 0%, #C7C7C5 79%); }
+.page-f1 .f1-cs--tryout     { background: linear-gradient(to right, #1D6E9B 0%, #113E66 33%, #51AFCD 66%, #4EBBDB 100%); }
+.page-f1 .f1-cs--qualif     { background: linear-gradient(to right, #5347D5 0%, #20168A 33%, #4E42D9 66%, #6557FF 100%); }
+.page-f1 .f1-cs--yellowflag { background: linear-gradient(to right, #FFEB57 0%, #E5CB0C 33%, #837929 66%, #F2DB32 100%); }
+.page-f1 .f1-cs--safetycar  { background: linear-gradient(to right, #6E6E6E 0%, #606060 33%, #7C7C7C 66%, #434343 100%); }
+/* Teams */
+.page-f1 .f1-cs--alpine      { background: linear-gradient(to right, #00A4EE 0%, #48C6FF 100%); }
+.page-f1 .f1-cs--redbull     { background: linear-gradient(to right, #1673CC 0%, #3DA0FF 100%); }
+.page-f1 .f1-cs--racingbulls { background: linear-gradient(to right, #5794FF 0%, #72A5FF 100%); }
+.page-f1 .f1-cs--williams    { background: linear-gradient(to right, #006AE2 0%, #2089FF 100%); }
+.page-f1 .f1-cs--mercedes    { background: linear-gradient(to right, #00F8D1 0%, #98FFEF 100%); }
+.page-f1 .f1-cs--astonmartin { background: linear-gradient(to right, #009C6E 0%, #03E19F 100%); }
+.page-f1 .f1-cs--haas        { background: linear-gradient(to right, #DFE1E2 0%, #F8F8F8 100%); }
+.page-f1 .f1-cs--cadillac    { background: linear-gradient(to right, #AAAAAD 0%, #E0E0E0 100%); }
+.page-f1 .f1-cs--mclaren     { background: linear-gradient(to right, #FF7700 0%, #FFA75A 100%); }
+.page-f1 .f1-cs--ferrari     { background: linear-gradient(to right, #FE001E 0%, #FF324B 100%); }
+.page-f1 .f1-cs--audi        { background: linear-gradient(to right, #FF0000 0%, #FF3E3E 100%); }
+
 .page-f1 .f1-dsection-head {
   margin-bottom: clamp(20px, 2.5vw, 36px);
 }
