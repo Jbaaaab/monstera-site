@@ -4147,6 +4147,7 @@ body:has(.page-posters .lb:target) {
 /* LT video — rises up, bleeds slightly over next section */
 .page-f1 .f1-lt-video-wrap {
   padding-block: clamp(12px, 1.5vw, 24px) 0;
+  margin-top: -100px;
   margin-bottom: clamp(-60px, -5vw, -40px);
   position: relative;
   z-index: 2;
@@ -4188,6 +4189,7 @@ body:has(.page-posters .lb:target) {
 /* Radio video — same behaviour */
 .page-f1 .f1-radio-video-wrap {
   padding-block: clamp(12px, 1.5vw, 24px) 0;
+  margin-top: -100px;
   margin-bottom: clamp(-60px, -5vw, -40px);
   position: relative;
   z-index: 2;
