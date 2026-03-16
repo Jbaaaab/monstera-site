@@ -4203,6 +4203,86 @@ body:has(.page-posters .lb:target) {
   margin-inline: auto;
 }
 
+/* ── 003 Pit Time — 4-col, fills col 1-12 ── */
+.page-f1 .f1-pit-grid {
+  align-items: start;
+  row-gap: 0;
+  padding-bottom: clamp(16px, 2vw, 32px);
+}
+.page-f1 .f1-pit-col {
+  display: flex;
+  flex-direction: column;
+}
+.page-f1 .f1-pit-col:nth-child(1) { grid-column: 1 / span 3; }
+.page-f1 .f1-pit-col:nth-child(2) { grid-column: 4 / span 3; }
+.page-f1 .f1-pit-col:nth-child(3) { grid-column: 7 / span 3; }
+.page-f1 .f1-pit-col:nth-child(4) { grid-column: 10 / span 3; }
+.page-f1 .f1-pit-card { margin: 0; }
+.page-f1 .f1-pit-col:nth-child(1) .f1-pit-card img { margin-left: 0;   margin-right: auto; }
+.page-f1 .f1-pit-col:nth-child(2) .f1-pit-card img { margin-inline: auto; }
+.page-f1 .f1-pit-col:nth-child(3) .f1-pit-card img { margin-inline: auto; }
+.page-f1 .f1-pit-col:nth-child(4) .f1-pit-card img { margin-left: auto;  margin-right: 0; }
+.page-f1 .f1-pit-card img {
+  display: block;
+  width: 91%;
+  height: auto;
+}
+
+/* ── 004 FIA Notification — 3-col, same rhythm as LT/Radio ── */
+.page-f1 .f1-fia-grid {
+  align-items: start;
+  row-gap: 0;
+  padding-bottom: clamp(16px, 2vw, 32px);
+}
+.page-f1 .f1-fia-col {
+  display: flex;
+  flex-direction: column;
+}
+.page-f1 .f1-fia-col:nth-child(1) { grid-column: 2 / span 3; }
+.page-f1 .f1-fia-col:nth-child(2) { grid-column: 5 / span 3; }
+.page-f1 .f1-fia-col:nth-child(3) { grid-column: 8 / span 3; }
+.page-f1 .f1-fia-card { margin: 0; }
+.page-f1 .f1-fia-col:nth-child(1) .f1-fia-card img { margin-left: 0;   margin-right: auto; }
+.page-f1 .f1-fia-col:nth-child(2) .f1-fia-card img { margin-inline: auto; }
+.page-f1 .f1-fia-col:nth-child(3) .f1-fia-card img { margin-left: auto;  margin-right: 0; }
+.page-f1 .f1-fia-card img {
+  display: block;
+  width: 91%;
+  height: auto;
+}
+
+/* FIA video */
+.page-f1 .f1-fia-video-wrap {
+  padding-block: clamp(12px, 1.5vw, 24px) 0;
+  margin-top: -100px;
+  margin-bottom: clamp(-60px, -5vw, -40px);
+  position: relative;
+  z-index: 2;
+  align-items: center;
+}
+.page-f1 .f1-fia-video {
+  grid-column: 1 / -1;
+  width: 74%;
+  height: auto;
+  display: block;
+  margin-inline: auto;
+}
+
+/* Video tag label — <FIA>, <RADIO> etc. */
+.page-f1 .f1-vtag-row {
+  padding-block: clamp(32px, 4vw, 64px) clamp(24px, 3vw, 48px);
+}
+.page-f1 .f1-vtag {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-size: clamp(11px, 1vw, 14px);
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  color: rgba(242,243,244,0.35);
+}
+
 /* ─── Responsive ─── */
 @media (max-width: 900px) {
   .page-f1 .f1-head .title { grid-column: 2 / span 6; }
