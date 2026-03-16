@@ -3063,6 +3063,10 @@ body:has(.page-posters .lb:target) {
 }
 
 /* Badge PNG centré */
+.page-f1 .page-grid {
+  z-index: 0;
+}
+
 .page-f1 .f1-title-wrap {
   display: flex;
   justify-content: center;
@@ -3095,7 +3099,7 @@ body:has(.page-posters .lb:target) {
   grid-column: 1 / span 1;
   font-family: "Clash Display", system-ui;
   font-weight: 600;
-  font-size: clamp(18px, 1.8vw, 28px);
+  font-size: clamp(14px, 1.44vw, 22px);
   line-height: 1;
   letter-spacing: 0.01em;
   font-variant-numeric: tabular-nums;
@@ -3112,26 +3116,26 @@ body:has(.page-posters .lb:target) {
   margin: 0;
   font-family: "Epilogue", system-ui;
   font-weight: 500;
-  font-size: clamp(13px, 1.16vw, 20px);
+  font-size: clamp(11px, 0.93vw, 16px);
   line-height: 1.1;
 }
 
 .page-f1 .f1-head .lead {
   margin: 0;
-  font-size: clamp(13px, 1.16vw, 20px);
+  font-size: clamp(11px, 0.93vw, 16px);
   line-height: 1.2;
 }
 
 .page-f1 .f1-head .year {
   grid-column: 10 / span 1;
   justify-self: end;
-  font-size: clamp(13px, 1.16vw, 20px);
+  font-size: clamp(11px, 0.93vw, 16px);
   font-weight: 500;
   line-height: 1.2;
 }
 
 .page-f1 .f1-head .sector {
-  grid-column: 11 / span 2;
+  grid-column: 11 / span 1;
   justify-self: end;
   text-align: right;
   display: grid;
@@ -3142,13 +3146,13 @@ body:has(.page-posters .lb:target) {
   margin: 0;
   font-family: "Epilogue", system-ui;
   font-weight: 500;
-  font-size: clamp(13px, 1.16vw, 20px);
+  font-size: clamp(11px, 0.93vw, 16px);
   line-height: 1.1;
 }
 
 .page-f1 .f1-head .sector p {
   margin: 0;
-  font-size: clamp(13px, 1.16vw, 20px);
+  font-size: clamp(11px, 0.93vw, 16px);
   line-height: 1.2;
 }
 
@@ -3169,17 +3173,17 @@ body:has(.page-posters .lb:target) {
   margin: 0;
   font-family: "Epilogue", system-ui;
   font-weight: 400;
-  font-size: clamp(13px, 1.16vw, 20px);
+  font-size: clamp(11px, 0.93vw, 16px);
   line-height: 1.55;
 }
 
 .page-f1 .f1-body .desc .disciplines {
-  font-size: clamp(11px, 0.85vw, 13px);
+  font-size: clamp(9px, 0.68vw, 11px);
   line-height: 1.5;
 }
 
 .page-f1 .f1-body .main-img {
-  grid-column: 6 / span 7;
+  grid-column: 6 / span 6;
   margin: 0;
 }
 
@@ -3209,12 +3213,12 @@ body:has(.page-posters .lb:target) {
   margin: 0;
   font-family: "Epilogue", system-ui;
   font-weight: 400;
-  font-size: clamp(13px, 1.16vw, 20px);
+  font-size: clamp(11px, 0.93vw, 16px);
   line-height: 1.55;
 }
 
 .page-f1 .thinking-label {
-  grid-column: 11 / span 2;
+  grid-column: 11 / span 1;
   justify-self: end;
   align-self: start;
   text-align: right;
@@ -3224,7 +3228,7 @@ body:has(.page-posters .lb:target) {
   margin: 0;
   font-family: "Epilogue", system-ui;
   font-weight: 400;
-  font-size: clamp(12px, 0.9vw, 15px);
+  font-size: clamp(10px, 0.72vw, 12px);
   line-height: 1.1;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -3237,6 +3241,7 @@ body:has(.page-posters .lb:target) {
   align-items: start;
   /* indent to match col 2 start: (container + gap) / 12 */
   padding-left: calc((100% + clamp(12px, 1.6vw, 28px)) / 12);
+  padding-right: calc((100% + clamp(12px, 1.6vw, 28px)) / 12);
 }
 
 .page-f1 .thinking-card {
@@ -3253,11 +3258,7 @@ body:has(.page-posters .lb:target) {
 
 /* Barre verte avec * */
 .page-f1 .tcard-tag {
-  background: #41F373;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: clamp(6px, 0.7vw, 10px);
+  display: none;
 }
 
 .page-f1 .tcard-tag span {
@@ -3276,8 +3277,8 @@ body:has(.page-posters .lb:target) {
 }
 
 .page-f1 .thinking-card figcaption {
-  margin-top: clamp(8px, 1vw, 14px);
-  font-size: clamp(11px, 0.82vw, 13px);
+  margin-top: clamp(6px, 0.8vw, 11px);
+  font-size: clamp(9px, 0.66vw, 11px);
   line-height: 1.5;
 }
 
@@ -3294,7 +3295,7 @@ body:has(.page-posters .lb:target) {
   margin: 0;
   font-family: "Epilogue", system-ui;
   font-weight: 400;
-  font-size: clamp(12px, 0.9vw, 15px);
+  font-size: clamp(10px, 0.72vw, 12px);
   line-height: 1.1;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -3302,14 +3303,14 @@ body:has(.page-posters .lb:target) {
 }
 
 .page-f1 .meaning-text {
-  grid-column: 4 / span 9;
+  grid-column: 4 / span 8;
 }
 
 .page-f1 .meaning-text p {
   margin: 0;
   font-family: "Epilogue", system-ui;
   font-weight: 400;
-  font-size: clamp(13px, 1.16vw, 20px);
+  font-size: clamp(11px, 0.93vw, 16px);
   line-height: 1.55;
 }
 
@@ -3325,20 +3326,20 @@ body:has(.page-posters .lb:target) {
   margin: 0;
   font-family: "Epilogue", system-ui;
   font-weight: 400;
-  font-size: clamp(12px, 0.9vw, 15px);
+  font-size: clamp(10px, 0.72vw, 12px);
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
 
 .page-f1 .so-text {
-  grid-column: 4 / span 9;
+  grid-column: 4 / span 8;
 }
 
 .page-f1 .so-text p {
   margin: 0;
   font-family: "Epilogue", system-ui;
   font-weight: 600;
-  font-size: clamp(16px, 1.39vw, 24px);
+  font-size: clamp(13px, 1.11vw, 19px);
   line-height: 1.2;
 }
 
