@@ -3645,19 +3645,21 @@ body:has(.page-posters .lb:target) {
 }
 /* Spacer for Try out/Qualif row: aligns labels to same x as Alpine etc. */
 .page-f1 .f1-csys-align-spacer { flex: 0 0 50%; }
-/* Try out/Qualif: left-aligned, same column as Alpine/Redbull etc. */
+/* Try out/Qualif: right-aligned, flush against their vbar */
 .page-f1 .f1-csys-names--tryout {
   flex: 1;
+  text-align: right;
   padding-inline: clamp(12px, 1.6vw, 28px);
 }
-/* Teams: both left-aligned */
+/* Teams left: left-aligned */
 .page-f1 .f1-csys-names--tleft {
   flex: 1;
   padding-inline: clamp(12px, 1.6vw, 28px);
 }
+/* Teams right: right-aligned, flush against their vbar */
 .page-f1 .f1-csys-names--tright {
   flex: 1;
-  text-align: left;
+  text-align: right;
   padding-inline: clamp(12px, 1.6vw, 28px);
 }
 
