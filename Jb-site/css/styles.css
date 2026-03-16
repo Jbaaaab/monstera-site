@@ -4120,12 +4120,12 @@ body:has(.page-posters .lb:target) {
 .page-f1 .f1-lt-grid {
   align-items: start;
   row-gap: 0;
-  padding-bottom: clamp(32px, 4vw, 72px);
+  padding-bottom: clamp(16px, 2vw, 32px);
 }
 .page-f1 .f1-lt-col {
   display: flex;
   flex-direction: column;
-  gap: clamp(10px, 1.2vw, 20px);
+  gap: clamp(8px, 1vw, 16px);
 }
 .page-f1 .f1-lt-col:nth-child(1) { grid-column: 1 / span 4; }
 .page-f1 .f1-lt-col:nth-child(2) { grid-column: 5 / span 4; }
@@ -4135,18 +4135,22 @@ body:has(.page-posters .lb:target) {
 }
 .page-f1 .f1-lt-card img {
   display: block;
-  width: 100%;
+  width: 70%;
   height: auto;
+  margin-inline: auto;
 }
 
-/* Animated video row — inside f1-row, spans all 12 cols */
+/* LT video — rises up, bleeds slightly over next section */
 .page-f1 .f1-lt-video-wrap {
-  padding-block: clamp(40px, 5vw, 80px) clamp(60px, 7vw, 120px);
+  padding-block: clamp(12px, 1.5vw, 24px) 0;
+  margin-bottom: clamp(-60px, -5vw, -40px);
+  position: relative;
+  z-index: 2;
   align-items: center;
 }
 .page-f1 .f1-lt-video {
   grid-column: 1 / -1;
-  width: 80%;
+  width: 56%;
   height: auto;
   display: block;
   margin-inline: auto;
@@ -4156,7 +4160,7 @@ body:has(.page-posters .lb:target) {
 .page-f1 .f1-radio-grid {
   align-items: start;
   row-gap: 0;
-  padding-bottom: clamp(32px, 4vw, 72px);
+  padding-bottom: clamp(16px, 2vw, 32px);
 }
 .page-f1 .f1-radio-col {
   display: flex;
@@ -4170,16 +4174,22 @@ body:has(.page-posters .lb:target) {
 }
 .page-f1 .f1-radio-card img {
   display: block;
-  width: 100%;
+  width: 70%;
   height: auto;
+  margin-inline: auto;
 }
+
+/* Radio video — same behaviour */
 .page-f1 .f1-radio-video-wrap {
-  padding-block: clamp(40px, 5vw, 80px) clamp(60px, 7vw, 120px);
+  padding-block: clamp(12px, 1.5vw, 24px) 0;
+  margin-bottom: clamp(-60px, -5vw, -40px);
+  position: relative;
+  z-index: 2;
   align-items: center;
 }
 .page-f1 .f1-radio-video {
   grid-column: 1 / -1;
-  width: 80%;
+  width: 56%;
   height: auto;
   display: block;
   margin-inline: auto;
