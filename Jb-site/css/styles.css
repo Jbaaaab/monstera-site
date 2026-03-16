@@ -3386,7 +3386,10 @@ body:has(.page-posters .lb:target) {
 /* ── Logotype section header ── */
 .page-f1 .f1-dhead {
   padding: 24px 0 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  background-image: linear-gradient(to right, rgba(255,255,255,0.16) 75%, transparent 75%);
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: bottom;
   align-items: start;
 }
 
@@ -3502,7 +3505,7 @@ body:has(.page-posters .lb:target) {
 }
 
 /* Backgrounds */
-.page-f1 .f1-band--noir   { background: #111111; border-top: 1px solid rgba(255,255,255,0.16); }
+.page-f1 .f1-band--noir   { background-color: #111111; background-image: linear-gradient(to right, rgba(255,255,255,0.16) 75%, transparent 75%); background-size: 100% 1px; background-repeat: no-repeat; background-position: top; }
 .page-f1 .f1-band--gris   { background: #C7C7C5; color: #111111; }
 .page-f1 .f1-band--rouge  { background: linear-gradient(to right, #FE1A19 0%, #E41719 10%, #A50F18 33%, #F91A1A 66%, #FE3218 100%); }
 .page-f1 .f1-band--violet { background: linear-gradient(to right, #5347D5 0%, #20168A 33%, #4E42D9 66%, #6557FF 100%); }
@@ -3543,7 +3546,10 @@ body:has(.page-posters .lb:target) {
 /* WHY / BUUUTT rows */
 .page-f1 .f1-color-why {
   padding: clamp(20px, 2.5vw, 36px) 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  background-image: linear-gradient(to right, rgba(255,255,255,0.16) 75%, transparent 75%);
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: top;
   align-items: start;
 }
 
