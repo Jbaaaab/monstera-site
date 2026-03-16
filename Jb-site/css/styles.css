@@ -4086,20 +4086,23 @@ body:has(.page-posters .lb:target) {
   border-top: 1px solid rgba(255,255,255,0.12);
 }
 .page-f1 .f1-disp-subidx {
-  grid-column: 1 / span 1;   /* col 1, same as f1-didx */
-  font-family: "Epilogue", system-ui;
-  font-weight: 400;
-  font-size: clamp(11px, 0.83vw, 14px);
-  color: rgba(242,243,244,0.5);
+  grid-column: 1 / span 1;
+  justify-self: end;          /* colle visuellement au titre */
+  font-family: "Clash Display", system-ui;
+  font-weight: 400;           /* moins gras que f1-didx (600) */
+  font-size: clamp(14px, 1.44vw, 22px);
+  color: #F2F3F4;             /* blanc */
+  line-height: 1;
 }
 .page-f1 .f1-disp-subtitle {
-  grid-column: 2 / span 7;   /* same start as f1-dtitle */
+  grid-column: 2 / span 7;
 }
 .page-f1 .f1-disp-subtitle h3 {
   margin: 0;
-  font-family: "Clash Display", system-ui;
+  font-family: "Epilogue", system-ui;
   font-weight: 500;
-  font-size: clamp(20px, 2.08vw, 36px);
+  font-size: clamp(11px, 0.93vw, 16px);
+  line-height: 1.2;
   color: #F2F3F4;
 }
 .page-f1 .f1-disp-sublabel {
@@ -4247,7 +4250,7 @@ body:has(.page-posters .lb:target) {
 .page-f1 .f1-fia-col:nth-child(3) .f1-fia-card img { margin-left: auto;  margin-right: 0; }
 .page-f1 .f1-fia-card img {
   display: block;
-  width: 91%;
+  width: 105%;   /* 91% × 1.15 */
   height: auto;
 }
 
