@@ -4149,8 +4149,6 @@ body:has(.page-posters .lb:target) {
   width: 100%;
   height: auto;
   display: block;
-  /* remove black matte: pure black (#000) becomes transparent on dark bg */
-  mix-blend-mode: screen;
   animation: lt-fade 5s ease-in-out infinite;
 }
 
