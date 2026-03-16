@@ -3620,6 +3620,7 @@ body:has(.page-posters .lb:target) {
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
+  margin-inline: clamp(5px, 0.578vw, 10px); /* 10px gap from adjacent swatch */
 }
 .page-f1 .f1-csys-vbar-item {
   height: var(--csys-sh);
@@ -3636,28 +3637,48 @@ body:has(.page-posters .lb:target) {
   font-size: clamp(11px, 0.93vw, 16px);
   color: #F2F3F4;
 }
-/* Principal/Corps & Yellow Flag: names fill right, padding matches grid */
+/* Principal/Corps & Yellow Flag: names fill right */
 .page-f1 .f1-csys-names--main,
 .page-f1 .f1-csys-names--flag {
   flex: 1;
   padding-inline: clamp(12px, 1.6vw, 28px);
 }
-/* Try out/Qualif: names fill left, re-indent to content edge */
+/* Spacer for Try out/Qualif row: aligns labels to same x as Alpine etc. */
+.page-f1 .f1-csys-align-spacer { flex: 0 0 50%; }
+/* Try out/Qualif: left-aligned, same column as Alpine/Redbull etc. */
 .page-f1 .f1-csys-names--tryout {
   flex: 1;
-  padding-left: var(--csys-P);
-  padding-right: clamp(12px, 1.6vw, 28px);
+  padding-inline: clamp(12px, 1.6vw, 28px);
 }
-/* Teams: both fill equally */
+/* Teams: both left-aligned */
 .page-f1 .f1-csys-names--tleft {
   flex: 1;
   padding-inline: clamp(12px, 1.6vw, 28px);
 }
 .page-f1 .f1-csys-names--tright {
   flex: 1;
-  text-align: right;
+  text-align: left;
   padding-inline: clamp(12px, 1.6vw, 28px);
 }
+
+/* ── Flat colors for accent bars (override gradients) ── */
+.page-f1 .f1-csys-vbar-item.f1-cs--principal  { background: #FF1626; }
+.page-f1 .f1-csys-vbar-item.f1-cs--corps      { background: #FFFFFF; }
+.page-f1 .f1-csys-vbar-item.f1-cs--tryout     { background: #4AB5D4; }
+.page-f1 .f1-csys-vbar-item.f1-cs--qualif     { background: #6253FD; }
+.page-f1 .f1-csys-vbar-item.f1-cs--yellowflag { background: #FFEB57; }
+.page-f1 .f1-csys-vbar-item.f1-cs--safetycar  { background: #757575; }
+.page-f1 .f1-csys-vbar-item.f1-cs--alpine      { background: #00A4EE; }
+.page-f1 .f1-csys-vbar-item.f1-cs--redbull     { background: #1673CC; }
+.page-f1 .f1-csys-vbar-item.f1-cs--racingbulls { background: #5794FF; }
+.page-f1 .f1-csys-vbar-item.f1-cs--williams    { background: #006AE2; }
+.page-f1 .f1-csys-vbar-item.f1-cs--mercedes    { background: #00F8D1; }
+.page-f1 .f1-csys-vbar-item.f1-cs--astonmartin { background: #009C6E; }
+.page-f1 .f1-csys-vbar-item.f1-cs--haas        { background: #DFE1E2; }
+.page-f1 .f1-csys-vbar-item.f1-cs--cadillac    { background: #AAAAAD; }
+.page-f1 .f1-csys-vbar-item.f1-cs--mclaren     { background: #FF7700; }
+.page-f1 .f1-csys-vbar-item.f1-cs--ferrari     { background: #FE001E; }
+.page-f1 .f1-csys-vbar-item.f1-cs--audi        { background: #FF0000; }
 
 /* ── Gradient colors ── */
 .page-f1 .f1-cs--principal  { background: linear-gradient(to right, #FF470E 0%, #FF1626 33%, #990D17 66%, #FF1A19 100%); }
