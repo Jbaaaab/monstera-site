@@ -3120,15 +3120,14 @@ body:has(.page-posters .lb:target) {
   margin: 0;
   font-size: clamp(13px, 0.95vw, 16px);
   line-height: 1.2;
-  opacity: 0.8;
 }
 
 .page-f1 .f1-head .year {
   grid-column: 10 / span 1;
   justify-self: end;
   font-size: clamp(12px, 0.95vw, 16px);
+  font-weight: 500;
   line-height: 1.2;
-  opacity: 0.9;
 }
 
 .page-f1 .f1-head .sector {
@@ -3141,7 +3140,7 @@ body:has(.page-posters .lb:target) {
 
 .page-f1 .f1-head .sector h4 {
   margin: 0;
-  font-weight: 600;
+  font-weight: 500;
   font-size: clamp(12px, 0.9vw, 15px);
   line-height: 1.1;
 }
@@ -3150,7 +3149,6 @@ body:has(.page-posters .lb:target) {
   margin: 0;
   font-size: clamp(12px, 0.95vw, 16px);
   line-height: 1.2;
-  opacity: 0.9;
 }
 
 .page-f1 .f1-body {
@@ -3168,13 +3166,14 @@ body:has(.page-posters .lb:target) {
 
 .page-f1 .f1-body .desc p {
   margin: 0;
-  font-size: clamp(12px, 0.95vw, 16px);
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: 20px;
   line-height: 1.55;
 }
 
 .page-f1 .f1-body .desc .disciplines {
   font-size: clamp(11px, 0.85vw, 13px);
-  opacity: 0.55;
   line-height: 1.5;
 }
 
@@ -3207,7 +3206,9 @@ body:has(.page-posters .lb:target) {
 
 .page-f1 .thinking-text p {
   margin: 0;
-  font-size: clamp(12px, 0.95vw, 16px);
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: 20px;
   line-height: 1.55;
 }
 
@@ -3220,7 +3221,8 @@ body:has(.page-posters .lb:target) {
 
 .page-f1 .thinking-label h4 {
   margin: 0;
-  font-weight: 600;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
   font-size: clamp(12px, 0.9vw, 15px);
   line-height: 1.1;
   text-transform: uppercase;
@@ -3262,14 +3264,14 @@ body:has(.page-posters .lb:target) {
 .page-f1 .thinking-card img {
   display: block;
   width: 100%;
-  height: auto;
+  height: clamp(300px, 36vw, 540px);
+  object-fit: cover;
 }
 
 .page-f1 .thinking-card figcaption {
   margin-top: clamp(8px, 1vw, 14px);
   font-size: clamp(11px, 0.82vw, 13px);
   line-height: 1.5;
-  opacity: 0.65;
 }
 
 /* ─── Section 03 — What it means ─── */
@@ -3283,7 +3285,8 @@ body:has(.page-posters .lb:target) {
 
 .page-f1 .meaning-label h4 {
   margin: 0;
-  font-weight: 600;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
   font-size: clamp(12px, 0.9vw, 15px);
   line-height: 1.1;
   text-transform: uppercase;
@@ -3292,17 +3295,19 @@ body:has(.page-posters .lb:target) {
 }
 
 .page-f1 .meaning-text {
-  grid-column: 4 / span 7;
+  grid-column: 4 / span 9;
 }
 
 .page-f1 .meaning-text p {
   margin: 0;
-  font-size: clamp(12px, 0.95vw, 16px);
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: 20px;
   line-height: 1.55;
 }
 
 .page-f1 .f1-so-row {
-  align-items: baseline;
+  align-items: start;
 }
 
 .page-f1 .so-label {
@@ -3311,21 +3316,22 @@ body:has(.page-posters .lb:target) {
 
 .page-f1 .so-label h4 {
   margin: 0;
-  font-weight: 600;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
   font-size: clamp(12px, 0.9vw, 15px);
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
 
 .page-f1 .so-text {
-  grid-column: 4 / span 7;
+  grid-column: 4 / span 9;
 }
 
 .page-f1 .so-text p {
   margin: 0;
-  font-family: "Clash Display", system-ui;
+  font-family: "Epilogue", system-ui;
   font-weight: 600;
-  font-size: clamp(16px, 1.4vw, 24px);
+  font-size: 24px;
   line-height: 1.2;
 }
 
