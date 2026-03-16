@@ -49,18 +49,78 @@
    ========================= */
 @font-face {
   font-family: "Clash Display";
+  src: url("../assets/font/ClashDisplay_Complete/Fonts/WEB/fonts/ClashDisplay-Light.woff2") format("woff2"),
+       url("../assets/font/ClashDisplay_Complete/Fonts/WEB/fonts/ClashDisplay-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Clash Display";
   src: url("../assets/font/ClashDisplay_Complete/Fonts/WEB/fonts/ClashDisplay-Regular.woff2") format("woff2"),
        url("../assets/font/ClashDisplay_Complete/Fonts/WEB/fonts/ClashDisplay-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
-
+@font-face {
+  font-family: "Clash Display";
+  src: url("../assets/font/ClashDisplay_Complete/Fonts/WEB/fonts/ClashDisplay-Medium.woff2") format("woff2"),
+       url("../assets/font/ClashDisplay_Complete/Fonts/WEB/fonts/ClashDisplay-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
 @font-face {
   font-family: "Clash Display";
   src: url("../assets/font/ClashDisplay_Complete/Fonts/WEB/fonts/ClashDisplay-Semibold.woff2") format("woff2"),
        url("../assets/font/ClashDisplay_Complete/Fonts/WEB/fonts/ClashDisplay-Semibold.woff") format("woff");
   font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Clash Display";
+  src: url("../assets/font/ClashDisplay_Complete/Fonts/WEB/fonts/ClashDisplay-Bold.woff2") format("woff2"),
+       url("../assets/font/ClashDisplay_Complete/Fonts/WEB/fonts/ClashDisplay-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ── Neue Haas Grotesk Display Pro ── */
+@font-face {
+  font-family: "Neue Haas Grotesk Display Pro";
+  src: url("../assets/font/neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayThin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Neue Haas Grotesk Display Pro";
+  src: url("../assets/font/neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayLight.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Neue Haas Grotesk Display Pro";
+  src: url("../assets/font/neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayRoman.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Neue Haas Grotesk Display Pro";
+  src: url("../assets/font/neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayMediu.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Neue Haas Grotesk Display Pro";
+  src: url("../assets/font/neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayBold.ttf") format("truetype");
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
@@ -3645,19 +3705,21 @@ body:has(.page-posters .lb:target) {
 }
 /* Spacer for Try out/Qualif row: aligns labels to same x as Alpine etc. */
 .page-f1 .f1-csys-align-spacer { flex: 0 0 50%; }
-/* Try out/Qualif: left-aligned, same column as Alpine/Redbull etc. */
+/* Try out/Qualif: right-aligned, flush against their vbar */
 .page-f1 .f1-csys-names--tryout {
   flex: 1;
+  text-align: right;
   padding-inline: clamp(12px, 1.6vw, 28px);
 }
-/* Teams: both left-aligned */
+/* Teams left: left-aligned */
 .page-f1 .f1-csys-names--tleft {
   flex: 1;
   padding-inline: clamp(12px, 1.6vw, 28px);
 }
+/* Teams right: right-aligned, flush against their vbar */
 .page-f1 .f1-csys-names--tright {
   flex: 1;
-  text-align: left;
+  text-align: right;
   padding-inline: clamp(12px, 1.6vw, 28px);
 }
 
@@ -3883,6 +3945,106 @@ body:has(.page-posters .lb:target) {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* ══ TYPEFACE (03) ══ */
+
+.page-f1 .f1-tf-row {
+  align-items: start;
+  padding-block: clamp(40px, 5.8vw, 100px);
+  background-image: linear-gradient(to right, rgba(255,255,255,0.16) 75%, transparent 75%);
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+/* ── Large type name (left col) ── */
+.page-f1 .f1-tf-name {
+  grid-column: 2 / span 3;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  gap: 0;
+}
+
+/* Clash Display name */
+.page-f1 .f1-tf-name--clash {
+  font-family: "Clash Display", system-ui;
+}
+.page-f1 .f1-tf-disp-light {
+  font-weight: 300;
+  font-size: clamp(44px, 5.6vw, 88px);
+}
+.page-f1 .f1-tf-disp-bold {
+  font-weight: 700;
+  font-size: clamp(44px, 5.6vw, 88px);
+}
+
+/* Neue Haas name */
+.page-f1 .f1-tf-name--nhg {
+  font-family: "Neue Haas Grotesk Display Pro", system-ui;
+}
+.page-f1 .f1-tf-nhg-light {
+  font-weight: 300;
+  font-size: clamp(32px, 4.2vw, 68px);
+}
+.page-f1 .f1-tf-nhg-medium {
+  font-weight: 500;
+  font-size: clamp(32px, 4.2vw, 68px);
+}
+.page-f1 .f1-tf-nhg-bold {
+  font-weight: 700;
+  font-size: clamp(32px, 4.2vw, 68px);
+}
+
+/* ── Weights list (middle col) ── */
+.page-f1 .f1-tf-weights {
+  grid-column: 5 / span 3;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2px, 0.4vw, 6px);
+  color: #F2F3F4;
+}
+.page-f1 .f1-tf-weights--clash span {
+  font-family: "Clash Display", system-ui;
+  font-size: clamp(18px, 2vw, 32px);
+  line-height: 1.15;
+}
+.page-f1 .f1-tf-weights--nhg span {
+  font-family: "Neue Haas Grotesk Display Pro", system-ui;
+  font-size: clamp(18px, 2vw, 32px);
+  line-height: 1.15;
+}
+
+/* ── Right description col ── */
+.page-f1 .f1-tf-desc {
+  grid-column: 9 / span 4;
+}
+
+/* Charles Leclerc block */
+.page-f1 .f1-tf-desc--leclerc h3 {
+  margin: 0 0 clamp(4px, 0.4vw, 8px);
+  font-family: "Clash Display", system-ui;
+  font-weight: 600;
+  font-size: clamp(16px, 1.39vw, 24px);
+  line-height: 1.2;
+  color: #F2F3F4;
+}
+.page-f1 .f1-tf-desc--leclerc h4 {
+  margin: 0 0 clamp(10px, 1.2vw, 20px);
+  font-family: "Clash Display", system-ui;
+  font-weight: 400;
+  font-size: clamp(14px, 1.16vw, 20px);
+  line-height: 1.2;
+  color: #F2F3F4;
+}
+.page-f1 .f1-tf-desc--leclerc p {
+  margin: 0;
+  font-family: "Neue Haas Grotesk Display Pro", system-ui;
+  font-weight: 300;
+  font-size: clamp(12px, 1.04vw, 18px);
+  line-height: 1.55;
+  color: #F2F3F4;
 }
 
 /* ─── Responsive ─── */
