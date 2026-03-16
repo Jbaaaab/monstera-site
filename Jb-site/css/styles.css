@@ -3482,6 +3482,97 @@ body:has(.page-posters .lb:target) {
   color: #F2F3F4;
 }
 
+/* ══ COLOR PALETTE ══ */
+
+/* Bandes full-width — cassent hors du padding-inline de la section */
+.page-f1 .f1-color-bands {
+  margin-inline: calc(-1 * clamp(24px, 3vw, 56px));
+}
+
+.page-f1 .f1-band {
+  padding: clamp(20px, 2.5vw, 40px) clamp(24px, 3vw, 56px);
+}
+
+.page-f1 .f1-band-row {
+  align-items: center;
+}
+
+/* Backgrounds */
+.page-f1 .f1-band--noir   { background: #111111; border-top: 1px solid rgba(255,255,255,0.16); }
+.page-f1 .f1-band--gris   { background: #C7C7C5; color: #111111; }
+.page-f1 .f1-band--rouge  { background: linear-gradient(to right, #FE1A19 0%, #E41719 10%, #A50F18 33%, #F91A1A 66%, #FE3218 100%); }
+.page-f1 .f1-band--violet { background: linear-gradient(to right, #5347D5 0%, #20168A 33%, #4E42D9 66%, #6557FF 100%); }
+.page-f1 .f1-band--bleu   { background: linear-gradient(to right, #1D6E9B 0%, #113E66 33%, #51AFCD 66%, #4EBBDB 100%); }
+
+/* Texte dans les bandes */
+.page-f1 .f1-bname {
+  grid-column: 1 / span 3;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(11px, 0.93vw, 16px);
+}
+
+.page-f1 .f1-bidx {
+  grid-column: 9 / span 1;
+  justify-self: end;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(11px, 0.93vw, 16px);
+}
+
+.page-f1 .f1-bhex-label {
+  grid-column: 10 / span 1;
+  justify-self: end;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(10px, 0.72vw, 12px);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.6;
+}
+
+.page-f1 .f1-bhex-val {
+  grid-column: 11 / span 1;
+  justify-self: end;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(11px, 0.93vw, 16px);
+}
+
+/* WHY / BUUUTT rows */
+.page-f1 .f1-color-why {
+  padding: clamp(20px, 2.5vw, 36px) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  align-items: start;
+}
+
+.page-f1 .f1-why-label {
+  grid-column: 2 / span 2;
+}
+
+.page-f1 .f1-why-label p {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(10px, 0.72vw, 12px);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #F2F3F4;
+}
+
+.page-f1 .f1-why-text {
+  grid-column: 4 / span 8;
+}
+
+.page-f1 .f1-why-text p {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(11px, 0.93vw, 16px);
+  line-height: 1.55;
+  color: #F2F3F4;
+}
+
 .page-f1 .f1-dsection-head {
   margin-bottom: clamp(20px, 2.5vw, 36px);
 }
