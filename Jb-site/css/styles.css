@@ -3352,6 +3352,7 @@ body:has(.page-posters .lb:target) {
   color: #F2F3F4;
   border-radius: 20px 20px 0 0;
   overflow: hidden;
+  margin-inline: calc(-1 * clamp(24px, 3vw, 56px));
 }
 
 /* Lignes rouges à l'intérieur du dark */
@@ -3379,12 +3380,13 @@ body:has(.page-posters .lb:target) {
 .page-f1 .f1-dsection {
   padding-top: clamp(24px, 3.5vw, 56px);
   padding-bottom: clamp(32px, 5vw, 72px);
+  padding-inline: clamp(24px, 3vw, 56px);
 }
 
 /* ── Logotype section header ── */
 .page-f1 .f1-dhead {
   padding: 24px 0 20px;
-  border-bottom: 1px solid rgba(254, 50, 24, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
   align-items: start;
 }
 
@@ -3440,7 +3442,6 @@ body:has(.page-posters .lb:target) {
 
 /* ── Logo rows ── */
 .page-f1 .f1-logo-row {
-  border-top: 1px solid rgba(254, 50, 24, 0.15);
   padding: clamp(40px, 5vw, 80px) 0;
   align-items: center;
 }
