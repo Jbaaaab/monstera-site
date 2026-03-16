@@ -4139,15 +4139,19 @@ body:has(.page-posters .lb:target) {
 
 /* Animated video row */
 .page-f1 .f1-lt-video-wrap {
-  padding-block: clamp(40px, 5vw, 80px);
+  padding-block: clamp(40px, 5vw, 80px) clamp(60px, 7vw, 120px);
+  /* bleed past the section's padding-inline to go full width */
+  margin-inline: calc(-1 * clamp(24px, 3vw, 56px));
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .page-f1 .f1-lt-video {
-  width: clamp(300px, 40vw, 640px);
+  width: 100%;
   height: auto;
   display: block;
+  /* removes the black matte from broadcast-encoded webm on dark bg */
+  mix-blend-mode: screen;
   animation: lt-fade 5s ease-in-out infinite;
 }
 
