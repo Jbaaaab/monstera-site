@@ -3332,8 +3332,7 @@ body:has(.page-posters .lb:target) {
 .page-f1 .thinking-card img {
   display: block;
   width: 100%;
-  height: clamp(300px, 36vw, 540px);
-  object-fit: cover;
+  height: auto;
 }
 
 .page-f1 .thinking-card figcaption {
@@ -3691,11 +3690,16 @@ body:has(.page-posters .lb:target) {
 .page-f1 .f1-csys-names {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-start;
   font-family: "Epilogue", system-ui;
   font-weight: 400;
   font-size: clamp(11px, 0.93vw, 16px);
   color: #F2F3F4;
+}
+.page-f1 .f1-csys-names span {
+  height: var(--csys-sh);
+  display: flex;
+  align-items: center;
 }
 /* Principal/Corps & Yellow Flag: names fill right */
 .page-f1 .f1-csys-names--main,
@@ -4019,6 +4023,32 @@ body:has(.page-posters .lb:target) {
 /* ── Right description col ── */
 .page-f1 .f1-tf-desc {
   grid-column: 9 / span 4;
+}
+
+/* Clash Display block */
+.page-f1 .f1-tf-desc--clash h3 {
+  margin: 0 0 clamp(4px, 0.4vw, 8px);
+  font-family: "Clash Display", system-ui;
+  font-weight: 600;
+  font-size: clamp(16px, 1.39vw, 24px);
+  line-height: 1.2;
+  color: #F2F3F4;
+}
+.page-f1 .f1-tf-desc--clash h4 {
+  margin: 0 0 clamp(10px, 1.2vw, 20px);
+  font-family: "Clash Display", system-ui;
+  font-weight: 400;
+  font-size: clamp(14px, 1.16vw, 20px);
+  line-height: 1.2;
+  color: rgba(242,243,244,0.6);
+}
+.page-f1 .f1-tf-desc--clash p {
+  margin: 0;
+  font-family: "Neue Haas Grotesk Display Pro", system-ui;
+  font-weight: 300;
+  font-size: clamp(12px, 1.04vw, 18px);
+  line-height: 1.55;
+  color: rgba(242,243,244,0.7);
 }
 
 /* Charles Leclerc block */
