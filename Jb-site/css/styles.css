@@ -3347,18 +3347,138 @@ body:has(.page-posters .lb:target) {
    DARK SECTION
    ═══════════════════════════════ */
 .page-f1 .f1-dark {
+  position: relative;
   background: #111111;
   color: #F2F3F4;
   border-radius: 20px 20px 0 0;
   overflow: hidden;
 }
 
+/* Lignes rouges à l'intérieur du dark */
+.page-f1 .f1-dark::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background: repeating-linear-gradient(
+    to right,
+    rgba(254, 50, 24, 0.15) 0,
+    rgba(254, 50, 24, 0.15) var(--grid-thk),
+    transparent var(--grid-thk),
+    transparent calc(100vw / var(--grid-cols))
+  );
+}
+
+.page-f1 .f1-dark > * {
+  position: relative;
+  z-index: 2;
+}
+
 /* Section dans le dark */
 .page-f1 .f1-dsection {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: clamp(24px, 3.5vw, 56px);
   padding-bottom: clamp(32px, 5vw, 72px);
-  padding-inline: clamp(24px, 3vw, 56px);
+}
+
+/* ── Logotype section header ── */
+.page-f1 .f1-dhead {
+  padding: 24px 0 20px;
+  border-bottom: 1px solid rgba(254, 50, 24, 0.15);
+  align-items: start;
+}
+
+.page-f1 .f1-didx {
+  grid-column: 1 / span 1;
+  font-family: "Clash Display", system-ui;
+  font-weight: 600;
+  font-size: clamp(14px, 1.44vw, 22px);
+  color: #FE3218;
+  line-height: 1;
+}
+
+.page-f1 .f1-dtitle {
+  grid-column: 2 / span 6;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.page-f1 .f1-dtitle h2 {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 500;
+  font-size: clamp(11px, 0.93vw, 16px);
+  line-height: 1.2;
+  color: #F2F3F4;
+}
+
+.page-f1 .f1-dtitle p {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(11px, 0.93vw, 16px);
+  line-height: 1.4;
+  color: #F2F3F4;
+}
+
+.page-f1 .f1-dlabel {
+  grid-column: 11 / span 1;
+  justify-self: end;
+  text-align: right;
+}
+
+.page-f1 .f1-dlabel h4 {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(10px, 0.72vw, 12px);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #F2F3F4;
+}
+
+/* ── Logo rows ── */
+.page-f1 .f1-logo-row {
+  border-top: 1px solid rgba(254, 50, 24, 0.15);
+  padding: clamp(40px, 5vw, 80px) 0;
+  align-items: center;
+}
+
+.page-f1 .f1-limg {
+  grid-column: 2 / span 2;
+  margin: 0;
+}
+
+.page-f1 .f1-limg img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.page-f1 .f1-lname {
+  grid-column: 4 / span 2;
+}
+
+.page-f1 .f1-lname p {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 500;
+  font-size: clamp(11px, 0.93vw, 16px);
+  color: #F2F3F4;
+}
+
+.page-f1 .f1-ldesc {
+  grid-column: 7 / span 5;
+}
+
+.page-f1 .f1-ldesc p {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(11px, 0.93vw, 16px);
+  line-height: 1.55;
+  color: #F2F3F4;
 }
 
 .page-f1 .f1-dsection-head {
