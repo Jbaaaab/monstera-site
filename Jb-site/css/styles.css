@@ -3490,10 +3490,14 @@ body:has(.page-posters .lb:target) {
 }
 
 .page-f1 .f1-band {
-  padding: clamp(20px, 2.5vw, 40px) clamp(24px, 3vw, 56px);
+  min-height: clamp(52px, 5vw, 80px);
+  padding: 0 clamp(24px, 3vw, 56px);
+  display: flex;
+  align-items: center;
 }
 
 .page-f1 .f1-band-row {
+  width: 100%;
   align-items: center;
 }
 
@@ -3513,16 +3517,14 @@ body:has(.page-posters .lb:target) {
 }
 
 .page-f1 .f1-bidx {
-  grid-column: 9 / span 1;
-  justify-self: end;
+  grid-column: 5 / span 1;
   font-family: "Epilogue", system-ui;
   font-weight: 400;
   font-size: clamp(11px, 0.93vw, 16px);
 }
 
 .page-f1 .f1-bhex-label {
-  grid-column: 10 / span 1;
-  justify-self: end;
+  grid-column: 6 / span 1;
   font-family: "Epilogue", system-ui;
   font-weight: 400;
   font-size: clamp(10px, 0.72vw, 12px);
@@ -3532,8 +3534,7 @@ body:has(.page-posters .lb:target) {
 }
 
 .page-f1 .f1-bhex-val {
-  grid-column: 11 / span 1;
-  justify-self: end;
+  grid-column: 7 / span 2;
   font-family: "Epilogue", system-ui;
   font-weight: 400;
   font-size: clamp(11px, 0.93vw, 16px);
