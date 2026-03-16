@@ -4145,19 +4145,11 @@ body:has(.page-posters .lb:target) {
   align-items: center;
 }
 .page-f1 .f1-lt-video {
-  grid-column: 1 / -1;   /* span all 12 cols inside f1-row */
-  width: 100%;
+  grid-column: 1 / -1;
+  width: 80%;
   height: auto;
   display: block;
-  animation: lt-fade 5s ease-in-out infinite;
-}
-
-@keyframes lt-fade {
-  0%   { opacity: 0; }
-  15%  { opacity: 1; }
-  75%  { opacity: 1; }
-  90%  { opacity: 0; }
-  100% { opacity: 0; }
+  margin-inline: auto;
 }
 
 /* ─── Responsive ─── */
