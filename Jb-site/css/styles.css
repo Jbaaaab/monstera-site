@@ -4280,6 +4280,16 @@ body:has(.page-posters .lb:target) {
   margin-top: -17.8vw; /* center (−12.8vw) + big down shift */
 }
 
+/* Safari-only red outline on cropped video wraps */
+@supports (hanging-punctuation: first) {
+  .page-f1 .f1-lt-video-wrap,
+  .page-f1 .f1-radio-video-wrap,
+  .page-f1 .f1-fia-video-wrap {
+    outline: 1.5px solid red;
+    outline-offset: 0px;
+  }
+}
+
 /* Video tag label — <FIA>, <RADIO> etc. */
 .page-f1 .f1-vtag-row {
   padding-block: clamp(32px, 4vw, 64px) clamp(24px, 3vw, 48px);
