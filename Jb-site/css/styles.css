@@ -4162,7 +4162,7 @@ body:has(.page-posters .lb:target) {
   height: auto;
   display: block;
   margin-inline: auto;
-  clip-path: inset(32% 0 26% 0); /* show ~42% centered, slight down */
+  clip-path: inset(calc(32% + 40px) 0 calc(26% - 40px) 0); /* +40px down */
 }
 
 /* ── 002 Radio comm ── */
@@ -4205,7 +4205,7 @@ body:has(.page-posters .lb:target) {
   height: auto;
   display: block;
   margin-inline: auto;
-  clip-path: inset(29% 0 29% 0); /* show ~42% centered */
+  clip-path: inset(calc(29% + 10px) 0 calc(29% - 10px) 0); /* +10px down */
 }
 
 /* ── 003 Pit Time — 4-col, fills col 1-12 ── */
@@ -4271,7 +4271,7 @@ body:has(.page-posters .lb:target) {
   height: auto;
   display: block;
   margin-inline: auto;
-  clip-path: inset(35% 0 23% 0); /* show ~42%, shifted down */
+  clip-path: inset(calc(35% + 50px) 0 calc(23% - 50px) 0); /* +50px down */
 }
 
 /* Safari-only red outline on cropped videos (outline is clipped by clip-path) */
