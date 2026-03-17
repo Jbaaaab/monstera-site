@@ -4335,7 +4335,7 @@ body:has(.page-posters .lb:target) {
   align-items: start;
   row-gap: 0;
   padding-bottom: clamp(16px, 2vw, 32px);
-  grid-template-columns: 2fr 8fr 2fr 7fr 5fr;
+  grid-template-columns: 2fr 8fr 2fr 7.7fr 4.3fr;
 }
 .page-f1 .f1-rf-left {
   grid-column: 2;
