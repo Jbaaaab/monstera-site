@@ -4333,7 +4333,7 @@ body:has(.page-posters .lb:target) {
   padding-bottom: clamp(16px, 2vw, 32px);
 }
 .page-f1 .f1-rf-left {
-  grid-column: 2 / span 6;
+  grid-column: 2 / span 4;
   display: flex;
   flex-direction: column;
   gap: clamp(8px, 1vw, 14px);
