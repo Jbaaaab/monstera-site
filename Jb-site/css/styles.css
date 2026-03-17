@@ -4347,7 +4347,7 @@ body:has(.page-posters .lb:target) {
 .page-f1 .f1-rf-card { margin: 0; }
 /* Hauteur fixe uniforme pour toutes les cartes-barres de la colonne gauche */
 .page-f1 .f1-rf-left .f1-rf-card:not(.f1-rf-card--cpt) {
-  height: 51px;
+  height: 77px;
 }
 .page-f1 .f1-rf-left .f1-rf-card:not(.f1-rf-card--cpt) img {
   display: block;
