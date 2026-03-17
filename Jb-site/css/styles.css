@@ -4179,7 +4179,7 @@ body:has(.page-posters .lb:target) {
   width: 100%;
   height: auto;
   display: block;
-  transform: translateY(15.54%); /* -8/100 masque */
+  transform: translateY(16.317%); /* +1/20 masque */
 }
 
 /* ── 002 Radio comm ── */
