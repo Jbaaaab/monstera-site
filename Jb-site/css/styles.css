@@ -4156,13 +4156,20 @@ body:has(.page-posters .lb:target) {
   z-index: 2;
   align-items: center;
 }
-.page-f1 .f1-lt-video {
+/* crop wrapper — is the grid cell */
+.page-f1 .f1-lt-crop {
   grid-column: 1 / -1;
-  width: 74%;   /* 62% × 1.2 */
+  width: 74%;
+  height: 17.5vw;   /* 42% of ~41.6vw natural video height */
+  overflow: hidden;
+  margin-inline: auto;
+  border: 1px solid #FE0220;
+}
+.page-f1 .f1-lt-video {
+  width: 100%;
   height: auto;
   display: block;
-  margin-inline: auto;
-  clip-path: inset(calc(32% + 40px) 0 calc(26% - 40px) 0); /* +40px down */
+  margin-top: calc(-13.3vw - 40px); /* top inset 32% + 40px down */
 }
 
 /* ── 002 Radio comm ── */
@@ -4199,13 +4206,20 @@ body:has(.page-posters .lb:target) {
   z-index: 2;
   align-items: center;
 }
-.page-f1 .f1-radio-video {
+/* crop wrapper */
+.page-f1 .f1-radio-crop {
   grid-column: 1 / -1;
-  width: 74%;   /* 62% × 1.2 */
+  width: 74%;
+  height: 17.5vw;
+  overflow: hidden;
+  margin-inline: auto;
+  border: 1px solid #FE0220;
+}
+.page-f1 .f1-radio-video {
+  width: 100%;
   height: auto;
   display: block;
-  margin-inline: auto;
-  clip-path: inset(calc(29% + 10px) 0 calc(29% - 10px) 0); /* +10px down */
+  margin-top: calc(-12.1vw - 10px); /* top inset 29% + 10px down */
 }
 
 /* ── 003 Pit Time — 4-col, fills col 1-12 ── */
@@ -4265,23 +4279,22 @@ body:has(.page-posters .lb:target) {
   z-index: 2;
   align-items: center;
 }
-.page-f1 .f1-fia-video {
+/* crop wrapper */
+.page-f1 .f1-fia-crop {
   grid-column: 1 / -1;
   width: 74%;
+  height: 17.5vw;
+  overflow: hidden;
+  margin-inline: auto;
+  border: 1px solid #FE0220;
+}
+.page-f1 .f1-fia-video {
+  width: 100%;
   height: auto;
   display: block;
-  margin-inline: auto;
-  clip-path: inset(calc(35% + 50px) 0 calc(23% - 50px) 0); /* +50px down */
+  margin-top: calc(-14.6vw - 50px); /* top inset 35% + 50px down */
 }
 
-/* Safari-only red outline on cropped videos (outline is clipped by clip-path) */
-@supports (hanging-punctuation: first) {
-  .page-f1 .f1-lt-video,
-  .page-f1 .f1-radio-video,
-  .page-f1 .f1-fia-video {
-    outline: 1.5px solid red;
-  }
-}
 
 /* Video tag label — <FIA>, <RADIO> etc. */
 .page-f1 .f1-vtag-row {
