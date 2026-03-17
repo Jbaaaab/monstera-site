@@ -4154,7 +4154,9 @@ body:has(.page-posters .lb:target) {
   margin-bottom: clamp(-60px, -5vw, -40px);
   position: relative;
   z-index: 2;
-  align-items: center;
+  align-items: start;
+  overflow: hidden;
+  height: 16vw;
 }
 .page-f1 .f1-lt-video {
   grid-column: 1 / -1;
@@ -4162,6 +4164,7 @@ body:has(.page-posters .lb:target) {
   height: auto;
   display: block;
   margin-inline: auto;
+  margin-top: -14.8vw; /* center (−12.8vw) + slight down shift */
 }
 
 /* ── 002 Radio comm ── */
@@ -4196,7 +4199,9 @@ body:has(.page-posters .lb:target) {
   margin-bottom: clamp(-60px, -5vw, -40px);
   position: relative;
   z-index: 2;
-  align-items: center;
+  align-items: start;
+  overflow: hidden;
+  height: 16vw;
 }
 .page-f1 .f1-radio-video {
   grid-column: 1 / -1;
@@ -4204,6 +4209,7 @@ body:has(.page-posters .lb:target) {
   height: auto;
   display: block;
   margin-inline: auto;
+  margin-top: -12.8vw; /* centered */
 }
 
 /* ── 003 Pit Time — 4-col, fills col 1-12 ── */
@@ -4261,7 +4267,9 @@ body:has(.page-posters .lb:target) {
   margin-bottom: clamp(-60px, -5vw, -40px);
   position: relative;
   z-index: 2;
-  align-items: center;
+  align-items: start;
+  overflow: hidden;
+  height: 16vw;
 }
 .page-f1 .f1-fia-video {
   grid-column: 1 / -1;
@@ -4269,6 +4277,7 @@ body:has(.page-posters .lb:target) {
   height: auto;
   display: block;
   margin-inline: auto;
+  margin-top: -17.8vw; /* center (−12.8vw) + big down shift */
 }
 
 /* Video tag label — <FIA>, <RADIO> etc. */
