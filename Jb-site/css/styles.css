@@ -4154,9 +4154,7 @@ body:has(.page-posters .lb:target) {
   margin-bottom: clamp(-60px, -5vw, -40px);
   position: relative;
   z-index: 2;
-  align-items: start;
-  overflow: hidden;
-  height: 16vw;
+  align-items: center;
 }
 .page-f1 .f1-lt-video {
   grid-column: 1 / -1;
@@ -4164,7 +4162,7 @@ body:has(.page-posters .lb:target) {
   height: auto;
   display: block;
   margin-inline: auto;
-  margin-top: -14.8vw; /* center (−12.8vw) + slight down shift */
+  clip-path: inset(32% 0 26% 0); /* show ~42% centered, slight down */
 }
 
 /* ── 002 Radio comm ── */
@@ -4199,9 +4197,7 @@ body:has(.page-posters .lb:target) {
   margin-bottom: clamp(-60px, -5vw, -40px);
   position: relative;
   z-index: 2;
-  align-items: start;
-  overflow: hidden;
-  height: 16vw;
+  align-items: center;
 }
 .page-f1 .f1-radio-video {
   grid-column: 1 / -1;
@@ -4209,7 +4205,7 @@ body:has(.page-posters .lb:target) {
   height: auto;
   display: block;
   margin-inline: auto;
-  margin-top: -12.8vw; /* centered */
+  clip-path: inset(29% 0 29% 0); /* show ~42% centered */
 }
 
 /* ── 003 Pit Time — 4-col, fills col 1-12 ── */
@@ -4267,9 +4263,7 @@ body:has(.page-posters .lb:target) {
   margin-bottom: clamp(-60px, -5vw, -40px);
   position: relative;
   z-index: 2;
-  align-items: start;
-  overflow: hidden;
-  height: 16vw;
+  align-items: center;
 }
 .page-f1 .f1-fia-video {
   grid-column: 1 / -1;
@@ -4277,16 +4271,15 @@ body:has(.page-posters .lb:target) {
   height: auto;
   display: block;
   margin-inline: auto;
-  margin-top: -17.8vw; /* center (−12.8vw) + big down shift */
+  clip-path: inset(35% 0 23% 0); /* show ~42%, shifted down */
 }
 
-/* Safari-only red outline on cropped video wraps */
+/* Safari-only red outline on cropped videos (outline is clipped by clip-path) */
 @supports (hanging-punctuation: first) {
-  .page-f1 .f1-lt-video-wrap,
-  .page-f1 .f1-radio-video-wrap,
-  .page-f1 .f1-fia-video-wrap {
+  .page-f1 .f1-lt-video,
+  .page-f1 .f1-radio-video,
+  .page-f1 .f1-fia-video {
     outline: 1.5px solid red;
-    outline-offset: 0px;
   }
 }
 
