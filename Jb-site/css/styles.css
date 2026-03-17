@@ -4179,7 +4179,7 @@ body:has(.page-posters .lb:target) {
   width: 100%;
   height: auto;
   display: block;
-  transform: translateY(16.317%); /* +1/20 masque */
+  transform: translateY(16.725%);
 }
 
 /* ── 002 Radio comm ── */
@@ -4239,7 +4239,7 @@ body:has(.page-posters .lb:target) {
   width: 100%;
   height: auto;
   display: block;
-  transform: translateY(5.25%); /* descend 1/8 masque = 42%/8 */
+  transform: translateY(5.25%);
 }
 
 /* ── 003 Pit Time — 4-col, fills col 1-12 ── */
@@ -4322,7 +4322,7 @@ body:has(.page-posters .lb:target) {
   width: 100%;
   height: auto;
   display: block;
-  transform: translateY(9.45%); /* +1/40 masque */
+  transform: translateY(9.45%);
 }
 
 
