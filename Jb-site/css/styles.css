@@ -4156,22 +4156,22 @@ body:has(.page-posters .lb:target) {
   z-index: 2;
   align-items: center;
 }
-/* crop wrapper — grid cell, natural size for layout */
+/* crop wrapper — clip-path on parent = fixed mask; video shifts inside */
 .page-f1 .f1-lt-crop {
   grid-column: 1 / -1;
   width: 74%;
   margin-inline: auto;
   position: relative;
+  clip-path: inset(32% 0 26% 0);
 }
-/* border around the visible mask area — matches clip-path values exactly */
 .page-f1 .f1-lt-crop::after {
   content: '';
   position: absolute;
-  top: calc(32% + 40px);
-  bottom: calc(26% - 40px);
+  top: 32%;
+  bottom: 26%;
   left: 0;
   right: 0;
-  border: 1px solid #FE0220;
+  border: 1px solid rgba(254, 2, 32, 0.5);
   pointer-events: none;
   z-index: 3;
 }
@@ -4179,7 +4179,7 @@ body:has(.page-posters .lb:target) {
   width: 100%;
   height: auto;
   display: block;
-  clip-path: inset(calc(32% + 40px) 0 calc(26% - 40px) 0);
+  transform: translateY(21%); /* descend 1/2 masque = 42%/2 */
 }
 
 /* ── 002 Radio comm ── */
@@ -4222,15 +4222,16 @@ body:has(.page-posters .lb:target) {
   width: 74%;
   margin-inline: auto;
   position: relative;
+  clip-path: inset(29% 0 29% 0);
 }
 .page-f1 .f1-radio-crop::after {
   content: '';
   position: absolute;
-  top: calc(29% + 10px);
-  bottom: calc(29% - 10px);
+  top: 29%;
+  bottom: 29%;
   left: 0;
   right: 0;
-  border: 1px solid #FE0220;
+  border: 1px solid rgba(254, 2, 32, 0.5);
   pointer-events: none;
   z-index: 3;
 }
@@ -4238,7 +4239,7 @@ body:has(.page-posters .lb:target) {
   width: 100%;
   height: auto;
   display: block;
-  clip-path: inset(calc(29% + 10px) 0 calc(29% - 10px) 0);
+  transform: translateY(5.25%); /* descend 1/8 masque = 42%/8 */
 }
 
 /* ── 003 Pit Time — 4-col, fills col 1-12 ── */
@@ -4304,15 +4305,16 @@ body:has(.page-posters .lb:target) {
   width: 74%;
   margin-inline: auto;
   position: relative;
+  clip-path: inset(35% 0 23% 0);
 }
 .page-f1 .f1-fia-crop::after {
   content: '';
   position: absolute;
-  top: calc(35% + 50px);
-  bottom: calc(23% - 50px);
+  top: 35%;
+  bottom: 23%;
   left: 0;
   right: 0;
-  border: 1px solid #FE0220;
+  border: 1px solid rgba(254, 2, 32, 0.5);
   pointer-events: none;
   z-index: 3;
 }
@@ -4320,7 +4322,7 @@ body:has(.page-posters .lb:target) {
   width: 100%;
   height: auto;
   display: block;
-  clip-path: inset(calc(35% + 50px) 0 calc(23% - 50px) 0);
+  transform: translateY(16.8%); /* descend 4/10 masque = 42%×0.4 */
 }
 
 
