@@ -4179,7 +4179,7 @@ body:has(.page-posters .lb:target) {
   width: 100%;
   height: auto;
   display: block;
-  transform: translateY(21%); /* descend 1/2 masque = 42%/2 */
+  transform: translateY(16.8%); /* descend 2/5 masque (remonté 1/10) */
 }
 
 /* ── 002 Radio comm ── */
@@ -4322,7 +4322,7 @@ body:has(.page-posters .lb:target) {
   width: 100%;
   height: auto;
   display: block;
-  transform: translateY(4.2%); /* descend 1/10 masque (remonté de 3/10) */
+  transform: translateY(6.3%); /* descend 3/20 masque (baissé 1/20) */
 }
 
 
