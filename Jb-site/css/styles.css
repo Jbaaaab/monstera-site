@@ -4326,6 +4326,39 @@ body:has(.page-posters .lb:target) {
 }
 
 
+/* ── 005 Race Facts ── */
+.page-f1 .f1-rf-grid {
+  align-items: start;
+  row-gap: 0;
+  padding-bottom: clamp(16px, 2vw, 32px);
+}
+.page-f1 .f1-rf-left {
+  grid-column: 2 / span 6;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1vw, 14px);
+}
+.page-f1 .f1-rf-right {
+  grid-column: 9 / span 4;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1vw, 14px);
+}
+.page-f1 .f1-rf-card { margin: 0; }
+.page-f1 .f1-rf-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.page-f1 .f1-rf-duo {
+  display: flex;
+  gap: clamp(8px, 1vw, 14px);
+  align-items: stretch;
+}
+.page-f1 .f1-rf-duo .f1-rf-card--story { flex: 1 1 0; }
+.page-f1 .f1-rf-duo .f1-rf-card--cpt   { flex: 0 0 auto; }
+.page-f1 .f1-rf-duo .f1-rf-card--cpt img { width: auto; height: 100%; object-fit: contain; }
+
 /* Video tag label — <FIA>, <RADIO> etc. */
 .page-f1 .f1-vtag-row {
   padding-block: clamp(32px, 4vw, 64px) clamp(24px, 3vw, 48px);
