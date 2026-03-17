@@ -4156,20 +4156,30 @@ body:has(.page-posters .lb:target) {
   z-index: 2;
   align-items: center;
 }
-/* crop wrapper — is the grid cell */
+/* crop wrapper — grid cell, natural size for layout */
 .page-f1 .f1-lt-crop {
   grid-column: 1 / -1;
   width: 74%;
-  height: 17.5vw;   /* 42% of ~41.6vw natural video height */
-  overflow: hidden;
   margin-inline: auto;
+  position: relative;
+}
+/* border around the visible mask area — matches clip-path values exactly */
+.page-f1 .f1-lt-crop::after {
+  content: '';
+  position: absolute;
+  top: calc(32% + 40px);
+  bottom: calc(26% - 40px);
+  left: 0;
+  right: 0;
   border: 1px solid #FE0220;
+  pointer-events: none;
+  z-index: 3;
 }
 .page-f1 .f1-lt-video {
   width: 100%;
   height: auto;
   display: block;
-  margin-top: calc(-13.3vw - 40px); /* top inset 32% + 40px down */
+  clip-path: inset(calc(32% + 40px) 0 calc(26% - 40px) 0);
 }
 
 /* ── 002 Radio comm ── */
@@ -4210,16 +4220,25 @@ body:has(.page-posters .lb:target) {
 .page-f1 .f1-radio-crop {
   grid-column: 1 / -1;
   width: 74%;
-  height: 17.5vw;
-  overflow: hidden;
   margin-inline: auto;
+  position: relative;
+}
+.page-f1 .f1-radio-crop::after {
+  content: '';
+  position: absolute;
+  top: calc(29% + 10px);
+  bottom: calc(29% - 10px);
+  left: 0;
+  right: 0;
   border: 1px solid #FE0220;
+  pointer-events: none;
+  z-index: 3;
 }
 .page-f1 .f1-radio-video {
   width: 100%;
   height: auto;
   display: block;
-  margin-top: calc(-12.1vw - 10px); /* top inset 29% + 10px down */
+  clip-path: inset(calc(29% + 10px) 0 calc(29% - 10px) 0);
 }
 
 /* ── 003 Pit Time — 4-col, fills col 1-12 ── */
@@ -4283,16 +4302,25 @@ body:has(.page-posters .lb:target) {
 .page-f1 .f1-fia-crop {
   grid-column: 1 / -1;
   width: 74%;
-  height: 17.5vw;
-  overflow: hidden;
   margin-inline: auto;
+  position: relative;
+}
+.page-f1 .f1-fia-crop::after {
+  content: '';
+  position: absolute;
+  top: calc(35% + 50px);
+  bottom: calc(23% - 50px);
+  left: 0;
+  right: 0;
   border: 1px solid #FE0220;
+  pointer-events: none;
+  z-index: 3;
 }
 .page-f1 .f1-fia-video {
   width: 100%;
   height: auto;
   display: block;
-  margin-top: calc(-14.6vw - 50px); /* top inset 35% + 50px down */
+  clip-path: inset(calc(35% + 50px) 0 calc(23% - 50px) 0);
 }
 
 
