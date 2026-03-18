@@ -4498,28 +4498,39 @@ body:has(.page-posters .lb:target) {
 /* ── 007 Map ── */
 .page-f1 .f1-map-content {
   display: flex;
-  justify-content: space-evenly; /* gaps gauche = entre = droite */
-  align-items: center;
+  justify-content: space-evenly;
+  align-items: flex-start; /* au même niveau = alignés en haut */
   padding-block: clamp(32px, 4vw, 64px);
 }
+/* Vidéo : même ratio que le PNG (2:3 environ = portrait), croppée, contour rouge */
 .page-f1 .f1-map-video-wrap {
-  flex: 0 0 44%;
-  background: #E3E3E3;
+  flex: 0 0 38%;
+  aspect-ratio: 3 / 4;
+  border: 2px solid #FE3218;
   border-radius: 6px;
   overflow: hidden;
+  position: relative;
 }
+/* Scale up le contenu de la vidéo pour zoomer sur le circuit */
 .page-f1 .f1-map-video {
+  position: absolute;
+  inset: 0;
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(2.2);
+  transform-origin: 22% 38%;
   display: block;
 }
+/* PNG : même largeur que la vidéo, plus petit */
 .page-f1 .f1-map-img-wrap {
-  flex: 0 0 44%;
+  flex: 0 0 38%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 .page-f1 .f1-map-img-wrap img {
-  width: 100%;
+  width: 70%;
   height: auto;
   object-fit: contain;
 }
