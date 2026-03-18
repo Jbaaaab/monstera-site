@@ -4339,12 +4339,18 @@ body:has(.page-posters .lb:target) {
 }
 .page-f1 .f1-rf-left {
   grid-column: 2;
+  grid-row: 1;
+  align-self: start;
+  margin-top: 0;
   display: flex;
   flex-direction: column;
   gap: clamp(8px, 1vw, 14px);
 }
 .page-f1 .f1-rf-right {
   grid-column: 4;
+  grid-row: 1;
+  align-self: start;
+  margin-top: 0;
   display: flex;
   flex-direction: column;
   gap: clamp(8px, 1vw, 14px);
