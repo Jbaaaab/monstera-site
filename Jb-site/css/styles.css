@@ -3655,8 +3655,8 @@ body:has(.page-posters .lb:target) {
 .page-f1 .f1-csys-row {
   display: flex;
   align-items: stretch;
-  /* break out full-width so % widths = % of frame */
-  margin-inline: calc(-1 * var(--csys-P));
+  /* left edge = content boundary; right edge breaks out to dark section edge */
+  margin-right: calc(-1 * var(--csys-P));
   margin-top: var(--csys-gap);
 }
 
@@ -3965,7 +3965,7 @@ body:has(.page-posters .lb:target) {
 
 /* ── Large type name (left col) ── */
 .page-f1 .f1-tf-name {
-  grid-column: 2 / span 3;
+  grid-column: 1 / span 3;
   display: flex;
   flex-direction: column;
   line-height: 1;
@@ -4028,7 +4028,7 @@ body:has(.page-posters .lb:target) {
 
 /* Clash Display block */
 .page-f1 .f1-tf-desc--clash h3 {
-  margin: 0 0 clamp(4px, 0.4vw, 8px);
+  margin: 0 0 clamp(2px, 0.25vw, 4px);
   font-family: "Clash Display", system-ui;
   font-weight: 600;
   font-size: clamp(16px, 1.39vw, 24px);
@@ -4036,7 +4036,7 @@ body:has(.page-posters .lb:target) {
   color: #F2F3F4;
 }
 .page-f1 .f1-tf-desc--clash h4 {
-  margin: 0 0 clamp(10px, 1.2vw, 20px);
+  margin: 0 0 clamp(6px, 0.7vw, 12px);
   font-family: "Clash Display", system-ui;
   font-weight: 400;
   font-size: clamp(14px, 1.16vw, 20px);
@@ -4054,7 +4054,7 @@ body:has(.page-posters .lb:target) {
 
 /* Charles Leclerc block */
 .page-f1 .f1-tf-desc--leclerc h3 {
-  margin: 0 0 clamp(4px, 0.4vw, 8px);
+  margin: 0 0 clamp(2px, 0.25vw, 4px);
   font-family: "Clash Display", system-ui;
   font-weight: 600;
   font-size: clamp(16px, 1.39vw, 24px);
@@ -4062,7 +4062,7 @@ body:has(.page-posters .lb:target) {
   color: #F2F3F4;
 }
 .page-f1 .f1-tf-desc--leclerc h4 {
-  margin: 0 0 clamp(10px, 1.2vw, 20px);
+  margin: 0 0 clamp(6px, 0.7vw, 12px);
   font-family: "Clash Display", system-ui;
   font-weight: 400;
   font-size: clamp(14px, 1.16vw, 20px);
@@ -4107,7 +4107,7 @@ body:has(.page-posters .lb:target) {
   color: #F2F3F4;
 }
 .page-f1 .f1-disp-sublabel {
-  grid-column: 11 / span 2;  /* same as f1-dlabel */
+  grid-column: 12 / span 1;  /* right-aligned, same edge as f1-dlabel */
   justify-self: end;
   align-self: center;
 }
@@ -4176,7 +4176,7 @@ body:has(.page-posters .lb:target) {
   width: 100%;
   height: auto;
   display: block;
-  transform: translateY(16.725%);
+  transform: translateY(calc(16.725% - 10px));
 }
 
 /* ── 002 Radio comm ── */
@@ -4315,7 +4315,7 @@ body:has(.page-posters .lb:target) {
   width: 100%;
   height: auto;
   display: block;
-  transform: translateY(9.45%);
+  transform: translateY(calc(9.45% + 10px));
 }
 
 
@@ -4377,17 +4377,18 @@ body:has(.page-posters .lb:target) {
   transform: scale(0.9);
   transform-origin: left center;
 }
-/* LAP counter : 65% — calculé depuis les dimensions exactes (2.54vw constant) */
+/* LAP counter : bottom-aligned, bigger */
 .page-f1 .f1-rf-duo .f1-rf-card--cpt {
   flex: 0 0 auto;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: flex-end;
+  align-self: flex-end;
 }
 .page-f1 .f1-rf-duo .f1-rf-card--cpt img {
   display: block;
   width: auto;
-  height: clamp(16px, 2.54vw, 42px);
+  height: clamp(28px, 4vw, 64px);
   object-fit: contain;
 }
 
@@ -4489,7 +4490,7 @@ body:has(.page-posters .lb:target) {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   column-gap: clamp(12px, 1.6vw, 28px);
-  align-items: flex-start;
+  align-items: stretch;
   padding-block: clamp(32px, 4vw, 64px);
 }
 /* Vidéo : col 1→5, bord gauche = marge contenu */
@@ -4500,28 +4501,30 @@ body:has(.page-posters .lb:target) {
   border-radius: 6px;
   overflow: hidden;
   position: relative;
+  align-self: start;
 }
-/* Scale up le contenu de la vidéo pour zoomer sur le circuit */
+/* Vidéo fitte dans le masque sans zoom */
 .page-f1 .f1-map-video {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transform: scale(2.2);
-  transform-origin: 22% 38%;
+  object-fit: contain;
   display: block;
 }
-/* PNG : col 8→12, bord droit = marge contenu */
+/* PNG : col 8→12, même hauteur que le masque vidéo (même aspect ratio) */
 .page-f1 .f1-map-img-wrap {
   grid-column: 8 / span 5;
+  aspect-ratio: 3 / 4;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
+  align-self: start;
+  overflow: hidden;
 }
 .page-f1 .f1-map-img-wrap img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: contain;
 }
 
@@ -4534,7 +4537,7 @@ body:has(.page-posters .lb:target) {
 .page-f1 .f1-screen-video-wrap {
   grid-column: 2 / span 7;  /* aligne gauche sur le titre "Screen" */
   aspect-ratio: 16 / 9;
-  background: #E3E3E3;
+  background: transparent;
   border-radius: 6px;
   overflow: hidden;
 }
@@ -4595,7 +4598,7 @@ body:has(.page-posters .lb:target) {
 .page-f1 .f1-screen-cls-video-wrap {
   grid-column: 1 / span 12;
   aspect-ratio: 16 / 9;
-  background: #E3E3E3;
+  background: transparent;
   border-radius: 6px;
   overflow: hidden;
   margin-bottom: clamp(12px, 1.5vw, 24px);
