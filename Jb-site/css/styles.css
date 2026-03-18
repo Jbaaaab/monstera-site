@@ -4377,17 +4377,16 @@ body:has(.page-posters .lb:target) {
   gap: clamp(8px, 1vw, 14px);
   align-items: center;
 }
-/* Race Story x1.2 — overflow: hidden pour clipper le débordement */
+/* Race Story x0.9 — pas de débordement, image complète visible */
 .page-f1 .f1-rf-duo .f1-rf-card--story {
   flex: 1 1 0;
   min-width: 0;
-  overflow: hidden;
 }
 .page-f1 .f1-rf-duo .f1-rf-card--story img {
   display: block;
   width: 100%;
   height: auto;
-  transform: scale(1.2);
+  transform: scale(0.9);
   transform-origin: left center;
 }
 /* LAP counter : 65% — calculé depuis les dimensions exactes (2.54vw constant) */
