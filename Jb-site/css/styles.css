@@ -4378,8 +4378,8 @@ body:has(.page-posters .lb:target) {
   align-items: stretch;
 }
 .page-f1 .f1-rf-duo .f1-rf-card--story { flex: 1 1 0; }
-.page-f1 .f1-rf-duo .f1-rf-card--story img { width: 108%; height: auto; }
-.page-f1 .f1-rf-duo .f1-rf-card--cpt   { flex: 0 0 auto; display: flex; align-items: center; justify-content: center; }
+.page-f1 .f1-rf-duo .f1-rf-card--story img { width: 120%; height: auto; }
+.page-f1 .f1-rf-duo .f1-rf-card--cpt   { flex: 0 0 auto; display: flex; align-items: center; justify-content: flex-end; }
 .page-f1 .f1-rf-duo .f1-rf-card--cpt img { width: auto; height: 65%; object-fit: contain; }
 
 /* ── 006 Leaderboard ── */
