@@ -4335,7 +4335,7 @@ body:has(.page-posters .lb:target) {
   align-items: start;
   row-gap: 0;
   padding-bottom: clamp(16px, 2vw, 32px);
-  grid-template-columns: 2fr 8fr 2fr 7.7fr 4.3fr;
+  grid-template-columns: 2fr 8fr 2fr 7.7fr 2fr;
 }
 .page-f1 .f1-rf-left {
   grid-column: 2;
@@ -4478,6 +4478,22 @@ body:has(.page-posters .lb:target) {
   /* thinking-card columns handled by flex — no grid-column needed */
 
   .page-f1 .f1-grid--4 { grid-template-columns: repeat(3, 1fr); }
+
+  /* ── 005 Race Facts — tablet ── */
+  /* Gutter plus court, colonnes équilibrées */
+  .page-f1 .f1-rf-grid {
+    grid-template-columns: 1fr 9fr 1.5fr 9fr 1fr;
+  }
+
+  /* ── 006 Leaderboard — tablet ── */
+  /* Row 1 : gutters réduits, groupes légèrement plus larges */
+  .page-f1 .f1-lb-row1 {
+    grid-template-columns: 1fr 6fr 0.8fr 6fr 0.8fr 6fr 1.4fr;
+  }
+  /* Row 2 : 5 cartes, gaps réduits */
+  .page-f1 .f1-lb-row2 {
+    grid-template-columns: 1fr 4fr 0.4fr 4fr 0.4fr 4fr 0.4fr 4fr 0.4fr 4fr 1fr;
+  }
 }
 
 @media (max-width: 600px) {
