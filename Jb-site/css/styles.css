@@ -4542,7 +4542,7 @@ body:has(.page-posters .lb:target) {
   padding-block: clamp(16px, 2vw, 32px) clamp(32px, 4vw, 64px);
 }
 .page-f1 .f1-screen-video-wrap {
-  grid-column: 1 / span 7;  /* col 1 = bord gauche du contenu */
+  grid-column: 2 / span 7;  /* aligne gauche sur le titre "Screen" */
   aspect-ratio: 16 / 9;
   background: #E3E3E3;
   border-radius: 6px;
@@ -4555,7 +4555,7 @@ body:has(.page-posters .lb:target) {
   display: block;
 }
 .page-f1 .f1-screen-aside {
-  grid-column: 8 / span 5;  /* jusqu'à col 12 = bord droit du contenu */
+  grid-column: 9 / span 4;  /* finit à col 12, même que DISPLAY */
   display: flex;
   flex-direction: column;
   gap: clamp(8px, 1vw, 14px);
@@ -4578,6 +4578,64 @@ body:has(.page-posters .lb:target) {
   height: auto;
   display: block;
   border-radius: 4px;
+}
+
+/* ── 008-002 Classement sub-block ── */
+.page-f1 .f1-screen-cls-head {
+  align-items: baseline;
+  padding-block: clamp(24px, 3vw, 48px) clamp(12px, 1.5vw, 20px);
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+.page-f1 .f1-screen-cls-title {
+  grid-column: 2 / span 7;
+  font-family: "Epilogue", system-ui;
+  font-size: clamp(11px, 0.93vw, 16px);
+  font-weight: 500;
+  color: #F2F3F4;
+}
+.page-f1 .f1-screen-cls-num {
+  grid-column: 11 / span 2;
+  justify-self: end;
+  font-family: "Epilogue", system-ui;
+  font-size: clamp(9px, 0.75vw, 13px);
+  letter-spacing: 0.04em;
+  color: rgba(242,243,244,0.55);
+}
+/* Vidéo plein largeur col 2→12 */
+.page-f1 .f1-screen-cls-video-wrap {
+  grid-column: 2 / span 11;
+  aspect-ratio: 16 / 9;
+  background: #E3E3E3;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: clamp(12px, 1.5vw, 24px);
+}
+.page-f1 .f1-screen-cls-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* Deux images côte à côte */
+.page-f1 .f1-screen-cls-item--1 { grid-column: 2 / span 5; }
+.page-f1 .f1-screen-cls-item--2 { grid-column: 8 / span 5; }
+.page-f1 .f1-screen-cls-item figure { margin: 0; }
+.page-f1 .f1-screen-cls-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+.page-f1 .f1-screen-cls-caption {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: clamp(8px, 1vw, 14px);
+  padding-bottom: clamp(32px, 4vw, 64px);
+  font-family: "Epilogue", system-ui;
+  font-size: clamp(9px, 0.75vw, 13px);
+  letter-spacing: 0.04em;
+  color: rgba(242,243,244,0.55);
 }
 
 /* ─── Responsive ─── */
