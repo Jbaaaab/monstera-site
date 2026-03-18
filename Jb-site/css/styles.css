@@ -4495,6 +4495,42 @@ body:has(.page-posters .lb:target) {
   color: rgba(242,243,244,0.35);
 }
 
+/* ── 007 Map ── */
+.page-f1 .f1-map-section {
+  padding-bottom: 0;
+}
+.page-f1 .f1-map-content {
+  display: grid;
+  grid-template-columns: 47fr 53fr;
+  /* s'étend jusqu'aux bords du f1-dark (compense le padding-inline du f1-dsection) */
+  margin-inline: calc(-1 * clamp(24px, 3vw, 56px));
+  margin-top: clamp(12px, 1.5vw, 24px);
+}
+.page-f1 .f1-map-video-wrap {
+  background: #E3E3E3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.page-f1 .f1-map-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.page-f1 .f1-map-img-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: clamp(24px, 3.5vw, 60px) clamp(24px, 3vw, 48px);
+}
+.page-f1 .f1-map-img-wrap img {
+  width: 78%;
+  height: auto;
+  object-fit: contain;
+}
+
 /* ─── Responsive ─── */
 @media (max-width: 900px) {
   .page-f1 .f1-head .title { grid-column: 2 / span 6; }
