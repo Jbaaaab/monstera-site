@@ -3220,10 +3220,12 @@ body:has(.page-posters .lb:target) {
 .page-f1 .f1-body {
   padding: 8px 0 24px;
   border-top: 1px solid rgba(0, 0, 0, 0.16);
+  row-gap: clamp(16px, 2.5vw, 36px);
 }
 
 .page-f1 .f1-body .desc {
   grid-column: 2 / span 3;
+  grid-row: 1;
   display: flex;
   flex-direction: column;
   gap: clamp(12px, 1.6vw, 20px);
@@ -3244,7 +3246,8 @@ body:has(.page-posters .lb:target) {
 }
 
 .page-f1 .f1-body .main-img {
-  grid-column: 6 / span 6;
+  grid-column: 1 / span 11;
+  grid-row: 2;
   margin: 0;
 }
 
@@ -3518,7 +3521,8 @@ body:has(.page-posters .lb:target) {
 }
 
 .page-f1 .f1-limg {
-  grid-column: 2 / span 2;
+  grid-column: 2 / span 4;
+  grid-row: 1;
   margin: 0;
 }
 
@@ -3529,7 +3533,9 @@ body:has(.page-posters .lb:target) {
 }
 
 .page-f1 .f1-lname {
-  grid-column: 4 / span 2;
+  grid-column: 7 / span 3;
+  grid-row: 1;
+  align-self: center;
 }
 
 .page-f1 .f1-lname p {
@@ -3541,7 +3547,9 @@ body:has(.page-posters .lb:target) {
 }
 
 .page-f1 .f1-ldesc {
-  grid-column: 7 / span 6;
+  grid-column: 2 / span 10;
+  grid-row: 2;
+  margin-top: clamp(12px, 1.5vw, 20px);
 }
 
 .page-f1 .f1-ldesc p {
@@ -4515,7 +4523,7 @@ body:has(.page-posters .lb:target) {
 /* Vidéo : col 1→5, contour rouge */
 .page-f1 .f1-map-video-wrap {
   grid-column: 1 / span 5;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 1 / 1;
   border: 2px solid #FE3218;
   border-radius: 6px;
   overflow: hidden;
@@ -4824,8 +4832,8 @@ body:has(.page-posters .lb:target) {
   .page-f1 .f1-head .year  { grid-column: 2 / span 4; justify-self: start; margin-top: 8px; }
   .page-f1 .f1-head .sector{ grid-column: 7 / span 6; text-align: right; margin-top: 8px; }
 
-  .page-f1 .f1-body .desc    { grid-column: 2 / span 11; margin-bottom: clamp(20px, 5vw, 36px); }
-  .page-f1 .f1-body .main-img{ grid-column: 1 / span 12; }
+  .page-f1 .f1-body .desc    { grid-column: 2 / span 11; grid-row: 1; margin-bottom: clamp(20px, 5vw, 36px); }
+  .page-f1 .f1-body .main-img{ grid-column: 1 / span 12; grid-row: 2; }
 
   .page-f1 .thinking-text  { grid-column: 1 / span 12; }
   .page-f1 .thinking-label { grid-column: 1 / span 12; justify-self: start; margin-top: 10px; text-align: left; }
@@ -4883,11 +4891,9 @@ body:has(.page-posters .lb:target) {
 
   /* ══ 04 Logotype ══ */
   .page-f1 .f1-logo-row { padding: clamp(24px, 6vw, 40px) 0; }
-  .page-f1 .f1-logo--1,
-  .page-f1 .f1-logo--2,
-  .page-f1 .f1-logo--3 { grid-column: 1 / span 5; }
-  .page-f1 .f1-lname   { grid-column: 6 / span 5; align-self: center; }
-  .page-f1 .f1-ldesc   { grid-column: 1 / span 12; margin-top: 10px; }
+  .page-f1 .f1-limg    { grid-column: 1 / span 5; grid-row: 1; }
+  .page-f1 .f1-lname   { grid-column: 6 / span 6; grid-row: 1; align-self: center; }
+  .page-f1 .f1-ldesc   { grid-column: 1 / span 12; grid-row: 2; margin-top: 10px; }
 
   /* ══ 05 Color Bands ══ */
   .page-f1 .f1-bname      { grid-column: 1 / span 6; }
