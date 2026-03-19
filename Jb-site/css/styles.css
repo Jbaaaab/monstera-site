@@ -4714,18 +4714,20 @@ body:has(.page-posters .lb:target) {
 .page-f1 .f1-mk-section {
   padding-bottom: clamp(40px, 6vw, 96px);
 }
-.page-f1 .f1-mk-row {
-  row-gap: clamp(12px, 1.6vw, 24px);
-  padding-bottom: clamp(12px, 1.6vw, 24px);
+/* Asymmetric 2-col mockup grid: 543fr left / 823fr right */
+.page-f1 .f1-mk-grid {
+  display: grid;
+  grid-template-columns: 543fr 823fr;
+  gap: clamp(12px, 1.6vw, 24px);
 }
-.page-f1 .f1-mk-row--full .f1-mk-item {
-  grid-column: 1 / span 12;
+.page-f1 .f1-mk-item--full {
+  grid-column: 1 / span 2;
 }
-.page-f1 .f1-mk-row--pair .f1-mk-item:nth-child(1) {
-  grid-column: 1 / span 6;
+.page-f1 .f1-mk-col--l {
+  grid-column: 1;
 }
-.page-f1 .f1-mk-row--pair .f1-mk-item:nth-child(2) {
-  grid-column: 7 / span 6;
+.page-f1 .f1-mk-col--r {
+  grid-column: 2;
 }
 .page-f1 .f1-mk-item {
   margin: 0;
@@ -4808,4 +4810,13 @@ body:has(.page-posters .lb:target) {
   .page-f1 .f1-grid--4 { grid-template-columns: repeat(2, 1fr); }
 
   .page-f1 .filmstrip-frames { grid-template-columns: repeat(2, 1fr); }
+
+  .page-f1 .f1-mk-grid {
+    grid-template-columns: 1fr;
+  }
+  .page-f1 .f1-mk-item--full,
+  .page-f1 .f1-mk-col--l,
+  .page-f1 .f1-mk-col--r {
+    grid-column: 1;
+  }
 }
