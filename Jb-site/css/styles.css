@@ -4870,4 +4870,116 @@ body:has(.page-posters .lb:target) {
   .page-f1 .f1-mk-col-right .f1-mk-item {
     flex: 1 1 calc(50% - 6px);
   }
+
+  /* ══ Dark section: global section headers ══ */
+  .page-f1 .f1-didx   { grid-column: 1 / span 2; }
+  .page-f1 .f1-dtitle  { grid-column: 3 / span 9; }
+  .page-f1 .f1-dlabel  { display: none; }
+
+  /* ══ Dark section: display sub-headers ══ */
+  .page-f1 .f1-disp-subidx   { grid-column: 1 / span 2; }
+  .page-f1 .f1-disp-subtitle { grid-column: 3 / span 9; }
+  .page-f1 .f1-disp-sublabel { display: none; }
+
+  /* ══ 04 Logotype ══ */
+  .page-f1 .f1-logo-row { padding: clamp(24px, 6vw, 40px) 0; }
+  .page-f1 .f1-logo--1,
+  .page-f1 .f1-logo--2,
+  .page-f1 .f1-logo--3 { grid-column: 1 / span 5; }
+  .page-f1 .f1-lname   { grid-column: 6 / span 5; align-self: center; }
+  .page-f1 .f1-ldesc   { grid-column: 1 / span 12; margin-top: 10px; }
+
+  /* ══ 05 Color Bands ══ */
+  .page-f1 .f1-bname      { grid-column: 1 / span 6; }
+  .page-f1 .f1-bidx       { display: none; }
+  .page-f1 .f1-bhex-label { display: none; }
+  .page-f1 .f1-bhex-val   { grid-column: 9 / span 4; text-align: right; }
+  .page-f1 .f1-why-label  { grid-column: 1 / span 3; }
+  .page-f1 .f1-why-text   { grid-column: 4 / span 9; }
+
+  /* ══ 06 Colors System ══ */
+  .page-f1 .f1-csys-section {
+    --csys-sw:  clamp(60px, 22vw, 110px);
+    --csys-sh:  clamp(12px, 4vw, 22px);
+    --csys-gap: clamp(14px, 4vw, 28px);
+  }
+  /* Reset the 300px desktop offset — too wide for mobile */
+  .page-f1 .f1-csys-names--tryout,
+  .page-f1 .f1-csys-names--tright {
+    padding-left: clamp(6px, 1.5vw, 10px);
+  }
+
+  /* ══ 07 Typeface ══ */
+  .page-f1 .f1-tf-name    { grid-column: 1 / span 4; }
+  .page-f1 .f1-tf-weights { grid-column: 5 / span 8; }
+  .page-f1 .f1-tf-desc    { grid-column: 1 / span 12; margin-top: 8px; }
+
+  /* ══ 08 Display — 001 Lower Third ══ */
+  .page-f1 .f1-lt-col:nth-child(1),
+  .page-f1 .f1-lt-col:nth-child(2),
+  .page-f1 .f1-lt-col:nth-child(3) { grid-column: 1 / span 12; }
+
+  /* ══ 08 Display — 002 Radio ══ */
+  .page-f1 .f1-radio-col:nth-child(1),
+  .page-f1 .f1-radio-col:nth-child(2),
+  .page-f1 .f1-radio-col:nth-child(3) { grid-column: 1 / span 12; }
+
+  /* ══ 08 Display — 003 Pit (2×2) ══ */
+  .page-f1 .f1-pit-col:nth-child(1),
+  .page-f1 .f1-pit-col:nth-child(3) { grid-column: 1 / span 6; }
+  .page-f1 .f1-pit-col:nth-child(2),
+  .page-f1 .f1-pit-col:nth-child(4) { grid-column: 7 / span 6; }
+
+  /* ══ 08 Display — 004 FIA ══ */
+  .page-f1 .f1-fia-col:nth-child(1),
+  .page-f1 .f1-fia-col:nth-child(2),
+  .page-f1 .f1-fia-col:nth-child(3) { grid-column: 1 / span 12; }
+
+  /* ══ 08 Display — 005 Race Facts ══ */
+  .page-f1 .f1-rf-left  { grid-column: 1 / span 12; grid-row: 1; }
+  .page-f1 .f1-rf-right { grid-column: 1 / span 12; grid-row: 2; }
+
+  /* ══ 08 Display — 006 Leaderboard (horizontal scroll) ══ */
+  .page-f1 .f1-lb-row1,
+  .page-f1 .f1-lb-row2 {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: clamp(8px, 2vw, 12px);
+    padding-bottom: 8px;
+    scrollbar-width: none; /* hide scrollbar on Firefox */
+  }
+  .page-f1 .f1-lb-row1::-webkit-scrollbar,
+  .page-f1 .f1-lb-row2::-webkit-scrollbar { display: none; }
+  .page-f1 .f1-lb-group--1,
+  .page-f1 .f1-lb-group--2,
+  .page-f1 .f1-lb-group--3 { flex: 0 0 78vw; grid-column: unset; }
+  .page-f1 .f1-lb-single--1,
+  .page-f1 .f1-lb-single--2,
+  .page-f1 .f1-lb-single--3,
+  .page-f1 .f1-lb-single--4,
+  .page-f1 .f1-lb-single--5 { flex: 0 0 78vw; grid-column: unset; }
+  .page-f1 .f1-lb-side-label--r1,
+  .page-f1 .f1-lb-side-label--r2 { display: none; }
+
+  /* ══ 007 Map ══ */
+  .page-f1 .f1-map-content {
+    grid-template-columns: 1fr;
+    row-gap: clamp(16px, 4vw, 28px);
+  }
+  .page-f1 .f1-map-video-wrap { grid-column: 1; aspect-ratio: 4 / 3; }
+  .page-f1 .f1-map-img-wrap   { grid-column: 1; }
+  .page-f1 .f1-map-img-wrap img { height: 60%; }
+
+  /* ══ 008 Screen ══ */
+  .page-f1 .f1-screen-video-wrap  { grid-column: 1 / span 12; }
+  .page-f1 .f1-screen-aside       { grid-column: 1 / span 12; }
+  .page-f1 .f1-screen-cls-title   { grid-column: 1 / span 10; }
+  .page-f1 .f1-screen-cls-num     { grid-column: 11 / span 2; }
+  .page-f1 .f1-screen-cls-item--1,
+  .page-f1 .f1-screen-cls-item--2 { grid-column: 1 / span 12; }
+
+  /* ══ Transition sub-headers ══ */
+  .page-f1 .f1-tr-title { grid-column: 1 / span 10; }
+  .page-f1 .f1-tr-num   { grid-column: 11 / span 2; }
 }
