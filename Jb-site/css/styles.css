@@ -3726,23 +3726,24 @@ body:has(.page-posters .lb:target) {
 }
 /* Spacer for Try out/Qualif row: aligns labels to same x as Alpine etc. */
 .page-f1 .f1-csys-align-spacer { flex: 0 0 50%; }
-/* Try out/Qualif: right-aligned, flush against their vbar */
+/* Try out/Qualif: left-aligned, offset 300px right at 1728px */
 .page-f1 .f1-csys-names--tryout {
   flex: 1;
-  text-align: right;
-  padding-inline: clamp(12px, 1.6vw, 28px);
+  text-align: left;
+  padding-right: clamp(12px, 1.6vw, 28px);
+  padding-left: clamp(80px, 17.36vw, 300px);
 }
 /* Teams left: left-aligned */
 .page-f1 .f1-csys-names--tleft {
   flex: 1;
   padding-inline: clamp(12px, 1.6vw, 28px);
 }
-/* Teams right: right-aligned, flush against their vbar */
+/* Teams right: left-aligned, same 300px offset as tryout row */
 .page-f1 .f1-csys-names--tright {
   flex: 1;
-  text-align: right;
-  padding-inline: clamp(12px, 1.6vw, 28px);
-  padding-left: clamp(40px, 8.7vw, 150px);
+  text-align: left;
+  padding-right: clamp(12px, 1.6vw, 28px);
+  padding-left: clamp(80px, 17.36vw, 300px);
 }
 
 /* ── Flat colors for accent bars (override gradients) ── */
@@ -4530,21 +4531,20 @@ body:has(.page-posters .lb:target) {
   object-fit: contain;
   display: block;
 }
-/* PNG : col 8→12, clippé sur le même masque 3/4 que la vidéo */
+/* PNG : col 8→12, hauteur réduite pour ne pas dépasser la vidéo */
 .page-f1 .f1-map-img-wrap {
   grid-column: 8 / span 5;
-  aspect-ratio: 3 / 4;
+  align-self: stretch;   /* fills grid row = video height */
   overflow: hidden;
-  align-self: start;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .page-f1 .f1-map-img-wrap img {
-  width: 100%;
-  height: 100%;
   display: block;
-  object-fit: contain;
+  height: 78%;           /* ~78% of video height — stays within the mask */
+  width: auto;
+  max-width: 100%;
 }
 
 /* ── 008 Screen ── */
