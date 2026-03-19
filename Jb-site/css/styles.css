@@ -3742,6 +3742,7 @@ body:has(.page-posters .lb:target) {
   flex: 1;
   text-align: right;
   padding-inline: clamp(12px, 1.6vw, 28px);
+  padding-left: clamp(40px, 8.7vw, 150px);
 }
 
 /* ── Flat colors for accent bars (override gradients) ── */
@@ -4401,18 +4402,11 @@ body:has(.page-posters .lb:target) {
   transform: scale(0.9);
   transform-origin: left center;
 }
-/* LAP counter : bottom-aligned, bigger */
-.page-f1 .f1-rf-duo .f1-rf-card--cpt {
-  flex: 0 0 auto;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  align-self: flex-end;
-}
-.page-f1 .f1-rf-duo .f1-rf-card--cpt img {
+/* LAP counter : standalone card below Race Leader, 2× size */
+.page-f1 .f1-rf-card--cpt img {
   display: block;
   width: auto;
-  height: clamp(28px, 4vw, 64px);
+  height: clamp(56px, 8vw, 128px);
   object-fit: contain;
 }
 
@@ -4536,20 +4530,21 @@ body:has(.page-posters .lb:target) {
   object-fit: contain;
   display: block;
 }
-/* PNG : col 8→12, sans contour, image réduite et centrée */
+/* PNG : col 8→12, clippé sur le même masque 3/4 que la vidéo */
 .page-f1 .f1-map-img-wrap {
   grid-column: 8 / span 5;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  align-self: start;
   display: flex;
   align-items: center;
   justify-content: center;
-  align-self: center;
 }
 .page-f1 .f1-map-img-wrap img {
-  width: 72%;
-  height: auto;
+  width: 100%;
+  height: 100%;
   display: block;
-  transform: scale(0.85);
-  transform-origin: center center;
+  object-fit: contain;
 }
 
 /* ── 008 Screen ── */
@@ -4776,9 +4771,17 @@ body:has(.page-posters .lb:target) {
   margin: 0 auto;
 }
 
-/* Footer flush against the dark section — no white gap */
+/* Footer flush against the dark section — no white gap, green card */
 .page-f1 .site-footer {
   margin-top: 0;
+}
+.page-f1 .site-footer .footer-card {
+  background: var(--green);
+  color: #000;
+}
+.page-f1 .site-footer .footer-card a,
+.page-f1 .site-footer .footer-card .footer-giant {
+  color: #000;
 }
 
 /* ─── Responsive ─── */
