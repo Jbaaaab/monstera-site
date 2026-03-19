@@ -3446,11 +3446,19 @@ body:has(.page-posters .lb:target) {
 /* ── Logotype section header ── */
 .page-f1 .f1-dhead {
   padding: 24px 0 20px;
-  background-image: linear-gradient(to right, rgba(255,255,255,0.16), rgba(255,255,255,0.16));
-  background-size: 100% 1px;
-  background-repeat: no-repeat;
-  background-position: bottom;
   align-items: start;
+  position: relative;
+}
+.page-f1 .f1-dhead::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: calc(-1 * var(--f1-pad));
+  right: calc(-1 * var(--f1-pad));
+  height: 1px;
+  background: rgba(255,255,255,0.16);
+  pointer-events: none;
 }
 
 .page-f1 .f1-didx {
@@ -3606,11 +3614,19 @@ body:has(.page-posters .lb:target) {
 /* WHY / BUUUTT rows */
 .page-f1 .f1-color-why {
   padding: clamp(20px, 2.5vw, 36px) 0;
-  background-image: linear-gradient(to right, rgba(255,255,255,0.16), rgba(255,255,255,0.16));
-  background-size: 100% 1px;
-  background-repeat: no-repeat;
-  background-position: top;
   align-items: start;
+  position: relative;
+}
+.page-f1 .f1-color-why::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: calc(-1 * var(--f1-pad));
+  right: calc(-1 * var(--f1-pad));
+  height: 1px;
+  background: rgba(255,255,255,0.16);
+  pointer-events: none;
 }
 
 .page-f1 .f1-why-label {
@@ -3957,10 +3973,18 @@ body:has(.page-posters .lb:target) {
 .page-f1 .f1-tf-row {
   align-items: start;
   padding-block: clamp(40px, 5.8vw, 100px);
-  background-image: linear-gradient(to right, rgba(255,255,255,0.16), rgba(255,255,255,0.16));
-  background-size: 100% 1px;
-  background-repeat: no-repeat;
-  background-position: top;
+  position: relative;
+}
+.page-f1 .f1-tf-row::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: calc(-1 * var(--f1-pad));
+  right: calc(-1 * var(--f1-pad));
+  height: 1px;
+  background: rgba(255,255,255,0.16);
+  pointer-events: none;
 }
 
 /* ── Large type name (left col) ── */
@@ -4493,10 +4517,11 @@ body:has(.page-posters .lb:target) {
   align-items: stretch;
   padding-block: clamp(32px, 4vw, 64px);
 }
-/* Vidéo : col 1→5, sans contour rouge */
+/* Vidéo : col 1→5, contour rouge */
 .page-f1 .f1-map-video-wrap {
   grid-column: 1 / span 5;
   aspect-ratio: 3 / 4;
+  border: 2px solid #FE3218;
   border-radius: 6px;
   overflow: hidden;
   position: relative;
@@ -4511,22 +4536,18 @@ body:has(.page-posters .lb:target) {
   object-fit: contain;
   display: block;
 }
-/* PNG : col 8→12, contour rouge, même hauteur que la vidéo */
+/* PNG : col 8→12, sans contour, image réduite et centrée */
 .page-f1 .f1-map-img-wrap {
   grid-column: 8 / span 5;
-  aspect-ratio: 3 / 4;
-  border: 2px solid #FE3218;
-  border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
-  align-self: start;
-  overflow: hidden;
+  align-self: center;
 }
 .page-f1 .f1-map-img-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 72%;
+  height: auto;
+  display: block;
 }
 
 /* ── 008 Screen ── */
