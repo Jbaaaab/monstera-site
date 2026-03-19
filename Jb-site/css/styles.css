@@ -4548,6 +4548,8 @@ body:has(.page-posters .lb:target) {
   width: 72%;
   height: auto;
   display: block;
+  transform: scale(0.85);
+  transform-origin: center center;
 }
 
 /* ── 008 Screen ── */
