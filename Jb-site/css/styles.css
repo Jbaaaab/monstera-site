@@ -4740,6 +4740,36 @@ body:has(.page-posters .lb:target) {
   height: auto;
 }
 
+/* ── 06 Vidéo Vimeo ── */
+.page-f1 .f1-vimeo-wrap {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 6px;
+}
+.page-f1 .f1-vimeo-wrap iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ── Outro ── */
+.page-f1 .f1-outro-section {
+  padding-top: clamp(80px, 12vw, 200px);
+  padding-bottom: clamp(80px, 12vw, 200px);
+  text-align: center;
+}
+.page-f1 .f1-outro-text {
+  color: #fff;
+  font-size: clamp(14px, 1.1vw, 18px);
+  line-height: 1.6;
+  max-width: 660px;
+  margin: 0 auto;
+}
+
 /* ─── Responsive ─── */
 @media (max-width: 900px) {
   .page-f1 .f1-head .title { grid-column: 2 / span 6; }
