@@ -4714,7 +4714,7 @@ body:has(.page-posters .lb:target) {
 .page-f1 .f1-mk-section {
   padding-bottom: clamp(40px, 6vw, 96px);
 }
-/* Asymmetric 2-col mockup grid: 543fr left / 823fr right */
+/* Asymmetric 2-col grid: 543fr left (4 small) / 823fr right (3 large) */
 .page-f1 .f1-mk-grid {
   display: grid;
   grid-template-columns: 543fr 823fr;
@@ -4723,11 +4723,16 @@ body:has(.page-posters .lb:target) {
 .page-f1 .f1-mk-item--full {
   grid-column: 1 / span 2;
 }
-.page-f1 .f1-mk-col--l {
-  grid-column: 1;
+/* Column wrappers — flex so both start/end at the same vertical position */
+.page-f1 .f1-mk-col-left,
+.page-f1 .f1-mk-col-right {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 1.6vw, 24px);
 }
-.page-f1 .f1-mk-col--r {
-  grid-column: 2;
+.page-f1 .f1-mk-col-left .f1-mk-item,
+.page-f1 .f1-mk-col-right .f1-mk-item {
+  flex: 1;
 }
 .page-f1 .f1-mk-item {
   margin: 0;
@@ -4737,7 +4742,8 @@ body:has(.page-posters .lb:target) {
 .page-f1 .f1-mk-item img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* ── 06 Vidéo Vimeo ── */
@@ -4768,6 +4774,11 @@ body:has(.page-posters .lb:target) {
   line-height: 1.6;
   max-width: 660px;
   margin: 0 auto;
+}
+
+/* Footer flush against the dark section — no white gap */
+.page-f1 .site-footer {
+  margin-top: 0;
 }
 
 /* ─── Responsive ─── */
@@ -4844,9 +4855,16 @@ body:has(.page-posters .lb:target) {
   .page-f1 .f1-mk-grid {
     grid-template-columns: 1fr;
   }
-  .page-f1 .f1-mk-item--full,
-  .page-f1 .f1-mk-col--l,
-  .page-f1 .f1-mk-col--r {
+  .page-f1 .f1-mk-item--full {
     grid-column: 1;
+  }
+  .page-f1 .f1-mk-col-left,
+  .page-f1 .f1-mk-col-right {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .page-f1 .f1-mk-col-left .f1-mk-item,
+  .page-f1 .f1-mk-col-right .f1-mk-item {
+    flex: 1 1 calc(50% - 6px);
   }
 }
