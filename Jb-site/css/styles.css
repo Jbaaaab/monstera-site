@@ -4673,6 +4673,71 @@ body:has(.page-posters .lb:target) {
   display: block;
 }
 
+/* ── 010 Transition ── */
+.page-f1 .f1-tr-head {
+  padding-block: clamp(24px, 3vw, 48px) clamp(12px, 1.5vw, 24px);
+  border-top: 1px solid rgba(255,255,255,0.12);
+  align-items: baseline;
+}
+.page-f1 .f1-tr-title {
+  grid-column: 2 / span 8;
+  font-family: "Epilogue", system-ui;
+  font-weight: 500;
+  font-size: clamp(11px, 0.93vw, 16px);
+  color: #F2F3F4;
+}
+.page-f1 .f1-tr-num {
+  grid-column: 12 / span 1;
+  justify-self: end;
+  font-family: "Clash Display", system-ui;
+  font-weight: 400;
+  font-size: clamp(11px, 0.93vw, 16px);
+  color: rgba(242,243,244,0.55);
+}
+.page-f1 .f1-tr-video-row {
+  padding-bottom: clamp(32px, 4vw, 64px);
+}
+.page-f1 .f1-tr-video-wrap {
+  grid-column: 1 / span 12;
+  aspect-ratio: 16 / 9;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.page-f1 .f1-tr-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── 05 Mockups ── */
+.page-f1 .f1-mk-section {
+  padding-bottom: clamp(40px, 6vw, 96px);
+}
+.page-f1 .f1-mk-row {
+  row-gap: clamp(12px, 1.6vw, 24px);
+  padding-bottom: clamp(12px, 1.6vw, 24px);
+}
+.page-f1 .f1-mk-row--full .f1-mk-item {
+  grid-column: 1 / span 12;
+}
+.page-f1 .f1-mk-row--pair .f1-mk-item:nth-child(1) {
+  grid-column: 1 / span 6;
+}
+.page-f1 .f1-mk-row--pair .f1-mk-item:nth-child(2) {
+  grid-column: 7 / span 6;
+}
+.page-f1 .f1-mk-item {
+  margin: 0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.page-f1 .f1-mk-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 /* ─── Responsive ─── */
 @media (max-width: 900px) {
   .page-f1 .f1-head .title { grid-column: 2 / span 6; }
