@@ -4515,7 +4515,7 @@ body:has(.page-posters .lb:target) {
 /* Vidéo : col 1→5, contour rouge */
 .page-f1 .f1-map-video-wrap {
   grid-column: 1 / span 5;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 1 / 1;
   border: 2px solid #FE3218;
   border-radius: 6px;
   overflow: hidden;
@@ -4830,10 +4830,17 @@ body:has(.page-posters .lb:target) {
   .page-f1 .thinking-text  { grid-column: 1 / span 12; }
   .page-f1 .thinking-label { grid-column: 1 / span 12; justify-self: start; margin-top: 10px; text-align: left; }
 
-  .page-f1 .f1-thinking-cards { flex-direction: column; padding-left: 0; }
+  .page-f1 .f1-thinking-cards { flex-direction: column; padding-left: 0; padding-right: 0; }
   .page-f1 .thinking-card--1,
   .page-f1 .thinking-card--2,
   .page-f1 .thinking-card--3 { flex: unset; width: 100%; }
+  /* Horizontal images → full width ; posters → centered at natural ratio */
+  .page-f1 .thinking-card img {
+    width: auto;
+    max-width: 100%;
+    max-height: 65vw;
+    margin: 0 auto;
+  }
 
   .page-f1 .meaning-label  { grid-column: 1 / span 12; }
   .page-f1 .meaning-text   { grid-column: 1 / span 12; margin-top: 10px; }
@@ -4882,12 +4889,10 @@ body:has(.page-posters .lb:target) {
   .page-f1 .f1-disp-sublabel { display: none; }
 
   /* ══ 04 Logotype ══ */
-  .page-f1 .f1-logo-row { padding: clamp(24px, 6vw, 40px) 0; }
-  .page-f1 .f1-logo--1,
-  .page-f1 .f1-logo--2,
-  .page-f1 .f1-logo--3 { grid-column: 1 / span 5; }
-  .page-f1 .f1-lname   { grid-column: 6 / span 5; align-self: center; }
-  .page-f1 .f1-ldesc   { grid-column: 1 / span 12; margin-top: 10px; }
+  .page-f1 .f1-logo-row { padding: clamp(20px, 5vw, 36px) 0; }
+  .page-f1 .f1-limg    { grid-column: 1 / span 8; grid-row: 1; }
+  .page-f1 .f1-lname   { grid-column: 9 / span 4; grid-row: 1; align-self: center; }
+  .page-f1 .f1-ldesc   { grid-column: 1 / span 12; grid-row: 2; margin-top: 10px; }
 
   /* ══ 05 Color Bands ══ */
   .page-f1 .f1-bname      { grid-column: 1 / span 6; }
