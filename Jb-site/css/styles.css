@@ -4548,6 +4548,8 @@ body:has(.page-posters .lb:target) {
   width: 72%;
   height: auto;
   display: block;
+  transform: scale(0.85);
+  transform-origin: center center;
 }
 
 /* ── 008 Screen ── */
@@ -4653,6 +4655,121 @@ body:has(.page-posters .lb:target) {
   color: rgba(242,243,244,0.55);
 }
 
+/* ── 009 Fiche Pilote ── */
+.page-f1 .f1-fp-content {
+  align-items: start;
+  padding-block: clamp(16px, 2vw, 32px) clamp(32px, 4vw, 64px);
+}
+.page-f1 .f1-fp-video-wrap {
+  grid-column: 1 / span 12;
+  aspect-ratio: 16 / 9;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.page-f1 .f1-fp-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── 010 Transition ── */
+.page-f1 .f1-tr-head {
+  padding-block: clamp(24px, 3vw, 48px) clamp(12px, 1.5vw, 24px);
+  border-top: 1px solid rgba(255,255,255,0.12);
+  align-items: baseline;
+}
+.page-f1 .f1-tr-title {
+  grid-column: 2 / span 8;
+  font-family: "Epilogue", system-ui;
+  font-weight: 500;
+  font-size: clamp(11px, 0.93vw, 16px);
+  color: #F2F3F4;
+}
+.page-f1 .f1-tr-num {
+  grid-column: 12 / span 1;
+  justify-self: end;
+  font-family: "Clash Display", system-ui;
+  font-weight: 400;
+  font-size: clamp(11px, 0.93vw, 16px);
+  color: rgba(242,243,244,0.55);
+}
+.page-f1 .f1-tr-video-row {
+  padding-bottom: clamp(32px, 4vw, 64px);
+}
+.page-f1 .f1-tr-video-wrap {
+  grid-column: 1 / span 12;
+  aspect-ratio: 16 / 9;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.page-f1 .f1-tr-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── 05 Mockups ── */
+.page-f1 .f1-mk-section {
+  padding-bottom: clamp(40px, 6vw, 96px);
+}
+/* Asymmetric 2-col mockup grid: 543fr left / 823fr right */
+.page-f1 .f1-mk-grid {
+  display: grid;
+  grid-template-columns: 543fr 823fr;
+  gap: clamp(12px, 1.6vw, 24px);
+}
+.page-f1 .f1-mk-item--full {
+  grid-column: 1 / span 2;
+}
+.page-f1 .f1-mk-col--l {
+  grid-column: 1;
+}
+.page-f1 .f1-mk-col--r {
+  grid-column: 2;
+}
+.page-f1 .f1-mk-item {
+  margin: 0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.page-f1 .f1-mk-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ── 06 Vidéo Vimeo ── */
+.page-f1 .f1-vimeo-wrap {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 6px;
+}
+.page-f1 .f1-vimeo-wrap iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ── Outro ── */
+.page-f1 .f1-outro-section {
+  padding-top: clamp(80px, 12vw, 200px);
+  padding-bottom: clamp(80px, 12vw, 200px);
+  text-align: center;
+}
+.page-f1 .f1-outro-text {
+  color: #fff;
+  font-size: clamp(14px, 1.1vw, 18px);
+  line-height: 1.6;
+  max-width: 660px;
+  margin: 0 auto;
+}
+
 /* ─── Responsive ─── */
 @media (max-width: 900px) {
   .page-f1 .f1-head .title { grid-column: 2 / span 6; }
@@ -4723,4 +4840,13 @@ body:has(.page-posters .lb:target) {
   .page-f1 .f1-grid--4 { grid-template-columns: repeat(2, 1fr); }
 
   .page-f1 .filmstrip-frames { grid-template-columns: repeat(2, 1fr); }
+
+  .page-f1 .f1-mk-grid {
+    grid-template-columns: 1fr;
+  }
+  .page-f1 .f1-mk-item--full,
+  .page-f1 .f1-mk-col--l,
+  .page-f1 .f1-mk-col--r {
+    grid-column: 1;
+  }
 }
