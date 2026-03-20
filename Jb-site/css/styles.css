@@ -959,8 +959,9 @@ body.page-work #site-footer {
   min-height: calc(100vh - var(--head-h, 44px) - var(--hero-h));
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  padding-bottom: 10px;
+  justify-content: flex-start;
+  padding-top: clamp(20px, 3vh, 48px);
+  padding-bottom: 40px;
 }
 
 .page-work .work-table {
@@ -1045,6 +1046,109 @@ a.work-row:active {
 
 a.work-row:hover {
   background: rgba(65, 243, 115, 0.08);
+}
+
+/* =========================
+   WORK — BEST CASES (001) + SECONDARY TABLE (002)
+   ========================= */
+
+/* Section header shared by both blocks */
+.cases-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: clamp(10px, 1.4vh, 20px) 0 clamp(6px, 0.8vh, 12px);
+  border-bottom: 1px solid rgba(0,0,0,0.18);
+  font-family: "Epilogue", sans-serif;
+}
+.cases-header__label {
+  font-size: clamp(13px, 1.05vw, 16px);
+  font-weight: 500;
+}
+.cases-header__num {
+  font-family: "Clash Display", sans-serif;
+  font-size: clamp(13px, 1.05vw, 16px);
+  font-weight: 600;
+}
+
+/* Cases table wrapper */
+.cases-table {
+  width: 95vw;
+  max-width: none;
+  margin: 0 auto;
+  padding-inline: 0;
+}
+
+/* Cases rows — 5 cols: idx | title | spacer | date | type */
+.cases-row {
+  display: grid;
+  grid-template-columns: minmax(40px, 56px) minmax(220px, 36%) 1fr minmax(90px, 12%) minmax(160px, 22%);
+  align-items: start;
+  column-gap: clamp(10px, 1.6vw, 22px);
+  padding: clamp(7px, 1.05vh, 14px) 0;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+}
+.cases-row::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 0;
+  height: 1px;
+  background: rgba(0,0,0,0.18);
+}
+.cases-row:last-child {
+  border-bottom: 1px solid rgba(0,0,0,0.18);
+}
+.cases-row:hover {
+  background: rgba(65,243,115,0.08);
+}
+
+.cases-row .idx {
+  font-family: "Clash Display", sans-serif;
+  font-weight: 600;
+  font-size: clamp(13px, 1.05vw, 16px);
+}
+.cases-row .title h3 {
+  margin: 0 0 4px;
+  font-family: "Epilogue", sans-serif;
+  font-weight: 500;
+  font-size: clamp(15px, 1.25vw, 18px);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.cases-row .title .desc {
+  margin: 0;
+  opacity: 0.85;
+  font-size: clamp(12px, 1.0vw, 14px);
+}
+.cases-row .date-col h4,
+.cases-row .type-col h4 {
+  margin: 0 0 4px;
+  font-family: "Epilogue", sans-serif;
+  font-weight: 600;
+  font-size: clamp(12px, 0.95vw, 14px);
+}
+.cases-row .date-col p,
+.cases-row .type-col p {
+  margin: 0;
+  opacity: 0.9;
+  font-size: clamp(12px, 0.95vw, 14px);
+}
+
+/* Latest badge */
+.latest-badge {
+  height: clamp(16px, 1.4vw, 22px);
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Secondary categories block: add top spacing */
+.work-table--secondary {
+  margin-top: clamp(32px, 4vh, 60px);
 }
 
 /* =========================
