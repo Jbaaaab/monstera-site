@@ -1140,7 +1140,7 @@ a.work-row:hover {
 
 /* Latest badge */
 .latest-badge {
-  height: clamp(16px, 1.4vw, 22px);
+  height: clamp(48px, 4.2vw, 66px);
   width: auto;
   display: inline-block;
   vertical-align: middle;
@@ -1148,7 +1148,7 @@ a.work-row:hover {
 
 /* Secondary categories block: add top spacing */
 .work-table--secondary {
-  margin-top: clamp(32px, 4vh, 60px);
+  margin-top: 50vh;
 }
 
 /* =========================
