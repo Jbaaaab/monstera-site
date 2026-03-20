@@ -1077,6 +1077,7 @@ a.work-row:hover {
   max-width: none;
   margin: 0 auto;
   padding-inline: 0;
+  padding-bottom: 50vh;
 }
 
 /* Cases rows — 5 cols: idx | title | spacer | date | type */
@@ -1138,12 +1139,20 @@ a.work-row:hover {
   font-size: clamp(12px, 0.95vw, 14px);
 }
 
-/* Latest badge */
+/* Latest badge — absolute overlay, ne décale pas le texte */
+.cases-row .title h3 {
+  position: relative;
+}
+
 .latest-badge {
-  height: clamp(48px, 4.2vw, 66px);
-  width: auto;
-  display: inline-block;
-  vertical-align: middle;
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%) rotate(-14.49deg);
+  margin-left: 0.5em;
+  width: clamp(60px, 5.32vw, 100px);
+  height: auto;
+  pointer-events: none;
 }
 
 /* Secondary categories block: add top spacing */
