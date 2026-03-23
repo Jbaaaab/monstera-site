@@ -636,6 +636,11 @@ body.page-work #site-footer {
   margin-top: clamp(28px, 6vw, 96px);
 }
 
+/* F1 page: dark bg fills the gap above the rounded footer card */
+body.page-f1 .site-footer {
+  background: #111111;
+}
+
 .site-footer .footer-card {
   width: 100%;
   background: var(--bg);
@@ -3671,7 +3676,8 @@ body:has(.page-posters .lb:target) {
 .page-f1 .f1-csys-row {
   display: flex;
   align-items: stretch;
-  /* left edge = content boundary; right edge breaks out to dark section edge */
+  /* both edges break out to dark section edge — color system exception */
+  margin-left: calc(-1 * var(--csys-P));
   margin-right: calc(-1 * var(--csys-P));
   margin-top: var(--csys-gap);
 }
@@ -4403,11 +4409,11 @@ body:has(.page-posters .lb:target) {
   transform: scale(0.9);
   transform-origin: left center;
 }
-/* LAP counter : standalone card below Race Leader, 2× size */
+/* LAP counter : standalone card below Race Leader */
 .page-f1 .f1-rf-card--cpt img {
   display: block;
   width: auto;
-  height: clamp(56px, 8vw, 128px);
+  height: clamp(40px, 5.7vw, 91px);
   object-fit: contain;
 }
 
