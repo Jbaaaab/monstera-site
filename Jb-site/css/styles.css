@@ -1139,19 +1139,14 @@ a.work-row:hover {
   font-size: clamp(12px, 0.95vw, 14px);
 }
 
-/* Latest badge — overlay sur la ligne de séparation, ne décale pas le texte */
-.cases-row .c.title {
-  position: relative;
-}
-
+/* Latest badge — inline juste après le titre, incliné */
 .latest-badge {
-  position: absolute;
-  left: 0;
-  top: 0;
-  transform: translateY(-55%) rotate(-14.49deg);
-  transform-origin: left center;
+  display: inline-block;
+  vertical-align: middle;
   width: clamp(60px, 5.32vw, 100px);
   height: auto;
+  transform: rotate(-14.49deg);
+  margin-left: 0.4em;
   pointer-events: none;
 }
 
