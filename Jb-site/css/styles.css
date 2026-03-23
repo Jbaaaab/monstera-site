@@ -1115,10 +1115,10 @@ a.work-row:hover {
   font-family: "Epilogue", sans-serif;
   font-weight: 500;
   font-size: clamp(15px, 1.25vw, 18px);
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
+  position: relative;
+  overflow: visible;
 }
 .cases-row .title .desc {
   margin: 0;
@@ -1139,14 +1139,14 @@ a.work-row:hover {
   font-size: clamp(12px, 0.95vw, 14px);
 }
 
-/* Latest badge — inline juste après le titre, incliné */
+/* Latest badge — après le texte du titre, hors du flux (ne modifie pas la hauteur de la row) */
 .latest-badge {
-  display: inline-block;
-  vertical-align: middle;
+  position: absolute;
+  left: calc(100% + 8px);
+  top: 50%;
+  transform: translateY(-50%) rotate(-14.49deg);
   width: clamp(60px, 5.32vw, 100px);
   height: auto;
-  transform: rotate(-14.49deg);
-  margin-left: 0.4em;
   pointer-events: none;
 }
 
