@@ -1143,8 +1143,8 @@ a.work-row:hover {
 .latest-badge {
   position: absolute;
   left: calc(100% + 8px);
-  top: 50%;
-  transform: translateY(-50%) rotate(-14.49deg);
+  top: calc(50% - 10px);
+  transform: translateY(-50%) rotate(15deg);
   width: clamp(60px, 5.32vw, 100px);
   height: auto;
   pointer-events: none;
