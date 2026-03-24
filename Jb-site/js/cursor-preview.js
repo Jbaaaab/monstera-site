@@ -1,25 +1,40 @@
 /**
  * Floating cursor preview
- * Replaces the cursor with a floating image/video square on work rows
+ * Replaces the cursor with a smooth-following image/video square on work rows.
+ * Images are pre-loaded so the first hover is instant.
  */
 (function () {
-  const preview    = document.getElementById('cursor-preview');
-  const previewImg = document.getElementById('cursor-preview-img');
+  const preview      = document.getElementById('cursor-preview');
+  const previewImg   = document.getElementById('cursor-preview-img');
   const previewVimeo = document.getElementById('cursor-preview-vimeo');
 
   if (!preview) return;
 
-  let mouseX = 0, mouseY = 0;
-  let posX   = 0, posY   = 0;
-  let rafId  = null;
-  let active = false;
+  /* ── Preload all thumbnail images immediately ── */
+  const rows = document.querySelectorAll('[data-cursor-preview]');
+  rows.forEach(function (row) {
+    if (row.dataset.cursorPreviewType !== 'vimeo') {
+      var img = new Image();
+      img.src = row.dataset.cursorPreview;
+    }
+  });
+
+  /* ── Mouse tracking with lerp ── */
+  var mouseX = 0, mouseY = 0;
+  var posX   = 0, posY   = 0;
+  var rafId  = null;
+  var active = false;
 
   function lerp(a, b, t) { return a + (b - a) * t; }
 
   function tick() {
     posX = lerp(posX, mouseX, 0.1);
     posY = lerp(posY, mouseY, 0.1);
-    preview.style.transform = 'translate(' + posX + 'px, ' + posY + 'px)';
+
+    // Vertically center the preview on cursor
+    var h = preview.offsetHeight;
+    preview.style.transform = 'translate(' + posX + 'px, ' + (posY - h * 0.5) + 'px)';
+
     if (active) rafId = requestAnimationFrame(tick);
   }
 
@@ -28,12 +43,11 @@
     mouseY = e.clientY;
   });
 
-  const rows = document.querySelectorAll('[data-cursor-preview]');
-
+  /* ── Hover handlers ── */
   rows.forEach(function (row) {
     row.addEventListener('mouseenter', function () {
-      const type = row.dataset.cursorPreviewType;
-      const src  = row.dataset.cursorPreview;
+      var type = row.dataset.cursorPreviewType;
+      var src  = row.dataset.cursorPreview;
 
       if (type === 'vimeo') {
         previewImg.style.display = 'none';
@@ -50,7 +64,7 @@
         previewImg.src = src;
       }
 
-      // Snap position before showing to avoid slide-in from 0,0
+      // Snap position before first frame to avoid flying in from corner
       posX = mouseX;
       posY = mouseY;
 

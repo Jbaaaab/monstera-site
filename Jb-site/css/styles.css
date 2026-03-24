@@ -5113,21 +5113,18 @@ body:has(.page-posters .lb:target) {
   cursor: none !important;
 }
 
-/* The floating preview container */
+/* The floating preview container — width fixed, height adapts to media ratio */
 #cursor-preview {
   position: fixed;
   top: 0;
   left: 0;
-  width: 280px;
-  height: 320px;
+  width: 260px;
   pointer-events: none;
   z-index: 9000;
-  /* transform is set by JS: translate(x, y) */
-  /* Offset so the preview appears offset from the cursor tip */
-  margin-left: 20px;
-  margin-top: -160px;
+  /* transform set by JS: translate(x, y); vertical centering done there too */
+  margin-left: 24px;
   opacity: 0;
-  transition: opacity 0.25s ease;
+  transition: opacity 0.2s ease;
   will-change: transform;
 }
 
@@ -5137,22 +5134,22 @@ body:has(.page-posters .lb:target) {
 
 .cursor-preview__inner {
   width: 100%;
-  height: 100%;
   overflow: hidden;
   background: var(--text-primary, #0f1f1f);
 }
 
+/* Image fills width, height is natural (no cropping) */
 #cursor-preview-img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   display: block;
 }
 
+/* Vimeo keeps 16:9 */
 #cursor-preview-vimeo {
   display: none;
   width: 100%;
-  height: 100%;
+  aspect-ratio: 16 / 9;
 }
 
 #cursor-preview-vimeo iframe {
