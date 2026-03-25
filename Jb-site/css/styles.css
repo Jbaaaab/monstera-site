@@ -5528,6 +5528,134 @@ body:has(.page-posters .lb:target) {
   line-height: 1.55;
 }
 
+/* ─── Section 04 — Schemas ─── */
+.page-gust .gust-schemas {
+  padding-top: clamp(24px, 3.5vw, 48px);
+  padding-bottom: clamp(24px, 3.5vw, 48px);
+  border-top: none;
+}
+
+.page-gust .gust-schemas-row {
+  display: flex;
+  gap: clamp(10px, 1.4vw, 20px);
+  align-items: stretch;
+  padding-left: calc((100% + clamp(12px, 1.6vw, 28px)) / 12);
+}
+
+.page-gust .gust-schema-img {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+}
+
+.page-gust .gust-schema-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* ─── Section 05 — Website / Home Page ─── */
+.page-gust .gust-ws-head {
+  padding: 24px 0 14px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+}
+
+.page-gust .gust-ws-idx {
+  grid-column: 1 / span 1;
+  font-family: "Clash Display", system-ui;
+  font-weight: 600;
+  font-size: clamp(14px, 1.44vw, 22px);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-secondary);
+}
+
+.page-gust .gust-ws-title {
+  grid-column: 2 / span 5;
+}
+
+.page-gust .gust-ws-title h2 {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 500;
+  font-size: clamp(11px, 0.93vw, 16px);
+  line-height: 1.1;
+}
+
+.page-gust .gust-ws-label {
+  grid-column: 11 / span 2;
+  justify-self: end;
+  align-self: center;
+  text-align: right;
+}
+
+.page-gust .gust-ws-label h4 {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(10px, 0.72vw, 12px);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+}
+
+.page-gust .gust-ws-sub {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+}
+
+.page-gust .gust-ws-subidx {
+  grid-column: 1 / span 1;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(10px, 0.72vw, 12px);
+  color: var(--text-secondary);
+  opacity: 0.6;
+  align-self: center;
+}
+
+.page-gust .gust-ws-subtitle {
+  grid-column: 2 / span 5;
+}
+
+.page-gust .gust-ws-subtitle h3 {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(10px, 0.72vw, 12px);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+}
+
+.page-gust .gust-ws-text {
+  padding: clamp(20px, 3vw, 40px) 0;
+}
+
+.page-gust .gust-ws-desc {
+  grid-column: 2 / span 9;
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(11px, 0.93vw, 16px);
+  line-height: 1.55;
+}
+
+/* Landing screenshots — indent 1 col left, full right */
+.page-gust .gust-landing-fig {
+  margin: 0 0 clamp(12px, 1.6vw, 20px);
+  padding-left: calc((100% + clamp(12px, 1.6vw, 28px)) / 12);
+}
+
+.page-gust .gust-landing-fig img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
 /* ─── Footer ─── */
 body.page-gust .site-footer {
   background: #F2F3F4;
