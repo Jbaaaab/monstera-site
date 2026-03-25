@@ -5332,7 +5332,7 @@ body:has(.page-posters .lb:target) {
   flex: 1;
   min-width: 0;
   position: relative;
-  border-radius: 12px;
+
   overflow: hidden;
   aspect-ratio: 3 / 4;
 }
@@ -5353,23 +5353,32 @@ body:has(.page-posters .lb:target) {
   opacity: 0.4;
 }
 
+/* Text block — anchored to bottom of card */
 .page-gust .gust-offer-content {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
   padding: clamp(14px, 1.8vw, 24px);
   box-sizing: border-box;
 }
 
-/* Logo wrapper — centres the logo horizontally inside the card */
+/* Logo wrapper — absolute, centered horizontally, Y from Figma */
 .page-gust .gust-offer-logo-wrap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 2;
   display: flex;
   justify-content: center;
-  width: 100%;
 }
+
+/* Per-card Y positions: (logo_y - card_y) / card_h(418) */
+.page-gust .gust-offer--1 .gust-offer-logo-wrap { top: 4.78%;  } /* 20 / 418 */
+.page-gust .gust-offer--2 .gust-offer-logo-wrap { top: 23.24%; } /* 97.15 / 418 */
+.page-gust .gust-offer--3 .gust-offer-logo-wrap { top: 9.09%;  } /* 38 / 418 */
+.page-gust .gust-offer--4 .gust-offer-logo-wrap { top: 9.81%;  } /* 41 / 418 */
 
 .page-gust .gust-offer-logo {
   display: block;
@@ -5387,7 +5396,7 @@ body:has(.page-posters .lb:target) {
   margin: 0;
   font-family: "Epilogue", system-ui;
   font-weight: 400;
-  font-size: clamp(8px, 0.65vw, 11px);
+  font-size: clamp(14px, 1.14vw, 19px);
   line-height: 1.5;
   color: #fff;
 }
@@ -5552,7 +5561,7 @@ body:has(.page-posters .lb:target) {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 8px;
+
 }
 
 /* ─── Section 05 — Website / Home Page ─── */
@@ -5653,7 +5662,7 @@ body:has(.page-posters .lb:target) {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 8px;
+
 }
 
 /* ─── Mojo row: image left + aside text right ─── */
@@ -5671,7 +5680,7 @@ body:has(.page-posters .lb:target) {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 8px;
+
 }
 
 .page-gust .gust-mojo-aside {
@@ -5728,7 +5737,7 @@ body:has(.page-posters .lb:target) {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 8px;
+
 }
 
 /* ─── Footer ─── */
