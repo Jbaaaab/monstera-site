@@ -2967,3 +2967,1948 @@ body:has(.page-posters .lb:target) {
     transform: translateY(0.08em);
   }
 }
+
+
+/* =========================
+   F1 Rebranding — Page
+   ========================= */
+.page-f1 {
+  --bg: #F2F3F4;
+  --f1-pad: clamp(48px, 9.55vw, 165px); /* 165px dead zone at 1728px */
+  background: var(--bg);
+  color: var(--text-secondary);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scene container — same max-width system as branding/magazine */
+.page-f1 .f1-scene {
+  width: 100%;
+  max-width: var(--base-w);
+  margin: 0 auto;
+  padding-inline: var(--f1-pad);
+  box-sizing: border-box;
+}
+
+/* Badge PNG centré */
+.page-f1 .page-grid {
+  z-index: 0;
+}
+
+.page-f1 .f1-title-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: clamp(80px, 14vw, 200px);
+  padding-bottom: clamp(60px, 10vw, 140px);
+}
+
+.page-f1 .f1-badge {
+  width: clamp(140px, 14vw, 220px);
+  height: auto;
+  object-fit: contain;
+}
+
+/* ─── Grille 12 colonnes (partagée avec branding/magazine) ─── */
+.page-f1 .f1-row {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: clamp(12px, 1.6vw, 28px);
+  align-items: start;
+}
+
+/* ─── Section 01 — Hero ─── */
+.page-f1 .f1-head {
+  padding: 24px 0 14px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+}
+
+.page-f1 .f1-head .idx {
+  grid-column: 1 / span 1;
+  font-family: "Clash Display", system-ui;
+  font-weight: 600;
+  font-size: clamp(14px, 1.44vw, 22px);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-secondary);
+}
+
+.page-f1 .f1-head .title {
+  grid-column: 2 / span 7;
+  display: grid;
+  row-gap: 2px;
+}
+
+.page-f1 .f1-head h1 {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 500;
+  font-size: clamp(11px, 0.93vw, 16px);
+  line-height: 1.1;
+}
+
+.page-f1 .f1-head .lead {
+  margin: 0;
+  font-size: clamp(11px, 0.93vw, 16px);
+  line-height: 1.2;
+}
+
+.page-f1 .f1-head .year {
+  grid-column: 10 / span 1;
+  justify-self: end;
+  font-size: clamp(11px, 0.93vw, 16px);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.page-f1 .f1-head .sector {
+  grid-column: 11 / span 1;
+  justify-self: end;
+  text-align: right;
+  display: grid;
+  row-gap: 2px;
+}
+
+.page-f1 .f1-head .sector h4 {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 500;
+  font-size: clamp(11px, 0.93vw, 16px);
+  line-height: 1.1;
+}
+
+.page-f1 .f1-head .sector p {
+  margin: 0;
+  font-size: clamp(11px, 0.93vw, 16px);
+  line-height: 1.2;
+}
+
+.page-f1 .f1-body {
+  padding: 8px 0 24px;
+  border-top: 1px solid rgba(0, 0, 0, 0.16);
+}
+
+.page-f1 .f1-body .desc {
+  grid-column: 2 / span 3;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 1.6vw, 20px);
+  margin-top: 4px;
+}
+
+.page-f1 .f1-body .desc p {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(11px, 0.93vw, 16px);
+  line-height: 1.55;
+}
+
+.page-f1 .f1-body .desc .disciplines {
+  font-size: clamp(9px, 0.68vw, 11px);
+  line-height: 1.5;
+}
+
+.page-f1 .f1-body .main-img {
+  grid-column: 6 / span 6;
+  margin: 0;
+}
+
+.page-f1 .f1-body .main-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ─── f1-section (sections blanches) ─── */
+.page-f1 .f1-section {
+  border-top: 1px solid rgba(0, 0, 0, 0.16);
+  padding-top: clamp(24px, 3.5vw, 56px);
+  padding-bottom: clamp(32px, 5vw, 72px);
+}
+
+/* ─── Section 02 — Thinking Process ─── */
+.page-f1 .f1-thinking-top {
+  margin-bottom: clamp(28px, 4vw, 56px);
+}
+
+.page-f1 .thinking-text {
+  grid-column: 2 / span 7;
+}
+
+.page-f1 .thinking-text p {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(11px, 0.93vw, 16px);
+  line-height: 1.55;
+}
+
+.page-f1 .thinking-label {
+  grid-column: 11 / span 1;
+  justify-self: end;
+  align-self: start;
+  text-align: right;
+}
+
+.page-f1 .thinking-label h4 {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(10px, 0.72vw, 12px);
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Grille cartes thinking */
+.page-f1 .f1-thinking-cards {
+  display: flex;
+  gap: clamp(12px, 1.6vw, 28px);
+  align-items: start;
+  /* indent to match col 2 start: (container + gap) / 12 */
+  padding-left: calc((100% + clamp(12px, 1.6vw, 28px)) / 12);
+  padding-right: calc((100% + clamp(12px, 1.6vw, 28px)) / 12);
+}
+
+.page-f1 .thinking-card {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-f1 .thinking-card--1 { }
+.page-f1 .thinking-card--2 { }
+.page-f1 .thinking-card--3 { }
+
+/* Barre verte avec * */
+.page-f1 .tcard-tag {
+  display: none;
+}
+
+.page-f1 .tcard-tag span {
+  font-family: "Clash Display", system-ui;
+  font-weight: 600;
+  font-size: clamp(14px, 1.1vw, 18px);
+  color: var(--text-secondary);
+  line-height: 1;
+}
+
+.page-f1 .thinking-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.page-f1 .thinking-card figcaption {
+  margin-top: clamp(6px, 0.8vw, 11px);
+  font-size: clamp(9px, 0.66vw, 11px);
+  line-height: 1.5;
+}
+
+/* ─── Section 03 — What it means ─── */
+.page-f1 .f1-meaning-row {
+  margin-bottom: clamp(16px, 2vw, 28px);
+}
+
+.page-f1 .meaning-label {
+  grid-column: 2 / span 2;
+}
+
+.page-f1 .meaning-label h4 {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(10px, 0.72vw, 12px);
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-top: 0.2em;
+}
+
+.page-f1 .meaning-text {
+  grid-column: 4 / span 8;
+}
+
+.page-f1 .meaning-text p {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(11px, 0.93vw, 16px);
+  line-height: 1.55;
+}
+
+.page-f1 .f1-so-row {
+  align-items: start;
+}
+
+.page-f1 .so-label {
+  grid-column: 2 / span 2;
+}
+
+.page-f1 .so-label h4 {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(10px, 0.72vw, 12px);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.page-f1 .so-text {
+  grid-column: 4 / span 8;
+}
+
+.page-f1 .so-text p {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 600;
+  font-size: clamp(13px, 1.11vw, 19px);
+  line-height: 1.2;
+}
+
+/* ═══════════════════════════════
+   DARK SECTION
+   ═══════════════════════════════ */
+.page-f1 .f1-dark {
+  position: relative;
+  background: #111111;
+  color: #F2F3F4;
+  border-radius: 20px 20px 0 0;
+  overflow: hidden;
+  margin-inline: calc(-1 * var(--f1-pad));
+}
+
+/* Lignes rouges à l'intérieur du dark */
+.page-f1 .f1-dark::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background: repeating-linear-gradient(
+    to right,
+    rgba(254, 50, 24, 0.15) 0,
+    rgba(254, 50, 24, 0.15) var(--grid-thk),
+    transparent var(--grid-thk),
+    transparent calc(100vw / var(--grid-cols))
+  );
+}
+
+.page-f1 .f1-dark > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Section dans le dark */
+.page-f1 .f1-dsection {
+  padding-top: clamp(24px, 3.5vw, 56px);
+  padding-bottom: clamp(32px, 5vw, 72px);
+  padding-inline: var(--f1-pad);
+}
+
+/* ── Logotype section header ── */
+.page-f1 .f1-dhead {
+  padding: 24px 0 20px;
+  align-items: start;
+  position: relative;
+}
+.page-f1 .f1-dhead::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: calc(-1 * var(--f1-pad));
+  right: calc(-1 * var(--f1-pad));
+  height: 1px;
+  background: rgba(255,255,255,0.16);
+  pointer-events: none;
+}
+
+.page-f1 .f1-didx {
+  grid-column: 1 / span 1;
+  font-family: "Clash Display", system-ui;
+  font-weight: 600;
+  font-size: clamp(14px, 1.44vw, 22px);
+  color: #FE3218;
+  line-height: 1;
+}
+
+.page-f1 .f1-dtitle {
+  grid-column: 2 / span 6;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.page-f1 .f1-dtitle h2 {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 500;
+  font-size: clamp(11px, 0.93vw, 16px);
+  line-height: 1.2;
+  color: #F2F3F4;
+}
+
+.page-f1 .f1-dtitle p {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(11px, 0.93vw, 16px);
+  line-height: 1.4;
+  color: #F2F3F4;
+}
+
+.page-f1 .f1-dlabel {
+  grid-column: 11 / span 1;
+  justify-self: end;
+  text-align: right;
+}
+
+.page-f1 .f1-dlabel h4 {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(10px, 0.72vw, 12px);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #F2F3F4;
+}
+
+/* ── Logo rows ── */
+.page-f1 .f1-logo-row {
+  padding: clamp(40px, 5vw, 80px) 0;
+  align-items: center;
+}
+
+.page-f1 .f1-limg {
+  grid-column: 2 / span 2;
+  margin: 0;
+}
+
+.page-f1 .f1-limg img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.page-f1 .f1-lname {
+  grid-column: 4 / span 2;
+}
+
+.page-f1 .f1-lname p {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 500;
+  font-size: clamp(11px, 0.93vw, 16px);
+  color: #F2F3F4;
+}
+
+.page-f1 .f1-ldesc {
+  grid-column: 7 / span 6;
+}
+
+.page-f1 .f1-ldesc p {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(11px, 0.93vw, 16px);
+  line-height: 1.55;
+  color: #F2F3F4;
+}
+
+/* ══ COLOR PALETTE ══ */
+
+/* Bandes full-width — cassent hors du padding-inline de la section */
+.page-f1 .f1-color-bands {
+  margin-inline: calc(-1 * var(--f1-pad));
+}
+
+.page-f1 .f1-band {
+  min-height: clamp(104px, 10vw, 160px);
+  padding: 0 var(--f1-pad);
+  display: flex;
+  align-items: center;
+}
+
+.page-f1 .f1-band-row {
+  width: 100%;
+  align-items: center;
+}
+
+/* Backgrounds */
+.page-f1 .f1-band--noir   { background-color: #111111; background-image: linear-gradient(to right, rgba(255,255,255,0.16), rgba(255,255,255,0.16)); background-size: 100% 1px; background-repeat: no-repeat; background-position: top; }
+.page-f1 .f1-band--gris   { background: #C7C7C5; color: #111111; }
+.page-f1 .f1-band--rouge  { background: linear-gradient(to right, #FE1A19 0%, #E41719 10%, #A50F18 33%, #F91A1A 66%, #FE3218 100%); }
+.page-f1 .f1-band--violet { background: linear-gradient(to right, #5347D5 0%, #20168A 33%, #4E42D9 66%, #6557FF 100%); }
+.page-f1 .f1-band--bleu   { background: linear-gradient(to right, #1D6E9B 0%, #113E66 33%, #51AFCD 66%, #4EBBDB 100%); }
+
+/* Texte dans les bandes */
+.page-f1 .f1-bname {
+  grid-column: 1 / span 3;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(11px, 0.93vw, 16px);
+}
+
+.page-f1 .f1-bidx {
+  grid-column: 9 / span 1;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(11px, 0.93vw, 16px);
+}
+
+.page-f1 .f1-bhex-label {
+  grid-column: 10 / span 1;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(10px, 0.72vw, 12px);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.6;
+}
+
+.page-f1 .f1-bhex-val {
+  grid-column: 11 / span 2;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(11px, 0.93vw, 16px);
+}
+
+/* WHY / BUUUTT rows */
+.page-f1 .f1-color-why {
+  padding: clamp(20px, 2.5vw, 36px) 0;
+  align-items: start;
+  position: relative;
+}
+.page-f1 .f1-color-why::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: calc(-1 * var(--f1-pad));
+  right: calc(-1 * var(--f1-pad));
+  height: 1px;
+  background: rgba(255,255,255,0.16);
+  pointer-events: none;
+}
+
+.page-f1 .f1-why-label {
+  grid-column: 2 / span 2;
+}
+
+.page-f1 .f1-why-label p {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(10px, 0.72vw, 12px);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #F2F3F4;
+}
+
+.page-f1 .f1-why-text {
+  grid-column: 4 / span 8;
+}
+
+.page-f1 .f1-why-text p {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(11px, 0.93vw, 16px);
+  line-height: 1.55;
+  color: #F2F3F4;
+}
+
+/* ══ COOOOLORS SYSTEM (2.5) ══ */
+
+.page-f1 .f1-csys-section {
+  --csys-P:   var(--f1-pad);                 /* = section padding-inline */
+  --csys-sw:  clamp(280px, 32.81vw, 567px); /* swatch width  567/1728 */
+  --csys-vb:  clamp(5px,  0.578vw, 10px);   /* vbar  width   10/1728  */
+  --csys-sh:  clamp(22px, 2.44vw,  42px);   /* swatch height 42.15/1728 */
+  --csys-gap: clamp(40px, 5.8vw,   100px);  /* space between row groups */
+  padding-bottom: var(--csys-gap);
+}
+
+/* ── Flex rows (override f1-row grid) ── */
+.page-f1 .f1-csys-row {
+  display: flex;
+  align-items: stretch;
+  /* both edges break out to dark section edge — color system exception */
+  margin-left: calc(-1 * var(--csys-P));
+  margin-right: calc(-1 * var(--csys-P));
+  margin-top: var(--csys-gap);
+}
+
+/* ── Swatches container ── */
+.page-f1 .f1-csys-swatches {
+  width: var(--csys-sw);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Individual swatch ── */
+.page-f1 .f1-csys-swatch {
+  height: var(--csys-sh);
+  flex-shrink: 0;
+}
+
+/* ── Vertical accent bar ── */
+.page-f1 .f1-csys-vbar {
+  width: var(--csys-vb);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  margin-inline: clamp(5px, 0.578vw, 10px); /* 10px gap from adjacent swatch */
+}
+.page-f1 .f1-csys-vbar-item {
+  height: var(--csys-sh);
+  flex-shrink: 0;
+}
+
+/* ── Names / labels ── */
+.page-f1 .f1-csys-names {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(11px, 0.93vw, 16px);
+  color: #F2F3F4;
+}
+.page-f1 .f1-csys-names span {
+  height: var(--csys-sh);
+  display: flex;
+  align-items: center;
+}
+/* Principal/Corps & Yellow Flag: names fill right */
+.page-f1 .f1-csys-names--main,
+.page-f1 .f1-csys-names--flag {
+  flex: 1;
+  padding-inline: clamp(12px, 1.6vw, 28px);
+}
+/* Spacer for Try out/Qualif row: aligns labels to same x as Alpine etc. */
+.page-f1 .f1-csys-align-spacer { flex: 0 0 50%; }
+/* Try out/Qualif: left-aligned, offset 300px right at 1728px */
+.page-f1 .f1-csys-names--tryout {
+  flex: 1;
+  text-align: left;
+  padding-right: clamp(12px, 1.6vw, 28px);
+  padding-left: clamp(80px, 17.36vw, 300px);
+}
+/* Teams left: left-aligned */
+.page-f1 .f1-csys-names--tleft {
+  flex: 1;
+  padding-inline: clamp(12px, 1.6vw, 28px);
+}
+/* Teams right: left-aligned, same 300px offset as tryout row */
+.page-f1 .f1-csys-names--tright {
+  flex: 1;
+  text-align: left;
+  padding-right: clamp(12px, 1.6vw, 28px);
+  padding-left: clamp(80px, 17.36vw, 300px);
+}
+
+/* ── Flat colors for accent bars (override gradients) ── */
+.page-f1 .f1-csys-vbar-item.f1-cs--principal  { background: #FF1626; }
+.page-f1 .f1-csys-vbar-item.f1-cs--corps      { background: #FFFFFF; }
+.page-f1 .f1-csys-vbar-item.f1-cs--tryout     { background: #4AB5D4; }
+.page-f1 .f1-csys-vbar-item.f1-cs--qualif     { background: #6253FD; }
+.page-f1 .f1-csys-vbar-item.f1-cs--yellowflag { background: #FFEB57; }
+.page-f1 .f1-csys-vbar-item.f1-cs--safetycar  { background: #757575; }
+.page-f1 .f1-csys-vbar-item.f1-cs--alpine      { background: #00A4EE; }
+.page-f1 .f1-csys-vbar-item.f1-cs--redbull     { background: #1673CC; }
+.page-f1 .f1-csys-vbar-item.f1-cs--racingbulls { background: #5794FF; }
+.page-f1 .f1-csys-vbar-item.f1-cs--williams    { background: #006AE2; }
+.page-f1 .f1-csys-vbar-item.f1-cs--mercedes    { background: #00F8D1; }
+.page-f1 .f1-csys-vbar-item.f1-cs--astonmartin { background: #009C6E; }
+.page-f1 .f1-csys-vbar-item.f1-cs--haas        { background: #DFE1E2; }
+.page-f1 .f1-csys-vbar-item.f1-cs--cadillac    { background: #AAAAAD; }
+.page-f1 .f1-csys-vbar-item.f1-cs--mclaren     { background: #FF7700; }
+.page-f1 .f1-csys-vbar-item.f1-cs--ferrari     { background: #FE001E; }
+.page-f1 .f1-csys-vbar-item.f1-cs--audi        { background: #FF0000; }
+
+/* ── Gradient colors ── */
+.page-f1 .f1-cs--principal  { background: linear-gradient(to right, #FF470E 0%, #FF1626 33%, #990D17 66%, #FF1A19 100%); }
+.page-f1 .f1-cs--corps      { background: linear-gradient(to right, #FFFFFF 0%, #C7C7C5 79%); }
+.page-f1 .f1-cs--tryout     { background: linear-gradient(to right, #1D6E9B 0%, #113E66 33%, #51AFCD 66%, #4EBBDB 100%); }
+.page-f1 .f1-cs--qualif     { background: linear-gradient(to right, #5347D5 0%, #20168A 33%, #4E42D9 66%, #6557FF 100%); }
+.page-f1 .f1-cs--yellowflag { background: linear-gradient(to right, #FFEB57 0%, #E5CB0C 33%, #837929 66%, #F2DB32 100%); }
+.page-f1 .f1-cs--safetycar  { background: linear-gradient(to right, #6E6E6E 0%, #606060 33%, #7C7C7C 66%, #434343 100%); }
+/* Teams */
+.page-f1 .f1-cs--alpine      { background: linear-gradient(to right, #00A4EE 0%, #48C6FF 100%); }
+.page-f1 .f1-cs--redbull     { background: linear-gradient(to right, #1673CC 0%, #3DA0FF 100%); }
+.page-f1 .f1-cs--racingbulls { background: linear-gradient(to right, #5794FF 0%, #72A5FF 100%); }
+.page-f1 .f1-cs--williams    { background: linear-gradient(to right, #006AE2 0%, #2089FF 100%); }
+.page-f1 .f1-cs--mercedes    { background: linear-gradient(to right, #00F8D1 0%, #98FFEF 100%); }
+.page-f1 .f1-cs--astonmartin { background: linear-gradient(to right, #009C6E 0%, #03E19F 100%); }
+.page-f1 .f1-cs--haas        { background: linear-gradient(to right, #DFE1E2 0%, #F8F8F8 100%); }
+.page-f1 .f1-cs--cadillac    { background: linear-gradient(to right, #AAAAAD 0%, #E0E0E0 100%); }
+.page-f1 .f1-cs--mclaren     { background: linear-gradient(to right, #FF7700 0%, #FFA75A 100%); }
+.page-f1 .f1-cs--ferrari     { background: linear-gradient(to right, #FE001E 0%, #FF324B 100%); }
+.page-f1 .f1-cs--audi        { background: linear-gradient(to right, #FF0000 0%, #FF3E3E 100%); }
+
+.page-f1 .f1-dsection-head {
+  margin-bottom: clamp(20px, 2.5vw, 36px);
+}
+
+.page-f1 .dsection-label {
+  grid-column: 2 / span 11;
+}
+
+.page-f1 .dsection-label h4 {
+  margin: 0;
+  font-weight: 600;
+  font-size: clamp(12px, 0.9vw, 15px);
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(242, 243, 244, 0.5);
+}
+
+/* ─── Logos (3 colonnes égales) ─── */
+.page-f1 .f1-logos {
+  margin-bottom: clamp(32px, 4vw, 56px);
+}
+
+.page-f1 .f1-logo {
+  margin: 0;
+  background: #1A1A1A;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(20px, 2.5vw, 40px) clamp(12px, 1.5vw, 24px);
+}
+
+.page-f1 .f1-logo--1 { grid-column: 2 / span 3; }
+.page-f1 .f1-logo--2 { grid-column: 5 / span 4; }
+.page-f1 .f1-logo--3 { grid-column: 9 / span 4; }
+
+.page-f1 .f1-logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ─── Bands couleurs ─── */
+.page-f1 .f1-bands {
+  margin-bottom: clamp(32px, 4vw, 56px);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.page-f1 .f1-band {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: clamp(10px, 1.2vw, 18px) clamp(14px, 1.8vw, 24px);
+}
+
+.page-f1 .band-name {
+  font-family: "Clash Display", system-ui;
+  font-weight: 600;
+  font-size: clamp(13px, 1vw, 16px);
+}
+
+.page-f1 .band-val {
+  font-size: clamp(10px, 0.75vw, 12px);
+  opacity: 0.6;
+  font-variant-numeric: tabular-nums;
+}
+
+.page-f1 .f1-band--noir  { background: #111111; color: #F2F3F4; border: 1px solid rgba(255,255,255,0.08); }
+.page-f1 .f1-band--gris  { background: #C7C7C5; color: #111111; }
+.page-f1 .f1-band--rouge { background: linear-gradient(90deg, #FE3218 0%, #981E0E 100%); color: #F2F3F4; }
+.page-f1 .f1-band--violet{ background: linear-gradient(90deg, #5347D5 0%, #6557FF 100%); color: #F2F3F4; }
+.page-f1 .f1-band--bleu  { background: linear-gradient(90deg, #2076A4 0%, #4DBBDB 100%); color: #F2F3F4; }
+
+/* ─── Typo specimen ─── */
+.page-f1 .f1-typo {
+  align-items: end;
+}
+
+.page-f1 .f1-font--clash   { grid-column: 2 / span 4; }
+.page-f1 .f1-font--epilogue{ grid-column: 6 / span 4; }
+
+.page-f1 .font-label {
+  margin: 0 0 6px;
+  font-size: clamp(10px, 0.75vw, 12px);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.4;
+}
+
+.page-f1 .font-name {
+  margin: 0 0 8px;
+  line-height: 1;
+}
+
+.page-f1 .clash-sample {
+  font-family: "Clash Display", system-ui;
+  font-weight: 600;
+  font-size: clamp(28px, 4vw, 64px);
+}
+
+.page-f1 .epilogue-sample {
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(28px, 4vw, 64px);
+}
+
+.page-f1 .font-sub {
+  margin: 0;
+  font-size: clamp(10px, 0.75vw, 12px);
+  opacity: 0.4;
+}
+
+/* ─── Grilles d'images (sections dark) ─── */
+.page-f1 .f1-grid {
+  display: grid;
+  gap: clamp(10px, 1.4vw, 20px);
+}
+
+.page-f1 .f1-grid figure {
+  margin: 0;
+}
+
+.page-f1 .f1-grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.page-f1 .f1-grid--3 { grid-template-columns: repeat(3, 1fr); }
+.page-f1 .f1-grid--4 { grid-template-columns: repeat(4, 1fr); }
+
+/* ─── Film strip ─── */
+.page-f1 .f1-filmstrip {
+  margin-bottom: clamp(16px, 2vw, 32px);
+  background: #0a0a0a;
+}
+
+.page-f1 .filmstrip-sprockets {
+  height: clamp(14px, 1.4vw, 20px);
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px, transparent 10px,
+      #1a1a1a 10px, #1a1a1a 12px,
+      transparent 12px, transparent 28px
+    );
+  position: relative;
+}
+
+.page-f1 .filmstrip-sprockets::before {
+  content: '';
+  position: absolute;
+  inset: 3px 0;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px, transparent 4px,
+      #0a0a0a 4px, #0a0a0a 24px,
+      transparent 24px, transparent 28px
+    );
+}
+
+.page-f1 .filmstrip-frames {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(3px, 0.4vw, 6px);
+  padding: clamp(3px, 0.4vw, 6px);
+}
+
+.page-f1 .filmstrip-item {
+  position: relative;
+  background: #000;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+
+.page-f1 .filmstrip-item video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ══ TYPEFACE (03) ══ */
+
+.page-f1 .f1-tf-row {
+  align-items: start;
+  padding-block: clamp(40px, 5.8vw, 100px);
+  position: relative;
+}
+.page-f1 .f1-tf-row::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: calc(-1 * var(--f1-pad));
+  right: calc(-1 * var(--f1-pad));
+  height: 1px;
+  background: rgba(255,255,255,0.16);
+  pointer-events: none;
+}
+
+/* ── Large type name (left col) ── */
+.page-f1 .f1-tf-name {
+  grid-column: 1 / span 3;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  gap: 0;
+}
+
+/* Clash Display name */
+.page-f1 .f1-tf-name--clash {
+  font-family: "Clash Display", system-ui;
+}
+.page-f1 .f1-tf-disp-light {
+  font-weight: 300;
+  font-size: clamp(44px, 5.6vw, 88px);
+}
+.page-f1 .f1-tf-disp-bold {
+  font-weight: 700;
+  font-size: clamp(44px, 5.6vw, 88px);
+}
+
+/* Neue Haas name */
+.page-f1 .f1-tf-name--nhg {
+  font-family: "Neue Haas Grotesk Display Pro", system-ui;
+}
+.page-f1 .f1-tf-nhg-light {
+  font-weight: 300;
+  font-size: clamp(32px, 4.2vw, 68px);
+}
+.page-f1 .f1-tf-nhg-medium {
+  font-weight: 500;
+  font-size: clamp(32px, 4.2vw, 68px);
+}
+.page-f1 .f1-tf-nhg-bold {
+  font-weight: 700;
+  font-size: clamp(32px, 4.2vw, 68px);
+}
+
+/* ── Weights list (middle col) ── */
+.page-f1 .f1-tf-weights {
+  grid-column: 5 / span 3;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2px, 0.4vw, 6px);
+  color: #F2F3F4;
+}
+.page-f1 .f1-tf-weights--clash span {
+  font-family: "Clash Display", system-ui;
+  font-size: clamp(18px, 2vw, 32px);
+  line-height: 1.15;
+}
+.page-f1 .f1-tf-weights--nhg span {
+  font-family: "Neue Haas Grotesk Display Pro", system-ui;
+  font-size: clamp(18px, 2vw, 32px);
+  line-height: 1.15;
+}
+
+/* ── Right description col ── */
+.page-f1 .f1-tf-desc {
+  grid-column: 9 / span 4;
+}
+
+/* Clash Display block */
+.page-f1 .f1-tf-desc--clash h3 {
+  margin: 0 0 clamp(2px, 0.25vw, 4px);
+  font-family: "Clash Display", system-ui;
+  font-weight: 600;
+  font-size: clamp(16px, 1.39vw, 24px);
+  line-height: 1.2;
+  color: #F2F3F4;
+}
+.page-f1 .f1-tf-desc--clash h4 {
+  margin: 0 0 clamp(6px, 0.7vw, 12px);
+  font-family: "Clash Display", system-ui;
+  font-weight: 400;
+  font-size: clamp(14px, 1.16vw, 20px);
+  line-height: 1.2;
+  color: rgba(242,243,244,0.6);
+}
+.page-f1 .f1-tf-desc--clash p {
+  margin: 0;
+  font-family: "Neue Haas Grotesk Display Pro", system-ui;
+  font-weight: 300;
+  font-size: clamp(12px, 1.04vw, 18px);
+  line-height: 1.55;
+  color: rgba(242,243,244,0.7);
+}
+
+/* Charles Leclerc block */
+.page-f1 .f1-tf-desc--leclerc h3 {
+  margin: 0 0 clamp(2px, 0.25vw, 4px);
+  font-family: "Clash Display", system-ui;
+  font-weight: 600;
+  font-size: clamp(16px, 1.39vw, 24px);
+  line-height: 1.2;
+  color: #F2F3F4;
+}
+.page-f1 .f1-tf-desc--leclerc h4 {
+  margin: 0 0 clamp(6px, 0.7vw, 12px);
+  font-family: "Clash Display", system-ui;
+  font-weight: 400;
+  font-size: clamp(14px, 1.16vw, 20px);
+  line-height: 1.2;
+  color: #F2F3F4;
+}
+.page-f1 .f1-tf-desc--leclerc p {
+  margin: 0;
+  font-family: "Neue Haas Grotesk Display Pro", system-ui;
+  font-weight: 300;
+  font-size: clamp(12px, 1.04vw, 18px);
+  line-height: 1.55;
+  color: #F2F3F4;
+}
+
+/* ══ DISPLAY (04) ══ */
+
+/* Sub-header row: 001 | Lower Third | DISPLAY — same rhythm as f1-dhead */
+.page-f1 .f1-disp-subhead {
+  align-items: baseline;
+  padding-block: clamp(24px, 3vw, 48px) clamp(12px, 1.5vw, 24px);
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+.page-f1 .f1-disp-subidx {
+  grid-column: 1 / span 1;
+  justify-self: end;          /* colle visuellement au titre */
+  font-family: "Clash Display", system-ui;
+  font-weight: 400;           /* moins gras que f1-didx (600) */
+  font-size: clamp(14px, 1.44vw, 22px);
+  color: #F2F3F4;             /* blanc */
+  line-height: 1;
+}
+.page-f1 .f1-disp-subtitle {
+  grid-column: 2 / span 7;
+}
+.page-f1 .f1-disp-subtitle h3 {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 500;
+  font-size: clamp(11px, 0.93vw, 16px);
+  line-height: 1.2;
+  color: #F2F3F4;
+}
+.page-f1 .f1-disp-sublabel {
+  grid-column: 12 / span 1;  /* right-aligned, same edge as f1-dlabel */
+  justify-self: end;
+  align-self: center;
+}
+.page-f1 .f1-disp-sublabel span {
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(9px, 0.69vw, 12px);
+  letter-spacing: 0.12em;
+  color: rgba(242,243,244,0.4);
+  text-transform: uppercase;
+}
+
+/* 3-col lower third grid
+   cols 2-4, 5-7, 8-10 → aligns left with subtitle (col 2), even gaps */
+.page-f1 .f1-lt-grid {
+  align-items: start;
+  row-gap: 0;
+  padding-bottom: clamp(16px, 2vw, 32px);
+}
+.page-f1 .f1-lt-col {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1vw, 16px);
+}
+.page-f1 .f1-lt-col:nth-child(1) { grid-column: 1 / span 4; }
+.page-f1 .f1-lt-col:nth-child(2) { grid-column: 5 / span 4; }
+.page-f1 .f1-lt-col:nth-child(3) { grid-column: 9 / span 4; }
+.page-f1 .f1-lt-card { margin: 0; }
+.page-f1 .f1-lt-col:nth-child(1) .f1-lt-card img { margin-left: 0;   margin-right: auto; }
+.page-f1 .f1-lt-col:nth-child(2) .f1-lt-card img { margin-inline: auto; }
+.page-f1 .f1-lt-col:nth-child(3) .f1-lt-card img { margin-left: auto; margin-right: 0; }
+.page-f1 .f1-lt-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* LT video — rises up, bleeds slightly over next section */
+.page-f1 .f1-lt-video-wrap {
+  padding-block: clamp(12px, 1.5vw, 24px) 0;
+  margin-top: -200px;
+  margin-bottom: clamp(-60px, -5vw, -40px);
+  position: relative;
+  z-index: 2;
+  align-items: center;
+}
+/* crop wrapper — clip-path on parent = fixed mask; video shifts inside */
+.page-f1 .f1-lt-crop {
+  grid-column: 1 / -1;
+  width: 100%;
+  position: relative;
+  clip-path: inset(32% 0 26% 0);
+}
+.page-f1 .f1-lt-crop::after {
+  content: '';
+  position: absolute;
+  top: 32%;
+  bottom: 26%;
+  left: 0;
+  right: 0;
+  border: 1px solid rgba(254, 2, 32, 0.5);
+  pointer-events: none;
+  z-index: 3;
+}
+.page-f1 .f1-lt-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  transform: translateY(calc(16.725% - 10px));
+}
+
+/* ── 002 Radio comm ── */
+.page-f1 .f1-radio-grid {
+  align-items: start;
+  row-gap: 0;
+  padding-bottom: clamp(16px, 2vw, 32px);
+}
+.page-f1 .f1-radio-col {
+  display: flex;
+  flex-direction: column;
+}
+.page-f1 .f1-radio-col:nth-child(1) { grid-column: 1 / span 4; }
+.page-f1 .f1-radio-col:nth-child(2) { grid-column: 5 / span 4; }
+.page-f1 .f1-radio-col:nth-child(3) { grid-column: 9 / span 4; }
+.page-f1 .f1-radio-card { margin: 0; }
+.page-f1 .f1-radio-col:nth-child(1) .f1-radio-card img { margin-left: 0;   margin-right: auto; }
+.page-f1 .f1-radio-col:nth-child(2) .f1-radio-card img { margin-inline: auto; }
+.page-f1 .f1-radio-col:nth-child(3) .f1-radio-card img { margin-left: auto; margin-right: 0; }
+.page-f1 .f1-radio-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Radio video — same behaviour */
+.page-f1 .f1-radio-video-wrap {
+  padding-block: clamp(12px, 1.5vw, 24px) 0;
+  margin-top: -200px;
+  margin-bottom: clamp(-60px, -5vw, -40px);
+  position: relative;
+  z-index: 2;
+  align-items: center;
+}
+/* crop wrapper */
+.page-f1 .f1-radio-crop {
+  grid-column: 1 / -1;
+  width: 100%;
+  position: relative;
+  clip-path: inset(29% 0 29% 0);
+}
+.page-f1 .f1-radio-crop::after {
+  content: '';
+  position: absolute;
+  top: 29%;
+  bottom: 29%;
+  left: 0;
+  right: 0;
+  border: 1px solid rgba(254, 2, 32, 0.5);
+  pointer-events: none;
+  z-index: 3;
+}
+.page-f1 .f1-radio-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  transform: translateY(5.25%);
+}
+
+/* ── 003 Pit Time — 4-col, fills col 1-12 ── */
+.page-f1 .f1-pit-grid {
+  align-items: start;
+  row-gap: 0;
+  padding-bottom: clamp(16px, 2vw, 32px);
+}
+.page-f1 .f1-pit-col {
+  display: flex;
+  flex-direction: column;
+}
+.page-f1 .f1-pit-col:nth-child(1) { grid-column: 1 / span 3; }
+.page-f1 .f1-pit-col:nth-child(2) { grid-column: 4 / span 3; }
+.page-f1 .f1-pit-col:nth-child(3) { grid-column: 7 / span 3; }
+.page-f1 .f1-pit-col:nth-child(4) { grid-column: 10 / span 3; }
+.page-f1 .f1-pit-card { margin: 0; }
+.page-f1 .f1-pit-col:nth-child(1) .f1-pit-card img { margin-left: 0;   margin-right: auto; }
+.page-f1 .f1-pit-col:nth-child(2) .f1-pit-card img { margin-inline: auto; }
+.page-f1 .f1-pit-col:nth-child(3) .f1-pit-card img { margin-inline: auto; }
+.page-f1 .f1-pit-col:nth-child(4) .f1-pit-card img { margin-left: auto; margin-right: 0; }
+.page-f1 .f1-pit-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ── 004 FIA Notification — 3-col, same rhythm as LT/Radio ── */
+.page-f1 .f1-fia-grid {
+  align-items: start;
+  row-gap: 0;
+  padding-bottom: clamp(16px, 2vw, 32px);
+}
+.page-f1 .f1-fia-col {
+  display: flex;
+  flex-direction: column;
+}
+.page-f1 .f1-fia-col:nth-child(1) { grid-column: 1 / span 4; }
+.page-f1 .f1-fia-col:nth-child(2) { grid-column: 5 / span 4; }
+.page-f1 .f1-fia-col:nth-child(3) { grid-column: 9 / span 4; }
+.page-f1 .f1-fia-card { margin: 0; }
+.page-f1 .f1-fia-col:nth-child(1) .f1-fia-card img { margin-left: 0;   margin-right: auto; }
+.page-f1 .f1-fia-col:nth-child(2) .f1-fia-card img { margin-inline: auto; }
+.page-f1 .f1-fia-col:nth-child(3) .f1-fia-card img { margin-left: auto; margin-right: 0; }
+.page-f1 .f1-fia-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* FIA video */
+.page-f1 .f1-fia-video-wrap {
+  padding-block: clamp(12px, 1.5vw, 24px) 0;
+  margin-top: -200px;
+  margin-bottom: clamp(-60px, -5vw, -40px);
+  position: relative;
+  z-index: 2;
+  align-items: center;
+}
+/* crop wrapper */
+.page-f1 .f1-fia-crop {
+  grid-column: 1 / -1;
+  width: 100%;
+  position: relative;
+  clip-path: inset(35% 0 23% 0);
+}
+.page-f1 .f1-fia-crop::after {
+  content: '';
+  position: absolute;
+  top: 35%;
+  bottom: 23%;
+  left: 0;
+  right: 0;
+  border: 1px solid rgba(254, 2, 32, 0.5);
+  pointer-events: none;
+  z-index: 3;
+}
+.page-f1 .f1-fia-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  transform: translateY(calc(9.45% + 10px));
+}
+
+
+/* ── 005 Race Facts ── */
+.page-f1 .f1-rf-grid {
+  align-items: start;
+  row-gap: 0;
+  padding-bottom: clamp(16px, 2vw, 32px);
+}
+.page-f1 .f1-rf-left {
+  grid-column: 1 / span 6;
+  grid-row: 1;
+  align-self: start;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1vw, 14px);
+}
+.page-f1 .f1-rf-right {
+  grid-column: 7 / span 6;
+  grid-row: 1;
+  align-self: start;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1vw, 14px);
+}
+.page-f1 .f1-rf-card { margin: 0; }
+/* Hauteur fixe uniforme pour toutes les cartes-barres de la colonne gauche */
+.page-f1 .f1-rf-left .f1-rf-card:not(.f1-rf-card--cpt) {
+  height: 77px;
+}
+.page-f1 .f1-rf-left .f1-rf-card:not(.f1-rf-card--cpt) img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: left center;
+}
+.page-f1 .f1-rf-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.page-f1 .f1-rf-duo {
+  display: flex;
+  gap: clamp(8px, 1vw, 14px);
+  align-items: center;
+}
+/* Race Story x0.9 — pas de débordement, image complète visible */
+.page-f1 .f1-rf-duo .f1-rf-card--story {
+  flex: 1 1 0;
+  min-width: 0;
+}
+.page-f1 .f1-rf-duo .f1-rf-card--story img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform: scale(0.9);
+  transform-origin: left center;
+}
+/* LAP counter : standalone card below Race Leader */
+.page-f1 .f1-rf-card--cpt img {
+  display: block;
+  width: auto;
+  height: clamp(40px, 5.7vw, 91px);
+  object-fit: contain;
+}
+
+/* ── 006 Leaderboard ── */
+
+/* Row 1 : 3 paires (left-gutter | group | gap | group | gap | group | side-label) */
+.page-f1 .f1-lb-row1 {
+  grid-template-columns: 2fr 6fr 1fr 6fr 1fr 6fr 2fr;
+  align-items: start;
+  padding-bottom: clamp(28px, 3.5vw, 56px);
+}
+.page-f1 .f1-lb-group {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 0.8vw, 13px);
+}
+.page-f1 .f1-lb-group--1 { grid-column: 2; }
+.page-f1 .f1-lb-group--2 { grid-column: 4; }
+.page-f1 .f1-lb-group--3 { grid-column: 6; }
+
+/* Paire : carte compressée + carte étendue côte à côte, calées en bas */
+.page-f1 .f1-lb-pair {
+  display: flex;
+  gap: clamp(5px, 0.6vw, 10px);
+  align-items: flex-end;
+}
+/* Ratio 114.38 : 204.21 (compressé : étendu) */
+.page-f1 .f1-lb-card--sm { flex: 114 1 0; min-width: 0; }
+.page-f1 .f1-lb-card--lg { flex: 204 1 0; min-width: 0; }
+
+.page-f1 .f1-lb-card { margin: 0; }
+.page-f1 .f1-lb-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Row 2 : 5 variantes (left-gutter | card | gap × 4 | side-label) */
+.page-f1 .f1-lb-row2 {
+  grid-template-columns: 2fr 4fr 0.6fr 4fr 0.6fr 4fr 0.6fr 4fr 0.6fr 4fr 1.6fr;
+  align-items: start;
+  padding-top: clamp(16px, 2vw, 32px);
+  padding-bottom: clamp(16px, 2vw, 32px);
+}
+.page-f1 .f1-lb-single {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 0.8vw, 13px);
+}
+.page-f1 .f1-lb-single--1 { grid-column: 2;  }
+.page-f1 .f1-lb-single--2 { grid-column: 4;  }
+.page-f1 .f1-lb-single--3 { grid-column: 6;  }
+.page-f1 .f1-lb-single--4 { grid-column: 8;  }
+.page-f1 .f1-lb-single--5 { grid-column: 10; }
+
+/* Caption sous chaque groupe / carte */
+.page-f1 .f1-lb-caption {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(9px, 0.72vw, 12px);
+  color: rgba(242,243,244,0.45);
+  letter-spacing: 0.01em;
+}
+
+/* Label latéral "LEADERBOARD" (bas-droit de chaque rangée) */
+.page-f1 .f1-lb-side-label {
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(9px, 0.69vw, 12px);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(242,243,244,0.4);
+  padding-bottom: clamp(6px, 0.6vw, 10px);
+  align-self: end;
+  text-align: right;
+}
+.page-f1 .f1-lb-side-label--r1 { grid-column: 7; }
+.page-f1 .f1-lb-side-label--r2 { grid-column: 11; }
+
+/* Video tag label — <FIA>, <RADIO> etc. */
+.page-f1 .f1-vtag-row {
+  padding-block: clamp(32px, 4vw, 64px) clamp(24px, 3vw, 48px);
+}
+.page-f1 .f1-vtag {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-size: clamp(11px, 1vw, 14px);
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  color: rgba(242,243,244,0.35);
+}
+
+/* ── 007 Map ── */
+.page-f1 .f1-map-content {
+  /* Utilise le grid 12-col hérité de f1-row */
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: clamp(12px, 1.6vw, 28px);
+  align-items: stretch;
+  padding-block: clamp(32px, 4vw, 64px);
+}
+/* Vidéo : col 1→5, contour rouge */
+.page-f1 .f1-map-video-wrap {
+  grid-column: 1 / span 5;
+  aspect-ratio: 1 / 1;
+  border: 2px solid #FE3218;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  align-self: start;
+}
+/* Vidéo fitte dans le masque sans zoom */
+.page-f1 .f1-map-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+/* PNG : col 8→12, hauteur réduite pour ne pas dépasser la vidéo */
+.page-f1 .f1-map-img-wrap {
+  grid-column: 8 / span 5;
+  align-self: stretch;   /* fills grid row = video height */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.page-f1 .f1-map-img-wrap img {
+  display: block;
+  height: 78%;           /* ~78% of video height — stays within the mask */
+  width: auto;
+  max-width: 100%;
+}
+
+/* ── 008 Screen ── */
+/* Utilise le grid 12-col de f1-row pour aligner sur les marges du contenu */
+.page-f1 .f1-screen-content {
+  align-items: center;
+  padding-block: clamp(16px, 2vw, 32px) clamp(32px, 4vw, 64px);
+}
+.page-f1 .f1-screen-video-wrap {
+  grid-column: 2 / span 7;  /* aligne gauche sur le titre "Screen" */
+  aspect-ratio: 16 / 9;
+  background: transparent;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.page-f1 .f1-screen-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.page-f1 .f1-screen-aside {
+  grid-column: 9 / span 4;  /* finit à col 12, même que DISPLAY */
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1vw, 14px);
+}
+.page-f1 .f1-screen-aside-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: "Epilogue", system-ui;
+  font-size: clamp(9px, 0.75vw, 13px);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: rgba(242,243,244,0.55);
+}
+.page-f1 .f1-screen-aside-img {
+  margin: 0;
+}
+.page-f1 .f1-screen-aside-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+/* ── 008-002 Classement sub-block ── */
+.page-f1 .f1-screen-cls-head {
+  align-items: baseline;
+  padding-block: clamp(24px, 3vw, 48px) clamp(12px, 1.5vw, 20px);
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+.page-f1 .f1-screen-cls-title {
+  grid-column: 2 / span 7;
+  font-family: "Epilogue", system-ui;
+  font-size: clamp(11px, 0.93vw, 16px);
+  font-weight: 500;
+  color: #F2F3F4;
+}
+.page-f1 .f1-screen-cls-num {
+  grid-column: 11 / span 2;
+  justify-self: end;
+  font-family: "Epilogue", system-ui;
+  font-size: clamp(9px, 0.75vw, 13px);
+  letter-spacing: 0.04em;
+  color: rgba(242,243,244,0.55);
+}
+/* Vidéo plein largeur col 2→12 */
+.page-f1 .f1-screen-cls-video-wrap {
+  grid-column: 1 / span 12;
+  aspect-ratio: 16 / 9;
+  background: transparent;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: clamp(12px, 1.5vw, 24px);
+}
+.page-f1 .f1-screen-cls-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* Deux images côte à côte */
+.page-f1 .f1-screen-cls-item--1 { grid-column: 1 / span 6; }
+.page-f1 .f1-screen-cls-item--2 { grid-column: 7 / span 6; }
+.page-f1 .f1-screen-cls-item figure { margin: 0; }
+.page-f1 .f1-screen-cls-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+.page-f1 .f1-screen-cls-caption {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: clamp(8px, 1vw, 14px);
+  padding-bottom: clamp(32px, 4vw, 64px);
+  font-family: "Epilogue", system-ui;
+  font-size: clamp(9px, 0.75vw, 13px);
+  letter-spacing: 0.04em;
+  color: rgba(242,243,244,0.55);
+}
+
+/* ── 009 Fiche Pilote ── */
+.page-f1 .f1-fp-content {
+  align-items: start;
+  padding-block: clamp(16px, 2vw, 32px) clamp(32px, 4vw, 64px);
+}
+.page-f1 .f1-fp-video-wrap {
+  grid-column: 1 / span 12;
+  aspect-ratio: 16 / 9;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.page-f1 .f1-fp-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── 010 Transition ── */
+.page-f1 .f1-tr-head {
+  padding-block: clamp(24px, 3vw, 48px) clamp(12px, 1.5vw, 24px);
+  border-top: 1px solid rgba(255,255,255,0.12);
+  align-items: baseline;
+}
+.page-f1 .f1-tr-title {
+  grid-column: 2 / span 8;
+  font-family: "Epilogue", system-ui;
+  font-weight: 500;
+  font-size: clamp(11px, 0.93vw, 16px);
+  color: #F2F3F4;
+}
+.page-f1 .f1-tr-num {
+  grid-column: 12 / span 1;
+  justify-self: end;
+  font-family: "Clash Display", system-ui;
+  font-weight: 400;
+  font-size: clamp(11px, 0.93vw, 16px);
+  color: rgba(242,243,244,0.55);
+}
+.page-f1 .f1-tr-video-row {
+  padding-bottom: clamp(32px, 4vw, 64px);
+}
+.page-f1 .f1-tr-video-wrap {
+  grid-column: 1 / span 12;
+  aspect-ratio: 16 / 9;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.page-f1 .f1-tr-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── 05 Mockups ── */
+.page-f1 .f1-mk-section {
+  padding-bottom: clamp(40px, 6vw, 96px);
+}
+/* Asymmetric 2-col grid: 543fr left (4 small) / 823fr right (3 large) */
+.page-f1 .f1-mk-grid {
+  display: grid;
+  grid-template-columns: 543fr 823fr;
+  gap: clamp(12px, 1.6vw, 24px);
+}
+.page-f1 .f1-mk-item--full {
+  grid-column: 1 / span 2;
+}
+/* Column wrappers — flex so both start/end at the same vertical position */
+.page-f1 .f1-mk-col-left,
+.page-f1 .f1-mk-col-right {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 1.6vw, 24px);
+}
+.page-f1 .f1-mk-col-left .f1-mk-item,
+.page-f1 .f1-mk-col-right .f1-mk-item {
+  flex: 1;
+}
+.page-f1 .f1-mk-item {
+  margin: 0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.page-f1 .f1-mk-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── 06 Vidéo Vimeo ── */
+.page-f1 .f1-vimeo-wrap {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 6px;
+}
+.page-f1 .f1-vimeo-wrap iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ── Outro ── */
+.page-f1 .f1-outro-section {
+  padding-top: clamp(80px, 12vw, 200px);
+  padding-bottom: clamp(80px, 12vw, 200px);
+  text-align: center;
+}
+.page-f1 .f1-outro-text {
+  color: #fff;
+  font-size: clamp(14px, 1.1vw, 18px);
+  line-height: 1.6;
+  max-width: 660px;
+  margin: 0 auto;
+}
+
+/* Footer flush against the dark section — no white gap, green card */
+.page-f1 .site-footer {
+  margin-top: 0;
+}
+.page-f1 .site-footer .footer-card {
+  background: var(--green);
+  color: #000;
+}
+.page-f1 .site-footer .footer-card a,
+.page-f1 .site-footer .footer-card .footer-giant {
+  color: #000;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 900px) {
+  .page-f1 .f1-head .title { grid-column: 2 / span 6; }
+  .page-f1 .f1-head .year  { grid-column: 9 / span 2; }
+  .page-f1 .f1-head .sector{ grid-column: 11 / span 2; }
+  .page-f1 .f1-body .desc  { grid-column: 2 / span 4; }
+  .page-f1 .f1-body .main-img { grid-column: 6 / span 7; }
+
+  /* thinking-card columns handled by flex — no grid-column needed */
+
+  .page-f1 .f1-grid--4 { grid-template-columns: repeat(3, 1fr); }
+
+  /* ── 005 Race Facts — tablet ── */
+  /* Gutter plus court, colonnes équilibrées */
+  .page-f1 .f1-rf-grid {
+    grid-template-columns: 1fr 9fr 1.5fr 9fr 1fr;
+  }
+
+  /* ── 006 Leaderboard — tablet ── */
+  /* Row 1 : gutters réduits, groupes légèrement plus larges */
+  .page-f1 .f1-lb-row1 {
+    grid-template-columns: 1fr 6fr 0.8fr 6fr 0.8fr 6fr 1.4fr;
+  }
+  /* Row 2 : 5 cartes, gaps réduits */
+  .page-f1 .f1-lb-row2 {
+    grid-template-columns: 1fr 4fr 0.4fr 4fr 0.4fr 4fr 0.4fr 4fr 0.4fr 4fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .page-f1 .f1-title-wrap {
+    padding-top: clamp(48px, 14vw, 80px);
+    padding-bottom: clamp(40px, 10vw, 72px);
+  }
+
+  .page-f1 .f1-head .idx   { grid-column: 1 / span 1; }
+  .page-f1 .f1-head .title { grid-column: 2 / span 11; }
+  .page-f1 .f1-head .year  { grid-column: 2 / span 4; justify-self: start; margin-top: 8px; }
+  .page-f1 .f1-head .sector{ grid-column: 7 / span 6; text-align: right; margin-top: 8px; }
+
+  .page-f1 .f1-body .desc    { grid-column: 2 / span 11; margin-bottom: clamp(20px, 5vw, 36px); }
+  .page-f1 .f1-body .main-img{ grid-column: 1 / span 12; }
+
+  .page-f1 .thinking-text  { grid-column: 1 / span 12; }
+  .page-f1 .thinking-label { grid-column: 1 / span 12; justify-self: start; margin-top: 10px; text-align: left; }
+
+  .page-f1 .f1-thinking-cards { flex-direction: column; padding-left: 0; padding-right: 0; }
+  .page-f1 .thinking-card--1,
+  .page-f1 .thinking-card--2,
+  .page-f1 .thinking-card--3 { flex: unset; width: 100%; }
+  /* Horizontal images → full width ; posters → centered at natural ratio */
+  .page-f1 .thinking-card img {
+    width: auto;
+    max-width: 100%;
+    max-height: 65vw;
+    margin: 0 auto;
+  }
+
+  .page-f1 .meaning-label  { grid-column: 1 / span 12; }
+  .page-f1 .meaning-text   { grid-column: 1 / span 12; margin-top: 10px; }
+  .page-f1 .so-label       { grid-column: 1 / span 12; }
+  .page-f1 .so-text        { grid-column: 1 / span 12; margin-top: 6px; }
+
+  .page-f1 .f1-dark { border-radius: 12px 12px 0 0; }
+
+  .page-f1 .f1-logo--1,
+  .page-f1 .f1-logo--2,
+  .page-f1 .f1-logo--3 { grid-column: 2 / span 10; }
+  .page-f1 .f1-logos   { row-gap: 10px; }
+
+  .page-f1 .f1-font--clash,
+  .page-f1 .f1-font--epilogue { grid-column: 1 / span 12; }
+
+  .page-f1 .f1-grid--3 { grid-template-columns: 1fr; }
+  .page-f1 .f1-grid--4 { grid-template-columns: repeat(2, 1fr); }
+
+  .page-f1 .filmstrip-frames { grid-template-columns: repeat(2, 1fr); }
+
+  .page-f1 .f1-mk-grid {
+    grid-template-columns: 1fr;
+  }
+  .page-f1 .f1-mk-item--full {
+    grid-column: 1;
+  }
+  .page-f1 .f1-mk-col-left,
+  .page-f1 .f1-mk-col-right {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .page-f1 .f1-mk-col-left .f1-mk-item,
+  .page-f1 .f1-mk-col-right .f1-mk-item {
+    flex: 1 1 calc(50% - 6px);
+  }
+
+  /* ══ Dark section: global section headers ══ */
+  .page-f1 .f1-didx   { grid-column: 1 / span 2; }
+  .page-f1 .f1-dtitle  { grid-column: 3 / span 9; }
+  .page-f1 .f1-dlabel  { display: none; }
+
+  /* ══ Dark section: display sub-headers ══ */
+  .page-f1 .f1-disp-subidx   { grid-column: 1 / span 2; }
+  .page-f1 .f1-disp-subtitle { grid-column: 3 / span 9; }
+  .page-f1 .f1-disp-sublabel { display: none; }
+
+  /* ══ 04 Logotype ══ */
+  .page-f1 .f1-logo-row { padding: clamp(20px, 5vw, 36px) 0; }
+  .page-f1 .f1-limg    { grid-column: 1 / span 8; grid-row: 1; }
+  .page-f1 .f1-lname   { grid-column: 9 / span 4; grid-row: 1; align-self: center; }
+  .page-f1 .f1-ldesc   { grid-column: 1 / span 12; grid-row: 2; margin-top: 10px; }
+
+  /* ══ 05 Color Bands ══ */
+  .page-f1 .f1-bname      { grid-column: 1 / span 6; }
+  .page-f1 .f1-bidx       { display: none; }
+  .page-f1 .f1-bhex-label { display: none; }
+  .page-f1 .f1-bhex-val   { grid-column: 9 / span 4; text-align: right; }
+  .page-f1 .f1-why-label  { grid-column: 1 / span 3; }
+  .page-f1 .f1-why-text   { grid-column: 4 / span 9; }
+
+  /* ══ 06 Colors System ══ */
+  .page-f1 .f1-csys-section {
+    --csys-sw:  clamp(60px, 22vw, 110px);
+    --csys-sh:  clamp(12px, 4vw, 22px);
+    --csys-gap: clamp(14px, 4vw, 28px);
+  }
+  /* Reset the 300px desktop offset — too wide for mobile */
+  .page-f1 .f1-csys-names--tryout,
+  .page-f1 .f1-csys-names--tright {
+    padding-left: clamp(6px, 1.5vw, 10px);
+  }
+
+  /* ══ 07 Typeface ══ */
+  .page-f1 .f1-tf-name    { grid-column: 1 / span 4; }
+  .page-f1 .f1-tf-weights { grid-column: 5 / span 8; }
+  .page-f1 .f1-tf-desc    { grid-column: 1 / span 12; margin-top: 8px; }
+
+  /* ══ 08 Display — 001 Lower Third ══ */
+  .page-f1 .f1-lt-col:nth-child(1),
+  .page-f1 .f1-lt-col:nth-child(2),
+  .page-f1 .f1-lt-col:nth-child(3) { grid-column: 1 / span 12; }
+
+  /* ══ 08 Display — 002 Radio ══ */
+  .page-f1 .f1-radio-col:nth-child(1),
+  .page-f1 .f1-radio-col:nth-child(2),
+  .page-f1 .f1-radio-col:nth-child(3) { grid-column: 1 / span 12; }
+
+  /* ══ 08 Display — 003 Pit (2×2) ══ */
+  .page-f1 .f1-pit-col:nth-child(1),
+  .page-f1 .f1-pit-col:nth-child(3) { grid-column: 1 / span 6; }
+  .page-f1 .f1-pit-col:nth-child(2),
+  .page-f1 .f1-pit-col:nth-child(4) { grid-column: 7 / span 6; }
+
+  /* ══ 08 Display — 004 FIA ══ */
+  .page-f1 .f1-fia-col:nth-child(1),
+  .page-f1 .f1-fia-col:nth-child(2),
+  .page-f1 .f1-fia-col:nth-child(3) { grid-column: 1 / span 12; }
+
+  /* ══ 08 Display — 005 Race Facts ══ */
+  .page-f1 .f1-rf-left  { grid-column: 1 / span 12; grid-row: 1; }
+  .page-f1 .f1-rf-right { grid-column: 1 / span 12; grid-row: 2; }
+
+  /* ══ 08 Display — 006 Leaderboard (horizontal scroll) ══ */
+  .page-f1 .f1-lb-row1,
+  .page-f1 .f1-lb-row2 {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: clamp(8px, 2vw, 12px);
+    padding-bottom: 8px;
+    scrollbar-width: none; /* hide scrollbar on Firefox */
+  }
+  .page-f1 .f1-lb-row1::-webkit-scrollbar,
+  .page-f1 .f1-lb-row2::-webkit-scrollbar { display: none; }
+  .page-f1 .f1-lb-group--1,
+  .page-f1 .f1-lb-group--2,
+  .page-f1 .f1-lb-group--3 { flex: 0 0 78vw; grid-column: unset; }
+  .page-f1 .f1-lb-single--1,
+  .page-f1 .f1-lb-single--2,
+  .page-f1 .f1-lb-single--3,
+  .page-f1 .f1-lb-single--4,
+  .page-f1 .f1-lb-single--5 { flex: 0 0 78vw; grid-column: unset; }
+  .page-f1 .f1-lb-side-label--r1,
+  .page-f1 .f1-lb-side-label--r2 { display: none; }
+
+  /* ══ 007 Map ══ */
+  .page-f1 .f1-map-content {
+    grid-template-columns: 1fr;
+    row-gap: clamp(16px, 4vw, 28px);
+  }
+  .page-f1 .f1-map-video-wrap { grid-column: 1; aspect-ratio: 4 / 3; }
+  .page-f1 .f1-map-img-wrap   { grid-column: 1; }
+  .page-f1 .f1-map-img-wrap img { height: 60%; }
+
+  /* ══ 008 Screen ══ */
+  .page-f1 .f1-screen-video-wrap  { grid-column: 1 / span 12; }
+  .page-f1 .f1-screen-aside       { grid-column: 1 / span 12; }
+  .page-f1 .f1-screen-cls-title   { grid-column: 1 / span 10; }
+  .page-f1 .f1-screen-cls-num     { grid-column: 11 / span 2; }
+  .page-f1 .f1-screen-cls-item--1,
+  .page-f1 .f1-screen-cls-item--2 { grid-column: 1 / span 12; }
+
+  /* ══ Transition sub-headers ══ */
+  .page-f1 .f1-tr-title { grid-column: 1 / span 10; }
+  .page-f1 .f1-tr-num   { grid-column: 11 / span 2; }
+}
+
+/* ============================================================
+   FLOATING CURSOR PREVIEW
+   ============================================================ */
+
+/* Hide default cursor on hoverable rows */
+[data-cursor-preview]:hover,
+[data-cursor-preview]:hover * {
+  cursor: none !important;
+}
+
+/* The floating preview container — width fixed, height adapts to media ratio */
+#cursor-preview {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 260px;
+  pointer-events: none;
+  z-index: 9000;
+  /* transform set by JS: translate(x, y); vertical centering done there too */
+  margin-left: 24px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  will-change: transform;
+}
+
+#cursor-preview.is-visible {
+  opacity: 1;
+}
+
+.cursor-preview__inner {
+  width: 100%;
+  overflow: hidden;
+  background: var(--text-primary, #0f1f1f);
+  outline: 2px solid var(--bg, #41F373);
+}
+
+/* Image fills width, height is natural (no cropping) */
+#cursor-preview-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Vimeo keeps 16:9 */
+#cursor-preview-vimeo {
+  display: none;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+#cursor-preview-vimeo iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
