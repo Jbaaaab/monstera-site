@@ -5364,15 +5364,24 @@ body:has(.page-posters .lb:target) {
   box-sizing: border-box;
 }
 
+/* Logo wrapper — centres the logo horizontally inside the card */
+.page-gust .gust-offer-logo-wrap {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 .page-gust .gust-offer-logo {
   display: block;
-  width: auto;
-  max-width: 70%;
   height: auto;
-  max-height: clamp(36px, 4.5vw, 64px);
   object-fit: contain;
-  object-position: left top;
 }
+
+/* Per-card logo widths — pixel dimensions at 1728px / 1728 * 100vw */
+.page-gust .gust-offer--1 .gust-offer-logo { width: clamp(60px, 13.19vw, 228px); } /* 228px @ 1728 */
+.page-gust .gust-offer--2 .gust-offer-logo { width: clamp(60px, 10.94vw, 189px); } /* 189px @ 1728 */
+.page-gust .gust-offer--3 .gust-offer-logo { width: clamp(60px,  7.93vw, 137px); } /* 137px @ 1728 */
+.page-gust .gust-offer--4 .gust-offer-logo { width: clamp(60px,  9.09vw, 157px); } /* 157px @ 1728 */
 
 .page-gust .gust-offer-content p {
   margin: 0;
