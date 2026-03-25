@@ -84,8 +84,8 @@
          data-cursor-preview="assets/Img/WORK/previews/3d.jpg">
         <div class="c idx">02</div>
         <div class="c title">
-          <h3>"Longtemps" 3d Clip</h3>
-          <p class="desc">Longtemps, a 3D video made 100% in Blender, for the music group "Luca".</p>
+          <h3>&quot;Longtemps&quot; 3d Clip</h3>
+          <p class="desc">Longtemps, a 3D video made 100% in Blender, for the music group &quot;Luca&quot;.</p>
         </div>
         <div class="c spacer" aria-hidden="true"></div>
         <div class="c date-col">
@@ -190,14 +190,19 @@
     </div>
   </main>
 
-  <!-- =========================
-       JS global (si besoin)
-       ========================= -->
   <div id="site-footer"></div>
 
+  <!-- Floating cursor preview -->
+  <div id="cursor-preview" aria-hidden="true">
+    <div class="cursor-preview__inner">
+      <img id="cursor-preview-img" src="" alt="">
+      <div id="cursor-preview-vimeo"></div>
+    </div>
+  </div>
 
   <script src="js/script.js" defer></script>
   <script src="js/glitch.js" defer></script>
+  <script src="js/cursor-preview.js" defer></script>
 
 </body>
 </html>
