@@ -5656,6 +5656,81 @@ body:has(.page-posters .lb:target) {
   border-radius: 8px;
 }
 
+/* ─── Mojo row: image left + aside text right ─── */
+.page-gust .gust-mojo-row {
+  align-items: start;
+  margin-bottom: clamp(20px, 3vw, 40px);
+}
+
+.page-gust .gust-mojo-img {
+  grid-column: 2 / span 7;
+  margin: 0;
+}
+
+.page-gust .gust-mojo-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.page-gust .gust-mojo-aside {
+  grid-column: 10 / span 3;
+  align-self: end;
+  padding-bottom: 4px;
+}
+
+.page-gust .gust-mojo-aside p {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(11px, 0.93vw, 16px);
+  line-height: 1.55;
+}
+
+/* ─── Transition row: text left + image right ─── */
+.page-gust .gust-transition-row {
+  align-items: start;
+  margin-bottom: clamp(24px, 3.5vw, 48px);
+}
+
+.page-gust .gust-transition-text {
+  grid-column: 2 / span 2;
+  align-self: end;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.page-gust .gust-transition-text h4 {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(10px, 0.72vw, 12px);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.page-gust .gust-transition-text p {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(11px, 0.93vw, 16px);
+  line-height: 1.55;
+}
+
+.page-gust .gust-transition-img {
+  grid-column: 4 / span 9;
+  margin: 0;
+}
+
+.page-gust .gust-transition-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
 /* ─── Footer ─── */
 body.page-gust .site-footer {
   background: #F2F3F4;
