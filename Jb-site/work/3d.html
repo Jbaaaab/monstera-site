@@ -5,16 +5,24 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>3D — JBAB</title>
   <link rel="icon" type="image/png" href="../assets/Img/favicon.png">
-  <link rel="stylesheet" href="../css/styles.css?v=3d-v3" />
+  <link rel="stylesheet" href="../css/styles.css?v=3d-fix3" />
 </head>
 
 <body class="page-3d">
+
+  <!-- Header -->
   <div id="site-header"></div>
+
+  <!-- Grille -->
   <div class="page-grid" aria-hidden="true"></div>
 
-  <main class="work-3d-v2" role="main" aria-label="3D project Longtemps">
-    <div class="tag-3d" aria-hidden="true">
-      <img src="../assets/Img/WORK/3D png.png" alt="* 3D *" draggable="false">
+  <!-- Intro project -->
+  <main class="work-3d" role="main" aria-label="3D projects">
+    <section class="entry3d">
+
+    <!-- Strap -->
+    <div class="g">
+      <img class="strap3d" src="../assets/Img/WORK/3D/3D.png" alt="3D" />
     </div>
 
     <section class="intro3d" aria-label="Project intro">
@@ -31,17 +39,37 @@
       <p class="note n-top">We are doing this project on a small team of 3, in which I'm working as an art director, but also as a 3D modeler and animator.</p>
       <figure class="piece p-rue01"><img src="../assets/Img/WORK/3Dv2/RUE 01.png" alt="Longtemps street bench scene" loading="eager"></figure>
 
-      <p class="note n-focus">Focused on Agathe's music</p>
-      <figure class="piece p-bureau02"><img src="../assets/Img/WORK/3Dv2/BUREAU 02.png" alt="Top shot of a desk with computer"></figure>
-      <p class="note n-boring">The world's most boring workplace</p>
-      <figure class="piece p-ours dark"><img src="../assets/Img/WORK/3Dv2/OURS.png" alt="Bear character portrait"></figure>
+    <!-- Text + Hero image -->
+    <div class="g below">
+      <div class="copy">
+        <p>We are doing this project on a small team of 3, in which I’m working as an art director, but also as a 3D modeler and animator.</p>
+        <p class="focus">Focused on Agathe’s music</p>
+      </div>
+      <figure class="hero">
+        <img src="../assets/Img/WORK/3D/9.png" alt="Longtemps — butterfly scene" loading="eager" />
+      </figure>
+    </div>
 
-      <p class="note n-rue">A traditional Parisian Street</p>
-      <figure class="piece p-rue03"><img src="../assets/Img/WORK/3Dv2/RUE 03.png" alt="Bird-eye view of parisian street"></figure>
-      <p class="note n-bear">Here comes the bear, one of our mains protagonist in this story</p>
-      <figure class="piece p-chambre02"><img src="../assets/Img/WORK/3Dv2/CHAMBRE 02.png" alt="Blue bedroom at night"></figure>
-      <figure class="piece p-cafe03"><img src="../assets/Img/WORK/3Dv2/CAFE 03.png" alt="White café table detail"></figure>
-      <figure class="piece p-chambre03"><img src="../assets/Img/WORK/3Dv2/CHAMBRE 03.png" alt="Night room with TV scene"></figure>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery3d" aria-label="3D gallery">
+      <div class="g-canvas">
+        <figure class="slot s1"><img src="../assets/Img/WORK/3D/1.png"  alt=""></figure>
+        <figure class="slot s2"><img src="../assets/Img/WORK/3D/2.png"  alt=""></figure>
+        <figure class="slot s3"><img src="../assets/Img/WORK/3D/3.png"  alt=""></figure>
+        <figure class="slot s4"><img src="../assets/Img/WORK/3D/4.png"  alt=""></figure>
+        <figure class="slot s5"><img src="../assets/Img/WORK/3D/5.png"  alt=""></figure>
+        <figure class="slot s6"><img src="../assets/Img/WORK/3D/6.png"  alt=""></figure>
+        <figure class="slot s7"><img src="../assets/Img/WORK/3D/7.png"  alt=""></figure>
+        <figure class="slot s8"><img src="../assets/Img/WORK/3D/8.png"  alt=""></figure>
+        <figure class="slot s9"><img src="../assets/Img/WORK/3D/9.png"  alt=""></figure>
+        <figure class="slot s10"><img src="../assets/Img/WORK/3D/10.png" alt=""></figure>
+        <figure class="slot s11"><img src="../assets/Img/WORK/3D/11.png" alt=""></figure>
+        <figure class="slot s12"><img src="../assets/Img/WORK/3D/12.png" alt=""></figure>
+        <figure class="slot s13"><img src="../assets/Img/WORK/3D/13.png" alt=""></figure>
+      </div>
+    </section>
 
       <figure class="piece p-billie"><img src="../assets/Img/WORK/3Dv2/BILLIE.png" alt="Billie butterfly character"></figure>
       <p class="note n-billie">We welcome Billy, on our left, that is the hero of this story. It is a butterfly-toy that is chained to Thib's phone, that we can see on our right, she is the most basic parisian girl, and our "antagonist", even tho she is not evil, she is just a little stupid.</p>
@@ -60,9 +88,10 @@
     </section>
   </main>
 
+  <!-- JS global -->
   <div id="site-footer"></div>
 
-  <script src="../js/smooth-scroll.js" defer></script>
+
   <script src="../js/script.js" defer></script>
   <script src="../js/glitch.js" defer></script>
 </body>
