@@ -4856,6 +4856,167 @@ body:has(.page-posters .lb:target) {
   .page-f1 .f1-tr-num   { grid-column: 11 / span 2; }
 }
 
+/* =========================
+   Gust — Art Direction & UI/UX
+   ========================= */
+.page-gust {
+  --bg: #F2F3F4;
+  --gust-pad: clamp(48px, 9.55vw, 165px);
+  background: var(--bg);
+  color: var(--text-secondary);
+  -webkit-font-smoothing: antialiased;
+}
+
+.page-gust .gust-scene {
+  width: 100%;
+  max-width: var(--base-w);
+  margin: 0 auto;
+  padding-inline: var(--gust-pad);
+  box-sizing: border-box;
+}
+
+.page-gust .page-grid {
+  z-index: 0;
+}
+
+.page-gust .gust-title-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: clamp(80px, 14vw, 200px);
+  padding-bottom: clamp(60px, 10vw, 140px);
+}
+
+.page-gust .gust-badge {
+  width: clamp(140px, 14vw, 220px);
+  height: auto;
+  object-fit: contain;
+}
+
+/* ─── 12-col grid ─── */
+.page-gust .gust-row {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: clamp(12px, 1.6vw, 28px);
+  align-items: start;
+}
+
+/* ─── Section 01 — Hero ─── */
+.page-gust .gust-head {
+  padding: 24px 0 14px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+}
+
+.page-gust .gust-head .idx {
+  grid-column: 1 / span 1;
+  font-family: "Clash Display", system-ui;
+  font-weight: 600;
+  font-size: clamp(14px, 1.44vw, 22px);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-secondary);
+}
+
+.page-gust .gust-head .title {
+  grid-column: 2 / span 7;
+  display: grid;
+  row-gap: 2px;
+}
+
+.page-gust .gust-head h1 {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 500;
+  font-size: clamp(11px, 0.93vw, 16px);
+  line-height: 1.1;
+}
+
+.page-gust .gust-head .lead {
+  margin: 0;
+  font-size: clamp(11px, 0.93vw, 16px);
+  line-height: 1.2;
+}
+
+.page-gust .gust-head .year {
+  grid-column: 10 / span 1;
+  justify-self: end;
+  font-size: clamp(11px, 0.93vw, 16px);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.page-gust .gust-head .sector {
+  grid-column: 11 / span 1;
+  justify-self: end;
+  text-align: right;
+  display: grid;
+  row-gap: 2px;
+}
+
+.page-gust .gust-head .sector h4 {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 500;
+  font-size: clamp(11px, 0.93vw, 16px);
+  line-height: 1.1;
+}
+
+.page-gust .gust-head .sector p {
+  margin: 0;
+  font-size: clamp(11px, 0.93vw, 16px);
+  line-height: 1.2;
+}
+
+.page-gust .gust-body {
+  padding: 8px 0 24px;
+  border-top: 1px solid rgba(0, 0, 0, 0.16);
+}
+
+.page-gust .gust-body .desc {
+  grid-column: 2 / span 3;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 1.6vw, 20px);
+  margin-top: 4px;
+}
+
+.page-gust .gust-body .desc p {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(11px, 0.93vw, 16px);
+  line-height: 1.55;
+}
+
+.page-gust .gust-body .desc .disciplines {
+  font-size: clamp(9px, 0.68vw, 11px);
+  line-height: 1.5;
+}
+
+.page-gust .gust-body .main-img {
+  grid-column: 6 / span 6;
+  margin: 0;
+}
+
+.page-gust .gust-body .main-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ─── gust-section (white sections) ─── */
+.page-gust .gust-section {
+  border-top: 1px solid rgba(0, 0, 0, 0.16);
+  padding-top: clamp(24px, 3.5vw, 56px);
+  padding-bottom: clamp(32px, 5vw, 72px);
+}
+
+/* ─── Footer ─── */
+body.page-gust .site-footer {
+  background: #F2F3F4;
+}
+
 /* ============================================================
    FLOATING CURSOR PREVIEW
    ============================================================ */
