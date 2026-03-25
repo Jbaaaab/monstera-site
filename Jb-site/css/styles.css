@@ -5415,6 +5415,110 @@ body:has(.page-posters .lb:target) {
   color: var(--text-secondary);
 }
 
+/* ─── Section 03 — Color Palette ─── */
+/* Full-bleed swatches: bypass gust-scene padding */
+.page-gust .gust-color-palette {
+  margin-top: clamp(8px, 1.5vw, 20px);
+}
+
+.page-gust .gust-swatch {
+  width: 100%;
+  padding: clamp(28px, 4vw, 52px) 0;
+}
+
+.page-gust .gust-swatch-inner {
+  width: 100%;
+  max-width: var(--base-w);
+  margin: 0 auto;
+  padding-inline: var(--gust-pad);
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: clamp(12px, 1.6vw, 28px);
+  align-items: center;
+}
+
+.page-gust .gust-sw-name {
+  grid-column: 2 / span 7;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(11px, 0.93vw, 16px);
+  line-height: 1.2;
+}
+
+/* dark bg = white text */
+.page-gust .gust-swatch--1 .gust-sw-name,
+.page-gust .gust-swatch--3 .gust-sw-name,
+.page-gust .gust-swatch--4 .gust-sw-name,
+.page-gust .gust-swatch--5 .gust-sw-name {
+  color: #fff;
+}
+
+.page-gust .gust-sw-num {
+  grid-column: 9 / span 1;
+  justify-self: end;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(11px, 0.93vw, 16px);
+  color: inherit;
+  opacity: 0.7;
+}
+
+.page-gust .gust-swatch--1 .gust-sw-num,
+.page-gust .gust-swatch--3 .gust-sw-num,
+.page-gust .gust-swatch--4 .gust-sw-num,
+.page-gust .gust-swatch--5 .gust-sw-num {
+  color: #fff;
+}
+
+.page-gust .gust-sw-hex-label {
+  grid-column: 11 / span 1;
+  justify-self: end;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(9px, 0.65vw, 11px);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.6;
+}
+
+.page-gust .gust-swatch--1 .gust-sw-hex-label,
+.page-gust .gust-swatch--3 .gust-sw-hex-label,
+.page-gust .gust-swatch--4 .gust-sw-hex-label,
+.page-gust .gust-swatch--5 .gust-sw-hex-label {
+  color: #fff;
+}
+
+.page-gust .gust-sw-hex-val {
+  grid-column: 12 / span 1;
+  justify-self: end;
+  font-family: "Epilogue", system-ui;
+  font-weight: 500;
+  font-size: clamp(11px, 0.93vw, 16px);
+}
+
+.page-gust .gust-swatch--1 .gust-sw-hex-val,
+.page-gust .gust-swatch--3 .gust-sw-hex-val,
+.page-gust .gust-swatch--4 .gust-sw-hex-val,
+.page-gust .gust-swatch--5 .gust-sw-hex-val {
+  color: #fff;
+}
+
+/* Text block below the swatches */
+.page-gust .gust-color-text {
+  padding: clamp(24px, 3.5vw, 48px) 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.16);
+}
+
+.page-gust .gust-color-desc {
+  grid-column: 2 / span 9;
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(11px, 0.93vw, 16px);
+  line-height: 1.55;
+}
+
 /* ─── Footer ─── */
 body.page-gust .site-footer {
   background: #F2F3F4;
