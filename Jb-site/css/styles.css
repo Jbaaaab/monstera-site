@@ -49,9 +49,25 @@
    ========================= */
 @font-face {
   font-family: "Clash Display";
+  src: url("../assets/font/ClashDisplay_Complete/Fonts/WEB/fonts/ClashDisplay-Light.woff2") format("woff2"),
+       url("../assets/font/ClashDisplay_Complete/Fonts/WEB/fonts/ClashDisplay-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Clash Display";
   src: url("../assets/font/ClashDisplay_Complete/Fonts/WEB/fonts/ClashDisplay-Regular.woff2") format("woff2"),
        url("../assets/font/ClashDisplay_Complete/Fonts/WEB/fonts/ClashDisplay-Regular.woff") format("woff");
   font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Clash Display";
+  src: url("../assets/font/ClashDisplay_Complete/Fonts/WEB/fonts/ClashDisplay-Medium.woff2") format("woff2"),
+       url("../assets/font/ClashDisplay_Complete/Fonts/WEB/fonts/ClashDisplay-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
@@ -64,9 +80,33 @@
   font-display: swap;
 }
 @font-face {
-  font-family: "Epilogue";
-  src: url("../assets/font/Epilogue/Epilogue-VariableFont_wght.ttf") format("truetype");
-  font-weight: 100 900;
+  font-family: "Clash Display";
+  src: url("../assets/font/ClashDisplay_Complete/Fonts/WEB/fonts/ClashDisplay-Bold.woff2") format("woff2"),
+       url("../assets/font/ClashDisplay_Complete/Fonts/WEB/fonts/ClashDisplay-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ── Neue Haas Grotesk Display Pro ── */
+@font-face {
+  font-family: "Neue Haas Grotesk Display Pro";
+  src: url("../assets/font/neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayThin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Neue Haas Grotesk Display Pro";
+  src: url("../assets/font/neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayLight.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Neue Haas Grotesk Display Pro";
+  src: url("../assets/font/neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayRoman.ttf") format("truetype");
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
@@ -87,9 +127,9 @@
 
 @font-face {
   font-family: "Epilogue";
-  src: url("../assets/font/Epilogue/Epilogue-Italic-VariableFont_wght.ttf") format("truetype");
+  src: url("../assets/font/Epilogue/Epilogue-VariableFont_wght.ttf") format("truetype");
   font-weight: 100 900;
-  font-style: italic;
+  font-style: normal;
   font-display: swap;
 }
 
@@ -924,8 +964,9 @@ body.page-f1 .site-footer {
   min-height: calc(100vh - var(--head-h, 44px) - var(--hero-h));
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  padding-bottom: 10px;
+  justify-content: flex-start;
+  padding-top: clamp(20px, 3vh, 48px);
+  padding-bottom: 40px;
 }
 
 .page-work .work-table {
@@ -1010,6 +1051,113 @@ a.work-row:active {
 
 a.work-row:hover {
   background: rgba(65, 243, 115, 0.08);
+}
+
+/* =========================
+   WORK — BEST CASES (001) + SECONDARY TABLE (002)
+   ========================= */
+
+/* Section header shared by both blocks */
+.cases-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: clamp(10px, 1.4vh, 20px) 0 clamp(6px, 0.8vh, 12px);
+  border-bottom: 1px solid rgba(0,0,0,0.18);
+  font-family: "Epilogue", sans-serif;
+}
+.cases-header__label {
+  font-size: clamp(13px, 1.05vw, 16px);
+  font-weight: 500;
+}
+.cases-header__num {
+  font-family: "Clash Display", sans-serif;
+  font-size: clamp(13px, 1.05vw, 16px);
+  font-weight: 600;
+}
+
+/* Cases table wrapper */
+.cases-table {
+  width: 95vw;
+  max-width: none;
+  margin: 0 auto;
+  padding-inline: 0;
+  padding-bottom: 30vh;
+}
+
+/* Cases rows — 5 cols: idx | title | spacer | date | type */
+.cases-row {
+  display: grid;
+  grid-template-columns: minmax(40px, 56px) minmax(220px, 36%) 1fr minmax(90px, 12%) minmax(160px, 22%);
+  align-items: start;
+  column-gap: clamp(10px, 1.6vw, 22px);
+  padding: clamp(7px, 1.05vh, 14px) 0;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+}
+.cases-row::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 0;
+  height: 1px;
+  background: rgba(0,0,0,0.18);
+}
+.cases-row:last-child {
+  border-bottom: 1px solid rgba(0,0,0,0.18);
+}
+.cases-row:hover {
+  background: rgba(65,243,115,0.08);
+}
+
+.cases-row .idx {
+  font-family: "Clash Display", sans-serif;
+  font-weight: 600;
+  font-size: clamp(13px, 1.05vw, 16px);
+}
+.cases-row .title h3 {
+  margin: 0 0 4px;
+  font-family: "Epilogue", sans-serif;
+  font-weight: 500;
+  font-size: clamp(15px, 1.25vw, 18px);
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  overflow: visible;
+}
+.cases-row .title .desc {
+  margin: 0;
+  opacity: 0.85;
+  font-size: clamp(12px, 1.0vw, 14px);
+}
+.cases-row .date-col h4,
+.cases-row .type-col h4 {
+  margin: 0 0 4px;
+  font-family: "Epilogue", sans-serif;
+  font-weight: 600;
+  font-size: clamp(12px, 0.95vw, 14px);
+}
+.cases-row .date-col p,
+.cases-row .type-col p {
+  margin: 0;
+  opacity: 0.9;
+  font-size: clamp(12px, 0.95vw, 14px);
+}
+
+/* Latest badge — après le texte du titre, hors du flux (ne modifie pas la hauteur de la row) */
+.latest-badge {
+  position: absolute;
+  left: calc(100% + 8px);
+  top: calc(50% - 10px);
+  transform: translateY(-50%) rotate(15deg);
+  width: clamp(60px, 5.32vw, 100px);
+  height: auto;
+  pointer-events: none;
+}
+
+/* Secondary categories block: add top spacing */
+.work-table--secondary {
+  margin-top: 5vh;
 }
 
 /* =========================
@@ -1178,150 +1326,113 @@ body:has(.page-posters .lb:target) {
   box-sizing: border-box;
 }
 
-.page-3d .entry3d {
-  width: 100%;
-  max-width: var(--base-w);
-  margin: 0 auto;
-  padding: 0 clamp(24px, 3vw, 56px) clamp(96px, 12vh, 160px);
-  box-sizing: border-box;
-  position: relative;
+.page-3d .page-grid {
+  z-index: 0;
 }
 
-.page-3d .entry3d .g {
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  column-gap: clamp(12px, 1.6vw, 28px);
-  align-items: start;
+.page-3d .tag-3d {
+  width: fit-content;
+  margin: clamp(72px, 9vw, 130px) auto clamp(116px, 11vw, 160px);
 }
 
-.page-3d .entry3d .strap3d {
-  grid-column: 1 / -1;
-  justify-self: center;
+.page-3d .tag-3d img {
   display: block;
-  width: clamp(72px, 6.2vw, 110px);
+  width: clamp(96px, 9vw, 128px);
   height: auto;
-  margin: 250px auto clamp(20px, 3.6vw, 40px);
+  clip-path: inset(0 31.8% 16% 32.3%);
 }
 
-.page-3d .entry3d .top {
-  padding: 24px 0 14px;
-  align-items: start;
+.page-3d .intro3d {
+  display: grid;
+  grid-template-columns: 4% 59% 8% 11%;
+  justify-content: space-between;
+  align-items: end;
+  gap: clamp(12px, 1.2vw, 20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  padding-bottom: clamp(20px, 2.4vw, 28px);
 }
 
-.page-3d .entry3d .idx {
-  grid-column: 1 / span 1;
-  justify-self: start;
+.page-3d .intro3d .idx,
+.page-3d .intro3d h1,
+.page-3d .intro3d p,
+.page-3d .note {
+  margin: 0;
+}
+
+.page-3d .intro3d .idx {
   font-family: "Clash Display", system-ui;
+  font-size: clamp(23px, 1.55vw, 30px);
   font-weight: 600;
-  font-size: clamp(18px, 1.8vw, 28px);
   line-height: 1;
-  letter-spacing: 0.01em;
-  font-variant-numeric: tabular-nums;
-  color: var(--text-secondary);
 }
 
-.page-3d .entry3d .titleWrap {
-  grid-column: 2 / span 8;
-  display: grid;
-  grid-template-rows: auto auto;
-  row-gap: 2px;
-}
-
-.page-3d .entry3d .title {
-  margin: 0;
-  line-height: 1.1;
+.page-3d .intro3d h1 {
+  margin-bottom: 6px;
   font-family: "Epilogue", system-ui;
+  font-size: clamp(20px, 1.38vw, 25px);
   font-weight: 500;
-  font-size: clamp(18px, 1.25vw, 22px);
+  line-height: 1.08;
 }
 
-.page-3d .entry3d .subtitle {
-  margin: 0;
-  opacity: 0.8;
-  font-size: clamp(13px, 0.95vw, 16px);
-  line-height: 1.2;
-  max-width: none;
+.page-3d .intro3d p,
+.page-3d .note {
+  font-size: clamp(12px, 0.92vw, 14px);
+  line-height: 1.22;
 }
 
-.page-3d .entry3d .year {
-  grid-column: 10 / span 1;
-  align-self: start;
-  justify-self: end;
-  margin: 0;
-  font-size: clamp(12px, 0.95vw, 16px);
-  line-height: 1.2;
-  opacity: 0.9;
+.page-3d .intro3d .year,
+.page-3d .intro3d .sector {
+  align-self: center;
 }
 
-.page-3d .entry3d .sector {
-  grid-column: 11 / span 2;
-  justify-self: end;
-  align-self: start;
-  text-align: right;
-  display: grid;
-  grid-template-rows: auto auto;
-  row-gap: 2px;
-  align-items: start;
-}
-
-.page-3d .entry3d .sector .label {
+.page-3d .intro3d .sector strong,
+.page-3d .intro3d .sector span {
   display: block;
-  margin: 0;
-  line-height: 1.1;
-  font-weight: 600;
-  font-size: clamp(12px, 0.9vw, 15px);
 }
 
-.page-3d .entry3d .sector .val {
+.page-3d .v2-stage {
+  position: relative;
+  margin-top: clamp(14px, 1.8vw, 24px);
+  width: 100%;
+  height: 0;
+  padding-bottom: 272%;
+}
+
+.page-3d .piece,
+.page-3d .note {
+  position: absolute;
+}
+
+.page-3d .piece {
+  margin: 0;
+  transform: scale(1);
+  transform-origin: center top;
+}
+
+.page-3d .piece img {
   display: block;
-  margin: 0;
-  font-size: clamp(12px, 0.95vw, 16px);
-  line-height: 1.2;
-  opacity: 0.9;
+  width: 100%;
+  height: auto;
 }
 
-.page-3d .entry3d .rule {
-  grid-column: 2 / span 11;
-  height: 1px;
-  border: 0;
-  background: rgba(0, 0, 0, 0.16);
-  margin: 0;
+.page-3d .piece.dark img {
+  background: #5f5f5f;
 }
 
-.page-3d .entry3d .below {
-  padding: 8px 0 24px;
-  row-gap: 10px;
-  align-items: stretch;
-}
+.page-3d .n-top { left: 3.5%; top: 0.2%; width: 30%; }
+.page-3d .p-rue01 { left: 40%; top: 0.2%; width: 58%; }
 
-.page-3d .entry3d .copy {
-  grid-column: 2 / span 4;
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-  max-width: 42ch;
-  margin-top: 4px;
-}
+.page-3d .n-focus { left: 3.5%; top: 11.8%; width: 24%; }
+.page-3d .p-bureau02 { left: 42%; top: 17.1%; width: 39%; }
+.page-3d .n-boring { left: 81.8%; top: 23.2%; width: 14%; }
+.page-3d .p-ours { left: 74.8%; top: 25.7%; width: 20.2%; }
 
-.page-3d .entry3d .copy p {
-  margin: 0 0 10px 0;
-  font-size: clamp(12px, 0.95vw, 16px);
-  line-height: 1.35;
-}
-
-.page-3d .entry3d .copy .focus,
-.page-3d .entry3d .copy p:last-child {
-  margin-top: auto;
-  padding-top: clamp(8px, 0.9vw, 14px);
-  opacity: 0.85;
-}
-
-.page-3d .entry3d .hero {
-  grid-column: 7 / span 6;
-  margin: 4px 0 0 0;
-  justify-self: end;
-  width: calc(100% - clamp(10px, 0.9vw, 14px));
-}
+.page-3d .n-rue { left: 0%; top: 27.1%; width: 26%; white-space: nowrap; }
+.page-3d .p-rue03 { left: -0.6%; top: 28.5%; width: 50%; }
+.page-3d .n-bear { left: 74.8%; top: 34.0%; width: 20%; }
+.page-3d .p-chambre02 { left: 54.4%; top: 40.3%; width: 24.5%; }
+.page-3d .p-cafe03 { left: -1%; top: 39.6%; width: 36%; }
+.page-3d .p-chambre03 { left: 34%; top: 47.4%; width: 40%; }
 
 .page-3d .p-billie { left: 1%; top: 54.7%; width: 27.8%; }
 .page-3d .n-billie { left: 30%; top: 56.2%; width: 20%; z-index: 1; }
@@ -1338,15 +1449,11 @@ body:has(.page-posters .lb:target) {
 .page-3d .p-cafe01 { left: 2%; top: 95.1%; width: 54%; }
 .page-3d .p-rue02 { left: 56.4%; top: 95.1%; width: 40%; }
 
-/* Galerie 3D compositée */
-.page-3d .gallery3d {
-  width: 100%;
-  max-width: var(--base-w);
-  margin: 0 auto;
-  padding-inline: clamp(24px, 3vw, 56px);
-  box-sizing: border-box;
-  user-select: none;
-}
+@media (max-width: 640px) {
+  .page-3d .work-3d-v2 {
+    padding-inline: 16px;
+    padding-bottom: 190px;
+  }
 
   .page-3d .tag-3d {
     margin: 44px auto 72px;
@@ -2159,8 +2266,38 @@ body:has(.page-posters .lb:target) {
   }
 
   /* Page Lore mobile */
+  .page-lore .pharrel-fixed {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    z-index: 40;
+    pointer-events: none;
+  }
+
   .page-lore .pharrel-sticker {
-    width: 28%;
+    width: min(38vw, 190px);
+  }
+
+  .page-lore .footer-top {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 14px;
+  }
+
+  .page-lore .footer-col {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .page-lore .foot-label.foot-right,
+  .page-lore .footer-contacts {
+    text-align: right;
+  }
+
+  .page-lore .footer-contacts .social {
+    justify-content: flex-end;
   }
 
   .page-lore #lore-stage {
@@ -2557,7 +2694,7 @@ body:has(.page-posters .lb:target) {
   opacity: 0.85;
 }
 
-.page-branding .branding-head .sector h4 {
+.page-branding .branding-gallery figure {
   margin: 0;
   width: 100%;
   display: flex;
@@ -2787,36 +2924,146 @@ body:has(.page-posters .lb:target) {
     margin-top: clamp(20px, 8vw, 40px);
   }
 
-  .page-magazine .mag-head .title {
+  /* Mobile project layout template (Magazine + Branding) */
+  .page-magazine .mag-scene,
+  .page-branding .branding-scene {
+    margin: clamp(28px, 8vw, 52px) auto 8vh;
+    padding-inline: clamp(14px, 4vw, 24px);
+  }
+
+  .page-magazine .mag-badge,
+  .page-branding .branding-badge {
+    margin-top: clamp(26px, 7vw, 46px);
+  }
+
+  .page-magazine .mag-badge-img,
+  .page-branding .branding-badge-img {
+    width: clamp(110px, 34vw, 165px);
+    margin: 0 auto clamp(26px, 8vw, 48px);
+  }
+
+  .page-magazine .mag-head,
+  .page-branding .branding-head {
+    padding: 16px 0 12px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.22);
+  }
+
+  .page-magazine .mag-head .idx,
+  .page-branding .branding-head .idx {
+    grid-column: 1 / span 1;
+    font-size: clamp(20px, 4.5vw, 24px);
+    line-height: 1;
+    margin-top: 2px;
+  }
+
+  .page-magazine .mag-head .title,
+  .page-branding .branding-head .title {
     grid-column: 2 / span 7;
     max-width: none;
   }
 
-  .page-magazine .mag-head .year {
-    grid-column: 10 / span 1;
+  .page-magazine .mag-head .year,
+  .page-branding .branding-head .year {
+    grid-column: 9 / span 2;
     margin-top: 0;
     justify-self: end;
+    text-align: right;
   }
 
-  .page-magazine .mag-head .sector {
+  .page-magazine .mag-head .sector,
+  .page-branding .branding-head .sector {
     grid-column: 11 / span 2;
     margin-top: 0;
     justify-self: end;
     text-align: right;
   }
 
-  .page-magazine .mag-body .desc {
-    grid-column: 2 / span 5;
+  .page-magazine .mag-head h3,
+  .page-branding .branding-head h3 {
+    font-size: clamp(17px, 4.2vw, 20px);
+    line-height: 1.08;
+  }
+
+  .page-magazine .mag-head .lead,
+  .page-branding .branding-head .lead {
+    font-size: clamp(12px, 3.2vw, 14px);
+    line-height: 1.25;
+    margin-top: 6px;
+  }
+
+  .page-magazine .mag-body,
+  .page-branding .branding-body {
+    padding: 14px 0 20px;
+    row-gap: 14px;
+    border-top: 0;
+  }
+
+  .page-magazine .mag-body .desc,
+  .page-branding .branding-body .desc {
+    grid-column: 2 / span 11;
     max-width: none;
   }
 
-  .page-magazine .mag-body .gallery {
-    grid-column: 7 / span 6;
+  .page-magazine .mag-body .desc p,
+  .page-branding .branding-body .desc p {
+    font-size: clamp(12px, 3.2vw, 14px);
+    line-height: 1.28;
+  }
+
+  .page-magazine .mag-body .gallery,
+  .page-branding .branding-body .gallery {
+    grid-column: 2 / span 11;
+    justify-self: stretch;
+    width: 100%;
   }
 
   .page-magazine .gallery.is-static {
     width: 100%;
-    height: clamp(220px, 52vw, 420px);
+    height: clamp(260px, 58vw, 420px);
+  }
+
+  .page-branding .branding-body .gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(8px, 2vw, 12px);
+  }
+
+  .page-branding .branding-gallery figure:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .page-branding .branding-gallery img,
+  .page-branding .branding-gallery figure:first-child img,
+  .page-branding .branding-gallery figure:not(:first-child) img {
+    width: 100%;
+    height: auto;
+    margin-left: 0;
+  }
+
+  .page-magazine .mag-sep,
+  .page-branding .branding-sep {
+    margin: 0 0 clamp(34px, 10vw, 58px);
+    background: rgba(0, 0, 0, 0.24);
+  }
+
+  /* Magazine-specific phone fit */
+  .page-magazine .mag-head .title {
+    grid-column: 2 / span 6;
+  }
+
+  .page-magazine .mag-head .year {
+    grid-column: 8 / span 2;
+  }
+
+  .page-magazine .mag-head .sector {
+    grid-column: 10 / span 3;
+  }
+
+  .page-magazine .mag-head .lead,
+  .page-magazine .mag-body .desc p {
+    max-width: 36ch;
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
 
 }
