@@ -5136,6 +5136,7 @@ body:has(.page-posters .lb:target) {
   width: 100%;
   overflow: hidden;
   background: var(--text-primary, #0f1f1f);
+  outline: 2px solid var(--bg, #41F373);
 }
 
 /* Image fills width, height is natural (no cropping) */
