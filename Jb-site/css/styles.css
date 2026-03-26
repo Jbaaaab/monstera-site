@@ -6386,10 +6386,12 @@ body.page-gust .site-footer {
   line-height: 1.55;
 }
 
+.page-samurai .samurai-overview-fig,
 .page-samurai .samurai-landing-fig {
   margin: 0 0 clamp(12px, 1.6vw, 20px);
 }
 
+.page-samurai .samurai-overview-fig img,
 .page-samurai .samurai-landing-fig img {
   display: block;
   width: 100%;
