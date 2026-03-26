@@ -5151,6 +5151,14 @@ body:has(.page-posters .lb:target) {
   z-index: 0;
 }
 
+/* Tout le contenu passe devant les colonnes (page-grid z-index:0) */
+.page-gust .gust-scene,
+.page-gust .gust-color-palette,
+.page-gust .gust-section {
+  position: relative;
+  z-index: 1;
+}
+
 .page-gust .gust-title-wrap {
   display: flex;
   justify-content: center;
@@ -5357,7 +5365,7 @@ body:has(.page-posters .lb:target) {
   flex: 1;
   min-width: 0;
   position: relative;
-
+  border-radius: 17px;
   overflow: hidden;
   aspect-ratio: 3 / 4;
 }
@@ -5421,9 +5429,10 @@ body:has(.page-posters .lb:target) {
   margin: 0;
   font-family: "Epilogue", system-ui;
   font-weight: 400;
-  font-size: clamp(14px, 1.14vw, 19px);
+  font-size: clamp(9px, 0.694vw, 12px);
   line-height: 1.5;
   color: #fff;
+  text-align: center;
 }
 
 /* Gen footer row */
@@ -5633,6 +5642,25 @@ body:has(.page-posters .lb:target) {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--text-secondary);
+}
+
+/* Sub-label under a ws-head title (e.g. "HERO SECTION" under "Offers Page") */
+.page-gust .gust-ws-sublabel {
+  margin: 2px 0 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(10px, 0.72vw, 12px);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+.page-gust .gust-ws-title {
+  grid-column: 2 / span 5;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .page-gust .gust-ws-sub {
