@@ -5593,7 +5593,7 @@ body:has(.page-posters .lb:target) {
   display: flex;
   gap: clamp(10px, 1.4vw, 20px);
   align-items: stretch;
-  padding-left: calc((100% + clamp(12px, 1.6vw, 28px)) / 12);
+  padding-left: 0;
 }
 
 .page-gust .gust-schema-img {
@@ -5719,7 +5719,6 @@ body:has(.page-posters .lb:target) {
 /* Landing screenshots — indent 1 col left, full right */
 .page-gust .gust-landing-fig {
   margin: 0 0 clamp(12px, 1.6vw, 20px);
-  padding-left: calc((100% + clamp(12px, 1.6vw, 28px)) / 12);
 }
 
 .page-gust .gust-landing-fig img {
@@ -5736,7 +5735,7 @@ body:has(.page-posters .lb:target) {
 }
 
 .page-gust .gust-mojo-img {
-  grid-column: 2 / span 7;
+  grid-column: 1 / span 8;
   margin: 0;
 }
 
@@ -5768,7 +5767,7 @@ body:has(.page-posters .lb:target) {
 }
 
 .page-gust .gust-transition-text {
-  grid-column: 2 / span 2;
+  grid-column: 1 / span 2;
   align-self: end;
   display: flex;
   flex-direction: column;
@@ -5793,7 +5792,7 @@ body:has(.page-posters .lb:target) {
 }
 
 .page-gust .gust-transition-img {
-  grid-column: 4 / span 9;
+  grid-column: 3 / span 10;
   margin: 0;
 }
 
