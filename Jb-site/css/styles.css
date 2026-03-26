@@ -1176,15 +1176,15 @@ a.work-row:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: min(var(--badge-w), 16%);
+  width: auto;
   z-index: 1000;
   pointer-events: none;
 }
 
 .page-posters .posters-fixed img {
   display: block;
-  width: 100%;
-  height: auto;
+  height: clamp(22px, 2.0vw, 36px);
+  width: auto;
   filter: drop-shadow(0 0 0.6em rgba(0, 0, 0, 0.35));
 }
 
@@ -1337,9 +1337,8 @@ body:has(.page-posters .lb:target) {
 
 .page-3d .tag-3d img {
   display: block;
-  width: clamp(96px, 9vw, 128px);
-  height: auto;
-  clip-path: inset(0 31.8% 16% 32.3%);
+  height: clamp(22px, 2.0vw, 36px);
+  width: auto;
 }
 
 .page-3d .intro3d {
@@ -1479,7 +1478,8 @@ body:has(.page-posters .lb:target) {
   }
 
   .page-3d .tag-3d img {
-    width: 92px;
+    height: 22px;
+    width: auto;
   }
 
   .page-3d .intro3d {
@@ -3281,8 +3281,8 @@ body:has(.page-posters .lb:target) {
 }
 
 .page-f1 .f1-badge {
-  width: clamp(140px, 14vw, 220px);
-  height: auto;
+  height: clamp(22px, 2.0vw, 36px);
+  width: auto;
   object-fit: contain;
 }
 
@@ -5211,8 +5211,8 @@ body:has(.page-posters .lb:target) {
 }
 
 .page-gust .gust-badge {
-  width: clamp(140px, 14vw, 220px);
-  height: auto;
+  height: clamp(22px, 2.0vw, 36px);
+  width: auto;
   object-fit: contain;
 }
 
@@ -5958,8 +5958,8 @@ body.page-gust .site-footer {
 
 .page-samurai .samurai-badge {
   display: block;
-  width: clamp(200px, 22vw, 380px);
-  height: auto;
+  height: clamp(22px, 2.0vw, 36px);
+  width: auto;
 }
 
 /* ─── 12-col grid ─── */
