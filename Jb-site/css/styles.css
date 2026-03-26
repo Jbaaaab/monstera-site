@@ -6282,12 +6282,115 @@ body.page-gust .site-footer {
 
 .page-samurai .samurai-swatch--black .samurai-sw-value { color: #fff; }
 
-/* ─── Overview image ─── */
-.page-samurai .samurai-overview-fig {
-  margin: 0;
+/* ─── Website chapter ─── */
+.page-samurai .samurai-ws-head {
+  padding: 24px 0 14px;
+  position: relative;
 }
 
-.page-samurai .samurai-overview-fig img {
+.page-samurai .samurai-ws-head::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 100vw; height: 1px;
+  background: rgba(0, 0, 0, 0.16);
+  pointer-events: none;
+}
+
+.page-samurai .samurai-ws-idx {
+  grid-column: 1 / span 1;
+  font-family: "Clash Display", system-ui;
+  font-weight: 600;
+  font-size: clamp(14px, 1.44vw, 22px);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-secondary);
+}
+
+.page-samurai .samurai-ws-title {
+  grid-column: 2 / span 5;
+}
+
+.page-samurai .samurai-ws-title h2 {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 500;
+  font-size: clamp(11px, 0.93vw, 16px);
+  line-height: 1.1;
+}
+
+.page-samurai .samurai-ws-label {
+  grid-column: 11 / span 2;
+  justify-self: end;
+  align-self: center;
+  text-align: right;
+}
+
+.page-samurai .samurai-ws-label h4 {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(10px, 0.72vw, 12px);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+}
+
+.page-samurai .samurai-ws-sub {
+  padding: 16px 0 12px;
+  position: relative;
+}
+
+.page-samurai .samurai-ws-sub::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 100vw; height: 1px;
+  background: rgba(0, 0, 0, 0.16);
+  pointer-events: none;
+}
+
+.page-samurai .samurai-ws-subidx {
+  grid-column: 1 / span 1;
+  font-family: "Epilogue", system-ui;
+  font-weight: 500;
+  font-size: clamp(11px, 0.93vw, 16px);
+  color: var(--text-secondary);
+}
+
+.page-samurai .samurai-ws-subtitle {
+  grid-column: 2 / span 5;
+}
+
+.page-samurai .samurai-ws-subtitle h3 {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 500;
+  font-size: clamp(11px, 0.93vw, 16px);
+  line-height: 1.1;
+}
+
+.page-samurai .samurai-ws-text {
+  padding: clamp(16px, 2.5vw, 32px) 0;
+}
+
+.page-samurai .samurai-ws-desc {
+  grid-column: 2 / span 9;
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(11px, 0.93vw, 16px);
+  line-height: 1.55;
+}
+
+.page-samurai .samurai-landing-fig {
+  margin: 0 0 clamp(12px, 1.6vw, 20px);
+}
+
+.page-samurai .samurai-landing-fig img {
   display: block;
   width: 100%;
   height: auto;
