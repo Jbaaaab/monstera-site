@@ -6110,6 +6110,189 @@ body.page-gust .site-footer {
   height: auto;
 }
 
+/* ─── Section wrapper ─── */
+.page-samurai .samurai-section {
+  position: relative;
+  padding-top: clamp(24px, 3.5vw, 56px);
+  padding-bottom: clamp(32px, 5vw, 72px);
+}
+
+.page-samurai .samurai-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 100vw; height: 1px;
+  background: rgba(0, 0, 0, 0.16);
+  pointer-events: none;
+}
+
+/* ─── General Direction ─── */
+.page-samurai .samurai-gen-head {
+  padding: 24px 0 14px;
+  position: relative;
+}
+
+.page-samurai .samurai-gen-head::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 100vw; height: 1px;
+  background: rgba(0, 0, 0, 0.16);
+  pointer-events: none;
+}
+
+.page-samurai .samurai-sec-idx {
+  grid-column: 1 / span 1;
+  font-family: "Clash Display", system-ui;
+  font-weight: 600;
+  font-size: clamp(14px, 1.44vw, 22px);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-secondary);
+}
+
+.page-samurai .samurai-sec-title {
+  grid-column: 2 / span 5;
+}
+
+.page-samurai .samurai-sec-title h2 {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 500;
+  font-size: clamp(11px, 0.93vw, 16px);
+  line-height: 1.1;
+}
+
+.page-samurai .samurai-sec-label {
+  grid-column: 11 / span 2;
+  justify-self: end;
+  align-self: center;
+  text-align: right;
+}
+
+.page-samurai .samurai-sec-label h4 {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(10px, 0.72vw, 12px);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+}
+
+.page-samurai .samurai-gen-text {
+  padding: clamp(20px, 3vw, 40px) 0;
+  position: relative;
+}
+
+.page-samurai .samurai-gen-text::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 100vw; height: 1px;
+  background: rgba(0, 0, 0, 0.16);
+  pointer-events: none;
+}
+
+.page-samurai .samurai-gen-desc {
+  grid-column: 2 / span 10;
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(11px, 0.93vw, 16px);
+  line-height: 1.55;
+}
+
+/* ─── Color Palette — full-bleed ─── */
+.page-samurai .samurai-color-palette {
+  position: relative;
+  z-index: 1;
+  margin-top: clamp(8px, 1.5vw, 20px);
+}
+
+.page-samurai .samurai-swatch {
+  width: 100%;
+  padding: clamp(28px, 4vw, 52px) 0;
+}
+
+.page-samurai .samurai-swatch--yellow { background: #FFE969; }
+.page-samurai .samurai-swatch--black  { background: #000000; }
+
+.page-samurai .samurai-swatch-inner {
+  width: 100%;
+  max-width: var(--base-w);
+  margin: 0 auto;
+  padding-inline: var(--samurai-pad);
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: clamp(12px, 1.6vw, 28px);
+  align-items: center;
+}
+
+.page-samurai .samurai-sw-name {
+  grid-column: 2 / span 7;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(11px, 0.93vw, 16px);
+  line-height: 1.2;
+  color: #000;
+}
+
+.page-samurai .samurai-swatch--black .samurai-sw-name { color: #fff; }
+
+.page-samurai .samurai-sw-num {
+  grid-column: 9 / span 1;
+  justify-self: end;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(11px, 0.93vw, 16px);
+  color: #000;
+  opacity: 0.7;
+}
+
+.page-samurai .samurai-swatch--black .samurai-sw-num { color: #fff; }
+
+.page-samurai .samurai-sw-hex-label {
+  grid-column: 11 / span 1;
+  justify-self: end;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(9px, 0.65vw, 11px);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #000;
+  opacity: 0.5;
+}
+
+.page-samurai .samurai-swatch--black .samurai-sw-hex-label { color: #fff; }
+
+.page-samurai .samurai-sw-value {
+  grid-column: 12 / span 1;
+  justify-self: end;
+  font-family: "Epilogue", system-ui;
+  font-weight: 500;
+  font-size: clamp(11px, 0.93vw, 16px);
+  color: #000;
+}
+
+.page-samurai .samurai-swatch--black .samurai-sw-value { color: #fff; }
+
+/* ─── Overview image ─── */
+.page-samurai .samurai-overview-fig {
+  margin: 0;
+}
+
+.page-samurai .samurai-overview-fig img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 /* ─── Footer ─── */
 body.page-samurai .site-footer {
   background: #F2F3F4;
