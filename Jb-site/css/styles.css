@@ -5255,6 +5255,7 @@ body:has(.page-posters .lb:target) {
 
 .page-gust .gust-body .desc {
   grid-column: 2 / span 3;
+  align-self: start;
   display: flex;
   flex-direction: column;
   gap: clamp(12px, 1.6vw, 20px);
@@ -5269,13 +5270,20 @@ body:has(.page-posters .lb:target) {
   line-height: 1.55;
 }
 
-.page-gust .gust-body .desc .disciplines {
-  font-size: clamp(9px, 0.68vw, 11px);
-  line-height: 1.5;
+.page-gust .gust-body .disciplines {
+  grid-column: 2 / span 3;
+  align-self: end;
+  margin: 0;
+  white-space: nowrap;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(9px, 0.694vw, 12px);
+  line-height: 1.2;
+  color: var(--text-secondary);
 }
 
 .page-gust .gust-body .main-img {
-  grid-column: 6 / span 6;
+  grid-column: 6 / 13;
   margin: 0;
 }
 
