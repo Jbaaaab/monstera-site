@@ -6386,7 +6386,10 @@ body.page-gust .site-footer {
   line-height: 1.55;
 }
 
-.page-samurai .samurai-overview-fig,
+.page-samurai .samurai-overview-fig {
+  margin: clamp(32px, 5vw, 72px) 0 clamp(12px, 1.6vw, 20px);
+}
+
 .page-samurai .samurai-landing-fig {
   margin: 0 0 clamp(12px, 1.6vw, 20px);
 }
