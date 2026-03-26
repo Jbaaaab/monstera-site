@@ -5389,7 +5389,7 @@ body:has(.page-posters .lb:target) {
 /* Text block — anchored to bottom of card */
 .page-gust .gust-offer-content {
   position: absolute;
-  bottom: 0;
+  top: 50%;
   left: 0;
   right: 0;
   z-index: 2;
