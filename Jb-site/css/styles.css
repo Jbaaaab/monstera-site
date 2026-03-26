@@ -5644,6 +5644,25 @@ body:has(.page-posters .lb:target) {
   color: var(--text-secondary);
 }
 
+/* Sub-label under a ws-head title (e.g. "HERO SECTION" under "Offers Page") */
+.page-gust .gust-ws-sublabel {
+  margin: 2px 0 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(10px, 0.72vw, 12px);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+.page-gust .gust-ws-title {
+  grid-column: 2 / span 5;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
 .page-gust .gust-ws-sub {
   padding: 10px 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.16);
