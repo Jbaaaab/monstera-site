@@ -4898,6 +4898,31 @@ body:has(.page-posters .lb:target) {
   color: #000;
 }
 
+/* ─── Full-width horizontal separators (F1) ─── */
+.page-f1 .f1-head,
+.page-f1 .f1-body,
+.page-f1 .f1-section { position: relative; }
+
+.page-f1 .f1-head   { border-bottom: none; }
+.page-f1 .f1-body   { border-top: none; }
+.page-f1 .f1-section { border-top: none; }
+
+.page-f1 .f1-head::after,
+.page-f1 .f1-body::before,
+.page-f1 .f1-section::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.16);
+  pointer-events: none;
+}
+.page-f1 .f1-head::after    { bottom: 0; }
+.page-f1 .f1-body::before   { top: 0; }
+.page-f1 .f1-section::before { top: 0; }
+
 /* ─── Responsive ─── */
 @media (max-width: 900px) {
   .page-f1 .f1-head .title { grid-column: 2 / span 6; }
@@ -5738,6 +5763,55 @@ body:has(.page-posters .lb:target) {
   width: 100%;
   height: auto;
 
+}
+
+/* ─── Full-width horizontal separators (Gust) ─── */
+.page-gust .gust-head,
+.page-gust .gust-body,
+.page-gust .gust-section,
+.page-gust .gust-gen-head,
+.page-gust .gust-gen-text,
+.page-gust .gust-gen-footer,
+.page-gust .gust-ws-head,
+.page-gust .gust-ws-sub { position: relative; }
+
+.page-gust .gust-head     { border-bottom: none; }
+.page-gust .gust-body     { border-top: none; }
+.page-gust .gust-section  { border-top: none; }
+.page-gust .gust-gen-head { border-bottom: none; }
+.page-gust .gust-gen-text { border-bottom: none; }
+.page-gust .gust-gen-footer { border-top: none; }
+.page-gust .gust-ws-head  { border-bottom: none; }
+.page-gust .gust-ws-sub   { border-bottom: none; }
+
+.page-gust .gust-head::after,
+.page-gust .gust-gen-head::after,
+.page-gust .gust-gen-text::after,
+.page-gust .gust-ws-head::after,
+.page-gust .gust-ws-sub::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.16);
+  pointer-events: none;
+}
+
+.page-gust .gust-body::before,
+.page-gust .gust-section::before,
+.page-gust .gust-gen-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.16);
+  pointer-events: none;
 }
 
 /* ─── Footer ─── */
