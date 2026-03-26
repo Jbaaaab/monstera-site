@@ -3368,6 +3368,8 @@ body:has(.page-posters .lb:target) {
 
 .page-f1 .f1-body .desc {
   grid-column: 2 / span 3;
+  grid-row: 1;
+  align-self: start;
   display: flex;
   flex-direction: column;
   gap: clamp(12px, 1.6vw, 20px);
@@ -3382,13 +3384,22 @@ body:has(.page-posters .lb:target) {
   line-height: 1.55;
 }
 
-.page-f1 .f1-body .desc .disciplines {
-  font-size: clamp(9px, 0.68vw, 11px);
-  line-height: 1.5;
+.page-f1 .f1-body .disciplines {
+  grid-column: 2 / span 3;
+  grid-row: 2;
+  align-self: end;
+  margin: 0;
+  white-space: nowrap;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(11px, 0.87vw, 15px);
+  line-height: 1.2;
+  color: var(--text-secondary);
 }
 
 .page-f1 .f1-body .main-img {
-  grid-column: 6 / span 6;
+  grid-column: 6 / 13;
+  grid-row: 1 / span 2;
   margin: 0;
 }
 
@@ -4959,8 +4970,9 @@ body:has(.page-posters .lb:target) {
   .page-f1 .f1-head .title { grid-column: 2 / span 6; }
   .page-f1 .f1-head .year  { grid-column: 9 / span 2; }
   .page-f1 .f1-head .sector{ grid-column: 11 / span 2; }
-  .page-f1 .f1-body .desc  { grid-column: 2 / span 4; }
-  .page-f1 .f1-body .main-img { grid-column: 6 / span 7; }
+  .page-f1 .f1-body .desc        { grid-column: 2 / span 4; }
+  .page-f1 .f1-body .disciplines  { grid-column: 2 / span 4; }
+  .page-f1 .f1-body .main-img    { grid-column: 6 / 13; }
 
   /* thinking-card columns handled by flex — no grid-column needed */
 
