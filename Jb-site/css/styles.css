@@ -5219,7 +5219,7 @@ body:has(.page-posters .lb:target) {
 }
 
 .page-gust .gust-head .year {
-  grid-column: 10 / span 1;
+  grid-column: 11 / span 1;
   justify-self: end;
   font-size: clamp(11px, 0.93vw, 16px);
   font-weight: 500;
@@ -5227,7 +5227,7 @@ body:has(.page-posters .lb:target) {
 }
 
 .page-gust .gust-head .sector {
-  grid-column: 11 / span 1;
+  grid-column: 12 / span 1;
   justify-self: end;
   text-align: right;
   display: grid;
