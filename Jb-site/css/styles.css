@@ -5957,16 +5957,9 @@ body.page-gust .site-footer {
 }
 
 .page-samurai .samurai-badge {
-  display: inline-block;
-  padding: 4px 18px;
-  background: var(--green, #41F373);
-  color: #0a0a0a;
-  font-family: "Epilogue", system-ui;
-  font-size: clamp(11px, 0.93vw, 16px);
-  font-weight: 500;
-  letter-spacing: 0.03em;
-  line-height: 1.6;
-  border-radius: 100px;
+  display: block;
+  width: clamp(200px, 22vw, 380px);
+  height: auto;
 }
 
 /* ─── 12-col grid ─── */
@@ -5980,7 +5973,6 @@ body.page-gust .site-footer {
 /* ─── Hero head ─── */
 .page-samurai .samurai-head {
   padding: 24px 0 14px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.16);
   position: relative;
 }
 
@@ -6060,7 +6052,6 @@ body.page-gust .site-footer {
 /* ─── Hero body ─── */
 .page-samurai .samurai-body {
   padding: 8px 0 24px;
-  border-top: 1px solid rgba(0, 0, 0, 0.16);
   position: relative;
 }
 
