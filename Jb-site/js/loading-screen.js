@@ -1,49 +1,54 @@
 /* =========================
    Loading Screen
-   Only triggers if page hasn't loaded within 2.5s
+   — Shows immediately on every page load
+   — Fake-but-convincing progress (eases to ~85%, jumps to 100% on window.load)
+   — Minimum display of 1 200ms so the animation is always seen
+   — Green panel slides out to the right on exit
    ========================= */
 (() => {
   'use strict';
 
-  const THRESHOLD_MS = 2500;
-  const GREEN = [0x41, 0xF3, 0x73]; // #41F373
-  const WHITE = [255, 255, 255];
+  const GREEN        = [0x41, 0xF3, 0x73]; // #41F373
+  const WHITE        = [255, 255, 255];
+  const MIN_DISPLAY  = 1200;               // ms — always shown at least this long
+  const FAKE_TARGET  = 85;                 // % to ease toward while loading
+  const LERP_FAKE    = 0.028;             // speed while loading  (slow, convincing)
+  const LERP_FINISH  = 0.11;              // speed after load     (quick sweep to 100)
 
-  const inWork = /\/work\//.test(location.pathname);
-  const assetBase = inWork ? '../assets/' : 'assets/';
+  const inWork   = /\/work\//.test(location.pathname);
+  const imgBase  = inWork ? '../assets/Img/' : 'assets/Img/';
 
   let loaderEl    = null;
   let percentEl   = null;
-  let progress    = 0;      // currently displayed progress
-  let target      = 0;      // target progress (set by load events)
-  let loaderShown = false;
-  let pageLoaded  = false;
+  let displayed   = 0;       // currently rendered progress value
+  let pageLoaded  = false;   // true when window.load has fired
+  let minTimeDone = false;   // true after MIN_DISPLAY ms
   let rafId       = null;
 
-  /* ---- Helpers ---- */
+  /* ---------- helpers ---------- */
   function lerp(a, b, t) { return a + (b - a) * t; }
 
-  function colorAtProgress(t) {
+  function colorAt(t) {
     const r = Math.round(lerp(WHITE[0], GREEN[0], t));
     const g = Math.round(lerp(WHITE[1], GREEN[1], t));
     const b = Math.round(lerp(WHITE[2], GREEN[2], t));
     return 'rgb(' + r + ',' + g + ',' + b + ')';
   }
 
-  /* ---- DOM creation ---- */
-  function createLoader() {
+  /* ---------- DOM ---------- */
+  function buildLoader() {
     loaderEl = document.createElement('div');
     loaderEl.id = 'jb-loader';
     loaderEl.setAttribute('aria-hidden', 'true');
 
     const img = document.createElement('img');
-    img.className = 'jb-loader-pastille';
-    img.src = assetBase + 'Img/PASTILLE CHARGEMENT.png';
-    img.alt = '';
-    img.draggable = false;
+    img.className  = 'jb-loader-pastille';
+    img.src        = imgBase + 'PASTILLE CHARGEMENT.png';
+    img.alt        = '';
+    img.draggable  = false;
 
     percentEl = document.createElement('div');
-    percentEl.className = 'jb-loader-percent';
+    percentEl.className   = 'jb-loader-percent';
     percentEl.textContent = '0%';
 
     loaderEl.appendChild(img);
@@ -51,109 +56,76 @@
     document.body.prepend(loaderEl);
   }
 
-  /* ---- Progress rendering ---- */
-  function applyProgress(pct) {
+  /* ---------- render ---------- */
+  function render(pct) {
     if (!loaderEl) return;
-    loaderEl.style.backgroundColor = colorAtProgress(pct / 100);
-    if (percentEl) percentEl.textContent = Math.round(pct) + '%';
+    loaderEl.style.backgroundColor = colorAt(pct / 100);
+    percentEl.textContent = Math.floor(pct) + '%';
   }
 
-  function tick() {
-    if (progress < target) {
-      // Ease toward target (faster when far, slower as it closes)
-      progress += (target - progress) * 0.07;
-      if (target - progress < 0.3) progress = target;
-      applyProgress(progress);
-    }
-
-    if (progress < target) {
-      rafId = requestAnimationFrame(tick);
-    } else if (target >= 100) {
-      applyProgress(100);
-      scheduleExit();
-    }
-  }
-
-  function setTarget(pct) {
-    target = Math.max(target, Math.min(100, pct));
-    if (!loaderShown) return;
-    cancelAnimationFrame(rafId);
-    rafId = requestAnimationFrame(tick);
-  }
-
-  /* ---- Exit animation ---- */
-  function scheduleExit() {
-    // Brief pause at 100% so the user sees it
+  /* ---------- exit ---------- */
+  function exit() {
+    if (!loaderEl) return;
+    render(100);
+    // Brief pause at 100% so the user sees the full green screen
     setTimeout(function () {
       if (!loaderEl) return;
       loaderEl.classList.add('is-exiting');
-      loaderEl.addEventListener('transitionend', function () {
+      // Cleanup after the CSS transition finishes
+      var cleanup = function () {
         if (loaderEl) { loaderEl.remove(); loaderEl = null; }
-      }, { once: true });
-      // Fallback removal in case transitionend doesn't fire
-      setTimeout(function () {
-        if (loaderEl) { loaderEl.remove(); loaderEl = null; }
-      }, 1200);
-    }, 350);
+      };
+      loaderEl.addEventListener('transitionend', cleanup, { once: true });
+      // Safety fallback if transitionend doesn't fire
+      setTimeout(cleanup, 1100);
+    }, 250);
   }
 
-  /* ---- Progress tracking ---- */
-  var totalImgs   = 0;
-  var loadedImgs  = 0;
+  /* ---------- animation loop ---------- */
+  function tick() {
+    var target = pageLoaded ? 100 : FAKE_TARGET;
+    var speed  = pageLoaded ? LERP_FINISH : LERP_FAKE;
 
-  function onImgSettled() {
-    loadedImgs++;
-    if (totalImgs > 0) {
-      setTarget(20 + (loadedImgs / totalImgs) * 78);
+    displayed += (target - displayed) * speed;
+
+    // Clamp floating-point drift
+    if (displayed > 99.6 && pageLoaded) {
+      displayed = 100;
+      render(100);
+      cancelAnimationFrame(rafId);
+      if (minTimeDone) { exit(); } else { /* wait for timer */ }
+      return;
     }
-  }
 
-  function trackImages() {
-    var imgs = Array.from(document.querySelectorAll('img'));
-    totalImgs = imgs.length;
-    if (totalImgs === 0) { setTarget(90); return; }
-
-    imgs.forEach(function (img) {
-      if (img.complete) {
-        loadedImgs++;
-      } else {
-        img.addEventListener('load',  onImgSettled, { once: true });
-        img.addEventListener('error', onImgSettled, { once: true });
-      }
-    });
-
-    // Reflect already-loaded images immediately
-    if (loadedImgs > 0) {
-      setTarget(20 + (loadedImgs / totalImgs) * 78);
-    }
-  }
-
-  document.addEventListener('DOMContentLoaded', function () {
-    setTarget(20);
-    trackImages();
-  });
-
-  window.addEventListener('load', function () {
-    pageLoaded = true;
-    setTarget(100);
-  }, { once: true });
-
-  /* ---- Threshold timer ---- */
-  // Adjust for time already elapsed since navigation start
-  var elapsed   = (performance && performance.now) ? performance.now() : 0;
-  var remaining = Math.max(0, THRESHOLD_MS - elapsed);
-
-  var showTimer = setTimeout(function () {
-    if (pageLoaded) return; // Already loaded, nothing to show
-    loaderShown = true;
-    createLoader();
-    applyProgress(progress); // Show current state immediately
-    cancelAnimationFrame(rafId);
+    render(displayed);
     rafId = requestAnimationFrame(tick);
-  }, remaining);
+  }
 
-  window.addEventListener('load', function () {
-    clearTimeout(showTimer);
-  }, { once: true });
+  /* ---------- boot ---------- */
+  function start() {
+    buildLoader();
+    render(0);
+    rafId = requestAnimationFrame(tick);
+
+    // Minimum display timer
+    setTimeout(function () {
+      minTimeDone = true;
+      // If progress has already hit 100 (fast page + fast animation), exit now
+      if (displayed >= 100) exit();
+    }, MIN_DISPLAY);
+
+    // Real load event
+    window.addEventListener('load', function () {
+      pageLoaded = true;
+      // RAF loop will pick up the new target on its next frame
+    }, { once: true });
+  }
+
+  // Inject as soon as <body> exists (DOMContentLoaded fires after HTML parse, ~10-30ms)
+  if (document.body) {
+    start();
+  } else {
+    document.addEventListener('DOMContentLoaded', start);
+  }
 
 })();
