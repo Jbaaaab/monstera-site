@@ -1,27 +1,75 @@
 <!doctype html>
-<html lang="fr" data-loader="heavy">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Take Care — JBAB</title>
+  <title>Take Care — Beauty — JBAB</title>
   <link rel="icon" type="image/png" href="../assets/Img/favicon.png">
-  <link rel="stylesheet" href="../css/styles.css" />
-  <script src="../js/loading-screen.js"></script>
+  <link rel="stylesheet" href="../css/styles.css?v=takecare-v1" />
 </head>
-<body class="page-tc">
+<body class="page-takecare">
 
   <div id="site-header"></div>
   <div class="page-grid" aria-hidden="true"></div>
 
-  <main role="main">
+  <main class="takecare-scene" role="main" aria-label="Take Care Beauty project">
+
+    <!-- Badge -->
+    <div class="takecare-title-wrap">
+      <img class="takecare-badge"
+           src="../assets/Img/Take care Title.png"
+           alt="* Take Care *"
+           loading="eager"
+           decoding="async" />
+    </div>
+
+    <!-- ── Section 01 : Hero ── -->
+    <section class="takecare-project" id="takecare-beauty" aria-labelledby="takecare-project-title">
+
+      <div class="takecare-row takecare-head">
+        <div class="c idx">01</div>
+        <div class="c title">
+          <h1 id="takecare-project-title">Take Care Beauty</h1>
+          <p class="lead">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="c year">2026</div>
+        <div class="c sector">
+          <h4>Sector</h4>
+          <p>Beauty</p>
+        </div>
+      </div>
+
+      <div class="takecare-row takecare-body">
+        <div class="c desc">
+          <p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        </div>
+        <p class="c disciplines">Social media, production, Art direction</p>
+        <figure class="c img-primary">
+          <img src="../assets/Img/WORK/TAKE CARE/image 33.png"
+               alt="Take Care — Product visual"
+               loading="eager"
+               decoding="async" />
+        </figure>
+        <figure class="c img-secondary">
+          <img src="../assets/Img/WORK/TAKE CARE/COVER TAKE CARE 1.png"
+               alt="Take Care — Cover"
+               loading="eager"
+               decoding="async" />
+        </figure>
+      </div>
+
+    </section>
+
   </main>
 
-  <div id="site-footer"></div>
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <p class="footer-copy">© 2026 JBAB — All rights reserved</p>
+    </div>
+  </footer>
 
   <script src="../js/smooth-scroll.js" defer></script>
   <script src="../js/header.js" defer></script>
   <script src="../js/script.js" defer></script>
-  <script src="../js/glitch.js" defer></script>
-  <script src="../js/page-transition.js" defer></script>
 </body>
 </html>
