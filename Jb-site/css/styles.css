@@ -6621,19 +6621,6 @@ body.page-samurai .site-footer {
 /* ─── Feed section ─── */
 .page-takecare .takecare-feed {
   padding: clamp(32px, 4vw, 64px) 0 clamp(32px, 4vw, 64px);
-  position: relative;
-}
-
-.page-takecare .takecare-feed::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100vw;
-  height: 1px;
-  background: rgba(0, 0, 0, 0.16);
-  pointer-events: none;
 }
 
 .page-takecare .takecare-feed .feed-img {
@@ -6644,7 +6631,7 @@ body.page-samurai .site-footer {
 
 .page-takecare .takecare-feed .feed-img img {
   display: block;
-  width: 100%;
+  width: 70%;
   height: auto;
 }
 
@@ -6675,23 +6662,10 @@ body.page-samurai .site-footer {
 /* ─── Tickets / Production section ─── */
 .page-takecare .takecare-tickets {
   padding: clamp(32px, 4vw, 64px) 0 clamp(32px, 4vw, 64px);
-  position: relative;
-}
-
-.page-takecare .takecare-tickets::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100vw;
-  height: 1px;
-  background: rgba(0, 0, 0, 0.16);
-  pointer-events: none;
 }
 
 .page-takecare .takecare-tickets .tickets-img {
-  grid-column: 2 / 5;
+  grid-column: 5 / 9;
   margin: 0;
 }
 
@@ -6702,7 +6676,7 @@ body.page-samurai .site-footer {
 }
 
 .page-takecare .takecare-tickets .tickets-video {
-  grid-column: 5 / 9;
+  grid-column: 2 / 5;
   margin: 0;
 }
 
