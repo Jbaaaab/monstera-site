@@ -6693,12 +6693,12 @@ body.page-samurai .site-footer {
 }
 
 .page-takecare .tc-cream-morpion .tc-cream {
-  grid-column: 2 / 4;
+  grid-column: 2 / 6;
   margin: 0;
 }
 
 .page-takecare .tc-cream-morpion .tc-morpion {
-  grid-column: 5 / 9;
+  grid-column: 7 / 11;
   margin: 0;
 }
 
@@ -6710,7 +6710,7 @@ body.page-samurai .site-footer {
 }
 
 .page-takecare .tc-cream-morpion .tc-morpion-text {
-  grid-column: 9 / 12;
+  grid-column: 11 / 13;
   align-self: center;
 }
 
@@ -6759,20 +6759,20 @@ body.page-samurai .site-footer {
   grid-row: 1 / 3;
 }
 .page-takecare .tc-popout-section .tc-miffy {
-  grid-column: 7 / 11;
+  grid-column: 7 / 10;
   grid-row: 1;
 }
 .page-takecare .tc-popout-section .tc-miffy-text {
-  grid-column: 11 / 13;
+  grid-column: 10 / 13;
   grid-row: 1;
   align-self: center;
 }
 .page-takecare .tc-popout-section .tc-kuromi {
-  grid-column: 7 / 11;
+  grid-column: 7 / 10;
   grid-row: 2;
 }
 .page-takecare .tc-popout-section .tc-kuromi-text {
-  grid-column: 11 / 13;
+  grid-column: 10 / 13;
   grid-row: 2;
   align-self: center;
 }
@@ -6784,6 +6784,40 @@ body.page-samurai .site-footer {
   display: block;
   width: 100%;
   height: auto;
+}
+
+/* ─── Fond bleu + Panier (section finale) ─── */
+.page-takecare .tc-final {
+  row-gap: clamp(12px, 1.6vw, 28px);
+  padding: clamp(24px, 3vw, 48px) 0;
+}
+.page-takecare .tc-final .tc-fondbleu {
+  grid-column: 2 / 6;
+  grid-row: 1;
+  margin: 0;
+}
+.page-takecare .tc-final .tc-panier {
+  grid-column: 7 / 12;
+  grid-row: 1 / 3;
+  margin: 0;
+}
+.page-takecare .tc-final .tc-final-caption {
+  grid-column: 2 / 6;
+  grid-row: 2;
+  align-self: end;
+}
+.page-takecare .tc-final img,
+.page-takecare .tc-final video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.page-takecare .tc-final .tc-final-caption p {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(11px, 0.93vw, 16px);
+  line-height: 1.55;
 }
 
 /* ─── Footer ─── */
