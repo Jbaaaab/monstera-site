@@ -6433,6 +6433,197 @@ body.page-samurai .site-footer {
 }
 
 /* ============================================================
+   TAKE CARE — Beauty — Social media & Art direction
+   ============================================================ */
+
+.page-takecare {
+  --bg: #F2F3F4;
+  --takecare-pad: clamp(48px, 9.55vw, 165px);
+  background: var(--bg);
+  color: var(--text-secondary);
+}
+
+.page-takecare .page-grid { z-index: 0; }
+
+.page-takecare .takecare-scene {
+  position: relative;
+  z-index: 1;
+  max-width: var(--base-w);
+  margin: 0 auto;
+  padding-inline: var(--takecare-pad);
+  box-sizing: border-box;
+}
+
+/* ─── Badge ─── */
+.page-takecare .takecare-title-wrap {
+  display: flex;
+  justify-content: center;
+  padding: clamp(80px, 12vw, 180px) 0 clamp(40px, 6vw, 80px);
+}
+
+.page-takecare .takecare-badge {
+  display: block;
+  height: clamp(22px, 2.0vw, 36px);
+  width: auto;
+}
+
+/* ─── 12-col grid ─── */
+.page-takecare .takecare-row {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: clamp(12px, 1.6vw, 28px);
+  align-items: start;
+}
+
+/* ─── Hero head ─── */
+.page-takecare .takecare-head {
+  padding: 24px 0 14px;
+  position: relative;
+}
+
+.page-takecare .takecare-head::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.16);
+  pointer-events: none;
+}
+
+.page-takecare .takecare-head .idx {
+  grid-column: 1 / span 1;
+  font-family: "Clash Display", system-ui;
+  font-weight: 600;
+  font-size: clamp(14px, 1.44vw, 22px);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-secondary);
+}
+
+.page-takecare .takecare-head .title {
+  grid-column: 2 / span 7;
+  display: grid;
+  row-gap: 2px;
+}
+
+.page-takecare .takecare-head h1 {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 500;
+  font-size: clamp(11px, 0.93vw, 16px);
+  line-height: 1.1;
+}
+
+.page-takecare .takecare-head .lead {
+  margin: 0;
+  font-size: clamp(11px, 0.93vw, 16px);
+  line-height: 1.2;
+}
+
+.page-takecare .takecare-head .year {
+  grid-column: 11 / span 1;
+  justify-self: end;
+  font-size: clamp(11px, 0.93vw, 16px);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.page-takecare .takecare-head .sector {
+  grid-column: 12 / span 1;
+  justify-self: end;
+  text-align: right;
+  display: grid;
+  row-gap: 2px;
+}
+
+.page-takecare .takecare-head .sector h4 {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 500;
+  font-size: clamp(11px, 0.93vw, 16px);
+  line-height: 1.1;
+}
+
+.page-takecare .takecare-head .sector p {
+  margin: 0;
+  font-size: clamp(11px, 0.93vw, 16px);
+  line-height: 1.2;
+}
+
+/* ─── Hero body ─── */
+.page-takecare .takecare-body {
+  padding: 8px 0 24px;
+  position: relative;
+}
+
+.page-takecare .takecare-body::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.16);
+  pointer-events: none;
+}
+
+.page-takecare .takecare-body .desc {
+  grid-column: 2 / span 3;
+  grid-row: 1;
+  align-self: start;
+  margin-top: 4px;
+}
+
+.page-takecare .takecare-body .desc p {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(11px, 0.93vw, 16px);
+  line-height: 1.55;
+}
+
+.page-takecare .takecare-body .disciplines {
+  grid-column: 2 / span 3;
+  grid-row: 2;
+  align-self: end;
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(11px, 0.87vw, 15px);
+  line-height: 1.2;
+  color: var(--text-secondary);
+}
+
+.page-takecare .takecare-body .img-primary {
+  grid-column: 5 / 9;
+  grid-row: 1 / span 2;
+  margin: 0;
+}
+
+.page-takecare .takecare-body .img-secondary {
+  grid-column: 9 / 13;
+  grid-row: 1 / span 2;
+  margin: 0;
+}
+
+.page-takecare .takecare-body .img-primary img,
+.page-takecare .takecare-body .img-secondary img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ─── Footer ─── */
+body.page-takecare .site-footer {
+  background: #F2F3F4;
+}
+
+/* ============================================================
    FLOATING CURSOR PREVIEW
    ============================================================ */
 
