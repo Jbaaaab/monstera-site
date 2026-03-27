@@ -6679,3 +6679,94 @@ body.page-takecare .site-footer {
   border: none;
   display: block;
 }
+
+/* =========================
+   Page Transition — exit strips
+   ========================= */
+
+/* Wrapper (fixed, covers everything, sits just below the loading screen) */
+#jb-pt {
+  position: fixed;
+  inset: 0;
+  z-index: 99998;
+  display: flex;
+  flex-direction: column;
+  pointer-events: all;
+}
+
+/* Instant hide while loader injects (applied synchronously in <head>) */
+html.jb-loading { visibility: hidden; }
+
+/* Each horizontal strip — shared base styles */
+.jb-pt-strip {
+  flex: 1;                 /* equal thirds of viewport height */
+  width: 100%;
+  background-color: #41F373;
+  transition: transform 480ms cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+/* EXIT MODE: strips slide in from left */
+#jb-pt[data-mode="exit"] .jb-pt-strip {
+  transform: translateX(-100%);
+  transition-delay: calc(var(--i) * 65ms);
+}
+#jb-pt[data-mode="exit"].is-covering .jb-pt-strip {
+  transform: translateX(0);
+}
+
+/* ENTER (CURTAIN) MODE: strips start covering, slide out right */
+#jb-pt[data-mode="enter"] .jb-pt-strip {
+  transform: translateX(0);                          /* starts fully covering */
+  transition-delay: calc((2 - var(--i)) * 60ms);    /* reverse stagger: bottom first */
+}
+#jb-pt[data-mode="enter"].is-revealing .jb-pt-strip {
+  transform: translateX(100%);
+}
+
+
+/* =========================
+   Loading Screen
+   ========================= */
+#jb-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color transitions white → green via JS */
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+/* Slide the entire panel out to the right on exit */
+#jb-loader.is-exiting {
+  transition: transform 0.85s cubic-bezier(0.77, 0, 0.175, 1);
+  transform: translateX(100%);
+}
+
+.jb-loader-pastille {
+  width: clamp(350px, 35vw, 525px);
+  height: auto;
+  display: block;
+  user-select: none;
+  animation: jbLoaderSpin 5s linear infinite;
+}
+
+.jb-loader-percent {
+  position: absolute;
+  bottom: clamp(22px, 3.5vh, 56px);
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Neue Haas Grotesk Display Pro", "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  font-size: clamp(11px, 1vw, 16px);
+  letter-spacing: 0.04em;
+  color: var(--text-primary, #0F1F1F);
+  white-space: nowrap;
+}
+
+@keyframes jbLoaderSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}

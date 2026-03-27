@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-loader="heavy">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -8,6 +8,8 @@
 
   <!-- CSS principale -->
   <link rel="stylesheet" href="../css/styles.css?v=3" />
+  <!-- Loading screen (no defer — starts timer immediately) -->
+  <script src="../js/loading-screen.js"></script>
 </head>
 
 <body class="page-posters" data-glitch>
@@ -206,5 +208,6 @@
   <script src="../js/smooth-scroll.js" defer></script>
   <script src="../js/script.js" defer></script>
   <script src="../js/glitch.js" defer></script>
+  <script src="../js/page-transition.js" defer></script>
 </body>
 </html>
