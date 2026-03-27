@@ -11,7 +11,9 @@
   var LERP_DONE  = 0.18;   /* sweep speed once window.load fires            */
 
   /* ── read page flags ── */
-  var isHeavy        = document.documentElement.getAttribute('data-loader') === 'heavy';
+  var loaderAttr     = document.documentElement.getAttribute('data-loader');
+  var isHeavy        = loaderAttr === 'heavy';
+  var isAlways       = loaderAttr === 'always'; /* show every external load, skip if from internal nav */
   var fromTransition = sessionStorage.getItem('jb-pt') === '1';
   var visitKey       = 'jb-v:' + location.pathname;
   var wasVisited     = !!localStorage.getItem(visitKey);
@@ -21,12 +23,13 @@
 
   /* ── decide mode ──────────────────────────────────────────
      fromTransition → curtain ALWAYS (prevents double animation)
+     always (home) → heavy every time from outside the site
      heavy + first visit + direct nav → full loading screen
      everything else → nothing                                */
   var mode;
   if (fromTransition) {
     mode = 'curtain';
-  } else if (isHeavy && !wasVisited) {
+  } else if (isAlways || (isHeavy && !wasVisited)) {
     mode = 'heavy';
   } else {
     mode = 'none';
