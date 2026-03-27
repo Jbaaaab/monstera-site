@@ -6433,6 +6433,365 @@ body.page-samurai .site-footer {
 }
 
 /* ============================================================
+   TAKE CARE — Art Direction & Brand Identity
+   ============================================================ */
+
+.page-tc {
+  --tc-pad: clamp(48px, 9.55vw, 165px);
+}
+
+.page-tc .page-grid { z-index: 0; }
+
+.page-tc .tc-scene,
+.page-tc .tc-section {
+  position: relative;
+  z-index: 1;
+}
+
+.page-tc .tc-scene {
+  max-width: var(--base-w);
+  margin: 0 auto;
+  padding-inline: var(--tc-pad);
+  box-sizing: border-box;
+}
+
+/* ─── Title ─── */
+.page-tc .tc-title-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: clamp(80px, 14vw, 200px);
+  padding-bottom: clamp(60px, 10vw, 140px);
+  padding-inline: var(--tc-pad);
+}
+
+.page-tc .tc-title-text {
+  margin: 0;
+  font-family: "Clash Display", system-ui;
+  font-weight: 600;
+  font-size: clamp(72px, 14vw, 240px);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--text-primary, #0F1F1F);
+}
+
+/* ─── 12-col grid ─── */
+.page-tc .tc-row {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: clamp(12px, 1.6vw, 28px);
+  align-items: start;
+}
+
+/* ─── Hero head ─── */
+.page-tc .tc-head {
+  padding: 24px 0 14px;
+  position: relative;
+}
+
+.page-tc .tc-head::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: calc(-1 * var(--tc-pad)); right: calc(-1 * var(--tc-pad));
+  height: 1px;
+  background: rgba(0, 0, 0, 0.16);
+}
+
+.page-tc .tc-head .idx {
+  grid-column: 1 / span 1;
+  font-family: "Clash Display", system-ui;
+  font-weight: 600;
+  font-size: clamp(14px, 1.44vw, 22px);
+  align-self: start;
+  padding-top: 2px;
+}
+
+.page-tc .tc-head .title {
+  grid-column: 2 / span 7;
+  display: grid;
+  row-gap: 6px;
+}
+
+.page-tc .tc-head h1 {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 700;
+  font-size: clamp(18px, 2.2vw, 36px);
+  line-height: 1.05;
+}
+
+.page-tc .tc-head .lead {
+  margin: 0;
+  font-size: clamp(11px, 0.93vw, 16px);
+  line-height: 1.55;
+  opacity: 0.75;
+}
+
+.page-tc .tc-head .year {
+  grid-column: 11 / span 1;
+  justify-self: end;
+  font-family: "Epilogue", system-ui;
+  font-size: clamp(11px, 0.93vw, 16px);
+  align-self: start;
+  padding-top: 2px;
+}
+
+.page-tc .tc-head .sector {
+  grid-column: 12 / span 1;
+  justify-self: end;
+  text-align: right;
+  align-self: start;
+}
+
+.page-tc .tc-head .sector h4 {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 700;
+  font-size: clamp(9px, 0.75vw, 12px);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.page-tc .tc-head .sector p {
+  margin: 0;
+  font-size: clamp(11px, 0.93vw, 16px);
+  line-height: 1.3;
+}
+
+/* ─── Hero body ─── */
+.page-tc .tc-body {
+  padding: 8px 0 24px;
+  position: relative;
+}
+
+.page-tc .tc-body::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: calc(-1 * var(--tc-pad)); right: calc(-1 * var(--tc-pad));
+  height: 1px;
+  background: rgba(0, 0, 0, 0.16);
+}
+
+.page-tc .tc-body .desc {
+  grid-column: 2 / span 3;
+  grid-row: 1;
+  align-self: start;
+  margin: 0;
+  margin-top: 4px;
+}
+
+.page-tc .tc-body .desc p {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 400;
+  font-size: clamp(11px, 0.93vw, 16px);
+  line-height: 1.55;
+}
+
+.page-tc .tc-body .disciplines {
+  grid-column: 2 / span 3;
+  grid-row: 2;
+  align-self: end;
+  margin: 0;
+  padding-bottom: 8px;
+  font-family: "Epilogue", system-ui;
+  font-size: clamp(9px, 0.75vw, 12px);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.55;
+}
+
+.page-tc .tc-body .main-img {
+  grid-column: 6 / 13;
+  grid-row: 1 / span 2;
+  margin: 0;
+}
+
+.page-tc .tc-body .main-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ─── Sections ─── */
+.page-tc .tc-section {
+  padding-top: clamp(24px, 3.5vw, 56px);
+  padding-bottom: clamp(32px, 5vw, 72px);
+  padding-inline: var(--tc-pad);
+  position: relative;
+}
+
+.page-tc .tc-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.16);
+}
+
+/* ─── Section headers (02, 03, 04) ─── */
+.page-tc .tc-gen-head,
+.page-tc .tc-feed-head,
+.page-tc .tc-gallery-head {
+  padding: 24px 0 14px;
+  position: relative;
+  margin-bottom: clamp(20px, 3vw, 40px);
+}
+
+.page-tc .tc-gen-head::after,
+.page-tc .tc-feed-head::after,
+.page-tc .tc-gallery-head::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.16);
+}
+
+.page-tc .tc-sec-idx {
+  grid-column: 1 / span 1;
+  font-family: "Clash Display", system-ui;
+  font-weight: 600;
+  font-size: clamp(14px, 1.44vw, 22px);
+  align-self: start;
+  padding-top: 2px;
+}
+
+.page-tc .tc-sec-title {
+  grid-column: 2 / span 7;
+}
+
+.page-tc .tc-sec-title h2 {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 700;
+  font-size: clamp(16px, 1.8vw, 28px);
+  line-height: 1.1;
+}
+
+.page-tc .tc-sec-label {
+  grid-column: 11 / span 2;
+  justify-self: end;
+  text-align: right;
+}
+
+.page-tc .tc-sec-label h4 {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 700;
+  font-size: clamp(9px, 0.75vw, 12px);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding-top: 4px;
+}
+
+/* ─── Section 02 — General ─── */
+.page-tc .tc-gen-text {
+  padding-bottom: clamp(20px, 3vw, 40px);
+  position: relative;
+}
+
+.page-tc .tc-gen-text::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.16);
+}
+
+.page-tc .tc-gen-desc {
+  grid-column: 2 / span 10;
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-size: clamp(11px, 0.93vw, 16px);
+  line-height: 1.65;
+}
+
+.page-tc .tc-gen-footer {
+  padding: 16px 0 8px;
+}
+
+.page-tc .tc-gen-footer-text {
+  grid-column: 2 / span 7;
+  margin: 0;
+  font-size: clamp(11px, 0.93vw, 16px);
+  opacity: 0.7;
+}
+
+.page-tc .tc-gen-footer-label {
+  grid-column: 11 / span 2;
+  justify-self: end;
+}
+
+.page-tc .tc-gen-footer-label h4 {
+  margin: 0;
+  font-family: "Epilogue", system-ui;
+  font-weight: 700;
+  font-size: clamp(9px, 0.75vw, 12px);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.55;
+}
+
+/* ─── Section 03 — Feed grid ─── */
+.page-tc .tc-feed-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: clamp(12px, 1.6vw, 28px);
+  row-gap: clamp(12px, 1.6vw, 28px);
+}
+
+.page-tc .tc-feed-main {
+  grid-column: 1 / span 8;
+  grid-row: 1 / span 2;
+  margin: 0;
+}
+
+.page-tc .tc-feed-char {
+  grid-column: 9 / span 4;
+  margin: 0;
+}
+
+.page-tc .tc-feed-char--kuromi { grid-row: 2; }
+
+.page-tc .tc-feed-grid figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ─── Section 04 — Gallery grid ─── */
+.page-tc .tc-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-rows: auto auto;
+  column-gap: clamp(12px, 1.6vw, 28px);
+  row-gap: clamp(12px, 1.6vw, 28px);
+}
+
+.page-tc .tc-gal-item { margin: 0; }
+.page-tc .tc-gal-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.page-tc .tc-gal-item--a { grid-column: 1 / span 5;  grid-row: 1; }
+.page-tc .tc-gal-item--b { grid-column: 6 / span 4;  grid-row: 1; }
+.page-tc .tc-gal-item--c { grid-column: 10 / span 3; grid-row: 1; }
+.page-tc .tc-gal-item--d { grid-column: 1 / span 6;  grid-row: 2; }
+.page-tc .tc-gal-item--e { grid-column: 7 / span 6;  grid-row: 2; }
+
+/* ─── Footer ─── */
+body.page-tc .site-footer {
+  background: #F2F3F4;
+}
+
+/* ============================================================
    FLOATING CURSOR PREVIEW
    ============================================================ */
 
