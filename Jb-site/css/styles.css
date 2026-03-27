@@ -1183,7 +1183,7 @@ a.work-row:hover {
 
 .page-posters .posters-fixed img {
   display: block;
-  height: clamp(22px, 2.0vw, 36px);
+  height: clamp(13px, 1.15vw, 20px);
   width: auto;
   filter: drop-shadow(0 0 0.6em rgba(0, 0, 0, 0.35));
 }
@@ -1337,7 +1337,7 @@ body:has(.page-posters .lb:target) {
 
 .page-3d .tag-3d img {
   display: block;
-  height: clamp(22px, 2.0vw, 36px);
+  height: clamp(13px, 1.15vw, 20px);
   width: auto;
 }
 
@@ -1478,7 +1478,7 @@ body:has(.page-posters .lb:target) {
   }
 
   .page-3d .tag-3d img {
-    height: 22px;
+    height: 13px;
     width: auto;
   }
 
@@ -3281,7 +3281,7 @@ body:has(.page-posters .lb:target) {
 }
 
 .page-f1 .f1-badge {
-  height: clamp(22px, 2.0vw, 36px);
+  height: clamp(13px, 1.15vw, 20px);
   width: auto;
   object-fit: contain;
 }
@@ -5211,7 +5211,7 @@ body:has(.page-posters .lb:target) {
 }
 
 .page-gust .gust-badge {
-  height: clamp(22px, 2.0vw, 36px);
+  height: clamp(13px, 1.15vw, 20px);
   width: auto;
   object-fit: contain;
 }
@@ -5958,7 +5958,7 @@ body.page-gust .site-footer {
 
 .page-samurai .samurai-badge {
   display: block;
-  height: clamp(22px, 2.0vw, 36px);
+  height: clamp(13px, 1.15vw, 20px);
   width: auto;
 }
 
@@ -6463,7 +6463,7 @@ body.page-samurai .site-footer {
 
 .page-takecare .takecare-badge {
   display: block;
-  height: clamp(22px, 2.0vw, 36px);
+  height: clamp(13px, 1.15vw, 20px);
   width: auto;
 }
 
@@ -6614,7 +6614,7 @@ body.page-samurai .site-footer {
 .page-takecare .takecare-body .img-primary img,
 .page-takecare .takecare-body .img-secondary img {
   display: block;
-  width: 100%;
+  width: 66%;
   height: auto;
 }
 
