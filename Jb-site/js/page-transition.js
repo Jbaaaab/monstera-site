@@ -35,6 +35,7 @@
 
     var wrap = document.createElement('div');
     wrap.id = 'jb-pt';
+    wrap.setAttribute('data-mode', 'exit');
 
     for (var i = 0; i < STRIP_COUNT; i++) {
       var strip = document.createElement('div');
@@ -72,6 +73,7 @@
     var href = a.href; // resolved absolute URL
 
     cover(function () {
+      sessionStorage.setItem('jb-pt', '1');
       window.location.href = href;
     });
   });

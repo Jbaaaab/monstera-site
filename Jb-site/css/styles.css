@@ -6503,7 +6503,10 @@ body.page-samurai .site-footer {
   pointer-events: all;
 }
 
-/* Each horizontal strip */
+/* Instant hide while loader injects (applied synchronously in <head>) */
+html.jb-loading { visibility: hidden; }
+
+/* Each horizontal strip — shared base styles */
 .jb-pt-strip {
   flex: 1;                 /* equal thirds of viewport height */
   width: 100%;
@@ -6515,14 +6518,30 @@ body.page-samurai .site-footer {
     transparent var(--grid-thk, 1px),
     transparent calc(100vw / var(--grid-cols, 12))
   );
-  /* Starts off-screen to the left */
-  transform: translateX(-100%);
   transition: transform 480ms cubic-bezier(0.77, 0, 0.175, 1);
-  transition-delay: calc(var(--i) * 65ms);
 }
 
-/* Trigger: all strips slide in to cover the page */
-#jb-pt.is-covering .jb-pt-strip {
+/* EXIT MODE: strips slide in from left */
+#jb-pt[data-mode="exit"] .jb-pt-strip {
+  transform: translateX(-100%);
+  transition-delay: calc(var(--i) * 65ms);
+}
+#jb-pt[data-mode="exit"].is-covering .jb-pt-strip {
+  transform: translateX(0);
+}
+
+/* ENTER (CURTAIN) MODE: strips start covering, slide out right */
+#jb-pt[data-mode="enter"] .jb-pt-strip {
+  transform: translateX(0);                          /* starts fully covering */
+  transition-delay: calc((2 - var(--i)) * 60ms);    /* reverse stagger: bottom first */
+}
+#jb-pt[data-mode="enter"].is-revealing .jb-pt-strip {
+  transform: translateX(100%);
+}
+
+/* Legacy: keep old selector working (exit is default) */
+#jb-pt:not([data-mode]).is-covering .jb-pt-strip,
+#jb-pt[data-mode="exit"].is-covering .jb-pt-strip {
   transform: translateX(0);
 }
 
@@ -6556,7 +6575,7 @@ body.page-samurai .site-footer {
 }
 
 .jb-loader-pastille {
-  width: clamp(140px, 14vw, 210px);
+  width: clamp(350px, 35vw, 525px);
   height: auto;
   display: block;
   user-select: none;
