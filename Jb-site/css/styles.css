@@ -6672,6 +6672,46 @@ body.page-samurai .site-footer {
   line-height: 1.55;
 }
 
+/* ─── Tickets / Production section ─── */
+.page-takecare .takecare-tickets {
+  padding: clamp(32px, 4vw, 64px) 0 clamp(32px, 4vw, 64px);
+  position: relative;
+}
+
+.page-takecare .takecare-tickets::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.16);
+  pointer-events: none;
+}
+
+.page-takecare .takecare-tickets .tickets-img {
+  grid-column: 2 / 5;
+  margin: 0;
+}
+
+.page-takecare .takecare-tickets .tickets-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.page-takecare .takecare-tickets .tickets-video {
+  grid-column: 5 / 9;
+  margin: 0;
+}
+
+.page-takecare .takecare-tickets .tickets-video video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 /* ─── Footer ─── */
 body.page-takecare .site-footer {
   background: #F2F3F4;
