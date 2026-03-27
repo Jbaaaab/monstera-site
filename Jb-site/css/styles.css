@@ -6488,3 +6488,58 @@ body.page-samurai .site-footer {
   border: none;
   display: block;
 }
+
+/* =========================
+   Loading Screen
+   ========================= */
+#jb-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color is set by JS (white → green) */
+  background-color: #ffffff;
+  /* Grid lines layered on top of the bg color */
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--grid-color, rgba(0,0,0,0.18)) 0,
+    var(--grid-color, rgba(0,0,0,0.18)) var(--grid-thk, 1px),
+    transparent var(--grid-thk, 1px),
+    transparent calc(100vw / var(--grid-cols, 12))
+  );
+  overflow: hidden;
+}
+
+/* Slide the entire panel out to the right on exit */
+#jb-loader.is-exiting {
+  transition: transform 0.85s cubic-bezier(0.77, 0, 0.175, 1);
+  transform: translateX(100%);
+}
+
+.jb-loader-pastille {
+  width: clamp(140px, 14vw, 210px);
+  height: auto;
+  display: block;
+  user-select: none;
+  animation: jbLoaderSpin 5s linear infinite;
+}
+
+.jb-loader-percent {
+  position: absolute;
+  bottom: clamp(22px, 3.5vh, 56px);
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Neue Haas Grotesk Display Pro", "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  font-size: clamp(11px, 1vw, 16px);
+  letter-spacing: 0.04em;
+  color: var(--text-primary, #0F1F1F);
+  white-space: nowrap;
+}
+
+@keyframes jbLoaderSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
