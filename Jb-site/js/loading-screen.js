@@ -1,48 +1,49 @@
-/* =========================
-   Loading Screen + Page-enter transition
-   ─────────────────────────────────────────
-   Heavy pages  (data-loader="heavy" on <html>)
-     → Full loader: white→green background, spinning pastille, counter 0→100%
-     → Exits: single panel slides right
-   Light pages coming from a link click  (sessionStorage jb-pt=1)
-     → Quick enter curtain: 3 strips already covering, slide out to reveal
-   Light pages opened directly
-     → Nothing (fast page, no need)
-   ─────────────────────────────────────────
-   INSTANT HIDE: adds .jb-loading to <html> synchronously the moment this
-   script runs (before <body> exists), so the browser never paints raw content.
-   ========================= */
 (function () {
   'use strict';
 
-  /* ─── constants ─── */
-  var GREEN       = [0x41, 0xF3, 0x73];
-  var WHITE       = [255, 255, 255];
-  var MIN_MS      = 1500;    // heavy pages: always shown this long
-  var PHASE1_MS   = 1800;    // fake progress: 0→80 % over this duration
-  var PHASE1_MAX  = 80;      // % ceiling during fake phase
-  var DRIFT       = 0.004;   // extra %/ms after PHASE1 while still loading
-  var LERP_DONE   = 0.18;    // sweep speed once page has loaded
+  /* ── constants ── */
+  var GREEN      = [0x41, 0xF3, 0x73];
+  var WHITE      = [255, 255, 255];
+  var MIN_MS     = 1500;   /* heavy: always shown at least this long        */
+  var PHASE1_MS  = 1800;   /* fake progress: 0 → 80 % over this duration   */
+  var PHASE1_MAX = 80;     /* % ceiling during fake phase                   */
+  var DRIFT      = 0.004;  /* extra % / ms after PHASE1 while still loading */
+  var LERP_DONE  = 0.18;   /* sweep speed once window.load fires            */
 
-  /* ─── decide mode ─── */
+  /* ── read page flags ── */
   var isHeavy        = document.documentElement.getAttribute('data-loader') === 'heavy';
   var fromTransition = sessionStorage.getItem('jb-pt') === '1';
+  var visitKey       = 'jb-v:' + location.pathname;
+  var wasVisited     = !!localStorage.getItem(visitKey);
+
+  /* Clear transition flag immediately (always, regardless of mode) */
   if (fromTransition) sessionStorage.removeItem('jb-pt');
 
-  var mode = isHeavy ? 'heavy' : (fromTransition ? 'curtain' : 'none');
-  if (mode === 'none') return;   // light page, direct nav → nothing to do
+  /* ── decide mode ──────────────────────────────────────────
+     fromTransition → curtain ALWAYS (prevents double animation)
+     heavy + first visit + direct nav → full loading screen
+     everything else → nothing                                */
+  var mode;
+  if (fromTransition) {
+    mode = 'curtain';
+  } else if (isHeavy && !wasVisited) {
+    mode = 'heavy';
+  } else {
+    mode = 'none';
+  }
 
-  /* ─── INSTANT HIDE ─── */
-  /* This runs synchronously in <head> before any <body> is parsed,
-     so the browser won't paint a single frame of bare content.       */
+  if (mode === 'none') return;
+
+  /* ── INSTANT HIDE ──────────────────────────────────────────
+     Runs synchronously in <head> before any <body> is parsed.
+     Browser never paints a raw frame of content.             */
   document.documentElement.classList.add('jb-loading');
 
-  /* ─── shared helpers ─── */
+  /* ── helpers ── */
   var inWork  = /\/work\//.test(location.pathname);
   var imgBase = inWork ? '../assets/Img/' : 'assets/Img/';
 
   function lerp(a, b, t) { return a + (b - a) * t; }
-
   function colorAt(pct) {
     var t = pct / 100;
     return 'rgb(' +
@@ -51,7 +52,7 @@
       Math.round(lerp(WHITE[2], GREEN[2], t)) + ')';
   }
 
-  /* ─── strip builder (shared by both modes) ─── */
+  /* ── strip builder (curtain mode) ── */
   function buildStrips(dataMode) {
     var old = document.getElementById('jb-pt');
     if (old) old.remove();
@@ -68,11 +69,10 @@
     return wrap;
   }
 
-  /* ═══════════════════════════════════════
-     HEAVY MODE
-     ═══════════════════════════════════════ */
+  /* ═══════════════════════════════════
+     HEAVY MODE — full loading screen
+     ═══════════════════════════════════ */
   function startHeavy() {
-    /* build loader panel */
     var loaderEl = document.createElement('div');
     loaderEl.id = 'jb-loader';
     loaderEl.setAttribute('aria-hidden', 'true');
@@ -91,18 +91,15 @@
     loaderEl.appendChild(pctEl);
     document.body.prepend(loaderEl);
 
-    /* un-hide body — loader covers everything */
     document.documentElement.classList.remove('jb-loading');
 
-    /* ── progress animation ── */
     var startTime  = performance.now();
     var displayed  = 0;
     var pageLoaded = false;
     var minDone    = false;
     var rafId      = null;
 
-    /* time-based fake progress: sqrt ease 0→80 % over PHASE1_MS,
-       then slow drift, then LERP sweep to 100 when actually loaded */
+    /* sqrt-ease: fast at start, slows near PHASE1_MAX, then slow drift */
     function fakeAt(now) {
       var elapsed = now - startTime;
       if (elapsed < PHASE1_MS) {
@@ -118,6 +115,8 @@
 
     function doExit() {
       render(100);
+      /* Mark page as visited so future navigations use curtain only */
+      try { localStorage.setItem(visitKey, '1'); } catch (e) {}
       setTimeout(function () {
         loaderEl.classList.add('is-exiting');
         var cleanup = function () { if (loaderEl) loaderEl.remove(); };
@@ -134,7 +133,6 @@
           render(100);
           cancelAnimationFrame(rafId);
           if (minDone) doExit();
-          /* else: wait for MIN_MS timer */
           return;
         }
       } else {
@@ -151,40 +149,34 @@
       if (displayed >= 100) doExit();
     }, MIN_MS);
 
-    window.addEventListener('load', function () {
-      pageLoaded = true;
-    }, { once: true });
+    window.addEventListener('load', function () { pageLoaded = true; }, { once: true });
   }
 
-  /* ═══════════════════════════════════════
-     CURTAIN MODE  (light page, from link)
-     ═══════════════════════════════════════ */
+  /* ═══════════════════════════════════
+     CURTAIN MODE — quick reveal
+     (light pages from link, OR heavy pages already cached)
+     ═══════════════════════════════════ */
   function startCurtain() {
     var wrap = buildStrips('enter');
-
-    /* un-hide body — strips cover everything */
     document.documentElement.classList.remove('jb-loading');
 
-    /* double-rAF: ensure strips are painted at translateX(0) first */
+    /* Double rAF: ensure strips are painted at translateX(0) before reveal */
     requestAnimationFrame(function () {
       requestAnimationFrame(function () {
         wrap.classList.add('is-revealing');
-        var totalMs = 480 + 60 * 2; /* = 600ms */
-        setTimeout(function () { wrap.remove(); }, totalMs + 50);
+        /* 480ms strip + 60ms × 2 stagger = 600ms total */
+        setTimeout(function () { wrap.remove(); }, 650);
       });
     });
   }
 
-  /* ─── boot (wait for <body>) ─── */
+  /* ── boot ── */
   function boot() {
-    if (mode === 'heavy')   startHeavy();
-    else                    startCurtain();
+    if (mode === 'heavy') startHeavy();
+    else                  startCurtain();
   }
 
-  if (document.body) {
-    boot();
-  } else {
-    document.addEventListener('DOMContentLoaded', boot);
-  }
+  if (document.body) { boot(); }
+  else { document.addEventListener('DOMContentLoaded', boot); }
 
 }());
