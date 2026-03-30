@@ -5923,6 +5923,13 @@ body:has(.page-posters .lb:target) {
 body.page-gust .site-footer {
   background: #F2F3F4;
 }
+body.page-gust #site-footer .site-footer,
+body.page-gust .site-footer .footer-card,
+body.page-gust .site-footer .footer-inner,
+body.page-gust .site-footer .footer-top,
+body.page-gust .site-footer .footer-giant {
+  background: var(--green);
+}
 
 /* =========================
    Gestion Samurai — UI UX & Webdesign
@@ -6431,6 +6438,13 @@ body.page-gust .site-footer {
 body.page-samurai .site-footer {
   background: #F2F3F4;
 }
+body.page-samurai #site-footer .site-footer,
+body.page-samurai .site-footer .footer-card,
+body.page-samurai .site-footer .footer-inner,
+body.page-samurai .site-footer .footer-top,
+body.page-samurai .site-footer .footer-giant {
+  background: var(--green);
+}
 
 /* ============================================================
    TAKE CARE — Beauty — Social media & Art direction
@@ -6819,6 +6833,13 @@ body.page-samurai .site-footer {
 /* ─── Footer ─── */
 body.page-takecare .site-footer {
   background: #F2F3F4;
+}
+body.page-takecare #site-footer .site-footer,
+body.page-takecare .site-footer .footer-card,
+body.page-takecare .site-footer .footer-inner,
+body.page-takecare .site-footer .footer-top,
+body.page-takecare .site-footer .footer-giant {
+  background: var(--green);
 }
 
 /* ============================================================
@@ -7239,4 +7260,13 @@ html.jb-loading { visibility: hidden; }
 
   /* Cursor preview hidden on touch */
   #cursor-preview { display: none; }
+
+  /* Footer — stack vertically on small phones */
+  .footer-top {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .foot-label.foot-right { text-align: left; }
+  .footer-contacts { text-align: left; }
+  .footer-contacts .social { justify-content: flex-start; }
 }
