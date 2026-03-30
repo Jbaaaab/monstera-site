@@ -6681,6 +6681,7 @@ body.page-samurai .site-footer {
   grid-column: 5 / 9;   /* 4 cols — row 1, right of ticket */
   grid-row: 1;
   margin: 0;
+  padding-left: 20px;
 }
 
 .page-takecare .tc-production .tc-morpion-text {
