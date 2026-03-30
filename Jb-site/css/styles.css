@@ -6659,62 +6659,51 @@ body.page-samurai .site-footer {
   line-height: 1.55;
 }
 
-/* ─── Tickets / Production section ─── */
-.page-takecare .takecare-tickets {
-  padding: clamp(32px, 4vw, 64px) 0 clamp(32px, 4vw, 64px);
-}
-
-.page-takecare .takecare-tickets .tickets-img {
-  grid-column: 6 / 12;
-  margin: 0;
-}
-
-.page-takecare .takecare-tickets .tickets-img img {
-  display: block;
-  width: 65%;
-  height: auto;
-}
-
-.page-takecare .takecare-tickets .tickets-video {
-  grid-column: 2 / 6;
-  margin: 0;
-}
-
-.page-takecare .takecare-tickets .tickets-video video {
-  display: block;
-  width: 65%;
-  height: auto;
-}
-
-/* ─── Crème mains + Morpion ─── */
-.page-takecare .tc-cream-morpion {
+/* ─── Production : Cream (gauche) + Ticket/Girl (haut droite) + Morpion/texte (bas droite) ─── */
+.page-takecare .tc-production {
+  row-gap: clamp(12px, 1.6vw, 28px);
   padding: clamp(24px, 3vw, 48px) 0;
   align-items: start;
 }
 
-.page-takecare .tc-cream-morpion .tc-cream {
-  grid-column: 2 / 6;
+.page-takecare .tc-production .tc-cream {
+  grid-column: 2 / 7;   /* 5 cols — tall orange video, spans both rows */
+  grid-row: 1 / 3;
   margin: 0;
 }
 
-.page-takecare .tc-cream-morpion .tc-morpion {
-  grid-column: 7 / 11;
+.page-takecare .tc-production .tc-ticket {
+  grid-column: 7 / 9;   /* 2 cols — ticket receipt, upper right */
+  grid-row: 1;
   margin: 0;
 }
 
-.page-takecare .tc-cream-morpion .tc-cream video,
-.page-takecare .tc-cream-morpion .tc-morpion video {
+.page-takecare .tc-production .tc-girl {
+  grid-column: 9 / 12;  /* 3 cols — sticker girl, upper right, next to ticket */
+  grid-row: 1;
+  margin: 0;
+}
+
+.page-takecare .tc-production .tc-morpion {
+  grid-column: 7 / 9;   /* 2 cols — tic-tac-toe, directly below ticket */
+  grid-row: 2;
+  margin: 0;
+}
+
+.page-takecare .tc-production .tc-morpion-text {
+  grid-column: 9 / 12;  /* 3 cols — text, below girl, next to morpion */
+  grid-row: 2;
+  align-self: center;
+}
+
+.page-takecare .tc-production video,
+.page-takecare .tc-production img {
   display: block;
   width: 100%;
   height: auto;
 }
 
-.page-takecare .tc-cream-morpion .tc-morpion-text {
-  grid-column: 11 / 13;
-  align-self: center;
-}
-
-.page-takecare .tc-cream-morpion .tc-morpion-text p {
+.page-takecare .tc-production .tc-morpion-text p {
   margin: 0;
   font-family: "Epilogue", system-ui;
   font-weight: 400;
