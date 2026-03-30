@@ -22,14 +22,33 @@
   }
 
   const jobs = [];
+  const hdrCacheKey = 'jb-hdr:' + (inWork ? '1' : '0');
 
   if (headerHost) {
-    jobs.push(
+    const cached = sessionStorage.getItem(hdrCacheKey);
+    if (cached) {
+      // Instant inject from cache — prevents transparent header flash on page transitions
+      headerHost.innerHTML = cached;
+      normalizeNavLinks(headerHost);
+      // Refresh cache in background for next visit
       fetch(headerPath)
         .then(r => r.ok ? r.text() : '')
-        .then(html => { if (html) { headerHost.innerHTML = html; normalizeNavLinks(headerHost); } })
-        .catch(() => {})
-    );
+        .then(html => { if (html) sessionStorage.setItem(hdrCacheKey, html); })
+        .catch(() => {});
+    } else {
+      jobs.push(
+        fetch(headerPath)
+          .then(r => r.ok ? r.text() : '')
+          .then(html => {
+            if (html) {
+              sessionStorage.setItem(hdrCacheKey, html);
+              headerHost.innerHTML = html;
+              normalizeNavLinks(headerHost);
+            }
+          })
+          .catch(() => {})
+      );
+    }
   }
 
   if (footerHost) {
