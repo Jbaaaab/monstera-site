@@ -179,7 +179,7 @@ h5 {
 /* Anti-drag pour les images */
 img {
   display: block;
-  max-width: none;
+  max-width: 100%;
   user-select: none;
   -webkit-user-drag: none;
 }
@@ -6967,4 +6967,276 @@ html.jb-loading { visibility: hidden; }
 @keyframes jbLoaderSpin {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
+}
+
+/* ================================================================
+   RESPONSIVE — Tablet & Mobile
+   768px : tablet portrait / large phone
+   480px : mobile
+   ================================================================ */
+
+/* ── Work page cases / work rows ── */
+@media (max-width: 768px) {
+  .cases-row,
+  .page-work .work-row {
+    grid-template-columns: 36px 1fr;
+    gap: 8px 12px;
+  }
+  .cases-row .spacer,
+  .page-work .work-row .spacer { display: none; }
+  .cases-row .date-col,
+  .cases-row .type-col {
+    grid-column: 2;
+    font-size: 12px;
+  }
+  .cases-row .clients { grid-column: 2; }
+}
+
+/* ── Take Care page ── */
+@media (max-width: 768px) {
+
+  /* Shared row override: drop to 6 cols */
+  .page-takecare .takecare-row {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    column-gap: clamp(8px, 2vw, 16px);
+  }
+
+  /* Head */
+  .page-takecare .takecare-head .idx   { grid-column: 1; }
+  .page-takecare .takecare-head .title { grid-column: 2 / 7; }
+  .page-takecare .takecare-head .year,
+  .page-takecare .takecare-head .sector { display: none; }
+
+  /* Body */
+  .page-takecare .takecare-body .desc        { grid-column: 1 / 7; grid-row: 1; }
+  .page-takecare .takecare-body .disciplines { grid-column: 1 / 7; grid-row: 2; }
+  .page-takecare .takecare-body .img-primary  { grid-column: 1 / 4; grid-row: 3; }
+  .page-takecare .takecare-body .img-secondary { grid-column: 4 / 7; grid-row: 3; }
+
+  /* Feed section */
+  .page-takecare .takecare-feed .feed-img  { grid-column: 1 / 4; }
+  .page-takecare .takecare-feed .feed-text { grid-column: 4 / 7; }
+
+  /* Production section — 2 cols */
+  .page-takecare .tc-production {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow: hidden;
+  }
+  .page-takecare .tc-production .tc-ticket {
+    grid-column: 1; grid-row: 1;
+    transform: none;
+    padding-right: 8px;
+  }
+  .page-takecare .tc-production .tc-girl   { grid-column: 2; grid-row: 1; padding-left: 8px; }
+  .page-takecare .tc-production .tc-morpion-text { grid-column: 1 / 3; grid-row: 2; }
+  .page-takecare .tc-production .tc-cream  { grid-column: 1; grid-row: 3; align-self: auto; }
+  .page-takecare .tc-production .tc-morpion { grid-column: 2; grid-row: 3; }
+
+  /* Triptych — stack */
+  .page-takecare .tc-triptych {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: clamp(8px, 2vw, 16px);
+  }
+  .page-takecare .tc-triptych .tc-trip-1 { grid-column: 1; }
+  .page-takecare .tc-triptych .tc-trip-2 { grid-column: 2; }
+  .page-takecare .tc-triptych .tc-trip-3 { grid-column: 3; }
+  .page-takecare .tc-triptych img { width: 100%; }
+
+  /* Pop-out section */
+  .page-takecare .tc-popout-section {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .page-takecare .tc-popout-section .tc-popout         { grid-column: 1; grid-row: 1 / 3; }
+  .page-takecare .tc-popout-section .tc-miffy          { grid-column: 2; grid-row: 1; }
+  .page-takecare .tc-popout-section .tc-miffy-text     { grid-column: 2; grid-row: 2; align-self: start; }
+  .page-takecare .tc-popout-section .tc-kuromi         { grid-column: 1; grid-row: 3; }
+  .page-takecare .tc-popout-section .tc-kuromi-text    { grid-column: 2; grid-row: 3; align-self: center; }
+  .page-takecare .tc-popout-section .tc-popout-caption { grid-column: 1 / 3; grid-row: 4; }
+
+  /* Final section */
+  .page-takecare .tc-final {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .page-takecare .tc-final .tc-fondbleu      { grid-column: 1; grid-row: 1; }
+  .page-takecare .tc-final .tc-panier        { grid-column: 2; grid-row: 1 / 3; }
+  .page-takecare .tc-final .tc-final-caption { grid-column: 1; grid-row: 2; }
+}
+
+/* ── Gust page ── */
+@media (max-width: 768px) {
+
+  .page-gust .gust-row {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    column-gap: clamp(8px, 2vw, 16px);
+  }
+
+  /* Head */
+  .page-gust .gust-head .idx   { grid-column: 1; }
+  .page-gust .gust-head .title { grid-column: 2 / 7; }
+  .page-gust .gust-head .year,
+  .page-gust .gust-head .sector { display: none; }
+
+  /* Body */
+  .page-gust .gust-body .desc        { grid-column: 1 / 7; grid-row: 1; }
+  .page-gust .gust-body .disciplines { grid-column: 1 / 7; grid-row: 2; }
+  .page-gust .gust-body .main-img    { grid-column: 1 / 7; grid-row: 3; }
+
+  /* Section headers */
+  .page-gust .gust-sec-idx   { grid-column: 1; }
+  .page-gust .gust-sec-title { grid-column: 2 / 7; }
+  .page-gust .gust-sec-label { display: none; }
+
+  /* General text */
+  .page-gust .gust-gen-desc  { grid-column: 1 / 7; }
+
+  /* Offer cards — 2x2 */
+  .page-gust .gust-offers-row {
+    flex-wrap: wrap;
+    padding-left: 0;
+  }
+  .page-gust .gust-offer-card {
+    flex: 1 1 calc(50% - 8px);
+    min-width: 0;
+  }
+
+  /* Color palette */
+  .page-gust .gust-swatch {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+  .page-gust .gust-sw-name  { grid-column: 1 / 5; }
+  .page-gust .gust-sw-num   { grid-column: 5; }
+  .page-gust .gust-sw-hex-label { grid-column: 6; }
+  .page-gust .gust-sw-hex-val   { grid-column: 6; }
+  .page-gust .gust-color-desc { grid-column: 1 / 7; }
+
+  /* Schemas — 2 per row */
+  .page-gust .gust-schemas-row {
+    flex-wrap: wrap;
+  }
+  .page-gust .gust-schema-img {
+    flex: 1 1 calc(50% - 8px);
+  }
+
+  /* Website section headers */
+  .page-gust .gust-ws-idx   { grid-column: 1; }
+  .page-gust .gust-ws-title { grid-column: 2 / 7; }
+  .page-gust .gust-ws-label { display: none; }
+  .page-gust .gust-ws-subidx   { grid-column: 1; }
+  .page-gust .gust-ws-subtitle { grid-column: 2 / 7; }
+  .page-gust .gust-ws-desc { grid-column: 1 / 7; }
+}
+
+/* ── Gestion Samurai page ── */
+@media (max-width: 768px) {
+
+  .page-samurai .samurai-row {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    column-gap: clamp(8px, 2vw, 16px);
+  }
+
+  /* Head */
+  .page-samurai .samurai-head .idx   { grid-column: 1; }
+  .page-samurai .samurai-head .title { grid-column: 2 / 7; }
+  .page-samurai .samurai-head .year,
+  .page-samurai .samurai-head .sector { display: none; }
+
+  /* Body */
+  .page-samurai .samurai-body .desc        { grid-column: 1 / 7; grid-row: 1; }
+  .page-samurai .samurai-body .disciplines { grid-column: 1 / 7; grid-row: 2; }
+  .page-samurai .samurai-body .main-img    { grid-column: 1 / 7; grid-row: 3; }
+
+  /* Section headers */
+  .page-samurai .samurai-sec-idx   { grid-column: 1; }
+  .page-samurai .samurai-sec-title { grid-column: 2 / 7; }
+  .page-samurai .samurai-sec-label { display: none; }
+  .page-samurai .samurai-gen-desc  { grid-column: 1 / 7; }
+
+  /* Color swatches */
+  .page-samurai .samurai-swatch-inner {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+  .page-samurai .samurai-sw-name  { grid-column: 1 / 5; }
+  .page-samurai .samurai-sw-num   { grid-column: 5; }
+  .page-samurai .samurai-sw-hex-label { grid-column: 6; }
+  .page-samurai .samurai-sw-value     { grid-column: 6; }
+
+  /* Website chapters */
+  .page-samurai .samurai-ws-idx      { grid-column: 1; }
+  .page-samurai .samurai-ws-title    { grid-column: 2 / 7; }
+  .page-samurai .samurai-ws-label    { display: none; }
+  .page-samurai .samurai-ws-subidx   { grid-column: 1; }
+  .page-samurai .samurai-ws-subtitle { grid-column: 2 / 7; }
+  .page-samurai .samurai-ws-desc     { grid-column: 1 / 7; }
+}
+
+/* ── F1 page — tablet ── */
+@media (max-width: 900px) and (min-width: 601px) {
+  .page-f1 .f1-grid--4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── All project pages — mobile (480px) ── */
+@media (max-width: 480px) {
+
+  /* Take Care: full single column */
+  .page-takecare .takecare-row,
+  .page-takecare .tc-production,
+  .page-takecare .tc-triptych,
+  .page-takecare .tc-popout-section,
+  .page-takecare .tc-final {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+  }
+  .page-takecare .takecare-row > *,
+  .page-takecare .tc-production > *,
+  .page-takecare .tc-triptych > *,
+  .page-takecare .tc-popout-section > *,
+  .page-takecare .tc-final > * {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+    transform: none !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    align-self: auto !important;
+  }
+  .page-takecare .tc-triptych img { width: 100%; }
+
+  /* Gust: full single column */
+  .page-gust .gust-row {
+    grid-template-columns: 1fr;
+  }
+  .page-gust .gust-row > * {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+  }
+  .page-gust .gust-offers-row { flex-direction: column; }
+  .page-gust .gust-offer-card { flex: none; width: 100%; }
+  .page-gust .gust-schemas-row { flex-direction: column; }
+  .page-gust .gust-schema-img { flex: none; }
+
+  /* Samurai: full single column */
+  .page-samurai .samurai-row {
+    grid-template-columns: 1fr;
+  }
+  .page-samurai .samurai-row > * {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+  }
+  .page-samurai .samurai-swatch-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+  .page-samurai .samurai-sw-name      { grid-column: 1 / 3; }
+  .page-samurai .samurai-sw-num       { grid-column: 1; }
+  .page-samurai .samurai-sw-hex-label { grid-column: 2; justify-self: end; }
+  .page-samurai .samurai-sw-value     { grid-column: 2; justify-self: end; }
+
+  /* Work page */
+  .cases-row,
+  .page-work .work-row {
+    grid-template-columns: 28px 1fr;
+  }
+
+  /* Cursor preview hidden on touch */
+  #cursor-preview { display: none; }
 }
