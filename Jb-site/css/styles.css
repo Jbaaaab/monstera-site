@@ -2917,8 +2917,11 @@ body:has(.page-posters .lb:target) {
   }
 
   .info-table .row {
-    grid-template-columns: 1fr;
-    grid-template-areas: "idx" "lead" "meta" "xp";
+    grid-template-columns: auto 45fr 10fr 45fr;
+    grid-template-areas:
+      "idx lead lead lead"
+      "idx meta .   xp";
+    column-gap: 0;
     row-gap: 14px;
   }
 
@@ -3240,6 +3243,10 @@ body:has(.page-posters .lb:target) {
 
   .page-home .footer-contacts .social {
     justify-content: flex-end;
+  }
+
+  .page-home .footer-contacts a {
+    overflow-wrap: anywhere;
   }
 
   .footer-giant span {
@@ -7000,19 +7007,30 @@ html.jb-loading { visibility: hidden; }
 
 /* ── Work page cases / work rows ── */
 @media (max-width: 768px) {
-  .cases-row,
-  .page-work .work-row {
-    grid-template-columns: 36px 1fr;
-    gap: 8px 12px;
+  /* cases-row: idx | sectors (75%) | gap (10%) | date (15%) */
+  .cases-row {
+    grid-template-columns: 36px 75fr 10fr 15fr;
+    gap: 8px 0;
   }
-  .cases-row .spacer,
-  .page-work .work-row .spacer { display: none; }
-  .cases-row .date-col,
+  .cases-row .title {
+    grid-column: 2 / 5;
+  }
+  .cases-row .spacer { display: none; }
+  .cases-row .date-col {
+    grid-column: 4;
+    font-size: 12px;
+  }
   .cases-row .type-col {
     grid-column: 2;
     font-size: 12px;
   }
   .cases-row .clients { grid-column: 2; }
+
+  .page-work .work-row {
+    grid-template-columns: 36px 1fr;
+    gap: 8px 12px;
+  }
+  .page-work .work-row .spacer { display: none; }
 }
 
 /* ── Take Care page ── */
@@ -7255,7 +7273,9 @@ html.jb-loading { visibility: hidden; }
   .page-samurai .samurai-sw-value     { grid-column: 2; justify-self: end; }
 
   /* Work page */
-  .cases-row,
+  .cases-row {
+    grid-template-columns: 28px 75fr 10fr 15fr;
+  }
   .page-work .work-row {
     grid-template-columns: 28px 1fr;
   }
