@@ -2375,65 +2375,67 @@ body:has(.page-posters .lb:target) {
   }
 
   .page-contact .bg--monstera {
-    width: 162vw;
+    width: 210vw;
     max-width: none;
     left: 50%;
     transform: translateX(-50%);
-    bottom: -10vh;
+    top: auto;
+    bottom: -2vh;
   }
 
   .page-contact .panel--main {
-    left: 25%;
-    top: 34vh;
-    width: 79%;
+    left: 20%;
+    top: 18vh;
+    width: 51vw;
   }
 
   .page-contact .tag--hire {
-    left: 44%;
-    top: 44vh;
-    width: 24%;
+    left: 38%;
+    top: 11vh;
+    width: 20vw;
   }
 
   .page-contact .panel--cadre {
     left: 6%;
-    top: 56vh;
-    width: 45%;
+    top: 35vh;
+    width: 26vw;
   }
 
   .page-contact .bubble--num {
-    left: 15%;
-    top: 30vh;
-    width: 51%;
+    left: 6%;
+    top: 17vh;
+    width: 31vw;
+    transform: rotate(-3deg);
   }
 
   .page-contact .panel--mail {
-    left: 65%;
-    top: 53vh;
-    width: 34%;
+    left: 45%;
+    top: 30vh;
+    width: 23vw;
   }
 
   .page-contact .photo--couple {
-    left: 39%;
-    top: 73vh;
-    width: 35%;
+    left: 30%;
+    top: 44vh;
+    width: 22vw;
   }
 
   .page-contact .caption--cams {
-    left: 58%;
-    top: 70vh;
-    width: 42%;
+    left: 43%;
+    top: 41vh;
+    width: 28vw;
   }
 
   .page-contact .deco--orange1 {
-    left: 3%;
-    top: 50vh;
-    width: 30%;
+    left: 5%;
+    top: 26vh;
+    width: 18vw;
   }
 
   .page-contact .deco--orange2 {
-    left: 71%;
-    top: 50vh;
-    width: 26%;
+    left: 56%;
+    top: 25vh;
+    width: 23vw;
   }
 
   /* Page Work mobile */
