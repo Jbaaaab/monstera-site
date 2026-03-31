@@ -5105,10 +5105,20 @@ body:has(.page-posters .lb:target) {
     padding-left: clamp(6px, 1.5vw, 10px);
   }
 
-  /* ══ 07 Typeface ══ */
-  .page-f1 .f1-tf-name    { grid-column: 1 / span 4; }
-  .page-f1 .f1-tf-weights { grid-column: 5 / span 8; }
-  .page-f1 .f1-tf-desc    { grid-column: 1 / span 12; margin-top: 8px; }
+  /* ══ 07 Typeface — stacked, pas de chevauchement ══ */
+  .page-f1 .f1-tf-name    { grid-column: 1 / span 12; }
+  .page-f1 .f1-tf-disp-light,
+  .page-f1 .f1-tf-disp-bold   { font-size: clamp(32px, 9vw, 64px); }
+  .page-f1 .f1-tf-nhg-light,
+  .page-f1 .f1-tf-nhg-medium,
+  .page-f1 .f1-tf-nhg-bold    { font-size: clamp(22px, 6vw, 44px); }
+  .page-f1 .f1-tf-weights {
+    grid-column: 1 / span 12;
+    margin-top: clamp(12px, 3vw, 20px);
+  }
+  .page-f1 .f1-tf-weights--clash span,
+  .page-f1 .f1-tf-weights--nhg span { font-size: clamp(14px, 3.5vw, 20px); }
+  .page-f1 .f1-tf-desc    { grid-column: 1 / span 12; margin-top: clamp(16px, 4vw, 24px); }
 
   /* ══ 08 Display — 001 Lower Third ══ */
   .page-f1 .f1-lt-col:nth-child(1),
@@ -5131,6 +5141,20 @@ body:has(.page-posters .lb:target) {
   .page-f1 .f1-fia-col:nth-child(2),
   .page-f1 .f1-fia-col:nth-child(3) { grid-column: 1 / span 12; }
 
+  /* ══ 08 Display — video wraps: annuler le overlap desktop ══ */
+  .page-f1 .f1-lt-video-wrap,
+  .page-f1 .f1-radio-video-wrap,
+  .page-f1 .f1-fia-video-wrap {
+    margin-top: clamp(20px, 5vw, 36px);
+    margin-bottom: 0;
+  }
+  /* Espacement équivalent entre chaque asset stacked */
+  .page-f1 .f1-lt-grid,
+  .page-f1 .f1-radio-grid,
+  .page-f1 .f1-fia-grid {
+    row-gap: clamp(16px, 4vw, 24px);
+  }
+
   /* ══ 08 Display — 005 Race Facts ══ */
   .page-f1 .f1-rf-left  { grid-column: 1 / span 12; grid-row: 1; }
   .page-f1 .f1-rf-right { grid-column: 1 / span 12; grid-row: 2; }
@@ -5149,12 +5173,12 @@ body:has(.page-posters .lb:target) {
   .page-f1 .f1-lb-row2::-webkit-scrollbar { display: none; }
   .page-f1 .f1-lb-group--1,
   .page-f1 .f1-lb-group--2,
-  .page-f1 .f1-lb-group--3 { flex: 0 0 78vw; grid-column: unset; }
+  .page-f1 .f1-lb-group--3 { flex: 0 0 90vw; grid-column: unset; }
   .page-f1 .f1-lb-single--1,
   .page-f1 .f1-lb-single--2,
   .page-f1 .f1-lb-single--3,
   .page-f1 .f1-lb-single--4,
-  .page-f1 .f1-lb-single--5 { flex: 0 0 78vw; grid-column: unset; }
+  .page-f1 .f1-lb-single--5 { flex: 0 0 90vw; grid-column: unset; }
   .page-f1 .f1-lb-side-label--r1,
   .page-f1 .f1-lb-side-label--r2 { display: none; }
 
