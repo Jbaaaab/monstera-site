@@ -5516,7 +5516,7 @@ body:has(.page-posters .lb:target) {
   margin: 0;
   font-family: "Epilogue", system-ui;
   font-weight: 400;
-  font-size: clamp(9px, 0.694vw, 12px);
+  font-size: clamp(12px, 0.94vw, 16px);
   line-height: 1.5;
   color: #fff;
   text-align: center;
@@ -7135,16 +7135,16 @@ html.jb-loading { visibility: hidden; }
     column-gap: clamp(8px, 2vw, 16px);
   }
 
-  /* Head */
-  .page-gust .gust-head .idx   { grid-column: 1; }
-  .page-gust .gust-head .title { grid-column: 2 / 7; }
+  /* Head — 01 stacked above title */
+  .page-gust .gust-head .idx   { grid-column: 1 / 3; grid-row: 1; }
+  .page-gust .gust-head .title { grid-column: 1 / 7; grid-row: 2; }
   .page-gust .gust-head .year,
   .page-gust .gust-head .sector { display: none; }
 
-  /* Body */
+  /* Body — disciplines after main photo */
   .page-gust .gust-body .desc        { grid-column: 1 / 7; grid-row: 1; }
-  .page-gust .gust-body .disciplines { grid-column: 1 / 7; grid-row: 2; }
-  .page-gust .gust-body .main-img    { grid-column: 1 / 7; grid-row: 3; }
+  .page-gust .gust-body .main-img    { grid-column: 1 / 7; grid-row: 2; }
+  .page-gust .gust-body .disciplines { grid-column: 1 / 7; grid-row: 3; }
 
   /* Section headers */
   .page-gust .gust-sec-idx   { grid-column: 1; }
@@ -7164,15 +7164,22 @@ html.jb-loading { visibility: hidden; }
     min-width: 0;
   }
 
-  /* Color palette */
-  .page-gust .gust-swatch {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
+  /* Color palette — flex row: name | num 10%-gap HEX hexval */
+  .page-gust .gust-swatch-inner {
+    display: flex;
+    align-items: center;
   }
-  .page-gust .gust-sw-name  { grid-column: 1 / 5; }
-  .page-gust .gust-sw-num   { grid-column: 5; }
-  .page-gust .gust-sw-hex-label { grid-column: 6; }
-  .page-gust .gust-sw-hex-val   { grid-column: 6; }
+  .page-gust .gust-sw-name      { flex: 1 1 0; min-width: 0; }
+  .page-gust .gust-sw-num       { flex: 0 0 auto; }
+  .page-gust .gust-sw-hex-label { flex: 0 0 auto; margin-left: 10%; }
+  .page-gust .gust-sw-hex-val   { flex: 0 0 auto; margin-left: 4px; }
   .page-gust .gust-color-desc { grid-column: 1 / 7; }
+
+  /* Offer logos ×1.65 */
+  .page-gust .gust-offer--1 .gust-offer-logo { width: clamp(60px, 21.76vw, 376px); }
+  .page-gust .gust-offer--2 .gust-offer-logo { width: clamp(60px, 18.05vw, 312px); }
+  .page-gust .gust-offer--3 .gust-offer-logo { width: clamp(60px, 13.08vw, 226px); }
+  .page-gust .gust-offer--4 .gust-offer-logo { width: clamp(60px, 15.00vw, 259px); }
 
   /* Schemas — 2 per row */
   .page-gust .gust-schemas-row {
@@ -7279,6 +7286,10 @@ html.jb-loading { visibility: hidden; }
   .page-gust .gust-offer-card { flex: none; width: 100%; }
   .page-gust .gust-schemas-row { flex-direction: column; }
   .page-gust .gust-schema-img { flex: none; }
+  /* Keep disciplines after main photo (overrides grid-row: auto DOM order) */
+  .page-gust .gust-body .desc        { grid-row: 1 !important; }
+  .page-gust .gust-body .main-img    { grid-row: 2 !important; }
+  .page-gust .gust-body .disciplines { grid-row: 3 !important; }
 
   /* Samurai: full single column */
   .page-samurai .samurai-row {
