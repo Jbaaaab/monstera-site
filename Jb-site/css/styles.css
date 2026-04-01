@@ -2919,8 +2919,9 @@ body:has(.page-posters .lb:target) {
   .info-table .row {
     grid-template-columns: auto 45fr 10fr 45fr;
     grid-template-areas:
-      "idx lead lead lead"
-      "idx meta .   xp";
+      "idx .    .    ."
+      "lead lead lead lead"
+      ".    meta .   xp";
     column-gap: 0;
     row-gap: 14px;
   }
@@ -3211,41 +3212,27 @@ body:has(.page-posters .lb:target) {
   }
 
   .footer-top {
-    flex-direction: column;
-    gap: 18px;
-  }
-
-  .foot-label.foot-right,
-  .footer-contacts {
-    text-align: left;
-  }
-
-  .footer-contacts .social {
-    justify-content: flex-start;
-  }
-
-  .page-home .footer-top {
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
     gap: 14px;
   }
 
-  .page-home .footer-col {
+  .footer-col {
     flex: 1 1 0;
     min-width: 0;
   }
 
-  .page-home .foot-label.foot-right,
-  .page-home .footer-contacts {
+  .foot-label.foot-right,
+  .footer-contacts {
     text-align: right;
   }
 
-  .page-home .footer-contacts .social {
+  .footer-contacts .social {
     justify-content: flex-end;
   }
 
-  .page-home .footer-contacts a {
+  .footer-contacts a {
     overflow-wrap: anywhere;
   }
 
@@ -5105,20 +5092,22 @@ body:has(.page-posters .lb:target) {
     padding-left: clamp(6px, 1.5vw, 10px);
   }
 
-  /* ══ 07 Typeface — stacked, pas de chevauchement ══ */
-  .page-f1 .f1-tf-name    { grid-column: 1 / span 12; }
+  /* ══ 07 Typeface — name left (8 cols), weights right (4 cols) vertically centered ══ */
+  .page-f1 .f1-tf-name    { grid-column: 1 / span 8; grid-row: 1; }
   .page-f1 .f1-tf-disp-light,
-  .page-f1 .f1-tf-disp-bold   { font-size: clamp(32px, 9vw, 64px); }
+  .page-f1 .f1-tf-disp-bold   { font-size: clamp(28px, 7.5vw, 56px); }
   .page-f1 .f1-tf-nhg-light,
   .page-f1 .f1-tf-nhg-medium,
-  .page-f1 .f1-tf-nhg-bold    { font-size: clamp(22px, 6vw, 44px); }
+  .page-f1 .f1-tf-nhg-bold    { font-size: clamp(20px, 5vw, 40px); }
   .page-f1 .f1-tf-weights {
-    grid-column: 1 / span 12;
-    margin-top: clamp(12px, 3vw, 20px);
+    grid-column: 9 / span 4;
+    grid-row: 1;
+    align-self: center;
+    margin-top: 0;
   }
   .page-f1 .f1-tf-weights--clash span,
-  .page-f1 .f1-tf-weights--nhg span { font-size: clamp(14px, 3.5vw, 20px); }
-  .page-f1 .f1-tf-desc    { grid-column: 1 / span 12; margin-top: clamp(16px, 4vw, 24px); }
+  .page-f1 .f1-tf-weights--nhg span { font-size: clamp(12px, 3vw, 18px); }
+  .page-f1 .f1-tf-desc    { grid-column: 1 / span 12; grid-row: 2; margin-top: clamp(16px, 4vw, 24px); }
 
   /* ══ 08 Display — 001 Lower Third ══ */
   .page-f1 .f1-lt-col:nth-child(1),
@@ -5159,7 +5148,8 @@ body:has(.page-posters .lb:target) {
   .page-f1 .f1-rf-left  { grid-column: 1 / span 12; grid-row: 1; }
   .page-f1 .f1-rf-right { grid-column: 1 / span 12; grid-row: 2; }
 
-  /* ══ 08 Display — 006 Leaderboard (horizontal scroll) ══ */
+  /* ══ 08 Display — 006 Leaderboard (horizontal scroll, overflow: visible on dark) ══ */
+  .page-f1 .f1-dark { overflow: visible; }
   .page-f1 .f1-lb-row1,
   .page-f1 .f1-lb-row2 {
     display: flex;
@@ -5167,14 +5157,15 @@ body:has(.page-posters .lb:target) {
     -webkit-overflow-scrolling: touch;
     gap: clamp(8px, 2vw, 12px);
     padding-bottom: 8px;
-    scrollbar-width: none; /* hide scrollbar on Firefox */
+    scrollbar-width: none;
   }
   .page-f1 .f1-lb-row1::-webkit-scrollbar,
   .page-f1 .f1-lb-row2::-webkit-scrollbar { display: none; }
+  /* lb-group--1, --2 and yellow flag (lb-single--1) scaled ×0.8 = 72vw */
   .page-f1 .f1-lb-group--1,
-  .page-f1 .f1-lb-group--2,
-  .page-f1 .f1-lb-group--3 { flex: 0 0 90vw; grid-column: unset; }
-  .page-f1 .f1-lb-single--1,
+  .page-f1 .f1-lb-group--2  { flex: 0 0 72vw; grid-column: unset; }
+  .page-f1 .f1-lb-group--3  { flex: 0 0 90vw; grid-column: unset; }
+  .page-f1 .f1-lb-single--1 { flex: 0 0 72vw; grid-column: unset; }
   .page-f1 .f1-lb-single--2,
   .page-f1 .f1-lb-single--3,
   .page-f1 .f1-lb-single--4,
@@ -7042,10 +7033,14 @@ html.jb-loading { visibility: hidden; }
   .cases-row .spacer { display: none; }
   .cases-row .date-col {
     grid-column: 4;
+    grid-row: 2;
+    align-self: start;
     font-size: 12px;
   }
   .cases-row .type-col {
     grid-column: 2;
+    grid-row: 2;
+    align-self: start;
     font-size: 12px;
   }
   .cases-row .clients { grid-column: 2; }
@@ -7206,16 +7201,16 @@ html.jb-loading { visibility: hidden; }
     column-gap: clamp(8px, 2vw, 16px);
   }
 
-  /* Head */
-  .page-samurai .samurai-head .idx   { grid-column: 1; }
-  .page-samurai .samurai-head .title { grid-column: 2 / 7; }
+  /* Head — 01 stacked above title */
+  .page-samurai .samurai-head .idx   { grid-column: 1 / 3; grid-row: 1; }
+  .page-samurai .samurai-head .title { grid-column: 1 / 7; grid-row: 2; }
   .page-samurai .samurai-head .year,
   .page-samurai .samurai-head .sector { display: none; }
 
-  /* Body */
+  /* Body — disciplines after main photo */
   .page-samurai .samurai-body .desc        { grid-column: 1 / 7; grid-row: 1; }
-  .page-samurai .samurai-body .disciplines { grid-column: 1 / 7; grid-row: 2; }
-  .page-samurai .samurai-body .main-img    { grid-column: 1 / 7; grid-row: 3; }
+  .page-samurai .samurai-body .main-img    { grid-column: 1 / 7; grid-row: 2; }
+  .page-samurai .samurai-body .disciplines { grid-column: 1 / 7; grid-row: 3; }
 
   /* Section headers */
   .page-samurai .samurai-sec-idx   { grid-column: 1; }
@@ -7299,6 +7294,11 @@ html.jb-loading { visibility: hidden; }
     grid-column: 1 !important;
     grid-row: auto !important;
   }
+  /* Keep disciplines after main photo */
+  .page-samurai .samurai-body .desc        { grid-row: 1 !important; }
+  .page-samurai .samurai-body .main-img    { grid-row: 2 !important; }
+  .page-samurai .samurai-body .disciplines { grid-row: 3 !important; }
+
   .page-samurai .samurai-swatch-inner {
     grid-template-columns: 1fr 1fr;
   }
