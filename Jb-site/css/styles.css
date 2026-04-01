@@ -1459,7 +1459,9 @@ body:has(.page-posters .lb:target) {
 .page-3d .p-chambre01 { left: 77.6%; top: 66.2%; width: 17.6%; }
 .page-3d .p-bureau01 { left: 15.6%; top: 64.8%; width: 36%; }
 
+.page-3d .p-img30 { left: 14%; top: 14%; width: 27%; }
 .page-3d .p-rue04 { left: 0%; top: 71.1%; width: 50%; }
+.page-3d .p-img31 { left: 52%; top: 70%; width: 44%; }
 .page-3d .p-rer01 { left: 55.4%; top: 77.6%; width: 31%; }
 .page-3d .p-rer02 { left: 55.3%; top: 76.7%; width: 31%; opacity: 0; pointer-events: none; }
 .page-3d .p-cafe02 { left: 38.2%; top: 85.7%; width: 36%; }
@@ -1564,7 +1566,9 @@ body:has(.page-posters .lb:target) {
   .page-3d .n-credit { left: 2%; top: 98.8%; width: 95%; }
 
   .page-3d .p-bureau01,
-  .page-3d .p-rer02 {
+  .page-3d .p-rer02,
+  .page-3d .p-img30,
+  .page-3d .p-img31 {
     display: none;
   }
 }
