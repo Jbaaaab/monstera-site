@@ -1490,11 +1490,14 @@ body:has(.page-posters .lb:target) {
   }
 
   .page-3d .intro3d .idx {
+    grid-column: 1 / span 2;
+    grid-row: 1;
     font-size: 14px;
   }
 
   .page-3d .intro3d .title-block {
-    grid-column: 2 / span 7;
+    grid-column: 1 / span 8;
+    grid-row: 2;
   }
 
   .page-3d .intro3d h1 {
@@ -1509,12 +1512,14 @@ body:has(.page-posters .lb:target) {
   }
 
   .page-3d .intro3d .year {
-    grid-column: 10 / span 2;
+    grid-column: 9 / span 2;
+    grid-row: 2;
     font-size: 10px;
   }
 
   .page-3d .intro3d .sector {
-    grid-column: 12 / span 1;
+    grid-column: 11 / span 2;
+    grid-row: 2;
     font-size: 10px;
   }
 
@@ -2991,7 +2996,8 @@ body:has(.page-posters .lb:target) {
 
   .page-magazine .mag-head .idx,
   .page-branding .branding-head .idx {
-    grid-column: 1 / span 1;
+    grid-column: 1 / span 2;
+    grid-row: 1;
     font-size: clamp(20px, 4.5vw, 24px);
     line-height: 1;
     margin-top: 2px;
@@ -2999,13 +3005,15 @@ body:has(.page-posters .lb:target) {
 
   .page-magazine .mag-head .title,
   .page-branding .branding-head .title {
-    grid-column: 2 / span 7;
+    grid-column: 1 / span 8;
+    grid-row: 2;
     max-width: none;
   }
 
   .page-magazine .mag-head .year,
   .page-branding .branding-head .year {
     grid-column: 9 / span 2;
+    grid-row: 2;
     margin-top: 0;
     justify-self: end;
     text-align: right;
@@ -3014,6 +3022,7 @@ body:has(.page-posters .lb:target) {
   .page-magazine .mag-head .sector,
   .page-branding .branding-head .sector {
     grid-column: 11 / span 2;
+    grid-row: 2;
     margin-top: 0;
     justify-self: end;
     text-align: right;
@@ -3089,7 +3098,7 @@ body:has(.page-posters .lb:target) {
 
   /* Magazine-specific phone fit */
   .page-magazine .mag-head .title {
-    grid-column: 2 / span 6;
+    grid-column: 1 / span 7;
   }
 
   .page-magazine .mag-head .year {
