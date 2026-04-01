@@ -49,6 +49,8 @@
   }
 
   /* ---- run cover animation, then call onDone ---- */
+  var pendingTimer = null;
+
   function cover(onDone) {
     var wrap = buildOverlay();
 
@@ -56,10 +58,22 @@
     requestAnimationFrame(function () {
       requestAnimationFrame(function () {
         wrap.classList.add('is-covering');
-        setTimeout(onDone, TOTAL_MS);
+        pendingTimer = setTimeout(onDone, TOTAL_MS);
       });
     });
   }
+
+  /* Cancel pending navigation if the page is hidden (e.g. mid-swipe-back) */
+  window.addEventListener('pagehide', function () {
+    if (pendingTimer) {
+      clearTimeout(pendingTimer);
+      pendingTimer = null;
+    }
+    var old = document.getElementById('jb-pt');
+    if (old) old.remove();
+    /* Also clear the transition flag so restored page doesn't get curtain */
+    try { sessionStorage.removeItem('jb-pt'); } catch (e) {}
+  });
 
   /* ---- intercept clicks ---- */
   document.addEventListener('click', function (e) {

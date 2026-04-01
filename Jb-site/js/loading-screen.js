@@ -13,7 +13,7 @@
   /* ── read page flags ── */
   var loaderAttr     = document.documentElement.getAttribute('data-loader');
   var isHeavy        = loaderAttr === 'heavy';
-  var isAlways       = loaderAttr === 'always'; /* show every external load, skip if from internal nav */
+  var isAlways       = loaderAttr === 'always'; /* show on first direct visit; skip on back/forward */
   var fromTransition = sessionStorage.getItem('jb-pt') === '1';
   var visitKey       = 'jb-v:' + location.pathname;
   var wasVisited     = !!localStorage.getItem(visitKey);
@@ -21,15 +21,40 @@
   /* Clear transition flag immediately (always, regardless of mode) */
   if (fromTransition) sessionStorage.removeItem('jb-pt');
 
+  /* ── back / forward nav detection ──────────────────────────
+     Both the legacy API (type===2) and the modern Navigation
+     Timing API are checked for cross-browser coverage.        */
+  var navEntry      = performance && performance.getEntriesByType &&
+                      performance.getEntriesByType('navigation')[0];
+  var isBackForward = navEntry
+    ? navEntry.type === 'back_forward'
+    : !!(performance.navigation && performance.navigation.type === 2);
+
+  /* ── bfcache restore: clean up any frozen loading overlay ──
+     When the browser restores a page from the back-forward
+     cache, pageshow fires with persisted=true.  Any in-flight
+     loader (green screen) or transition strips must be removed
+     so the page appears immediately.                          */
+  window.addEventListener('pageshow', function (e) {
+    if (!e.persisted) return;
+    var loader = document.getElementById('jb-loader');
+    if (loader) loader.remove();
+    var strips = document.getElementById('jb-pt');
+    if (strips) strips.remove();
+    document.documentElement.classList.remove('jb-loading');
+  });
+
   /* ── decide mode ──────────────────────────────────────────
      fromTransition → curtain ALWAYS (prevents double animation)
-     always (home) → heavy every time from outside the site
-     heavy + first visit + direct nav → full loading screen
+     back/forward nav → none (page already seen; no green flash)
+     always/heavy + first direct visit → full loading screen
      everything else → nothing                                */
   var mode;
   if (fromTransition) {
     mode = 'curtain';
-  } else if (isAlways || (isHeavy && !wasVisited)) {
+  } else if (isBackForward) {
+    mode = 'none';
+  } else if (!wasVisited && (isAlways || isHeavy)) {
     mode = 'heavy';
   } else {
     mode = 'none';
@@ -160,6 +185,8 @@
      (light pages from link, OR heavy pages already cached)
      ═══════════════════════════════════ */
   function startCurtain() {
+    /* Mark as visited so future direct/back navigations skip heavy loader */
+    try { localStorage.setItem(visitKey, '1'); } catch (e) {}
     var wrap = buildStrips('enter');
     document.documentElement.classList.remove('jb-loading');
 
