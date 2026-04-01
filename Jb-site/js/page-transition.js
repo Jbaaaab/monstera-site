@@ -58,21 +58,25 @@
     requestAnimationFrame(function () {
       requestAnimationFrame(function () {
         wrap.classList.add('is-covering');
-        pendingTimer = setTimeout(onDone, TOTAL_MS);
+        pendingTimer = setTimeout(function () {
+          pendingTimer = null; // mark as fired — navigation is intentional
+          onDone();
+        }, TOTAL_MS);
       });
     });
   }
 
-  /* Cancel pending navigation if the page is hidden (e.g. mid-swipe-back) */
+  /* Cancel pending navigation if the page is hidden mid-swipe-back.
+     Only cleans up sessionStorage when there's actually a pending timer
+     (i.e. the animation was interrupted, not completed normally). */
   window.addEventListener('pagehide', function () {
     if (pendingTimer) {
       clearTimeout(pendingTimer);
       pendingTimer = null;
+      var old = document.getElementById('jb-pt');
+      if (old) old.remove();
+      try { sessionStorage.removeItem('jb-pt'); } catch (e) {}
     }
-    var old = document.getElementById('jb-pt');
-    if (old) old.remove();
-    /* Also clear the transition flag so restored page doesn't get curtain */
-    try { sessionStorage.removeItem('jb-pt'); } catch (e) {}
   });
 
   /* ---- intercept clicks ---- */
