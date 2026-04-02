@@ -54,7 +54,7 @@
     mode = 'curtain';
   } else if (isBackForward) {
     mode = 'none';
-  } else if (!wasVisited && (isAlways || isHeavy)) {
+  } else if (isAlways || (!wasVisited && isHeavy)) {
     mode = 'heavy';
   } else {
     mode = 'none';
